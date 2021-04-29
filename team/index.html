@@ -1,72 +1,155 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-* {
-  box-sizing: border-box;
-}
-.menu {
-  float:left;
-  width:20%;
-  text-align:center;
-}
-.menu a {
-  background-color:#e5e5e5;
-  padding:8px;
-  margin-top:7px;
-  display:block;
-  width:100%;
-  color:black;
-}
-.main {
-  float:left;
-  width:60%;
-  padding:0 20px;
-}
-.right {
-  background-color:#e5e5e5;
-  float:left;
-  width:20%;
-  padding:15px;
-  margin-top:7px;
-  text-align:center;
-}
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+  
+    <meta name="theme-color" content="#fafafa">
 
-@media only screen and (max-width:620px) {
-  /* For mobile phones: */
-  .menu, .main, .right {
-    width:100%;
-  }
-}
+<style>
+.computer{border: 1px solid black; }
+.example{float: left; border: 1px solid black; margin-top: 20px; 
+    width: 25%; padding: 10px;
+     }
+.write-box{
+    margin-top: 20px;
+    height: 100px; 
+    border: 1px solid black;
+    color: black;
+    padding-top: 5px;
+    }
+.example input[type='text']{padding: 10px;}
+    .ex-3 input[type='text']{width: 50px; }
 </style>
 </head>
-<body style="font-family:Verdana;color:#aaaaaa;">
 
-<div style="background-color:#e5e5e5;padding:15px;text-align:center;">
-  <h1>Hello World</h1>
-</div>
+    <body style="font-family:Verdana;color:#aaaaaa;">
 
-<div style="overflow:auto">
-  <div class="menu">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-    <a href="#">Link 4</a>
-  </div>
+        <div style="background-color:#e5e5e5;padding:15px;text-align:center;">
+          <h1>Team Assignment 1</h1>
+        </div>
+        
+        <div style="overflow:auto">
+          <div id="nav" class="menu">
+            
+          </div>
+        
+          <div class="main">
+            <div class="computer">
+                <div class="example">
+                    <h3>Example 1: Write to Div</h3>
+                    <input id="ex-1-txt" type="text" value="Write to Div">
+                    <button onclick="writeToDiv()">Write</button>
+                    <div id="write1" class="write-box"></div>
+                    
+                </div>
+                
+                <div class="example">
+                    <h3>Example 2: Sum it up</h3>
+                    <input id="ex-2-txt" type="text" placeholder="Put in a number" value="">
+                    <button onclick="sumItUp()">Sum it Up</button>
+                    <div id="write2" class="write-box"></div>
+                </div>
+                <div class="example ex-3">
+                    <h3>Example 3: Adding Machine</h3>
+                    <input id="ex-3-txt-1" type="text" value="0">
+                    <input id="ex-3-txt-2" type="text" value="0">
+                    <button onclick="addItUp()">+</button>
+                    <button onclick="subItUp()">-</button>
+                    <button onclick="multiplyItUp()">*</button>
+                    <button onclick="divideItUp()">/</button>
+                    <div id="write3" class="write-box"></div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+          <div class="right">
+            <h2>About</h2>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+          </div>
+        </div>
 
-  <div class="main">
-    <h2>Lorum Ipsum</h2>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-  </div>
-
-  <div class="right">
-    <h2>About</h2>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-  </div>
-</div>
-
-<div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">© copyright w3schools.com</div>
-
+<script src="../components/nav.js"></script>
+  <script src="../js/main.js"></script>
+<script>
+    function writeToDiv(){
+        var txt = document.getElementById('ex-1-txt').value;
+        document.getElementById('write1').innerHTML = txt;
+    }
+    function sumItUp(){
+        var txt = document.getElementById('ex-2-txt').value;
+        var total = 0;
+        if(!isNaN(txt)){
+            for(i = 0; i <= txt; i++){
+                total += i;
+            }
+            txt = total;
+        }
+        else{
+            txt = '<p class="red">You must put in a number!!!</p>';
+        }
+        document.getElementById('write2').innerHTML = txt;
+    }
+    function addItUp(){
+        var txt1 = parseFloat(document.getElementById('ex-3-txt-1').value);
+        var txt2 = parseFloat(document.getElementById('ex-3-txt-2').value);
+        var total = 0;
+        if(!isNaN(txt1) && !isNaN(txt2)){
+            total = txt1 + txt2;
+            
+        }
+        else{
+            total = '<p class="red">You must put in a number!!!</p>';
+        }
+        document.getElementById('write3').innerHTML = total;
+    }
+    function subItUp(){
+        var txt1 = parseFloat(document.getElementById('ex-3-txt-1').value);
+        var txt2 = parseFloat(document.getElementById('ex-3-txt-2').value);
+        var total = 0;
+        if(!isNaN(txt1) && !isNaN(txt2)){
+            total = txt1 - txt2;
+            
+        }
+        else{
+            total = '<p class="red">You must put in a number!!!</p>';
+        }
+        document.getElementById('write3').innerHTML = total;
+    }
+    function multiplyItUp(){
+        var txt1 = parseFloat(document.getElementById('ex-3-txt-1').value);
+        var txt2 = parseFloat(document.getElementById('ex-3-txt-2').value);
+        var total = 0;
+        if(!isNaN(txt1) && !isNaN(txt2)){
+            total = txt1 * txt2;
+            
+        }
+        else{
+            total = '<p class="red">You must put in a number!!!</p>';
+        }
+        document.getElementById('write3').innerHTML = total;
+    }
+    function divideItUp(){
+        var txt1 = parseFloat(document.getElementById('ex-3-txt-1').value);
+        var txt2 = parseFloat(document.getElementById('ex-3-txt-2').value);
+        var total = 0;
+        if(!isNaN(txt1) && !isNaN(txt2)){
+            total = txt1 / txt2;
+            
+        }
+        else{
+            total = '<p class="red">You must put in a number!!!</p>';
+        }
+        document.getElementById('write3').innerHTML = total;
+    }
+</script>
 </body>
 </html>
