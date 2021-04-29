@@ -1,61 +1,36 @@
-
-.username:after {
-    content:"Insert your user name";
-}
-@media screen and (max-width: 1024px) {
-    .username:before {
-        content:"User name";
-    }
-}
-@media screen and (max-width: 480px) {
-    .username:before {
-        content:"";
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .menu { 
-        width: 100%;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .menu {
-        width: 30%;
-    }
-}
-
-img {
-    max-width: 100%
-}
-
-.container {
-	display: grid;
-	grid-template-columns: 1fr 3fr;
+* {
+    box-sizing: border-box;
   }
-
-.main {
-	max-width: 960px;
-	margin: 0 auto;
-	display: flex;
-	border: 1px solid red;
-}
-.top{border: 1px solid green; height: 30px;}
-aside{border: 1px solid black; height: 500px; }
-main{border: 1px solid black; height: 500px;}
-
-[class^="col-"], [class*=" col-"]{float: left;}
-
-.col-1 { flex-basis: 8.333%; }
-.col-2 { flex-basis: 16.666%; }
-.col-3 { flex-basis: 25%; }
-.col-4 { flex-basis: 33.333%; }
-.col-5 { flex-basis: 41.666%; }
-.col-6 { flex-basis: 50%; }
-.col-7 { flex-basis: 58%; }
-.col-8 { flex-basis: 67%; }
-.col-9 { flex-basis: 75%; }
-.col-10 { flex-basis: 83%; }
-.col-11 { flex-basis: 91%; }
-.col-12 { flex-basis: 100%; }
-/* and so on up to 12... */
+  .menu {
+    float:left;
+    width:20%;
+    text-align:center;
+  }
+  .menu a {
+    background-color:#e5e5e5;
+    padding:8px;
+    margin-top:7px;
+    display:block;
+    width:100%;
+    color:black;
+  }
+  .main {
+    float:left;
+    width:60%;
+    padding:0 20px;
+  }
+  .right {
+    background-color:#e5e5e5;
+    float:left;
+    width:20%;
+    padding:15px;
+    margin-top:7px;
+    text-align:center;
+  }
+  
+  @media only screen and (max-width:620px) {
+    /* For mobile phones: */
+    .menu, .main, .right {
+      width:100%;
+    }
+  }

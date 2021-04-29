@@ -1,18 +1,19 @@
-const links = [
-    {
-        week: "w1",
-        label: "Week 1 Notes",
-        url: "week1/index.html"
-    }
-  ]
-var ol = document.getElementById('table-contents');
-links.forEach(function(link){
-    var label = document.createElement("LABEL");
-    var a = document.createElement("A");
-    var li = document.createElement("LI");
-    a.text = link.label;
-    a.href = link.url;
-    //li.appendChild(label);
-    li.appendChild(a);
-    ol.appendChild(li);
-});
+`<div style="background-color:#e5e5e5;padding:15px;text-align:center;">
+      <h1>Aaron&apos; Portfolio</h1>
+    </div>
+    
+    <div style="overflow:auto">
+      <div id="nav" class="menu">
+        
+        
+      </div>
+    
+      <div class="main">
+        <h2 id="main-content-title">Script Examples and Demonstrations</h2>
+        <p id="main-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+      </div>
+    
+      <div class="right">
+        <h2 id="questions-title">Notes and Questions</h2>
+        <p id="questions-content">This is where I will place my notes ans questions.</p>
+      </div>`
