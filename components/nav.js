@@ -16,6 +16,15 @@ const links = [
                     <h2>I am a Notes Title 2</h2>
                 </div>
             `
+    },
+    {
+        week: "w2 Team",
+        label: "Week 2 Team Notes",
+        url: "team/index.html",
+        notes = `<div class="notes-content">
+                    <h2>I am a Notes Title 2</h2>
+                </div>
+            `
     }
   ]
 
