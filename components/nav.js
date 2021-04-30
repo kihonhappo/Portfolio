@@ -2,29 +2,13 @@ const links = [
     {
         week: "w1",
         label: "Week 1 Notes",
-        url: "week1/index.html",
-        notes: `<div class="notes-content">
-                    <h2>I am a Notes Title 1</h2>
-                </div>
-            `
+        url: "weeks/week1.js"
     },
     {
         week: "w2",
         label: "Week 2 Notes",
-        url: "week2/index.html",
-        notes: `<div class="notes-content">
-                    <h2>I am a Notes Title 2</h2>
-                </div>
-            `
-    },
-    {
-        week: "w2 Team",
-        label: "Week 2 Team Notes",
-        url: "team/index.html",
-        notes: `<div class="notes-content">
-                    <h2>I am a Notes Title 2</h2>
-                </div>
-            `
+        url: "weeks/week2.js",
+        
     }
   ]
 
@@ -42,5 +26,23 @@ const links = [
         //li.appendChild(label);
         //li.appendChild(a);
         nav.appendChild(a);
+        //var id = document.getElementById("31");
+
+        a.addEventListener("click",function(e){
+            e.preventDefault();
+            if (!document.getElementById(link.week)) {
+                var script = document.createElement('script');
+                /*script.onload = function () {
+                    //do stuff with the script
+                };*/
+                script.src = link.url
+                script.id = link.week;
+                document.head.appendChild(script);
+            }
+            
+         });
+         //or something of the likes
     });
+
+
 
