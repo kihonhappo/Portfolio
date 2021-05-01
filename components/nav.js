@@ -96,7 +96,7 @@ var links = [
     var weeks = [
         {   
             week: 'w1',
-            title: 'Week 1',
+            title: 'Week 1: Workspace and Dependancies Setup',
             reading: {
                 subjects: `
                     <div class="subject-list">
@@ -148,7 +148,7 @@ var links = [
         },
         {  
             week: 'w2', 
-            title: 'Week 2',
+            title: 'Week 2: Jasascript Review and Basics',
             reading: {
                 subjects: `
                 <div class="subjects-cont">
