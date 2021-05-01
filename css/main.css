@@ -1,33 +1,69 @@
 * {
     box-sizing: border-box;
   }
+
+  body{
+    font-family:Verdana; color:#aaaaaa;
+  }
+
+ .title-cont{
+      overflow: auto;
+      padding:0px;
+      text-align:center;
+      border-bottom: 1px solid black;
+ }
+ .left-title{float:left; width: 20%; color: green; font-size: x-large; padding-top: 20px;}
+ #top-header{float:left; width: 60%; color: green;}
+ .right-title{float:left; width: 20%; color: green; font-size: x-large; padding-top: 20px;}
+  
+ .h-center{text-align: center;} 
+
+  .content-wrapper{
+    overflow: hidden; 
+    height: 620px; 
+    border-bottom: 1px solid black;
+  }
+
+  #nav{}
   .menu {
     float:left;
-    width:20%;
+    width: 20%;
     text-align:center;
+    min-height: 620px;
+    overflow-y: auto;
   }
   .menu a {
-    background-color:#e5e5e5;
+    
     padding:8px;
     margin-top:7px;
     display:block;
     width:100%;
     color:black;
   }
-  .main {
+  #main {
     float:left;
     width:60%;
     padding:0 20px;
-    border: 1px solid red;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    color: black;
+    overflow: auto;
+    height: 620px;
   }
   .right {
-    background-color:#e5e5e5;
-    float:left;
-    width:20%;
-    padding:15px;
-    margin-top:7px;
-    text-align:center;
+    word-wrap: normal;
+    float: left;
+    width: 20%;
+    padding: 10px;
+    min-height: 400px;
+    color: black;
+    overflow-y: auto;
+    height: 620px;
   }
+  .notes-header{text-align: center;}
+   .notes-cont{padding: 10px;}
+
+   code{background-color: black; color: white;}
   
   @media only screen and (max-width:620px) {
     /* For mobile phones: */
@@ -35,5 +71,7 @@
       width:100%;
     }
   }
+
+ 
   .red{color: red;}
   .clearfix{clear: both;}

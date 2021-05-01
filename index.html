@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Aaron's Portfolio WWD330 Front End Dev</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,37 +12,56 @@
   <link rel="stylesheet" href="css/main.css">
 
   <meta name="theme-color" content="#fafafa">
+  <script>
+    let lastPage = localStorage.getItem("lastPage");
+    if(lastPage == null){
+      //alert('Last page is Null: ' + lastPage);
+      localStorage.setItem("lastPage", "w1");
+      lastPage = localStorage.getItem("lastPage");
+    }
+    else{
+      lastPage = localStorage.getItem("lastPage");
+      //alert('Last page is : ' + lastPage);
+    }
+
+  </script>
 </head>
 
-<body style="font-family:Verdana;color:#aaaaaa;">
+<body>
 
-  <div style="background-color:#e5e5e5;padding:15px;text-align:center;">
-    <h1 id="top-header">Hello World</h1>
+  <div class="title-cont">
+    <div class="left-title">WDD 330 Front End</div>
+    <h1 id="top-header">Aaron's Portfolio</h1>
+    <div class="right-title">Aaron Ameny</div>
   </div>
   
-  <div style="overflow:auto">
+  <div class="content-wrapper">
     <div id="nav" class="menu">
       
     </div>
   
     <div id="main" class="main">
-      <h2>Lorum Ipsum</h2>
-      <div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+      
     </div>
   
     <div id="right" class="right">
-      <h2>About</h2>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+      
     </div>
   </div>
-    <script src="components/nav.js"></script>
   <script src="js/main.js"></script>
+  <script src="components/nav.js"></script>
+  
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+ 
   <script>
-    
+     function loadPage(week){
+        document.getElementById('top-header').innerHTML = week.title;
+        document.getElementById('main').innerHTML = week.reading.subjects + week.reading.examples;
+        document.getElementById('right').innerHTML = week.notes + week.tasks;
+          //alert('Done');
+    }
   </script>
-  <!--<script src="https://www.google-analytics.com/analytics.js" async></script>-->
+ 
 </body>
-
+  
 </html>
