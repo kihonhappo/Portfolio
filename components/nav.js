@@ -2,13 +2,13 @@
 var links = [
     {
         week: "w1",
-        label: "Week 1 Notes",
+        label: "Week 1: Setup and Review",
         active: true,
         url: "weeks/week1.js"
     },
     {
         week: "w2",
-        label: "Week 2 Notes",
+        label: "Week 2: Review and Team Activity",
         active: true,
         url: "weeks/week2.js",
         
@@ -100,7 +100,17 @@ var links = [
             reading: {
                 subjects: `
                     <div class="subject-list">
-                        <h3 class="subjects-header h-center">Chapter 1 Subjects</h3>
+                        <h3 class="subjects-header section-header h-center">Doing Stuff with Web Things</h3>
+                        <ul class="list no-bullets">
+                            <li class="li-title">Local Storage</li>
+                            <li class="li-content">
+                                <iframe src="./assets/doing_stuff_with_web_things.pdf#page=35" class="document-viewer"></iframe>
+                            </li>
+                        </ul>
+                        <h3 class="subjects-header section-header h-center">
+                            <a href="https://www.sitepoint.com/premium/courses/master-mobile-ux-2952" target="_blank" rel="noreferrer">Master Mobile UX</a>
+                        </h3>
+                        <h3 class="subjects-header section-header h-center">Novice to Ninja: Chapter 1</h3>
                         <ul>
                             <li>What is programming?</li>
                             <li>The history of JavaScript</li>
@@ -114,9 +124,15 @@ var links = [
                             <li>Project - we'll start a quiz project that will be developed throughout the book</li>
                         </ul>
                     </div>`,
-                
                 examples: `
-                
+                    <div class="examples-cont">
+                        <h3 class="section-header h-center">Quiz Ninja Example:</h3>
+                        <iframe src="./pages/ninja.html" class="document-viewer"></iframe>
+                    </div>
+                    <div class="examples-cont">
+                        <h3 class="section-header h-center">Story Editor Example:</h3>
+                        <iframe src="./pages/ninja.html" class="document-viewer"></iframe>
+                    </div>
                 `
             },
             notes: 
@@ -136,15 +152,60 @@ var links = [
             tasks: 
                 `<div class="tasks">
                     <h3 class="tasks-header h-center">
-                       Next Steps 
+                       Tasks
                     </h3>
                     <ol class"num-list">
-                        <li>Download Code Editor</li>
-                        <li>Download and Install Node</li>
-                        <li>Download Set up Github</li>
-                        <li>Download Code Editor</li>
+                        <li><span class="task-txt completed">Download Code Editor</span> <i class="fas fa-check green"></i> </li>
+                        <li><span class="task-txt completed">Download and Install Node</span> <i class="fas fa-check green"></i> </li>
+                        <li><span class="task-txt completed">Download Set up Github</span> <i class="fas fa-check green"></i></li>
+                        <li><span class="task-txt completed">Download Code Editor</span> <i class="fas fa-check green"></i> </li>
                     </ol>
-                </div>`
+                </div>
+                <div class="report">
+                    <h3 class="report-header h-center">
+                       Week 2 Report
+                    </h3>
+                    <div>
+                        <h4 class="h-center">What did I do since the last meeting?</h4>
+                        <p>
+                            I set up Git Hub Account
+                            I set up my Visual Studio Code and set it up to work with Git Hub.
+                            I was able to publish the Portfolio hosted page to https://kihonhappo.github.io/Portfolio/.
+                            I downloaded Team Viewer and set it up for my group meatings.
+                            I read through the reading material but really enjoyed the Mobile First Videos.
+                        </p>
+                        <h4 class="h-center">What am I going to do next?</h4>
+                        <p> 
+                            I will build out my portfolio page links and start to record my notes and code examples in the subpages.
+                            I will set up my css files to make my portfolio pages look nicer.
+                        </p>
+                        
+                        <h4 class="h-center">What are my blockers?</h4>
+                        <p>  
+                            One major blocker was that I did not read both of the anouncments and I missed the link and explanation for the Team Viewer site and group. 
+                            I have a habit of quick scanning documentation and I am prone to missing important key elements. 
+                            I will need to not do that when it comes to announcements.
+                            I waited too late in the week to take a more detailed look at the assignments which tends to cause me stress.
+                            I was planning on using vue.js framework as my basic code for my projects but then I read that you wanted us to do it from scratch. 
+                            I have become so dependent on frameworks that I tend to get lazy when it comes to custom coding. This class will be good for me to brush up on my creative coding skills.
+                        </p>
+                    </div>
+                </div>
+                `,            
+            next: 
+                `<div class="tasks">
+                    <h3 class="tasks-header h-center">
+                        Next Steps
+                    </h3>
+                    <ol class"num-list">
+                        <li>Learn Github: </li>
+                        <li>Successfully sync Git with VSCode</li>
+                        <li>Learn to update Git Pages</li>
+                        <li>Set up and learn Teams</li>
+                        <li>Join a group</li>
+                    </ol>
+                 </div>
+                `
         },
         {  
             week: 'w2', 
@@ -209,6 +270,32 @@ var links = [
                 <div class="notes-cont">
                     <div class="notes-sub-cont">
                         <h3 class="notes-header">Reading Notes</h3>
+                        <p> In ch:2 concerning the primitive data types I noticed that there was a type that I have never heard of or used, the Symbol. 
+                            I have been developing web applications since 2008 and haven't ran across it. 
+                            I liked the tyepof special character if helps in cases where I am trying to automate the processing of data from multiple sources. 
+                            I can use typeof to tell me if it is a string, number, boolean, undefined or null. I have used it to determine is an element is an object or an array as well. 
+                        </p>
+                          I have also noticed that there is a lot more push to use let and const. I still use var most of the time hopefully it will not go away.
+                        </p>  
+                        <p>    In ch3 I noticed that I need to study about sets, and Maps. 
+                        </p>
+                        <p>  
+                            In ch4 I noticed that I don't like using arrow functions, they are challenging for me visually except for when I use a filter on an array. 
+                            <p>
+                                <code>
+                                    var list = [
+                                    
+                                    {first_name: "Aaron", last_name: "Ameny"},{first_name: "Jack", last_name: "Smith"}]
+                                    
+                                    list.filter(x => x.first_name == 'Aaron')[0]; 
+                                </code>
+                            </p>
+                            <p>
+                                This would bring back the first object with a first name of Aaron. 
+                                For some reason this makes sense to me visually.
+                            </p>
+                        </p>
+                        <h3 class="notes-header">Activity Notes</h3>
                         <p> 
                             I already had Visual Studio Code installed on my pc and I have been using it since it first came out. 
                             I had no problem with intalling node.
@@ -232,18 +319,61 @@ var links = [
                 </div>`
                 ,
             tasks: 
-                `<div class="tasks-cont">
-                    <h3 class="tasks-header h-center">Next Tasks</h3>
+                `<div class="tasks">
+                    <h3 class="tasks-header h-center">
+                        Tasks:
+                    </h3>
                     <ol class"num-list">
-                        <li>Download Code Editor</li>
-                        <li>Download and Install Node</li>
-                        <li>Download Set up Github</li>
-                        <li>Download Code Editor</li>
+                        <li><span class="task-txt completed">Learn Github: </span> <i class="fas fa-check green"></i>  </li>
+                        <li><span class="task-txt completed">Successfully sync Git with VSCode</span> <i class="fas fa-check green"></i> </li>
+                        <li><span class="task-txt completed">Learn to update Git Pages</span> <i class="fas fa-check green"></i> </li>
+                        <li><span class="task-txt completed">Set up and learn Teams</span> <i class="fas fa-check green"></i> </li>
+                        <li><span class="task-txt completed">Join a group</span> <i class="fas fa-check green"></i> </li>
                     </ol>
-                </div>`
-        
-            }
-            ,
+                </div>
+                <div class="report">
+                    <h3 class="report-header h-center">
+                       Week 2 Report
+                    </h3>
+                    <div>
+                        <h4 class="h-center">What did I do since the last meeting?</h4>
+                        <p>
+                            I had to revamp my portfolio site to include much more content. 
+                            I created a function in the portfolio site that checks if a localStorage item for link last clicked. 
+                            If not storage item then the function defaults to the first week information. 
+                            If there is a storage item then the function will get the content associated with the storage item. 
+                            If a link is clicked then the localStorage will be set to the week selected and then the function injects the associated content into the web page. 
+                            I was able to learn how to sync my VS code with Github to push site code to the repository. 
+                            I was also able to update my Github pages. I added last weeks report and ninja example to my week 1 portfolio page. 
+                            I had a successful Team meeting with my group. We were able to help each other with the Team Assignment.
+                        </p>
+                        <h4 class="h-center">What am I going to do next?</h4>
+                        <p> 
+                            I am going to complete the week 2 page of my portfolio and start on week 3 of my portfolio. 
+                            I will spend more time on the exercises and do some extra reading.
+                        </p>
+                        
+                        <h4 class="h-center">What are my blockers?</h4>
+                        <p>  
+                            Time is a blocker and timing is as well. 
+                            It can be a bit discouraging to come home after work and then put in several hours of homework and then realize that my whole evening is gone. 
+                            I need to read more on Sunday and Monday evening.
+                        </p>
+                    </div>
+                </div>`,
+            next: 
+                `<div class="tasks">
+                    <h3 class="tasks-header h-center">
+                        Next Steps
+                    </h3>
+                    <ol class"num-list">
+                        <li><span class="task-txt">Add more examples to my portfolio</span> </li>
+                        <li><span class="task-txt">Request a reveiw from the Instructor</span></li>
+                        <li><span class="task-txt">Make my Portfolio site more Responsive</span></li>
+                    </ol>
+                </div>
+                `
+        },
         {
             week: 'w3',
             title: 'Week 3',

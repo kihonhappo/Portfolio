@@ -13,8 +13,8 @@
       border-bottom: 1px solid black;
  }
  .left-title{float:left; width: 20%; color: green; font-size: x-large; padding-top: 20px;}
- #top-header{float:left; width: 60%; color: green;}
- .right-title{float:left; width: 20%; color: green; font-size: x-large; padding-top: 20px;}
+ #top-header{float:left; width: 55%; color: green;}
+ .right-title{float:left; width: 25%; color: green; font-size: x-large; padding-top: 20px;}
   
  .h-center{text-align: center;} 
 
@@ -29,7 +29,7 @@
     float:left;
     width: 20%;
     text-align:center;
-    min-height: 620px;
+    height: 620px;
     overflow-y: auto;
   }
   .menu a {
@@ -42,7 +42,7 @@
   }
   #main {
     float:left;
-    width:60%;
+    width:55%;
     padding:0 20px;
     border-left: 1px solid black;
     border-right: 1px solid black;
@@ -53,7 +53,7 @@
   .right {
     word-wrap: normal;
     float: left;
-    width: 20%;
+    width: 25%;
     padding: 10px;
     min-height: 400px;
     color: black;
@@ -64,14 +64,30 @@
    .notes-cont{padding: 10px;}
 
    code{background-color: black; color: white;}
+
+   .list{margin-top: 20px;}
+   .no-bullets{list-style-type: none;}
+   .li-title{margin-bottom: 20px; font-size: 18px; text-align: center;}
+   .document-viewer{width: 100%; border: none; min-height: 600px;}
+   .section-header{border-top: 1px solid black; border-bottom: 1px solid black; padding-top: 20px; padding-bottom: 20px;}
   
   @media only screen and (max-width:620px) {
     /* For mobile phones: */
     .menu, .main, .right {
       width:100%;
     }
+    .menu{height: 15%;}
+    .right{height: 35%;}
+
+    #main{width: 100%; border-top: 1px solid black; border-bottom: 1px solid black; height: 50%;}
+    
+    .content-wrapper{height: auto;}
   }
+  .tasks li{}
+  .tasks i{float: right; margin-right: 50px;}
+  .completed{text-decoration: line-through;}
 
  
   .red{color: red;}
+  .green{color: green;}
   .clearfix{clear: both;}
