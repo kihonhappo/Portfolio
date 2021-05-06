@@ -20,7 +20,7 @@
 
   .content-wrapper{
     overflow: hidden; 
-    height: 620px; 
+    height: 800px; 
     border-bottom: 1px solid black;
   }
 
@@ -29,7 +29,7 @@
     float:left;
     width: 20%;
     text-align:center;
-    height: 620px;
+    height: 800px;
     overflow-y: auto;
   }
   .menu a {
@@ -48,7 +48,7 @@
     border-right: 1px solid black;
     color: black;
     overflow: auto;
-    height: 620px;
+    height: 800px;
   }
   .right {
     word-wrap: normal;
@@ -58,7 +58,7 @@
     min-height: 400px;
     color: black;
     overflow-y: auto;
-    height: 620px;
+    height: 800px;
   }
   .notes-header{text-align: center;}
    .notes-cont{padding: 10px;}
@@ -87,7 +87,7 @@
   .tasks i{float: right; margin-right: 50px;}
   .completed{text-decoration: line-through;}
 
- 
+ .example-img{width: 20%;}
   .red{color: red;}
   .green{color: green;}
   .clearfix{clear: both;}

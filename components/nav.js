@@ -10,14 +10,20 @@ var links = [
         week: "w2",
         label: "Week 2: Review and Team Activity",
         active: true,
-        url: "weeks/week2.js",
+        url: "weeks/week2.js"
         
     },
     {
         week: "w3",
-        label: "Week 3 Notes",
-        active: false,
-        url: "weeks/week3.js"
+        label: "Week 3: Objects and Arrays",
+        active: true,
+        url: "weeks/week3.js",
+        sub_links: [
+            {
+                label: 'Team Activity',
+                url: './pages/w03_team_assignment.html'
+            }
+        ]
     },
     {
         week: "w4",
@@ -163,7 +169,7 @@ var links = [
                 </div>
                 <div class="report">
                     <h3 class="report-header h-center">
-                       Week 2 Report
+                       Week 1 Report
                     </h3>
                     <div>
                         <h4 class="h-center">What did I do since the last meeting?</h4>
@@ -275,7 +281,7 @@ var links = [
                             I liked the tyepof special character if helps in cases where I am trying to automate the processing of data from multiple sources. 
                             I can use typeof to tell me if it is a string, number, boolean, undefined or null. I have used it to determine is an element is an object or an array as well. 
                         </p>
-                          I have also noticed that there is a lot more push to use let and const. I still use var most of the time hopefully it will not go away.
+                         <p> I have also noticed that there is a lot more push to use let and const. I still use var most of the time hopefully it will not go away.
                         </p>  
                         <p>    In ch3 I noticed that I need to study about sets, and Maps. 
                         </p>
@@ -380,28 +386,59 @@ var links = [
             reading: {
                 subjects: `
                     <div class="subject-list">
-                        <h3 class="subjects-header h-center">Chapter 1 Subjects</h3>
+                        <h3 class="subjects-header h-center">Study Subjects</h3>
                         <ul>
-                            <li>What is programming?</li>
-                            <li>The history of JavaScript</li>
-                            <li>The tools that are needed to program in JavaScript</li>
-                            <li>Installing Node.js</li>
-                            <li>JavaScript in the console</li>
-                            <li>Hello, world! Your first JavaScript program</li>
-                            <li>JavaScript in the web browser</li>
-                            <li>Graceful degradation and progressive enhancement</li>
-                            <li>A more complicated JavaScript program</li>
-                            <li>Project - we'll start a quiz project that will be developed throughout the book</li>
+                            <li>Object Methods: this.</li>
+                            <li>This in Javascript</li>
+                            <li>Ch5: Objects</li>
+                            <li>Ch6: Document Object Model</li>
+                            <li>Ch7: Events</li>
+                            <li>This code sandbox Ch14-15</li>
                         </ul>
                     </div>`,
                 
                 examples: `
-                
+                    <div class="examples-cont">
+                        <div class="example">
+                            <img class="example-img" src="./images/object_methods.png">
+                        </div>
+                    </div>
+                    <div class="examples-cont">
+                        <h3 class="section-header h-center">Team Activity:</h3>
+                        <iframe src="./pages/w03_team_assignment.html" class="document-viewer"></iframe>
+                    </div>
                 `
             },
             notes: 
-                `<div class="notes-cont">
+                ` <div class="notes-cont">
+                <div class="notes-sub-cont">
                     <h3 class="notes-header">Reading Notes</h3>
+                    <p> In ch:2 concerning the primitive data types I noticed that there was a type that I have never heard of or used, the Symbol. 
+                        I have been developing web applications since 2008 and haven't ran across it. 
+                        I liked the tyepof special character if helps in cases where I am trying to automate the processing of data from multiple sources. 
+                        I can use typeof to tell me if it is a string, number, boolean, undefined or null. I have used it to determine is an element is an object or an array as well. 
+                    </p>
+                     <p> I have also noticed that there is a lot more push to use let and const. I still use var most of the time hopefully it will not go away.
+                    </p>  
+                    <p>    In ch3 I noticed that I need to study about sets, and Maps. 
+                    </p>
+                    <p>  
+                        In ch4 I noticed that I don't like using arrow functions, they are challenging for me visually except for when I use a filter on an array. 
+                        <p>
+                            <code>
+                                var list = [
+                                
+                                {first_name: "Aaron", last_name: "Ameny"},{first_name: "Jack", last_name: "Smith"}]
+                                
+                                list.filter(x => x.first_name == 'Aaron')[0]; 
+                            </code>
+                        </p>
+                        <p>
+                            This would bring back the first object with a first name of Aaron. 
+                            For some reason this makes sense to me visually.
+                        </p>
+                    </p>
+                    <h3 class="notes-header">Activity Notes</h3>
                     <p> 
                         I already had Visual Studio Code installed on my pc and I have been using it since it first came out. 
                         I had no problem with intalling node.
@@ -410,6 +447,19 @@ var links = [
                         I am having issues with updating my gitpages for my live portfolio site.
                     </p>
                 </div>
+                <div class="notes-sub-cont">
+                    <h3 class="notes-header h-center">Team Assignment Notes</h3>
+                    <p>
+                        We are Group 4 and we met on Wednesday 4/29/2021 from 8:00pm to 9:30pm CST. 
+                        Our group members were: Aaron Ameny (me), Erin Engler, Joseph Watt and Catteara Neyman.
+                    </p>
+                    <p>
+                        Erin helped us all with using Git as well as with the assignment.
+                        I was able to help with some of the debugging and hopefully I didn't teach any bad habbits.
+                        I was very impressed with the last example that the teacher had created where he passed functions as arguments into the calculator function.
+                    </p>
+                </div>
+            </div>
                 `,
             tasks: 
                 `<div class="tasks">
@@ -1246,6 +1296,19 @@ var links = [
                 loadPage(week);
             }
         }
+       /* if(link.sub_links){
+            var ul = document.createElement("UL");
+            nav.appendChild(ul);
+            link.sub_links.forEach(function(sub_link){
+                var sa = document.createElement("A");
+                sa.text = sub_link.label;
+                sa.href = sub_link.url;
+                var li = document.createElement("LI");
+                ul.appendChild(li);
+                li.appendChild(sa);
+                
+            });
+        }*/
          //or something of the likes
     });
 

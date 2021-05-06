@@ -1,3 +1,11 @@
+let user = {
+    name: "John",
+    age: 30
+  };
+
+
+
+
 window.onload = function(){
    // alert('Welcome to Quiz Ninja!');
 
@@ -6,4 +14,10 @@ window.onload = function(){
     alert(`You answered ${answer}`); */
     // At the end of the game, report the player's score
 alert(`Game Over, you scored ${score} point${score !== 1 ? 's' : ''}`);
+
+
+
+
+
+
 }
