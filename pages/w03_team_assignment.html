@@ -3,14 +3,23 @@
     <meta charset="UTF-8">
     <title>Array Cardio 💪</title>
     <style>
+      .exercise-cont{}
       .ex-list{border: 1px solid black; width: 45%; list-style: none; padding-left: 0px; float: left;}
       .ex-list li{padding: 5px; padding-left: 10px; padding-right: 10px;}
-      .name{color: blue; margin-right: 50px;}
-      .dob{color: green; float: right;} 
-      .li-head-cont{border-bottom: 1px solid black;}
+      .float-left{color: blue; margin-right: 50px;}
+      .float-right{color: green; float: right;} 
+      .li-head-cont{border-bottom: 1px solid black; overflow: auto; clear: both;}
       .li-header{text-align: center; color: black; font-weight: bold; }
+      .li-header-left{float: left;}
       .li-header-right{float: right;}
-      .code-cont{border: 1px solid red; width: 45%; float: right;}
+      .code-cont{width: 45%; float: left; padding: 10px;}
+      .clearfix {overflow: auto; clear: both;}
+      pre{
+        border: 1px solid red; 
+        padding: 20px;
+        background-color: rgb(255, 247, 229);
+        white-space: pre-line;
+      }
     </style>
   </head>
   <body>
@@ -18,6 +27,7 @@
       
       <div id="card-1">
         <h2>Team Assignment: W03 Array Cardio 1</h2>
+                  
         <div id="card-1-exercises">
           <div class="exercise-cont">
             <h3>Exercise 1: Filter the list of inventors for those who were born in the 1500's</h3>
@@ -27,44 +37,56 @@
                 let items = this.inventors.filter(x => x.year < 1600 && x.year > 1499);
               </code>
             </div>
+            <div class="clearfix"></div>
           </div>
+          
           <div class="exercise-cont">
             <h3>Exercise 2: Give us an array of the inventors' first and last names</h3>
             <ul id="card-1-ex-2" class="ex-list"></ul>
             <div class="code-cont">
               <code class="code-box">
-                
+                let items = this.inventors.map(x => x.first + ' ' + x.last);
               </code>
             </div>
+            <div class="clearfix"></div>
           </div>
-          <div id="exercise-3" class="ex">
+          <div class="exercise-cont">
             <h3>Exercise 3: Sort the inventors by birthdate, oldest to youngest</h3>
             <ul id="card-1-ex-3" class="ex-list"></ul>
             <div class="code-cont">
               <code class="code-box">
-                
+                var items = this.inventors;
+                items = items.sort((a, b) => (a.year < b.year) ? 1 : -1);
               </code>
             </div>
+            <div class="clearfix"></div>
           </div>
-          <div id="exercise-4">
+          <div class="exercise-cont">
             <h3>Exercise 4: How many years did all the inventors live?</h3>
             <ul id="card-1-ex-4" class="ex-list"></ul>
             <div class="code-cont">
               <code class="code-box">
-                
+                var items = this.inventors;
+                var total = items.reduce((sum, x) => sum + (parseInt(x.passed) - parseInt(x.year)), 0);
               </code>
             </div>
+            <div class="clearfix"></div>
           </div>
-          <div id="exercise-5">
+          <div class="exercise-cont">
             <h3>Exercise 5: Sort the inventors by years lived</h3>
             <ul id="card-1-ex-5" class="ex-list"></ul>
             <div class="code-cont">
               <code class="code-box">
-                
+                var items = this.inventors;
+                items.forEach(function(item){
+                  item.age = parseInt(item.passed) - parseInt(item.year);
+                });
+                items = items.sort((a, b) => (a.age < b.age) ? 1 : -1);
               </code>
             </div>
+            <div class="clearfix"></div>
           </div>
-          <div id="exercise-6">
+          <div class="exercise-cont">
             <h3>Exercise 6: create a list of Boulevards in Paris that contain 'de' anywhere in the name</h3>
             <ul id="card-1-ex-6" class="ex-list"></ul>
             <div class="code-cont">
@@ -72,17 +94,23 @@
                 
               </code>
             </div>
+            <div class="clearfix"></div>
           </div>
-          <div id="exercise-7">
+          <div class="exercise-cont">
             <h3>Exercise 7: Sort the people alphabetically by last name</h3>
             <ul id="card-1-ex-7" class="ex-list"></ul>
             <div class="code-cont">
-              <code class="code-box">
-                
-              </code>
+             
+                <code class="code-box">
+                  var items = this.people.sort((a, b) => (a > b) ? 1 : -1);
+                  var headers = [{name: 'Name', float: 'left', attrs: []}];
+                  this.buildList(headers, 'card-1-ex-7', items);
+                </code>
+              
             </div>
+            <div class="clearfix"></div>
           </div>
-          <div id="exercise-8">
+          <div class="exercise-cont">
             <h3>Exercise 8: Sum up the instances of each of these</h3>
             <ul id="card-1-ex-8" class="ex-list"></ul>
             <div class="code-cont">
@@ -90,6 +118,7 @@
                 
               </code>
             </div>
+            <div class="clearfix"></div>
           </div>
         </div>
 
@@ -174,91 +203,104 @@
          inventors: inventors,
 
          getCount(list){
-            //alert(list.length);
+
          },
-         
-         filterInventors(){
-            let items = this.inventors.filter(x => x.year < 1600 && x.year > 1499);
-            let ul = document.getElementById('card-1-ex-1');
+         wrapCode(wrap_item, wrap_type){
+          Array.prototype.forEach.call(document.querySelectorAll(wrap_item), function(c){
+            var newElem = document.createElement(wrap_type); 
+            var parent = c.parentElement;
+            newElem.appendChild(c);
+            parent.appendChild(newElem);
+          });
+          
+         },
+         buildList(headers, ele_id, items){
+            
+            let ul = document.getElementById(ele_id);
+            let li_headers = document.createElement("LI");
+            li_headers.classList.add('li-head-cont');
+            var head_str = '';
+            headers.forEach(function(header, index){
+              if(index == 0){
+                head_str = '<span class="li-header li-header-' + header.float + '">' + header.name + '</span>';
+              }
+              else{
+                head_str += '<span class="li-header li-header-' + header.float + '">' + header.name + '</span>';
+              }
+              
+            });
+            li_headers.innerHTML = head_str;
+            ul.appendChild(li_headers);
             items.forEach(function(item){
               let li = document.createElement("LI");
-              li.innerHTML = '<span class="name">' + item.first + ' ' + item.last + '</span><span class="dob">' + item.year + '</span>';
+              var li_str = '';
+              headers.forEach(function(header){
+                var attr_str = '';
+                if(header.attrs.length > 0){
+                  header.attrs.forEach(function(attr, index){
+                    if(index == 0){
+                      attr_str = item[attr];
+                    }
+                    else{
+                      attr_str += ' ' + item[attr];
+                    }
+                    
+                  });
+                }
+                else{
+                  attr_str = item;
+                }
+                li_str += '<span class="float-' + header.float + '">' + attr_str + '</span>';
+              });
+              li.innerHTML = li_str;
               ul.appendChild(li);
             });
+         },
+         filterInventors(){
+            let items = this.inventors.filter(x => x.year < 1600 && x.year > 1499);
+            var headers = [{name: 'Name', float: 'left', attrs: ['first','last']},{name: 'DOB', float: 'right', attrs: ['year']}];
+            this.buildList(headers, 'card-1-ex-1', items);
          },
          mapInventors(){
             let items = this.inventors.map(x => x.first + ' ' + x.last);
-            let ul = document.getElementById('card-1-ex-2');
-            items.forEach(function(item){
-              let li = document.createElement("LI");
-              li.innerHTML = '<span class="name">' + item + '</span>';
-              ul.appendChild(li);
-            });
+            var headers = [{name: 'Name', float: 'left', attrs: []}];
+            this.buildList(headers, 'card-1-ex-2', items);
          },
          sortInventorsDOB(){
-            var items = this.inventors;
-            items = items.sort((a, b) => (a.year < b.year) ? 1 : -1);            
-            let ul = document.getElementById('card-1-ex-3');
-            let li_headers = document.createElement("LI");
-            li_headers.classList.add('li-head-cont');
-            li_headers.innerHTML = '<span class="li-header li-header-left">Name</span><span class="li-header li-header-right">DOB</span>'
-            ul.appendChild(li_headers);
-            items.forEach(function(item){
-              let li = document.createElement("LI");
-              li.innerHTML = '<span class="name">' + item.first + ' ' + item.last + '</span><span class="dob">' + item.year + '</span>';
-              ul.appendChild(li);
-            });
+            var items = this.inventors.sort((a, b) => (a.year < b.year) ? 1 : -1);            
+            var headers = [{name: 'Name', float: 'left', attrs: ['first','last']},{name: 'DOB', float: 'right', attrs: ['year']}];
+            this.buildList(headers, 'card-1-ex-3', items);
          },
          inventorsLived(){
-            var items = this.inventors;
-            var total = items.reduce((sum, x) => sum + (parseInt(x.passed) - parseInt(x.year)), 0);
-            let ul = document.getElementById('card-1-ex-4');
-            let li_headers = document.createElement("LI");
-            li_headers.classList.add('li-head-cont');
-            li_headers.innerHTML = '<span class="li-header li-header-left">Total:</span><span class="li-header li-header-right">' + total + '</span>'
-            ul.appendChild(li_headers);
+            var items = new Array();
+            items.push(this.inventors.reduce((sum, x) => sum + (parseInt(x.passed) - parseInt(x.year)), 0));
+            var headers = [{name: 'Total Years Lived', float: 'left', attrs: []}];
+            this.buildList(headers, 'card-1-ex-4', items);
          },
          sortInventorsAge(){
             
             var items = this.inventors;
-
             items.forEach(function(item){
               item.age = parseInt(item.passed) - parseInt(item.year);
             });
-            //alert(JSON.stringify(items));
-            items = items.sort((a, b) => (a.age < b.age) ? 1 : -1);
             
-            let ul = document.getElementById('card-1-ex-5');
-            let li_headers = document.createElement("LI");
-            li_headers.classList.add('li-head-cont');
-            li_headers.innerHTML = '<span class="li-header li-header-left">Name</span><span class="li-header li-header-right">Age</span>'
-            ul.appendChild(li_headers);
-            items.forEach(function(item){
-              let li = document.createElement("LI");
-              li.innerHTML = '<span class="name">' + item.first + ' ' + item.last + '</span><span class="dob">' + item.age + '</span>';
-              ul.appendChild(li);
-            });
+            items = items.sort((a, b) => (a.age < b.age) ? 1 : -1);
+            var headers = [{name: 'Name', float: 'left', attrs: ['first','last']},{name: 'Age', float: 'right', attrs: ['age']}];
+            this.buildList(headers, 'card-1-ex-5', items);
+
          },
          sortPeople(){
             
-            var items = this.people;
-            items = items.sort((a, b) => (a > b) ? 1 : -1);
-            
-            let ul = document.getElementById('card-1-ex-7');
-            let li_headers = document.createElement("LI");
-            li_headers.classList.add('li-head-cont');
-            li_headers.innerHTML = '<span class="li-header li-header-left">Name</span><span class="li-header li-header-right">Age</span>'
-            ul.appendChild(li_headers);
-            items.forEach(function(item){
-              let li = document.createElement("LI");
-              li.innerHTML = '<span class="name">' + item + '</span>';
-              ul.appendChild(li);
-            });
+            var items = this.people.sort((a, b) => (a > b) ? 1 : -1);
+            var headers = [{name: 'Name', float: 'left', attrs: []}];
+            this.buildList(headers, 'card-1-ex-7', items);
          },
          sumInstanceOf(){
 
          }
       }
+
+      cardio_1.wrapCode('code', 'pre');
       // Array.prototype.filter()
       // 1. Filter the list of inventors for those who were born in the 1500's
       cardio_1.filterInventors();
