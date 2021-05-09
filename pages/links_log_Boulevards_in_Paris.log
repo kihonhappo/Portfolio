@@ -1,0 +1,23 @@
+Error with Permissions-Policy header: Unrecognized feature: 'interest-cohort'.
+load.php?lang=en&modules=jquery&skin=vector&version=8v0mf:145 JQMIGRATE: Migrate is installed with logging active, version 3.3.2
+const category = document.querySelector('.mw-category');
+const links = Array.from(category.querySelectorAll('a'));
+undefined
+links[0].innerText
+"Boulevards of Paris"
+var link_list = new Array()
+undefined
+links.forEach(function(link){});
+undefined
+links = links.map(x => x.innerHTML)
+VM1154:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:7
+(anonymous) @ VM1154:1
+var link_list = links.map(x => x.innerHTML)
+undefined
+console.log(link_linst);
+VM1394:1 Uncaught ReferenceError: link_linst is not defined
+    at <anonymous>:1:13
+(anonymous) @ VM1394:1
+console.log(link_list)
+VM1453:1 (39) 

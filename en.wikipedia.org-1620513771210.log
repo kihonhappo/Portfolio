@@ -1,0 +1,27 @@
+Error with Permissions-Policy header: Unrecognized feature: 'interest-cohort'.
+load.php?lang=en&modules=jquery&skin=vector&version=8v0mf:145 JQMIGRATE: Migrate is installed with logging active, version 3.3.2
+const category = document.querySelector('.mw-category');
+const links = Array.from(category.querySelectorAll('a'));
+undefined
+links[0].innerText
+"Boulevards of Paris"
+var link_list = new Array()
+undefined
+links.forEach(function(link){});
+undefined
+links = links.map(x => x.innerHTML)
+VM1154:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:7
+(anonymous) @ VM1154:1
+var link_list = links.map(x => x.innerHTML)
+undefined
+console.log(link_linst);
+VM1394:1 Uncaught ReferenceError: link_linst is not defined
+    at <anonymous>:1:13
+(anonymous) @ VM1394:1
+console.log(link_list)
+VM1453:1 (39) ["Boulevards of Paris", "City walls of Paris", "Thiers wall", "Wall of Charles V", "Wall of Philip II Augustus", "City gates of Paris", "Haussmann's renovation of Paris", "Boulevards of the Marshals", "Boulevard Auguste-Blanqui", "Boulevard Barbès", "Boulevard Beaumarchais", "Boulevard de l'Amiral-Bruix", "Boulevard Mortier", "Boulevard Poniatowski", "Boulevard Soult", "Boulevard des Capucines", "Boulevard de la Chapelle", "Boulevard de Clichy", "Boulevard du Crime", "Boulevard du Général-d'Armée-Jean-Simon", "Boulevard Haussmann", "Boulevard de l'Hôpital", "Boulevard des Italiens", "Boulevard Lefebvre", "Boulevard de la Madeleine", "Boulevard de Magenta", "Boulevard Malesherbes", "Boulevard Marguerite-de-Rochechouart", "Boulevard Montmartre", "Boulevard du Montparnasse", "Boulevard Raspail", "Boulevard Richard-Lenoir", "Boulevard Saint-Germain", "Boulevard Saint-Michel", "Boulevard de Sébastopol", "Boulevard de Strasbourg", "Boulevard du Temple", "Boulevard Voltaire", "Boulevard de la Zone"]0: "Boulevards of Paris"1: "City walls of Paris"2: "Thiers wall"3: "Wall of Charles V"4: "Wall of Philip II Augustus"5: "City gates of Paris"6: "Haussmann's renovation of Paris"7: "Boulevards of the Marshals"8: "Boulevard Auguste-Blanqui"9: "Boulevard Barbès"10: "Boulevard Beaumarchais"11: "Boulevard de l'Amiral-Bruix"12: "Boulevard Mortier"13: "Boulevard Poniatowski"14: "Boulevard Soult"15: "Boulevard des Capucines"16: "Boulevard de la Chapelle"17: "Boulevard de Clichy"18: "Boulevard du Crime"19: "Boulevard du Général-d'Armée-Jean-Simon"20: "Boulevard Haussmann"21: "Boulevard de l'Hôpital"22: "Boulevard des Italiens"23: "Boulevard Lefebvre"24: "Boulevard de la Madeleine"25: "Boulevard de Magenta"26: "Boulevard Malesherbes"27: "Boulevard Marguerite-de-Rochechouart"28: "Boulevard Montmartre"29: "Boulevard du Montparnasse"30: "Boulevard Raspail"31: "Boulevard Richard-Lenoir"32: "Boulevard Saint-Germain"33: "Boulevard Saint-Michel"34: "Boulevard de Sébastopol"35: "Boulevard de Strasbourg"36: "Boulevard du Temple"37: "Boulevard Voltaire"38: "Boulevard de la Zone"length: 39__proto__: Array(0)
+undefined
+console.log(links)
+VM1511:1 (39) [a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a]
+undefined

@@ -239,33 +239,14 @@ var links = [
                         <h3 class="examples-header h-center">Comments</h3>
                             <ul class="main-ul">
                                 <li>Single line comments starting with&nbsp;
-                                    <code>//</code> and finishing at the end of the line:
-                                    <pre class="">
-                                        <code>
-                                            <div class="">
-                                                <span class="token plain">// this is a short comment</span>
-                                            </div>
+                                   <pre>
+                                    <div class="code-cont">
+                                        <code class="code-box">
+                                            // and finishing at the end of the line:
+                                         // this is a short comment
+                                          
                                         </code>
-                                    </pre>
-                                </li>
-                                <li font-size="" class="">Multi-line comments starting with&nbsp;
-                                    <code class="">/*</code> and finishing with&nbsp;
-                                    <code class="">*/</code> :<p class="sc-AykKE jTRyXh" font-size="2,2,3,3"></p>
-                                    <pre class="">
-                                        <code>
-                                            <div class="token-line" style="color: rgb(0, 0, 0);">
-                                                <span class="token plain">/* This is a longer comment</span>
-                                            </div>
-                                            <div class="token-line" style="color: rgb(0, 0, 0);">
-                                                <span class="token plain">anything here will be ignored</span>
-                                            </div>
-                                            <div class="token-line" style="color: rgb(0, 0, 0);">
-                                                <span class="token plain">This is a useful place to put notes</span>
-                                            </div>
-                                            <div class="token-line" style="color: rgb(0, 0, 0);">
-                                                <span class="token plain">*/</span>
-                                            </div>
-                                        </code>
+                                    </div>
                                     </pre>
                                 </li>
                             </ul>
@@ -287,15 +268,15 @@ var links = [
                         </p>
                         <p>  
                             In ch4 I noticed that I don't like using arrow functions, they are challenging for me visually except for when I use a filter on an array. 
-                            <p>
-                                <code>
-                                    var list = [
-                                    
-                                    {first_name: "Aaron", last_name: "Ameny"},{first_name: "Jack", last_name: "Smith"}]
-                                    
-                                    list.filter(x => x.first_name == 'Aaron')[0]; 
-                                </code>
-                            </p>
+                            <pre>
+                                <div class="code-cont">
+                                    <code class="code-box">
+                                        var list = [
+                                        {first_name: "Aaron", last_name: "Ameny"},{first_name: "Jack", last_name: "Smith"}]
+                                        list.filter(x => x.first_name == 'Aaron')[0]; 
+                                    </code>
+                                </div>
+                            </pre>
                             <p>
                                 This would bring back the first object with a first name of Aaron. 
                                 For some reason this makes sense to me visually.
@@ -387,20 +368,149 @@ var links = [
                 subjects: `
                     <div class="subject-list">
                         <h3 class="subjects-header h-center">Study Subjects</h3>
-                        <ul>
+                        <ol class="reading-outline">
                             <li>Object Methods: this.</li>
-                            <li>This in Javascript</li>
+                            <li>This is Javascript</li>
                             <li>Ch5: Objects</li>
                             <li>Ch6: Document Object Model</li>
                             <li>Ch7: Events</li>
                             <li>This code sandbox Ch14-15</li>
-                        </ul>
+                        </ol>
                     </div>`,
                 
                 examples: `
                     <div class="examples-cont">
                         <div class="example">
-                            <img class="example-img" src="./images/object_methods.png">
+                            <h3 class="section-header h-center">Objects Methods:</h3>
+                            <pre>
+                                <div class="code-cont">
+                                    <code class="code-box">
+                                        let user = {
+                                            name: "John",
+                                            age: 30,
+                                        
+                                            sayHi() {
+                                            // "this" is the "current object"
+                                            alert(this.name);
+                                            }
+                                        
+                                        };
+                                        
+                                        user.sayHi(); // John
+                                    </code>
+                                </div>
+                            </pre>
+                        </div>
+                        <div class="example">
+                            <h3 class="section-header h-center">Ch5: Objects:</h3>
+                            <p>
+                                An object in JavaScript is a self-contained set of related values and functions. 
+                                They act as a collection of named properties that map to any JavaScript value such as strings, 
+                                numbers, booleans, arrays and functions. If a property’s value is a function, it is known as a method.
+                            </p>
+                            <p>
+                                One way to think about an object is that it’s like a dictionary where you look up a property name 
+                                and see a value. It's like a database of values (in fact, some databases use JavaScript objects to 
+                                store information). JavaScript objects are similar to a hash or associative array in other programming 
+                                languages (or even a JavaScript map ). They are, however, much more flexible, as they can be employed to 
+                                encapsulate code that can be reused throughout a program. They can also inherit properties from other 
+                                objects in a similar way to object-oriented languages.         
+                            </p>
+                            <p>
+                                Objects are often used to keep any related information and functionality together in the same place. 
+                                For example, if you wrote functions that found the perimeter and area of a square, you might want to 
+                                group them together as methods of the same object that also included a length property.
+                            </p>
+                            <pre>
+                                <div class="code-cont">
+                                    <code class="code-box">
+                                        const superman = {
+                                            name: 'Superman',
+                                            'real name': 'Clark Kent',
+                                            height: 75,
+                                            weight: 235,
+                                            hero: true,
+                                            villain: false,
+                                            allies: ['Batman','Supergirl','Superboy'],
+                                            fly() {
+                                                return 'Up, up and away!';
+                                            }
+                                        };
+                                    </code>
+                                </div>
+                            </pre>
+                        </div>
+                        <div class="example">
+                            <h3 class="section-header h-center">Ch5: Computed Properties:</h3>
+                            <p>
+                                The ability to create objects with computed property keys was introduced in ES6. This means that 
+                                JavaScript code can be placed inside square brackets and the property key will be the return value of 
+                                that code. This can be seen in the example below where the + operator is used to concatenate the 
+                                strings 'catch' and 'phrase':
+                            </p>
+                            <p>
+                                The value of a property has always been allowed to be a JavaScript expression. 
+                                In the example below a ternary operator is used to return a true or false value for the hero property 
+                                depending on the value of the bewitched variable:      
+                            </p>
+                            <pre>
+                                <div class="code-cont">
+                                    <code class="code-box">
+                                        const bewitched = true;
+                                        const captainBritain = { name: 'Captain Britain', hero: bewitched ? false : true };
+                                        captainBritain
+                                        << { name: 'Captain Britain', hero: false }
+                                    </code>
+                                </div>
+                            </pre>
+                            <p>
+                                The new Symbol date type can also be used as a computed property key:
+                            </p>
+                            <pre>
+                                <div class="code-cont">
+                                    <code class="code-box">
+                                        const name = Symbol('name');
+                                        const supergirl = { [name]: 'Supergirl' };
+                                    </code>
+                                </div>
+                            </pre>
+                        </div>
+                        <div class="example">
+                            <h3 class="section-header h-center">Ch5: Finding all the Properties of an Object:</h3>
+                            <p>
+                                We can loop through all of an object’s properties and methods by using a for in loop. For example, 
+                                to log all the properties of the superman object to the console, we could use:
+                            </p>
+                            <pre>
+                                <div class="code-cont">
+                                    <code class="code-box">
+                                        for(const key in superman) {
+                                            console.log(key + ": " + superman[key]);
+                                        }
+                                        << "name: Superman"
+                                        << "real name: Clark Kent"
+                                        << "height: 75"
+                                        << "weight: 235"
+                                        << "hero: true"
+                                        << "villain: false"
+                                        << "allies: Batman,Supergirl,Superboy"
+                                        << "fly: function (){
+                                            console.log(\"Up, up and away!\");
+                                        }"
+                                    </code>
+                                </div>
+                            </pre>
+                            <p>
+                                The new Symbol date type can also be used as a computed property key:
+                            </p>
+                            <pre>
+                                <div class="code-cont">
+                                    <code class="code-box">
+                                        const name = Symbol('name');
+                                        const supergirl = { [name]: 'Supergirl' };
+                                    </code>
+                                </div>
+                            </pre>
                         </div>
                     </div>
                     <div class="examples-cont">
@@ -409,70 +519,121 @@ var links = [
                     </div>
                 `
             },
-            notes: 
-                ` <div class="notes-cont">
-                <div class="notes-sub-cont">
-                    <h3 class="notes-header">Reading Notes</h3>
-                    <p> In ch:2 concerning the primitive data types I noticed that there was a type that I have never heard of or used, the Symbol. 
-                        I have been developing web applications since 2008 and haven't ran across it. 
-                        I liked the tyepof special character if helps in cases where I am trying to automate the processing of data from multiple sources. 
-                        I can use typeof to tell me if it is a string, number, boolean, undefined or null. I have used it to determine is an element is an object or an array as well. 
-                    </p>
-                     <p> I have also noticed that there is a lot more push to use let and const. I still use var most of the time hopefully it will not go away.
-                    </p>  
-                    <p>    In ch3 I noticed that I need to study about sets, and Maps. 
-                    </p>
-                    <p>  
-                        In ch4 I noticed that I don't like using arrow functions, they are challenging for me visually except for when I use a filter on an array. 
+            notes: `
+                <div class="notes-cont">
+                    <div class="notes-sub-cont">
+                        <h3 class="notes-header">Reading Notes</h3>
+                        <div class="reading-subjects">
+                            <label class="reading-sub-label">Objecrts Methods</label>
+                            <p> In ch:2 concerning the primitive data types I noticed that there was a type that I have never heard of or used, the Symbol. 
+                                I have been developing web applications since 2008 and haven't ran across it. 
+                                I liked the tyepof special character if helps in cases where I am trying to automate the processing of data from multiple sources. 
+                                I can use typeof to tell me if it is a string, number, boolean, undefined or null. I have used it to determine is an element is an object or an array as well. 
+                            </p>
+                        </div>
+                        <div class="reading-subjects">
+                            <label class="reading-sub-label">Ch5: Objects</label>
+                            <p> 
+                                I love to use objects in javascript. One thing I have not used is the computed property. 
+                            </p>
+                        </div>
+                        <div class="reading-subjects">
+                            <label class="reading-sub-label">Ch6: Document Object Model</label>
+                            <p> 
+
+                            </p>
+                        </div>
+                        <div class="reading-subjects">
+                            <label class="reading-sub-label">Ch7: Events</label>
+                            <p> 
+                           
+                            </p>
+                        </div>
+                        <div class="reading-subjects">
+                            <label class="reading-sub-label">This code sandbox Ch14-15</label>
+                            <p> 
+                            
+                            </p>
+                        </div>
+                    </div>
+                    <div class="notes-sub-cont">
+                        <h3 class="notes-header">Activity Notes</h3>
+                        <p> 
+                            I did more tutorials on GitHub and am now much more comfortable with commiting and uploading code changes to the GitPages
+                            where my Portfolio is hosted. I have not used sub version software in the past so this is a great experience for me to 
+                            broaden my resume and to better streamline my coding practices.
+                        </p>
+                    </div>
+                    <div class="notes-sub-cont">
+                        <h3 class="notes-header h-center">Team Assignment Notes</h3>
                         <p>
-                            <code>
-                                var list = [
-                                
-                                {first_name: "Aaron", last_name: "Ameny"},{first_name: "Jack", last_name: "Smith"}]
-                                
-                                list.filter(x => x.first_name == 'Aaron')[0]; 
-                            </code>
+                            Group 4 met on Wednesday 5/5/2021 from 7:45pm to 9:00pm CST. 
+                            We pretty much worked on the assignment together. I had the first 4 completed before the meeting and was able 
+                            to compete exercises 4, 5 and 7. I was able to help with some of the group members but since I do have quite a bit more
+                            experience with programming and specifically with javascript, I didn't want to answer all of the questions. I held back and 
+                            let some of the other students teach and learn from each other. When the group seemed to get stuck for an extendend amount of time
+                            I would step in and give some direction. 
                         </p>
                         <p>
-                            This would bring back the first object with a first name of Aaron. 
-                            For some reason this makes sense to me visually.
+                            Erin hosted the meeting using zoom and like last week she was a great tutor for the group.
                         </p>
-                    </p>
-                    <h3 class="notes-header">Activity Notes</h3>
-                    <p> 
-                        I already had Visual Studio Code installed on my pc and I have been using it since it first came out. 
-                        I had no problem with intalling node.
-                        I have not used Github so this is a good but challenging process. 
-                        I was able to get it set up on mu Visual Studio Code editor.
-                        I am having issues with updating my gitpages for my live portfolio site.
-                    </p>
-                </div>
-                <div class="notes-sub-cont">
-                    <h3 class="notes-header h-center">Team Assignment Notes</h3>
-                    <p>
-                        We are Group 4 and we met on Wednesday 4/29/2021 from 8:00pm to 9:30pm CST. 
-                        Our group members were: Aaron Ameny (me), Erin Engler, Joseph Watt and Catteara Neyman.
-                    </p>
-                    <p>
-                        Erin helped us all with using Git as well as with the assignment.
-                        I was able to help with some of the debugging and hopefully I didn't teach any bad habbits.
-                        I was very impressed with the last example that the teacher had created where he passed functions as arguments into the calculator function.
-                    </p>
-                </div>
-            </div>
-                `,
+                    </div>
+                </div>`
+                ,
             tasks: 
                 `<div class="tasks">
                     <h3 class="tasks-header h-center">
-                        Tasks
+                        Tasks:
                     </h3>
                     <ol class"num-list">
-                        <li>Download Code Editor</li>
-                        <li>Download and Install Node</li>
-                        <li>Download Set up Github</li>
-                        <li>Download Code Editor</li>
+                        <li><span class="task-txt completed">Add more examples to my portfolio</span> <i class="fas fa-check green"></i>  </li>
+                        <li><span class="task-txt">Request a reveiw from the Instructor</span> <i class="fas fa-times red"></i> </li>
+                        <li><span class="task-txt completed">Make my Portfolio site more Responsive</span> <i class="fas fa-check green"></i> </li>
                     </ol>
-                </div>`
+                </div>
+                <div class="report">
+                    <h3 class="report-header h-center">
+                       Week 3 Report
+                    </h3>
+                    <div>
+                        <h4 class="h-center">What did I do since the last meeting?</h4>
+                        <p>
+                            I was having a hard time deciding on how to seperate my assignment and exercise pages from my main index page
+                            so I have decided to create each example and assignment page as a seperate html page and then link an
+                            iframe to it. This way I can include them in the body of my front end page and the user doesn't need to 
+                            navigate away. I spent a lot more time on the css for the site and tried to make it more pleasant to use.
+                        </p>
+                        <h4 class="h-center">What am I going to do next?</h4>
+                        <p> 
+                            I will not go off on tangents but stick to the assignments. Going out of scope cost me too much time so I will be more 
+                            strict when it comes to spending my time.
+                        </p>
+                        
+                        <h4 class="h-center">What are my blockers?</h4>
+                        <p>  
+                        I spent a lot of time on the Assignment this week. I ended up spending most of my time on Exercise 6.
+                        I learned that Wikipedia has a great API, so I tried to get the Category: Boulevards in Paris page from the API. 
+                        I was able to use the Javascript ajax functions to make calls to the Wiki web service but I couldn't get the actual page.
+                        I finally followed the instructions and ran the code given to extract the array of links from the page using the console.
+                        I then downloaded the log file after using console.log to record the array into the file. I then copied the array and 
+                        pasted it into the Team Assignment code. After that I was able to quickly complete the exercise.
+                        </p>
+                    </div>
+                </div>`,
+            next: 
+                `<div class="tasks">
+                    <h3 class="tasks-header h-center">
+                        Next Steps
+                    </h3>
+                    <ol class"num-list">
+                        <li><span class="task-txt">Add more examples to my portfolio</span> </li>
+                        <li><span class="task-txt">Request a reveiw from the Instructor</span></li>
+                        <li><span class="task-txt">Make sublinks for sections inside of the main section of the page as well as the 
+                            right side of the page. Sublinks for examples, team assignments, Reading notes, tasks, and reports.
+                        </span></li>
+                    </ol>
+                </div>
+                `
         },
         {
             week: 'w4',

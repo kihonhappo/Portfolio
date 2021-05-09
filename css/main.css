@@ -60,17 +60,22 @@
     overflow-y: auto;
     height: 800px;
   }
+
+  .right p, .right li{font-size: 12px;}
+
   .notes-header{text-align: center;}
    .notes-cont{padding: 10px;}
+   .notes-cont p, .notes-cont li, .notes-cont i{ font-size: 12px;}
 
-   code{background-color: black; color: white;}
+   .code-black{background-color: black; color: white;}
+   
 
    .list{margin-top: 20px;}
    .no-bullets{list-style-type: none;}
    .li-title{margin-bottom: 20px; font-size: 18px; text-align: center;}
    .document-viewer{width: 100%; border: none; min-height: 600px;}
    .section-header{border-top: 1px solid black; border-bottom: 1px solid black; padding-top: 20px; padding-bottom: 20px;}
-  
+   .subjects-header{border-bottom: 1px solid black; padding-top: 20px; padding-bottom: 20px;}
   @media only screen and (max-width:620px) {
     /* For mobile phones: */
     .menu, .main, .right {
@@ -84,10 +89,21 @@
     .content-wrapper{height: auto;}
   }
   .tasks li{}
-  .tasks i{float: right; margin-right: 50px;}
+  .tasks i{float: right; margin-right: 30px;}
+  .task-txt{font-size: 12px;}
+  pre{
+    border: 1px solid red; 
+    margin-left: 0px;
+    background-color: rgb(255, 247, 229);
+    white-space: pre-line;
+    padding-left: 5px;
+  }
   .completed{text-decoration: line-through;}
-
+  .code-cont{width: 100%;  padding: 0px; font-size: 12px;}
  .example-img{width: 20%;}
   .red{color: red;}
   .green{color: green;}
   .clearfix{clear: both;}
+  .reading-sub-label{font-size: 14px; font-weight: bold;}
+  .reading-outline{}
+  

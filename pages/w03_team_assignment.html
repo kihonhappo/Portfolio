@@ -5,21 +5,34 @@
     <style>
       .exercise-cont{}
       .ex-list{border: 1px solid black; width: 45%; list-style: none; padding-left: 0px; float: left;}
-      .ex-list li{padding: 5px; padding-left: 10px; padding-right: 10px;}
-      .float-left{color: blue; margin-right: 50px;}
-      .float-right{color: green; float: right;} 
+      .ex-list-1{border: 1px solid black; width: 30%; list-style: none; padding-left: 0px; float: left;}
+      .ex-list li{padding: 5px; padding-left: 10px; padding-right: 10px; }
+      .ex-list-1 li{padding: 5px; padding-left: 10px; padding-right: 10px; }
+      .float-left{color: blue; text-align: center; margin-right: 20px;}
+      .float-right{color: green;  float: right; text-align: center;} 
       .li-head-cont{border-bottom: 1px solid black; overflow: auto; clear: both;}
       .li-header{text-align: center; color: black; font-weight: bold; }
-      .li-header-left{float: left;}
+
+      .li-header-left{float: left; margin-left: 10px;}
+      .li-header-left:first-child{margin-left: 0px;}
       .li-header-right{float: right;}
-      .code-cont{width: 45%; float: left; padding: 10px;}
+      .code-cont{width: 45%; float: left; padding: 0px;}
+      .code-cont-1{width: 35%; float: left; padding: 0px;}
       .clearfix {overflow: auto; clear: both;}
+      .code-6{overflow: auto;}
       pre{
         border: 1px solid red; 
-        padding: 20px;
+        margin-left: 10px;
+        
+        padding: 5px;
+        padding-bottom: 20px;
         background-color: rgb(255, 247, 229);
         white-space: pre-line;
       }
+      .document-viewer{width: 100%; border: none; height: 600px;}
+      .grab-txt-area{width: 100%; height: 300px;}
+      .display-div{width: 100%; height: 400px; overflow: auto;}
+      .grab-txt-lbl{width: 100%; font-size: large; padding: 20px;}
     </style>
   </head>
   <body>
@@ -55,8 +68,7 @@
             <ul id="card-1-ex-3" class="ex-list"></ul>
             <div class="code-cont">
               <code class="code-box">
-                var items = this.inventors;
-                items = items.sort((a, b) => (a.year < b.year) ? 1 : -1);
+                var items = this.inventors.sort((a, b) => (a.year < b.year) ? 1 : -1);
               </code>
             </div>
             <div class="clearfix"></div>
@@ -66,8 +78,8 @@
             <ul id="card-1-ex-4" class="ex-list"></ul>
             <div class="code-cont">
               <code class="code-box">
-                var items = this.inventors;
-                var total = items.reduce((sum, x) => sum + (parseInt(x.passed) - parseInt(x.year)), 0);
+                var items = new Array();
+                items.push(this.inventors.reduce((sum, x) => sum + (parseInt(x.passed) - parseInt(x.year)), 0));
               </code>
             </div>
             <div class="clearfix"></div>
@@ -89,9 +101,16 @@
           <div class="exercise-cont">
             <h3>Exercise 6: create a list of Boulevards in Paris that contain 'de' anywhere in the name</h3>
             <ul id="card-1-ex-6" class="ex-list"></ul>
-            <div class="code-cont">
+            <div id="code-6" class="code-cont">
               <code class="code-box">
-                
+                const category = document.querySelector('.mw-category');
+                const links = Array.from(category.querySelectorAll('a'));
+                var link_list = links.map(x => x.innerHTML)
+                console.log(link_list)
+                I then downloaded the log 
+                and extracted the array 
+                I called the array boulevards
+                var items = boulevards.filter(x => x.indexOf(' de ') > -1);
               </code>
             </div>
             <div class="clearfix"></div>
@@ -100,13 +119,9 @@
             <h3>Exercise 7: Sort the people alphabetically by last name</h3>
             <ul id="card-1-ex-7" class="ex-list"></ul>
             <div class="code-cont">
-             
                 <code class="code-box">
                   var items = this.people.sort((a, b) => (a > b) ? 1 : -1);
-                  var headers = [{name: 'Name', float: 'left', attrs: []}];
-                  this.buildList(headers, 'card-1-ex-7', items);
                 </code>
-              
             </div>
             <div class="clearfix"></div>
           </div>
@@ -115,7 +130,17 @@
             <ul id="card-1-ex-8" class="ex-list"></ul>
             <div class="code-cont">
               <code class="code-box">
-                
+                var autos = this.vehicle_types.reduce((tally, type) => {
+                  tally[type] = (tally[type] || 0) + 1 ;
+                  return tally;
+                } , {});
+                var items = new Array();
+                Object.keys(autos).forEach(function(key, value){
+                  var auto = {};
+                  auto.type = key;
+                  auto.cnt = autos[key]; 
+                  items.push(auto);
+                }); 
               </code>
             </div>
             <div class="clearfix"></div>
@@ -123,14 +148,66 @@
         </div>
 
       </div>
-      <div id="card-2">
+      <div id="card-2"> 
         <h2>Team Assignment: W03 Array Cardio 2</h2>
         <div id="card-2-exercises">
-          
+          <div class="exercise-cont">
+            <h3>Exercise 9: Is at least one person 19 or older?</h3>
+            <ul id="card-ex-9" class="ex-list"></ul>
+            <div class="code-cont">
+              <code class="code-box">
+                var year = new Date().getFullYear();
+                var items = person2.some(x => (year - x.year) > 19);
+                
+              </code>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="exercise-cont">
+            <h3>Exercise 10: Is every person 19 or older?</h3>
+            <ul id="card-ex-10" class="ex-list"></ul>
+            <div class="code-cont">
+              <code class="code-box">
+                var year = new Date().getFullYear();
+                var items = person2.every(x => (year - x.year) > 19);
+                
+              </code>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="exercise-cont">
+            <h3>Exercise 11: Find the comment with the ID of 823423</h3> 
+            <ul id="card-ex-11" class="ex-list"></ul>
+            <div class="code-cont">
+              <code class="code-box">
+                var items = comments.find(x => x.id == 823423);
+              </code>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="exercise-cont">
+            <h3>Exercise 12: Find the comment with this ID, delete the comment with the ID of 823423</h3> 
+            <div class="btn-group">
+              <button id="restore-comments">Restore Comments</button>
+              <select id="select-delete-txt" class="drp-delete">
+              </select>
+              <button id="remove-comment">Delete Comment</button>
+              
+            </div>
+            <ul id="card-ex-12" class="ex-list-1"></ul>
+            <ul id="card-ex-13" class="ex-list-1"></ul>
+            <div class="code-cont-1">
+              <code class="code-box">
+                var items = comments.findIndex(x => x.id == 823423);
+              </code>
+            </div>
+            <div class="clearfix"></div>
+          </div>
         </div>
-
       </div>
+
     </div>
+  </div>
     <script>
       // Get your shorts on - this is an array workout!
       // ## Array Cardio Day 1
@@ -196,11 +273,94 @@
         'Blake, William'
       ];
 
+      const boulevards = [
+        "Boulevards of Paris", 
+        "City walls of Paris", 
+        "Thiers wall", 
+        "Wall of Charles V", 
+        "Wall of Philip II Augustus", 
+        "City gates of Paris", 
+        "Haussmann's renovation of Paris", 
+        "Boulevards of the Marshals", 
+        "Boulevard Auguste-Blanqui", 
+        "Boulevard Barbès", 
+        "Boulevard Beaumarchais", 
+        "Boulevard de l'Amiral-Bruix", 
+        "Boulevard Mortier", 
+        "Boulevard Poniatowski", 
+        "Boulevard Soult", 
+        "Boulevard des Capucines", 
+        "Boulevard de la Chapelle", 
+        "Boulevard de Clichy", 
+        "Boulevard du Crime", 
+        "Boulevard du Général-d'Armée-Jean-Simon", 
+        "Boulevard Haussmann", 
+        "Boulevard de l'Hôpital",
+        "Boulevard des Italiens", 
+        "Boulevard Lefebvre", 
+        "Boulevard de la Madeleine", 
+        "Boulevard de Magenta", 
+        "Boulevard Malesherbes", 
+        "Boulevard Marguerite-de-Rochechouart", 
+        "Boulevard Montmartre", 
+        "Boulevard du Montparnasse", 
+        "Boulevard Raspail", 
+        "Boulevard Richard-Lenoir", 
+        "Boulevard Saint-Germain", 
+        "Boulevard Saint-Michel", 
+        "Boulevard de Sébastopol", 
+        "Boulevard de Strasbourg", 
+        "Boulevard du Temple", 
+        "Boulevard Voltaire", 
+        "Boulevard de la Zone"
+      ]
+
+      const data = [
+        'car',
+        'car',
+        'truck',
+        'truck',
+        'bike',
+        'walk',
+        'car',
+        'van',
+        'bike',
+        'walk',
+        'car',
+        'van',
+        'car',
+        'truck'
+      ];
+    
+        // ## Array Cardio Day 2
+    
+        const people2 = [
+          { name: 'Wes', year: 1988 },
+          { name: 'Kait', year: 1986 },
+          { name: 'Irv', year: 1970 },
+          { name: 'Lux', year: 2015 }
+        ];
+    
+        const comments = [
+          { text: 'Love this!', id: 523423 },
+          { text: 'Super good', id: 823423 },
+          { text: 'You are the best', id: 2039842 },
+          { text: 'Ramen is my fav food ever', id: 123523 },
+          { text: 'Nice Nice Nice!', id: 542328 }
+        ];
+    
+        
+       
       
 
-      const cardio_1 = {
+      const cardio = {
          people: people,
+         people2: people2,
+         comments: comments,
+         deleted_comments: [],
          inventors: inventors,
+         vehicle_types: data,
+         boulevards: boulevards,
 
          getCount(list){
 
@@ -217,6 +377,7 @@
          buildList(headers, ele_id, items){
             
             let ul = document.getElementById(ele_id);
+            ul.innerHTML = '';
             let li_headers = document.createElement("LI");
             li_headers.classList.add('li-head-cont');
             var head_str = '';
@@ -289,6 +450,196 @@
             this.buildList(headers, 'card-1-ex-5', items);
 
          },
+         getBoulevards(){
+            var items = this.boulevards.filter(x => x.indexOf(' de ') > -1);
+            var headers = [{name: 'Name', float: 'left', attrs: []}];
+            this.buildList(headers, 'card-1-ex-6', items);
+         },
+          decodeHtml(html) {
+            var txt = document.createElement("textarea");
+            txt.innerHTML = html;
+            return txt.value;
+          },
+          getLinks(){
+            //var url = "https://en.wikipedia.org/w/api.php?action=parse&format=json&page=Pet_door&prop=wikitext&formatversion=2";
+            //var url = "https://www.mediawiki.org/w/api.php?action=parse&origin=*&format=json&page=Boulevards%20of%20Paris";
+            //var url = "https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris?origin=*";
+            //var url = 'https://en.wikipedia.org/api/rest_v1/page/html/Category%3ABoulevards_in_Paris';
+            //var url = 'https://en.wikipedia.org/w/api.php?action=parse&origin=*&format=json&page=Boulevards%20of%20Paris';
+            //var url = 'https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=Category%3ABoulevards_in_Paris&prop=text';
+            //var url = 'http://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=Steve%20Jobs&prop=text';
+            //var url = 'https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=Pet_door&prop=text&formatversion=2';
+
+            var iframe_url = 'https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris';
+            //var iframe_url = 'https://en.wikipedia.org/wiki/Pet_door'; 
+            
+            var iframe = `
+            <div class="debug">
+              <label class="grab-txt-lbl">Response Code</label>
+              <textarea id="grab-text" class="grab-txt-area"></textarea>
+            </div>
+            <div class="debug">
+              <label class="grab-txt-lbl">Debug Code</label>
+              <textarea id="debug-code" class="grab-txt-area"></textarea>
+            </div>
+            <div class="debug">
+              <label class="grab-txt-lbl">Show HTML</label>
+              <div id="display-code" class="display-div"></div>
+            </div>
+            <div class="debug">
+              <label class="grab-txt-lbl">Original Page</label>
+              <iframe id="grab-links" src="` + iframe_url + `" class="document-viewer"></iframe>
+            </div>
+            `;//document.createElement('iframe');
+            
+            //iframe.src = 'https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris';
+            //iframe.id = 'grab-links';
+            var cont = document.getElementById('code-6').parentNode;
+            cont.innerHTML = iframe;
+            var grab = document.getElementById('grab-links');
+            var links = grab.contentWindow.document.querySelector('.mw-category');
+            var vi = this;
+            
+            var url = "https://en.wikipedia.org/w/api.php?";
+            // action=query&format=json&prop=categories&titles=Janelle%20Mon%C3%A1e
+            var getType = 'page';
+            
+            /* Page */
+            
+            var page = new URLSearchParams({
+              origin: "*",
+              action: "parse",
+              page: "Category:Boulevards of Paris",
+              format: "json",
+            });
+
+            var cat_query = new URLSearchParams({
+              origin: "*",
+              action: "query",
+              prop: "categories",
+              titles: "Boulevards Paris",
+              format: "json"
+            });
+
+            var query = new URLSearchParams({
+              origin: "*",
+              action: "query",
+              list: "search",
+              srsearch: "Boulevards in Paris",
+              format: "json"
+            });
+
+            var open_search = new URLSearchParams({
+              origin: "*",
+              action: "opensearch",
+              search: "Boulevards of Paris",
+              limit: "5",
+              namespace: "0",
+              format: "json"
+            });
+
+            switch(getType){
+              case 'page':
+                url += page;
+                break;
+              case 'query':
+                url += query;
+                break;
+              case 'open_search':
+                url += open_search;
+                break;
+              case 'cat_query':
+                url += cat_query;
+                break;
+            }
+
+           // try {
+            
+             fetch(url)
+              .then(function(response) {
+                return response.json();
+              })
+              .then(function(response){
+                //alert(JSON.stringify(response));
+                var grab_txt = document.getElementById('grab-text');
+                grab_txt.value = JSON.stringify(response);
+                var links = '';
+                switch(getType){
+                  case 'page':
+                    links = vi.decodeHtml(response.parse.text['*']);
+                    //.mw-headline == category headers
+                    //
+                    break;
+                  case 'query':
+                    links = response.query.search.map(x => x.title);
+                    break;
+                  case 'open_search':
+                    //links = response.query.search.map(x => x.title);
+                    break;
+                  case 'cat_query':
+                    //links = response.query.search.map(x => x.title);
+                    break;
+                }
+                
+                
+                var debug_code = document.getElementById('debug-code');
+                debug_code.value = links;
+                var display_code = document.getElementById('display-code');
+                display_code.innerHTML = links;
+                //parser = new DOMParser();
+                //html = parser.parseFromString(html_code, "text/html");
+                //var tables = html.querySelectorAll(".wikitable");
+                
+                 //grab_txt.value = JSON.stringify(response);
+                //const category = html.querySelector('.mw-category');
+                //const links = Array.from(category.querySelectorAll('a'));
+                
+              })
+           // } catch (e) {
+                //console.error(e);
+            //}
+          },
+         pageScrape(){
+          var request = new XMLHttpRequest(); //https://www.mediawiki.org/w/api.php
+          request.open("GET", encodeURIComponent("https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris"), true);  // last parameter must be true
+          request.responseType = "document";
+          request.onload = function (e) {
+            if (request.readyState === 4) {
+              if (request.status === 200) {
+                //var a = request.responseXML.querySelector("div.result:nth-child(1) > div:nth-child(1) > h2:nth-child(1) > a:nth-child(1)");
+                const category = responseXML.querySelector('.mw-category');
+                const links = Array.from(category.querySelectorAll('a'));
+                alert(category.length);
+              } else {
+                alert('Error: Top ' + request.status + ' ' + request.statusText);
+              }
+            }
+          };
+          request.onerror = function (e) {
+            alert('Error: bottom ' + request.status + ' ' + request.statusText);
+          };
+          request.send(null);  // not a POST request, so don't send extra data  mediawiki.org https://www.mediawiki.org/w/api.php
+         }, //https://en.wikipedia.org/api/rest_v1/page/html/Category%3ABoulevards_in_Paris  https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+         pageScrape2(){
+          var url = 'https://en.wikipedia.org/w/api.php?action=parse&origin=*&format=json&page=Boulevards%20of%20Paris';
+          //var url = 'https://en.wikipedia.org/w/api.php?action=parse&origin=*&format=json&page=Category%3ABoulevards_in_Paris&prop=text';
+          //var url = 'http://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=Steve%20Jobs&prop=text';
+          //var url = 'https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=Pet_door&prop=text&formatversion=2';
+          fetch(url)
+            .then(function(response) {
+              return response.json();
+            })
+            .then(function(response){
+              html_code = response;
+              //parser = new DOMParser();
+              //html = parser.parseFromString(html_code, "text/html");
+              //var tables = html.querySelectorAll(".wikitable");
+              document.getElementById('code-6').parentNode.innerHTML = JSON.stringify(response);
+              //const category = html.querySelector('.mw-category');
+              //const links = Array.from(category.querySelectorAll('a'));
+              alert(JSON.stringify(response));
+            })
+         },
          sortPeople(){
             
             var items = this.people.sort((a, b) => (a > b) ? 1 : -1);
@@ -296,84 +647,148 @@
             this.buildList(headers, 'card-1-ex-7', items);
          },
          sumInstanceOf(){
+            var autos = this.vehicle_types.reduce((tally, type) => {
+              tally[type] = (tally[type] || 0) + 1 ;
+              return tally;
+            } , {});
+            var items = new Array();
+            Object.keys(autos).forEach(function(key, value){
+              var auto = {};
+              auto.type = key;
+              auto.cnt = autos[key]; 
+              items.push(auto);
+            }); 
+            var headers = [{name: 'Type', float: 'left', attrs: ['type']},{name: 'Cnt', float: 'right', attrs: ['cnt']}];
+            this.buildList(headers, 'card-1-ex-8', items);
+         },
+         someMethod(){
+            // is at least one person 19 or older?
+            var year = new Date().getFullYear();
+            var items = new Array();
+            
+            items.push(this.people2.some(x => (year - x.year) > 19));
+            /*items.forEach(function(item){
+              item.age = parseInt(year) - parseInt(item.year);
+            });
+            
+            items = items.sort((a, b) => (a.age < b.age) ? 1 : -1);*/
+            
+            
+            
+            //var headers = [{name: 'Name', float: 'left', attrs: ['name']},{name: 'Year', float: 'left', attrs: ['year']},{name: 'Age', float: 'right', attrs: ['age']}];
+            var headers = [{name: 'Is any one over 19?', float: 'left', attrs: []}];
+            this.buildList(headers, 'card-ex-9', items);
 
-         }
+         },
+         everyMethod(){
+            var year = new Date().getFullYear();
+            var items = new Array();
+            
+            items.push(this.people2.every(x => (year - x.year) > 19));
+            var headers = [{name: 'Is everyone over 19?', float: 'left', attrs: []}];
+            this.buildList(headers, 'card-ex-10', items);
+         },
+        findMethod(){
+            var items = new Array();
+            
+            items.push(this.comments.find(x => x.id == 823423));
+            //alert(items.text);
+            var headers = [{name: 'Text', float: 'left', attrs: ['text']},{name: 'ID', float: 'right', attrs: ['id']}];
+            this.buildList(headers, 'card-ex-11', items);
+        },
+        loadComments(){
+            this.loadSelect()
+            this.createComments();       
+            var restore = document.getElementById('restore-comments');
+            var del_btn = document.getElementById('remove-comment');
+            var vi = this;
+            del_btn.addEventListener("click", function(e){
+                e.preventDefault();
+                vi.deleteComment();
+            });
+            restore.addEventListener("click", function(e){
+                e.preventDefault();
+                vi.restoreComment();
+            });
+        },
+        loadSelect(){
+          var sel = document.getElementById('select-delete-txt');
+          var options = '';
+          this.comments.forEach(function(comment){
+            options += '<option value="' + comment.id + '">' + comment.id + '</option>'; 
+          });
+          sel.innerHTML = options;
+        },
+        createComments(){
+            var items = this.comments;
+            var headers = [{name: 'Text', float: 'left', attrs: ['text']},{name: 'ID', float: 'right', attrs: ['id']}];
+            this.buildList(headers, 'card-ex-12', items);
+
+            var del_comments = this.deleted_comments;
+            var headers = [{name: 'Text', float: 'left', attrs: ['text']},{name: 'ID', float: 'right', attrs: ['id']}];
+            this.buildList(headers, 'card-ex-13', del_comments);
+        },
+        deleteComment(){
+            var id = document.getElementById('select-delete-txt').value;
+            var del_index = this.comments.findIndex(x => x.id == id);
+            //alert(del_index);
+            var comment = this.comments[del_index];
+            this.deleted_comments.push(comment);
+            this.comments = this.comments.filter(x=> x.id != comment.id);
+            this.createComments(); 
+        },
+        restoreComment(){
+            this.deleted_comments = [];
+            this.comments = comments;
+            this.createComments(); 
+        }
       }
 
-      cardio_1.wrapCode('code', 'pre');
+      cardio.wrapCode('code', 'pre');
       // Array.prototype.filter()
       // 1. Filter the list of inventors for those who were born in the 1500's
-      cardio_1.filterInventors();
+      cardio.filterInventors();
       // Array.prototype.map()
       // 2. Give us an array of the inventors' first and last names
-      cardio_1.mapInventors();
+      cardio.mapInventors();
       // Array.prototype.sort()
       // 3. Sort the inventors by birthdate, oldest to youngest
-      cardio_1.sortInventorsDOB();
+      cardio.sortInventorsDOB();
       // Array.prototype.reduce()
       // 4. How many years did all the inventors live?
-      cardio_1.inventorsLived();
+      cardio.inventorsLived();
       // 5. Sort the inventors by years lived
-      cardio_1.sortInventorsAge();
+      cardio.sortInventorsAge();
       // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
       // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
       // goto the link above and open the console. Paste the following two lines in.  That will create a list of links in memory that 
       // you can reference through the console. Use that list to finish the problem.
       // const category = document.querySelector('.mw-category');
       // const links = Array.from(category.querySelectorAll('a'));
+      //cardio.pageScrape2();
+      cardio.getBoulevards();
 
       // 7. sort Exercise
       // Sort the people alphabetically by last name
-      cardio_1.sortPeople();
+      cardio.sortPeople();
       // 8. Reduce Exercise
       // Sum up the instances of each of these
+      cardio.sumInstanceOf();
+      // Some and Every Checks
+      // Array.prototype.some() // is at least one person 19 or older?
+      cardio.someMethod();
+      // Array.prototype.every() // is everyone 19 or older?
+      cardio.everyMethod();
+      // Array.prototype.find()
+      // Find is like filter, but instead returns just the one you are looking for
+      // find the comment with the ID of 823423
+      cardio.findMethod();
+      // Array.prototype.findIndex()
+      // Find the comment with this ID
+      // delete the comment with the ID of 823423
+      cardio.loadComments();
 
-
-      const data = [
-        'car',
-        'car',
-        'truck',
-        'truck',
-        'bike',
-        'walk',
-        'car',
-        'van',
-        'bike',
-        'walk',
-        'car',
-        'van',
-        'car',
-        'truck'
-      ];
-    
-        // ## Array Cardio Day 2
-    
-        const people2 = [
-          { name: 'Wes', year: 1988 },
-          { name: 'Kait', year: 1986 },
-          { name: 'Irv', year: 1970 },
-          { name: 'Lux', year: 2015 }
-        ];
-    
-        const comments = [
-          { text: 'Love this!', id: 523423 },
-          { text: 'Super good', id: 823423 },
-          { text: 'You are the best', id: 2039842 },
-          { text: 'Ramen is my fav food ever', id: 123523 },
-          { text: 'Nice Nice Nice!', id: 542328 }
-        ];
-    
-        // Some and Every Checks
-        // Array.prototype.some() // is at least one person 19 or older?
-        // Array.prototype.every() // is everyone 19 or older?
-    
-        // Array.prototype.find()
-        // Find is like filter, but instead returns just the one you are looking for
-        // find the comment with the ID of 823423
-    
-        // Array.prototype.findIndex()
-        // Find the comment with this ID
-        // delete the comment with the ID of 823423
+     
     
       </script>
 
