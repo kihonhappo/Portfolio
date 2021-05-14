@@ -168,10 +168,7 @@ var links = [
                             <section id="story_display"></section>
                         </div>
                     </div>
-                    <div class="examples-cont">
-                        <h3 class="section-header h-center">Ninja Example:</h3>
-                        <iframe src="./pages/ninja.html" class="document-viewer"></iframe>
-                    </div>
+                    
                 `
             },
             
