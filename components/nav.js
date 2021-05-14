@@ -132,18 +132,18 @@ var links = [
                     </div>`,
                 scripts() {
                     document.getElementById('load-story').addEventListener('click', function(evt){
-                        var storyName = document.getElementById('name_input').value
-                        var storyHTML = localStorage.getItem(storyName)
-                        document.getElementById('story_editor').value = storyHTML
+                        var storyName = document.getElementById('name_input').value;
+                        var storyHTML = localStorage.getItem(storyName);
+                        document.getElementById('story_editor').value = storyHTML;
                     });
                     document.getElementById('save-story').addEventListener('click', function(evt){
-                        var storyName = document.getElementById('name_input').value
-                        var storyHTML = document.getElementById('story_editor').value
-                        localStorage.setItem(storyName, storyHTML)
+                        var storyName = document.getElementById('name_input').value;
+                        var storyHTML = document.getElementById('story_editor').value;
+                        localStorage.setItem(storyName, storyHTML);
                     });
                     document.getElementById('display-story').addEventListener('click', function(evt){
-                        var storyHTML = document.getElementById('story_editor').value
-                        document.getElementById('story_display').innerHTML = storyHTML     
+                        var storyHTML = document.getElementById('story_editor').value;
+                        document.getElementById('story_display').innerHTML = storyHTML;     
                     });
                 },
                 examples: `
