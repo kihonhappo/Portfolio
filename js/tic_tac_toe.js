@@ -72,8 +72,12 @@ const tic_tac_toe_game = {
 
     render_board: () => {
         board_container.innerHTML = "";
-        const vi = this;
-        vi.play_board.forEach((e, i) => {
+        var vi = this;
+        //alert('render board');
+        if(this.play_board.length == 0){
+            this.play
+        }
+        this.play_board.forEach((e, i) => {
             board_container.innerHTML += `<div id="block_${i}" class="block" onclick="addPlayerMove(${i})">${vi.play_board[i]}</div>`
             if (e == vi.player || e == vi.computer) {
             document.querySelector(`#block_${i}`).classList.add("occupied");
@@ -119,9 +123,9 @@ const tic_tac_toe_game = {
 
 
 //initial render
-window.load = function(e){
-    
+window.onload = function(e){
+    //alert('before ');
     tic_tac_toe_game.render_board();
-    alert('before ')
+    alert('After ');
     document.getElementById('board-reset-btn').addEventListener('click', tic_tac_toe_game.reset_board);
 };
