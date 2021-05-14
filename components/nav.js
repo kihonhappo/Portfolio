@@ -149,9 +149,15 @@ var links = [
                 examples: `
                     <style>
                         #story-editor-cont textarea{
-                            width: 800px;
+                            width: 100%;
                             height: 250px;
                             background-color: lightyellow;
+                        }
+                        #story-editor-cont #story_display{
+                            width: 100%;
+                            min-height: 150px;
+                            border: 1px solid black;
+                            margin-bottom: 20px;
                         }
                     </style>
                     
