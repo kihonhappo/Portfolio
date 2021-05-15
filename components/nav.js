@@ -912,7 +912,7 @@ var links = [
                 loadPage(week);
             }
             if(weeks[index].reading.scripts){
-                //weeks[index].reading.scripts();
+                weeks[index].reading.scripts();
             }
             
         }
