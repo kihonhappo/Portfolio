@@ -117,7 +117,6 @@ const tic_tac_toe = {
         this.render_board();
     },
     loadBoard(){
-        //
         this.render_board();
         
     },
