@@ -131,49 +131,14 @@ var links = [
                         </ul>
                     </div>`,
                 scripts() {
-                    document.getElementById('load-story').addEventListener('click', function(evt){
-                        var storyName = document.getElementById('name_input').value;
-                        var storyHTML = localStorage.getItem(storyName);
-                        document.getElementById('story_editor').value = storyHTML;
-                    });
-                    document.getElementById('save-story').addEventListener('click', function(evt){
-                        var storyName = document.getElementById('name_input').value;
-                        var storyHTML = document.getElementById('story_editor').value;
-                        localStorage.setItem(storyName, storyHTML);
-                    });
-                    document.getElementById('display-story').addEventListener('click', function(evt){
-                        var storyHTML = document.getElementById('story_editor').value;
-                        document.getElementById('story_display').innerHTML = storyHTML;     
-                    });
+                    
                 },
                 examples: `
-                    <style>
-                        #story-editor-cont textarea{
-                            width: 100%;
-                            height: 250px;
-                            background-color: lightyellow;
-                        }
-                        #story-editor-cont #story_display{
-                            width: 100%;
-                            min-height: 150px;
-                            border: 1px solid black;
-                            margin-bottom: 20px;
-                        }
-                    </style>
-                    
-                    <div id="story-editor-cont" class="examples-cont">
+                    <div class="examples-cont ht-300">
                         <h3 class="section-header h-center">Story Editor:</h3>
-                            <div class="story-cont">
-                                Story Name:<input id=name_input></input>
-                                <section>
-                                    <button id="load-story">Find and Edit It</button>
-                                    <button id="save-story">Save It</button>
-                                    <button id="display-story">Display It</button>
-                                </section>
-                            <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
-                            <section id="story_display"></section>
-                        </div>
+                        <iframe src="./pages/story_editor.html" class="document-viewer"></iframe>
                     </div>
+                    
                     
                 `
             },
@@ -767,9 +732,10 @@ var links = [
             if(lastPageNav == link.week){
                 loadPage(week);
             }
-            if(weeks[index].reading.scripts){
+           /* if(weeks[index].reading.scripts){
                 //weeks[index].reading.scripts();
             }
+            */
             
         }
        /* if(link.sub_links){

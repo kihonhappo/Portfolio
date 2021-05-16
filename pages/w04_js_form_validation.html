@@ -58,6 +58,13 @@
           }
           //alert('After ifs');
       });
+      const inputs = document.querySelectorAll('input[type=password');
+      inputs.forEach(function(input){
+        const error = document.getElementById('error');
+        input.addEventListener('focus', function(e){
+          error.innerHTML = '';
+        });
+      });
       
       
        
