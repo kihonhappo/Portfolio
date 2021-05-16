@@ -688,160 +688,16 @@ var links = [
                 
                 examples: `
                 <div class="examples-cont">
-                    <div class="example">
-                        <h3 class="section-header h-center">Objects Methods:</h3>
-                        <pre>
-                            <div class="code-cont">
-                                <code class="code-box">
-                                    let user = {
-                                        name: "John",
-                                        age: 30,
-                                    
-                                        sayHi() {
-                                        // "this" is the "current object"
-                                        alert(this.name);
-                                        }
-                                    
-                                    };
-                                    
-                                    user.sayHi(); // John
-                                </code>
-                            </div>
-                        </pre>
-                    </div>
-                    <div class="example">
-                        <h3 class="section-header h-center">Ch5: Objects:</h3>
-                        <p>
-                            An object in JavaScript is a self-contained set of related values and functions. 
-                            They act as a collection of named properties that map to any JavaScript value such as strings, 
-                            numbers, booleans, arrays and functions. If a property’s value is a function, it is known as a method.
-                        </p>
-                        <p>
-                            One way to think about an object is that it’s like a dictionary where you look up a property name 
-                            and see a value. It's like a database of values (in fact, some databases use JavaScript objects to 
-                            store information). JavaScript objects are similar to a hash or associative array in other programming 
-                            languages (or even a JavaScript map ). They are, however, much more flexible, as they can be employed to 
-                            encapsulate code that can be reused throughout a program. They can also inherit properties from other 
-                            objects in a similar way to object-oriented languages.         
-                        </p>
-                        <p>
-                            Objects are often used to keep any related information and functionality together in the same place. 
-                            For example, if you wrote functions that found the perimeter and area of a square, you might want to 
-                            group them together as methods of the same object that also included a length property.
-                        </p>
-                        <pre>
-                            <div class="code-cont">
-                                <code class="code-box">
-                                    const superman = {
-                                        name: 'Superman',
-                                        'real name': 'Clark Kent',
-                                        height: 75,
-                                        weight: 235,
-                                        hero: true,
-                                        villain: false,
-                                        allies: ['Batman','Supergirl','Superboy'],
-                                        fly() {
-                                            return 'Up, up and away!';
-                                        }
-                                    };
-                                </code>
-                            </div>
-                        </pre>
-                    </div>
-                    <div class="example">
-                        <h3 class="section-header h-center">Ch5: Computed Properties:</h3>
-                        <p>
-                            The ability to create objects with computed property keys was introduced in ES6. This means that 
-                            JavaScript code can be placed inside square brackets and the property key will be the return value of 
-                            that code. This can be seen in the example below where the + operator is used to concatenate the 
-                            strings 'catch' and 'phrase':
-                        </p>
-                        <p>
-                            The value of a property has always been allowed to be a JavaScript expression. 
-                            In the example below a ternary operator is used to return a true or false value for the hero property 
-                            depending on the value of the bewitched variable:      
-                        </p>
-                        <pre>
-                            <div class="code-cont">
-                                <code class="code-box">
-                                    const bewitched = true;
-                                    const captainBritain = { name: 'Captain Britain', hero: bewitched ? false : true };
-                                    captainBritain
-                                    << { name: 'Captain Britain', hero: false }
-                                </code>
-                            </div>
-                        </pre>
-                        <p>
-                            The new Symbol date type can also be used as a computed property key:
-                        </p>
-                        <pre>
-                            <div class="code-cont">
-                                <code class="code-box">
-                                    const name = Symbol('name');
-                                    const supergirl = { [name]: 'Supergirl' };
-                                </code>
-                            </div>
-                        </pre>
-                    </div>
-                    <div class="example">
-                        <h3 class="section-header h-center">Ch5: Finding all the Properties of an Object:</h3>
-                        <p>
-                            We can loop through all of an object’s properties and methods by using a for in loop. For example, 
-                            to log all the properties of the superman object to the console, we could use:
-                        </p>
-                        <pre>
-                            <div class="code-cont">
-                                <code class="code-box">
-                                    for(const key in superman) {
-                                        console.log(key + ": " + superman[key]);
-                                    }
-                                    << "name: Superman"
-                                    << "real name: Clark Kent"
-                                    << "height: 75"
-                                    << "weight: 235"
-                                    << "hero: true"
-                                    << "villain: false"
-                                    << "allies: Batman,Supergirl,Superboy"
-                                    << "fly: function (){
-                                        console.log(\"Up, up and away!\");
-                                    }"
-                                </code>
-                            </div>
-                        </pre>
-                        <p>
-                            The new Symbol date type can also be used as a computed property key:
-                        </p>
-                        <pre>
-                            <div class="code-cont">
-                                <code class="code-box">
-                                    const name = Symbol('name');
-                                    const supergirl = { [name]: 'Supergirl' };
-                                </code>
-                            </div>
-                        </pre>
-                    </div>
+                    <h3 class="section-header h-center">W04 Individual Activity: Javascript Form Validation</h3>
+                    <iframe src="./pages/w04_js_form_validation.html" class="document-viewer"></iframe>
+                    
                 </div>
-                <div class="examples-cont">
-                    <h3 class="section-header h-center">W04 Random Quiz Questions:</h3>
-                    <pre>
-                        <div class="code-cont">
-                            <code class="code-box">
-                                const myObj = Object.assign({
-                                    name: "Hello"
-                                }, {
-                                    name: "World"
-                                }, {
-                                    name: "!"
-                                });
-                                const result = myObj.name;
-                            </code>
-                        </div>
-                    </pre>
-                </div>
+                    
                 <div class="examples-cont">
                     <h3 class="section-header h-center">W04 Team Activity:</h3>
-                    <iframe src="./pages/tic_tac_toe.html" class="document-viewer"></iframe>
+                    <iframe src="./pages/tic_tac_toe.html" class="document-viewer ht-300"></iframe>
                 </div>
+                
                         
                     `
                 },
@@ -912,7 +768,7 @@ var links = [
                 loadPage(week);
             }
             if(weeks[index].reading.scripts){
-                weeks[index].reading.scripts();
+                //weeks[index].reading.scripts();
             }
             
         }

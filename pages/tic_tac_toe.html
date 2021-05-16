@@ -9,15 +9,7 @@
     <body>
         <div class="container">
             <h1>Tic-Tac-Toe</h1>
-            <div class="play-type">
-                <label for="computer">
-                   Computer: <input type="radio" name="play-type" id="computer" value="computer">
-                </label>
-                <label for="person">
-                    Person: <input type="radio" name="play-type" id="person" value="person">
-                 </label>
-            </div>
-            <div class="play-area">
+                <div class="play-area">
                 <div id="block_0" class="block"></div>
                 <div id="block_1" class="block"></div>
                 <div id="block_2" class="block"></div>
@@ -31,6 +23,9 @@
             <h2 id="winner"></h2>
             <button id="board-reset-btn" class="btn">RESET BOARD</button>
         </div>
+      <!-- <div class="debug-cont">
+            <textarea id="debugger" class="debug-txt-area"></textarea>
+        </div> -->
        
         <script src='../js/tic_tac_toe.js'></script> 
     </body>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Form Validation 💪</title>
+    <style>
+      .green{color: green;}
+      .red{color: red;}
+      #error{width: 100%; height: 50px; margin-bottom: 20xp; text-align: center;}
+      .control-group{border: 1px solid black;}
+      .hide{display: none;}
+      .btn-submit{margin-top: 20px;}
+    </style>
+  </head>
+  <body>
+    <div id="error"></div>
+    <form action="/inetpub" method="GET">
+      <hr />
+      
+      <fieldset>
+        <legend>Login:</legend>
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="password" id="pass" name="pass">
+        </div>
+        <div class="form-group">
+          <label>Confirm Password:</label>
+          <input type="password" id="confirm" name="confirm">
+        </div>
+        </fieldset>
+      </fieldset>
+      <button class="btn-submit" type="reset">Reset</button><button class="btn-submit" type="submit">Submit</button>
+  </form>
+    <script>
+     
+     const form  = document.getElementsByTagName('form')[0];
+      form.addEventListener('submit', function(event){
+        event.preventDefault();
+        const error = document.getElementById('error');
+        const pass = document.getElementById('pass');
+        const confirm_pass = document.getElementById('confirm');
+        const sub_btn = document.getElementById('button[type=submit]');
+        //alert('validate form: pass ' + pass.value);
+          if(pass.value == '' || pass.value == null){
+            //alert('Pass Null');
+            error.innerHTML = '<span class="red">Password is empty</span>';
+          }
+          else if(confirm_pass.value == '' || confirm_pass.value == null){
+            //alert('Confirm pass Null');
+            error.innerHTML = '<span class="red">Confirm Password is empty</span>';
+          }
+          else if(confirm_pass.value != pass.value){
+            //alert('Confirm pass Null');
+            error.innerHTML = '<span class="red">Confirm Password and Password Do Not Match</span>';
+          }
+          else if(confirm_pass.value == pass.value){
+            error.innerHTML = '<span class="green">Password and Confirm Password do match</span><br><h3>Form Submitted Successfully</h3>';
+            form.classList.add('hide');
+          }
+          //alert('After ifs');
+      });
+      
+      
+       
+     
+      
+      
+    
+      </script>
+
+</body>
+
+</html>
