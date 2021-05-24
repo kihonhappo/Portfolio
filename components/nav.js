@@ -35,65 +35,15 @@ var links = [
     {
         week: "w5",
         label: "Week 5 Notes",
-        url: "weeks/week5.js"
+        active: true,
+        url: "weeks/week4.js",
+        
     },
     {
         week: "w6",
-        label: "Week 6 Notes",
-        active: false,
-        url: "weeks/week6.js",
-        
-    },
-    {
-        week: "w7",
-        label: "Week 7 Notes",
-        active: false,
-        url: "weeks/week7.js"
-    },
-    {
-        week: "w8",
-        label: "Week 8 Notes",
-        active: false,
-        url: "weeks/week8.js",
-        
-    },
-    {
-        week: "w9",
-        label: "Week 9 Notes",
-        active: false,
-        url: "weeks/week9.js"
-    },
-    {
-        week: "w10",
-        label: "Week 10 Notes",
-        active: false,
-        url: "weeks/week10.js",
-        
-    },
-    {
-        week: "w11",
-        label: "Week 11 Notes",
-        active: false,
-        url: "weeks/week11.js"
-    },
-    {
-        week: "w12",
-        label: "Week 12 Notes",
-        active: false,
-        url: "weeks/week12.js",
-        
-    },
-    {
-        week: "w13",
-        label: "Week 13 Notes",
-        active: false,
-        url: "weeks/week13.js"
-    },
-    {
-        week: "w14",
-        label: "Week 14 Notes",
-        active: false,
-        url: "weeks/week14.js",
+        label: "Week 6325 Notes",
+        active: true,
+        url: "weeks/week4.js",
         
     }
   ]
@@ -105,7 +55,7 @@ var links = [
             title: 'Week 1: Workspace and Dependancies Setup',
             reading: {
                 subjects: `
-                    <div class="subject-list">
+                    <div id="subjects" class="subject-list">
                         <h3 class="subjects-header section-header h-center">Doing Stuff with Web Things</h3>
                         <ul class="list no-bullets">
                             <li class="li-title">Local Storage</li>
@@ -134,9 +84,13 @@ var links = [
                     
                 },
                 examples: `
-                    <div class="examples-cont ht-300">
+                    <div id="examples" class="examples-cont ht-300">
                         <h3 class="section-header h-center">Story Editor:</h3>
                         <iframe src="./pages/story_editor.html" class="document-viewer"></iframe>
+                    </div>
+                    <div class="examples-cont ht-300">
+                        <h3 class="section-header h-center">Rainbow:</h3>
+                        <iframe src="./pages/rainbow.html" class="document-viewer"></iframe>
                     </div>
                     
                     
@@ -144,7 +98,7 @@ var links = [
             },
             
             notes: 
-                `<div class="notes-cont">
+                `<div id="notes" class="notes-cont">
                     <div class="notes-sub-cont">
                         <h3 class="notes-header">Reading Notes</h3>
                         <p> 
@@ -158,7 +112,7 @@ var links = [
                 </div>
                 `,
             tasks: 
-                `<div class="tasks">
+                `<div id="tasks" class="tasks">
                     <h3 class="tasks-header h-center">
                        Tasks
                     </h3>
@@ -201,7 +155,7 @@ var links = [
                 </div>
                 `,            
             next: 
-                `<div class="tasks">
+                `<div id="notes" class="tasks">
                     <h3 class="tasks-header h-center">
                         Next Steps
                     </h3>
@@ -220,7 +174,7 @@ var links = [
             title: 'Week 2: Jasascript Review and Basics',
             reading: {
                 subjects: `
-                <div class="subjects-cont">
+                <div id="subjects" class="subjects-cont">
                     <h3 class="subjects-header h-center">Chapter 2 Subjects</h3>
                     <ul>
                         <li>The importance of well-commented code</li>
@@ -237,7 +191,7 @@ var links = [
                     </ul>
                 </div>`,
                 examples: `
-                    <div class="examples-cont">
+                    <div id="examples" class="examples-cont">
                         <h3 class="examples-header h-center">Comments</h3>
                             <ul class="main-ul">
                                 <li>Single line comments starting with&nbsp;
@@ -256,7 +210,7 @@ var links = [
                         `
                 },
             notes: `
-                <div class="notes-cont">
+                <div id="notes" class="notes-cont">
                     <div class="notes-sub-cont">
                         <h3 class="notes-header">Reading Notes</h3>
                         <p> In ch:2 concerning the primitive data types I noticed that there was a type that I have never heard of or used, the Symbol. 
@@ -308,7 +262,7 @@ var links = [
                 </div>`
                 ,
             tasks: 
-                `<div class="tasks">
+                `<div id="tasks" class="tasks">
                     <h3 class="tasks-header h-center">
                         Tasks:
                     </h3>
@@ -320,7 +274,7 @@ var links = [
                         <li><span class="task-txt completed">Join a group</span> <i class="fas fa-check green"></i> </li>
                     </ol>
                 </div>
-                <div class="report">
+                <div id="report" class="report">
                     <h3 class="report-header h-center">
                        Week 2 Report
                     </h3>
@@ -351,7 +305,7 @@ var links = [
                     </div>
                 </div>`,
             next: 
-                `<div class="tasks">
+                `<div id="next" class="tasks">
                     <h3 class="tasks-header h-center">
                         Next Steps
                     </h3>
@@ -368,7 +322,7 @@ var links = [
             title: 'Week 3',
             reading: {
                 subjects: `
-                    <div class="subject-list">
+                    <div id="subjects" class="subject-list">
                         <h3 class="subjects-header h-center">Study Subjects</h3>
                         <ol class="reading-outline">
                             <li>Object Methods: this.</li>
@@ -381,7 +335,7 @@ var links = [
                     </div>`,
                 
                 examples: `
-                    <div class="examples-cont">
+                    <div id="examples" class="examples-cont">
                         <div class="example">
                             <h3 class="section-header h-center">Objects Methods:</h3>
                             <pre>
@@ -514,6 +468,28 @@ var links = [
                                 </div>
                             </pre>
                         </div>
+                        <div class="example">
+                            <h3 class="section-header h-center">Ch 6: A Function To Create Elementst:</h3>
+                            <p>
+                                We can loop through all of an object’s properties and methods by using a for in loop. For example, 
+                                to log all the properties of the superman object to the console, we could use:
+                            </p>
+                            <pre>
+                                <div class="code-cont">
+                                    <code class="code-box">
+                                        function createElement (tag,text) {
+                                            const el = document.createElement(tag);
+                                            el.textContent = text;
+                                            return el
+                                        }
+                                    </code>
+                                </div>
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="examples-cont">
+                        <h3 class="section-header h-center">Chapter 7: Events</h3>
+                        <iframe src="./pages/events.html" class="document-viewer"></iframe>
                     </div>
                     <div class="examples-cont">
                         <h3 class="section-header h-center">Team Activity:</h3>
@@ -522,7 +498,7 @@ var links = [
                 `
             },
             notes: `
-                <div class="notes-cont">
+                <div id="notes" class="notes-cont">
                     <div class="notes-sub-cont">
                         <h3 class="notes-header">Reading Notes</h3>
                         <div class="reading-subjects">
@@ -583,7 +559,7 @@ var links = [
                 </div>`
                 ,
             tasks: 
-                `<div class="tasks">
+                `<div id="tasks"class="tasks">
                     <h3 class="tasks-header h-center">
                         Tasks:
                     </h3>
@@ -623,7 +599,7 @@ var links = [
                     </div>
                 </div>`,
             next: 
-                `<div class="tasks">
+                `<div id="notes" class="tasks">
                     <h3 class="tasks-header h-center">
                         Next Steps
                     </h3>
@@ -642,7 +618,7 @@ var links = [
             title: 'Week 4',
             reading: {
                 subjects: `
-                <div class="subjects-cont">
+                <div id="subjects" class="subjects-cont">
                     <h3 class="subjects-header h-center">Chapter 2 Subjects</h3>
                     <ul>
                         <li>TChapter 8 - Forms (Links to an external site.)</li>
@@ -652,7 +628,7 @@ var links = [
                 </div>`,
                 
                 examples: `
-                <div class="examples-cont">
+                <div id="examples" class="examples-cont">
                     <h3 class="section-header h-center">W04 Individual Activity: Javascript Form Validation</h3>
                     <iframe src="./pages/w04_js_form_validation.html" class="document-viewer"></iframe>
                     
@@ -667,12 +643,8 @@ var links = [
                     `
                 },
             notes: `
-                <div class="notes-cont">
+                <div id="notes" class="notes-cont">
                     <h3 class="notes-header h-center">Team Assignment Notes</h3>
-                    <p>
-                        We are Group 4 and we met on Wednesday 4/29/2021 from 8:00pm to 9:30pm CST. 
-                        Our group members were: Aaron Ameny (me), Erin Engler, Joseph Watt and Catteara Neyman.
-                    </p>
                     <p>
                         Erin helped us all with using Git as well as with the assignment.
                         I was able to help with some of the debugging and hopefully I didn't teach any bad habbits.
@@ -681,7 +653,7 @@ var links = [
                 </div>
                 `,
             tasks: 
-                `<div class="tasks-cont">
+                `<div id="tasks" class="tasks-cont">
                     <h3 class="tasks-header h-center">Steps to set up my Coding Environment</h3>
                     <ol class"num-list">
                         <li>Download Code Editor</li>
@@ -689,9 +661,101 @@ var links = [
                         <li>Download Set up Github</li>
                         <li>Download Code Editor</li>
                     </ol>
-                </div>`
-            
-        }
+                </div>
+                
+                `
+            },
+        {
+            week: 'w5',
+            title: 'Week 5',
+            reading: {
+                subjects: `
+                <div id="subjects" class="subjects-cont">
+                    <h3 class="subjects-header h-center">Chapter 10 Subjects</h3>
+                    <ul>
+                        <li>TChapter 10 - Testing & Debugging</li>
+                    </ul>
+                </div>`,
+                
+                examples: `
+                <div id="examples" class="examples-cont">
+                    <h3 class="section-header h-center">W05 Individual Activity: Javascript Form Validation</h3>
+                    <iframe src="./pages/w04_js_form_validation.html" class="document-viewer"></iframe>
+                    
+                </div>
+                    
+                <div class="examples-cont">
+                    <h3 class="section-header h-center">W05 Team Activity:</h3>
+                    <iframe src="./pages/hiking-start.html" class="document-viewer ht-300"></iframe>
+                </div>
+                
+                        
+                    `
+                },
+            notes: `
+                <div id="notes" class="notes-cont">
+                    <h3 class="notes-header h-center">Team Assignment Notes</h3>
+                    <p>
+                        We are Group 4 and we met on Wednesday 4/29/2021 from 8:00pm to 9:30pm CST. 
+                        Our group members were: Aaron Ameny (me), Erin Engler, Joseph Watt and Catteara Neyman.
+                    </p>
+                    <p>
+                        
+                    </p>
+                </div>
+                `,
+            tasks: 
+                `<div id="tasks" class="tasks-cont">
+                    <h3 class="tasks-header h-center">Steps to set up my Coding Environment</h3>
+                    <ol class"num-list">
+                        <li>Download Code Editor</li>
+                        <li>Download and Install Node</li>
+                        <li>Download Set up Github</li>
+                        <li>Download Code Editor</li>
+                    </ol>
+                </div>
+                
+                `
+        },
+        {
+            week: 'w6',
+            title: 'Week 6',
+            reading: {
+                subjects: `
+                <div id="subjects" class="subjects-cont">
+                    <h3 class="subjects-header h-center">Mid Term</h3>
+                    <ul>
+                        <li>To Do List Project</li>
+                       
+                    </ul>
+                </div>`,
+                
+                examples: `
+                <div id="examples" class="examples-cont">
+                    <h3 class="section-header h-center">W04 Individual Activity: Javascript Form Validation</h3>
+                    <iframe src="./pages/hiking_start.html" class="document-viewer"></iframe>
+                    
+                </div>
+                        
+                    `
+                },
+            notes: `
+                <div id="notes" class="notes-cont">
+                    
+                </div>
+                `,
+            tasks: 
+                `<div id="tasks" class="tasks-cont">
+                    <h3 class="tasks-header h-center">Steps to set up my Coding Environment</h3>
+                    <ol class"num-list">
+                        <li>Download Code Editor</li>
+                        <li>Download and Install Node</li>
+                        <li>Download Set up Github</li>
+                        <li>Download Code Editor</li>
+                    </ol>
+                </div>
+                
+                `}
         
         ] 
       
@@ -706,22 +770,45 @@ var links = [
       
       
    window.onload = function(e){
-    //alert(result);
-        
-    var nav = document.getElementById('nav');
+    let nav = document.getElementById('nav');
     links.forEach(function(link, index){
-        var label = document.createElement("LABEL");
-        var a = document.createElement("A");
-        //var li = document.createElement("LI");
+        let div_link_cont = document.createElement('DIV');
+        div_link_cont.classList.add('header-link-cont');
+        let h3 = document.createElement('H3');
+        let a = document.createElement('A');
+        let div_sub_links = document.createElement('DIV');
         a.text = link.label;
-        a.href = link.url;
+        a.href = '#' + link.week;
+        a.classList.add('head-link-a');
+        h3.text = 'link.label';
+        h3.classList.add('nav-link-header');
+        h3.id = 'head-link-' + link.week;
+        h3.appendChild(a);
+        div_link_cont.appendChild(h3);
+
+        div_sub_links.classList.add('sub-links-cont>');
+
+        var this_week = weeks.filter(x => x.week == link.week)[0];
+       
+        if(this_week.reading.examples){
+            div_sub_links.innerHTML += `<a href="${link.week}-subjects" class="sub-link-a">Examples</a>`;
+        }      
+        if(this_week.reading){
+            div_sub_links.innerHTML += `<a href="${link.week}-reading" class="sub-link-a">Reading</a>`;
+        }
+        if(this_week.reading.subjects){
+            div_sub_links.innerHTML += `<a href="${link.week}-subjects" class="sub-link-a">Subjects</a>`;
+        }
+        if(this_week.notes){
+            div_sub_links.innerHTML += `<a href="${link.week}-subjects" class="sub-link-a">Notes</a>`;
+        }
+        if(this_week.team){
+            div_sub_links.innerHTML += `<a href="#${link.week}-team" class="sub-link-a">Team Activity</a>`;
+        }
+
+        div_link_cont.appendChild(div_sub_links);
+        nav.appendChild(div_link_cont);
         if(link.active == true){
-            
-        
-            //li.appendChild(label);
-            //li.appendChild(a);
-            nav.appendChild(a);
-            //var id = document.getElementById("31");
             var week = weeks.filter(x => x.week == link.week)[0];
             a.addEventListener("click", function(e){
                 e.preventDefault();
@@ -732,26 +819,9 @@ var links = [
             if(lastPageNav == link.week){
                 loadPage(week);
             }
-           /* if(weeks[index].reading.scripts){
-                //weeks[index].reading.scripts();
-            }
-            */
             
         }
-       /* if(link.sub_links){
-            var ul = document.createElement("UL");
-            nav.appendChild(ul);
-            link.sub_links.forEach(function(sub_link){
-                var sa = document.createElement("A");
-                sa.text = sub_link.label;
-                sa.href = sub_link.url;
-                var li = document.createElement("LI");
-                ul.appendChild(li);
-                li.appendChild(sa);
-                
-            });
-        }*/
-         //or something of the likes
+       
     });
 
 

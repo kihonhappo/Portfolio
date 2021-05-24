@@ -74,7 +74,7 @@ const tic_tac_toe = {
         var vi = this;
         
         play_board.forEach((e, i) => {
-            board_container.innerHTML += `<div id="block_${i}" data-num="${i}" onclick="tic_tac_toe.addPlayerMove(${i})" class="block">${play_board[i]}</div>`;
+            board_container.innerHTML += `<div id="block_${i}" data-num="${i}" ontouchcancel="tic_tac_toe.addPlayerMove(${i})" onclick="tic_tac_toe.addPlayerMove(${i})" class="block">${play_board[i]}</div>`;
             if (e == vi.player || e == vi.computer) {
                 document.getElementById('block_' + i).classList.add("occupied");
             }
@@ -124,7 +124,7 @@ const tic_tac_toe = {
 }
 
 
-//initial render
+//initial render  .addEventListener("touchcancel", myScript);
 window.onload = function(e){
     tic_tac_toe.loadBoard(tic_tac_toe);
     document.getElementById('board-reset-btn').addEventListener('click', function(){

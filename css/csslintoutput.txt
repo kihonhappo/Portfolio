@@ -1,0 +1,254 @@
+
+main.css
+   2:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+   3:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+   5:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+   5:6    ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+   6:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+   6:17   ✖  Expected single space after ":" with a single-line declaration       declaration-colon-space-after                 
+   6:17   ✖  Unexpected missing generic font family                               font-family-no-missing-generic-family-keyword 
+   6:25   ✖  Expected newline after ";" in a multi-line declaration block         declaration-block-semicolon-newline-after     
+   6:32   ✖  Expected "#aaaaaa" to be "#aaa"                                      color-hex-length                              
+   6:32   ✖  Expected single space after ":" with a single-line declaration       declaration-colon-space-after                 
+   7:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+   9:2    ✖  Expected indentation of 0 spaces                                     indentation                                   
+   9:12   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  10:7    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  11:7    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  11:15   ✖  Expected single space after ":" with a single-line declaration       declaration-colon-space-after                 
+  11:16   ✖  Unexpected unit                                                      length-zero-no-unit                           
+  12:7    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  12:18   ✖  Expected single space after ":" with a single-line declaration       declaration-colon-space-after                 
+  13:7    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  14:2    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  15:2    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  15:12   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  15:13   ✖  Expected no more than 1 declaration                                  declaration-block-single-line-max-declarations
+  15:14   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  15:20   ✖  Expected single space after ":" with a single-line declaration       declaration-colon-space-after                 
+  15:89   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  16:2    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  16:12   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  16:13   ✖  Expected no more than 1 declaration                                  declaration-block-single-line-max-declarations
+  16:14   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  16:20   ✖  Expected single space after ":" with a single-line declaration       declaration-colon-space-after                 
+  16:50   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  17:2    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  17:13   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  17:14   ✖  Expected no more than 1 declaration                                  declaration-block-single-line-max-declarations
+  17:15   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  17:21   ✖  Expected single space after ":" with a single-line declaration       declaration-colon-space-after                 
+  17:90   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  18:2    ✖  Unexpected whitespace at end of line                                 no-eol-whitespace                             
+  19:2    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  19:10   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  19:12   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  19:30   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  19:32   ✖  Expected newline after "}"                                           block-closing-brace-newline-after             
+  19:32   ✖  Unexpected whitespace at end of line                                 no-eol-whitespace                             
+  21:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  21:18   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  22:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  22:22   ✖  Expected newline after ";" in a multi-line declaration block         declaration-block-semicolon-newline-after     
+  22:22   ✖  Unexpected whitespace at end of line                                 no-eol-whitespace                             
+  23:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  23:19   ✖  Expected newline after ";" in a multi-line declaration block         declaration-block-semicolon-newline-after     
+  23:19   ✖  Unexpected whitespace at end of line                                 no-eol-whitespace                             
+  24:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  25:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  27:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  27:7    ✖  Unexpected empty block                                               block-no-empty                                
+  28:3    ✖  Expected empty line before rule                                      rule-empty-line-before                        
+  28:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  29:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  29:11   ✖  Expected single space after ":" with a single-line declaration       declaration-colon-space-after                 
+  30:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  31:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  31:16   ✖  Expected single space after ":" with a single-line declaration       declaration-colon-space-after                 
+  32:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  33:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  34:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  35:3    ✖  Expected empty line before rule                                      rule-empty-line-before                        
+  35:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  36:4    ✖  Unexpected whitespace at end of line                                 no-eol-whitespace                             
+  37:5    ✖  Unexpected empty line before declaration                             declaration-empty-line-before                 
+  37:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  37:13   ✖  Expected single space after ":" with a single-line declaration       declaration-colon-space-after                 
+  38:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  38:16   ✖  Expected single space after ":" with a single-line declaration       declaration-colon-space-after                 
+  39:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  39:13   ✖  Expected single space after ":" with a single-line declaration       declaration-colon-space-after                 
+  40:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  40:11   ✖  Expected single space after ":" with a single-line declaration       declaration-colon-space-after                 
+  41:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  41:11   ✖  Expected single space after ":" with a single-line declaration       declaration-colon-space-after                 
+  42:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  43:3    ✖  Expected empty line before rule                                      rule-empty-line-before                        
+  43:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  44:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  44:11   ✖  Expected single space after ":" with a single-line declaration       declaration-colon-space-after                 
+  45:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  45:11   ✖  Expected single space after ":" with a single-line declaration       declaration-colon-space-after                 
+  46:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  46:13   ✖  Expected single space after ":" with a single-line declaration       declaration-colon-space-after                 
+  47:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  48:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  49:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  50:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  51:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  52:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  53:3    ✖  Expected empty line before rule                                      rule-empty-line-before                        
+  53:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  54:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  55:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  56:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  57:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  58:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  59:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  60:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  61:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  62:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  64:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  64:11   ✖  Expected newline after ","                                           selector-list-comma-newline-after             
+  64:21   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  64:23   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  64:38   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  66:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  66:15   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  66:17   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  66:35   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  67:4    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  67:14   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  67:16   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  67:29   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  68:4    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  68:17   ✖  Expected newline after ","                                           selector-list-comma-newline-after             
+  68:33   ✖  Expected newline after ","                                           selector-list-comma-newline-after             
+  68:47   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  68:65   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  70:4    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  70:14   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  70:15   ✖  Expected no more than 1 declaration                                  declaration-block-single-line-max-declarations
+  70:16   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  70:53   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  71:3    ✖  Unexpected whitespace at end of line                                 no-eol-whitespace                             
+  73:4    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  73:8    ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  73:10   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  73:26   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  74:4    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  74:14   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  74:16   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  74:37   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  75:4    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  75:12   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  75:13   ✖  Expected no more than 1 declaration                                  declaration-block-single-line-max-declarations
+  75:14   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  75:70   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  76:4    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  76:19   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  76:20   ✖  Expected no more than 1 declaration                                  declaration-block-single-line-max-declarations
+  76:21   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  76:65   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  77:4    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  77:18   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  77:19   ✖  Expected no more than 1 declaration                                  declaration-block-single-line-max-declarations
+  77:20   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  77:120  ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  78:4    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  78:19   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  78:20   ✖  Expected no more than 1 declaration                                  declaration-block-single-line-max-declarations
+  78:21   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  78:92   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  79:3    ✖  Expected empty line before at-rule                                   at-rule-empty-line-before                     
+  79:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  79:36   ✖  Expected single space after ":"                                      media-feature-colon-space-after               
+  80:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  81:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  81:10   ✖  Expected newline after ","                                           selector-list-comma-newline-after             
+  81:17   ✖  Expected newline after ","                                           selector-list-comma-newline-after             
+  82:7    ✖  Expected indentation of 4 spaces                                     indentation                                   
+  82:13   ✖  Expected single space after ":" with a single-line declaration       declaration-colon-space-after                 
+  83:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  84:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  84:9    ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  84:11   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  84:22   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  85:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  85:10   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  85:12   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  85:23   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  86:2    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  86:8    ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  86:10   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  86:23   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  87:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  87:9    ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  87:10   ✖  Expected no more than 1 declaration                                  declaration-block-single-line-max-declarations
+  87:11   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  87:96   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  88:4    ✖  Unexpected whitespace at end of line                                 no-eol-whitespace                             
+  89:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  89:20   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  89:22   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  89:34   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  90:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  91:1    ✖  Unexpected whitespace at end of line                                 no-eol-whitespace                             
+  92:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  92:10   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  92:11   ✖  Expected no more than 1 declaration                                  declaration-block-single-line-max-declarations
+  92:12   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  92:44   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  93:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  93:11   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  93:13   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+  93:28   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+  94:3    ✖  Expected empty line before rule                                      rule-empty-line-before                        
+  94:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+  94:5    ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+  95:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  95:27   ✖  Expected newline after ";" in a multi-line declaration block         declaration-block-semicolon-newline-after     
+  95:27   ✖  Unexpected whitespace at end of line                                 no-eol-whitespace                             
+  96:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  96:19   ✖  Unexpected unit                                                      length-zero-no-unit                           
+  97:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  98:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+  99:5    ✖  Expected indentation of 2 spaces                                     indentation                                   
+ 100:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+ 101:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+ 101:12   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+ 101:14   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+ 101:43   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+ 102:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+ 102:12   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+ 102:13   ✖  Expected no more than 1 declaration                                  declaration-block-single-line-max-declarations
+ 102:14   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+ 102:26   ✖  Expected single space after ";" in a single-line declaration block   declaration-block-semicolon-space-after       
+ 102:38   ✖  Unexpected unit                                                      length-zero-no-unit                           
+ 102:57   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+ 103:2    ✖  Expected indentation of 0 spaces                                     indentation                                   
+ 103:13   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+ 103:15   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+ 103:25   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+ 104:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+ 104:6    ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+ 104:8    ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+ 104:18   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+ 105:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+ 105:8    ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+ 105:10   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+ 105:22   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+ 106:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+ 106:11   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+ 106:13   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+ 106:24   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+ 107:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+ 107:20   ✖  Expected single space before "{"                                     block-opening-brace-space-before              
+ 107:21   ✖  Expected no more than 1 declaration                                  declaration-block-single-line-max-declarations
+ 107:22   ✖  Expected single space after "{" of a single-line block               block-opening-brace-space-after               
+ 107:56   ✖  Expected single space before "}" of a single-line block              block-closing-brace-space-before              
+ 108:3    ✖  Expected indentation of 0 spaces                                     indentation                                   
+ 108:19   ✖  Unexpected empty block                                               block-no-empty                                
+ 109:2    ✖  Unexpected whitespace at end of line                                 no-eol-whitespace                             
+ 109:2    ✖  Unexpected missing end-of-source newline                             no-missing-end-of-source-newline
+
