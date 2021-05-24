@@ -27,21 +27,21 @@ var links = [
     },
     {
         week: "w4",
-        label: "Week 4 Notes",
+        label: "Week 4",
         active: true,
         url: "weeks/week4.js",
         
     },
     {
         week: "w5",
-        label: "Week 5 Notes",
+        label: "Week 5",
         active: true,
         url: "weeks/week4.js",
         
     },
     {
         week: "w6",
-        label: "Week 6325 Notes",
+        label: "Week 6",
         active: true,
         url: "weeks/week4.js",
         
@@ -681,15 +681,11 @@ var links = [
                 <div id="examples" class="examples-cont">
                     <h3 class="section-header h-center">W05 Individual Activity: Javascript Form Validation</h3>
                     <iframe src="./pages/w04_js_form_validation.html" class="document-viewer"></iframe>
-                    
                 </div>
-                    
                 <div class="examples-cont">
                     <h3 class="section-header h-center">W05 Team Activity:</h3>
                     <iframe src="./pages/hiking-start.html" class="document-viewer ht-300"></iframe>
                 </div>
-                
-                        
                     `
                 },
             notes: `
@@ -790,7 +786,7 @@ var links = [
 
         var this_week = weeks.filter(x => x.week == link.week)[0];
        
-        if(this_week.reading.examples){
+      /*  if(this_week.reading.examples){
             div_sub_links.innerHTML += `<a href="${link.week}-subjects" class="sub-link-a">Examples</a>`;
         }      
         if(this_week.reading){
@@ -806,7 +802,7 @@ var links = [
             div_sub_links.innerHTML += `<a href="#${link.week}-team" class="sub-link-a">Team Activity</a>`;
         }
 
-        div_link_cont.appendChild(div_sub_links);
+        div_link_cont.appendChild(div_sub_links);*/
         nav.appendChild(div_link_cont);
         if(link.active == true){
             var week = weeks.filter(x => x.week == link.week)[0];
