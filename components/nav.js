@@ -679,8 +679,8 @@ var links = [
                 
                 examples: `
                 <div id="examples" class="examples-cont">
-                    <h3 class="section-header h-center">W05 Individual Activity: Javascript Form Validation</h3>
-                    <iframe src="./pages/w04_js_form_validation.html" class="document-viewer"></iframe>
+                    <h3 class="section-header h-center">W05 Individual Activity: To Do List</h3>
+                    
                 </div>
                 <div class="examples-cont">
                     <h3 class="section-header h-center">W05 Team Activity:</h3>
