@@ -1,6 +1,6 @@
 
 
-import TodoList from '/modules/todo/todo-list.js';
+import TodoList from '/Portfolio/modules/todo/todo-list.js';
 
 
 const td_list = new TodoList();
