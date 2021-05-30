@@ -31,7 +31,12 @@
 <body>
 
   <div class="title-cont">
-    <div class="left-title">WDD 330 Front End</div>
+    <div class="left-title">
+      <select id="subjects" class="form-control left-title">
+        <option value="wdd-330">WDD 330: Front End Dev</option>
+        <option value="wdd-331">WDD 331: Advanced CSS</option>
+      </select>
+    </div>
     <h1 id="top-header">Aaron's Portfolio</h1>
     <div class="right-title">Aaron Ameny</div>
   </div>
@@ -50,11 +55,25 @@
     </div>
   </div>
   <script src="js/main.js"></script>
-  <script src="components/nav.js"></script>
+  <script type="module" src="components/nav.js"></script>
   
 
  
   <script>
+      document.getElementById('subjects').addEventListener('change', function(event){
+          let subject = event.target.value;
+          switch(subject){
+            case 'wdd-330':addEventListener
+              links = wdd_330_links;
+              weeks = wdd_330_weeks;
+              break;
+            case 'wdd-331':
+              links = wdd_331_links;
+              weeks = wdd_331_weeks;
+              break;
+          }
+          weeks = subject;
+      });
      function loadPage(week){
         document.getElementById('top-header').innerHTML = week.title;
         document.getElementById('main').innerHTML = week.reading.subjects + week.reading.examples;

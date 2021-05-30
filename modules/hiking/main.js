@@ -1,2 +1,4 @@
+import Bugger from '../components/bugger.js';
 
-alert('main');
+let debug = new Bugger();
+

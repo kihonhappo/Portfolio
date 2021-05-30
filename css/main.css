@@ -60,7 +60,9 @@
     overflow-y: auto;
     height: 800px;
   }
-
+.form-control{padding: 5px;}
+select.form-control{min-width: 150px;}
+#subjects{width: 100%};
   .right p, .right li{font-size: 12px;}
 
   .notes-header{text-align: center;}

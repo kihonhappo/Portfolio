@@ -1,12 +1,13 @@
 
 export default class bugger {
     constructor() {
-      
+      //alert('bugger');
       // we need a back button to return back to the list. This will build it and hide it. When we need it we just need to remove the 'hidden' class
       this.bugger_ele = `
         <style>
-          .debug-cont{width: 400px; height: 200px; margin-bottom: 20px;}
-          .debug-txt-area{width: 100%; height: 100%;}
+          .debug-cont{width: 400px; height: 200px; margin-bottom: 20px; padding-top: 20px; margin: 0 auto;}
+          .debug-cont label{color: white;}
+          .debug-txt-area{width: 100%; height: 100%; padding: 10px; margin-top: 20px;}
         </style>
         <hr />
         <div class="debug-cont">
@@ -15,30 +16,31 @@ export default class bugger {
         </div>
       `;
 
-      //alert('bugger Constructor');
-      //Create the element using the createElement method.
+     
       
-
-      //Set its unique ID.
-      //myDiv.id = 'debug-cont';
-
-      //Add your content to the DIV
-      
-
-      //Finally, append the element to the HTML body
-      //alert(!!document.getElementById("bugger"));
-      if(!document.getElementById("bugger")){
-        var myDiv = document.createElement("div");
-        myDiv.innerHTML = this.bugger_ele;
-        document.body.appendChild(myDiv); 
-      }
       
       //document.body.appendChild(this.bugger_ele);
 
     }
+    showDebug(bool){
+      if(bool == true){
+        if(!document.getElementById("bugger-cont")){
+          var buggerDiv = document.createElement("div");
+          buggerDiv.id = 'bugger-cont';
+          buggerDiv.innerHTML = this.bugger_ele;
+          document.body.appendChild(buggerDiv); 
+        }
+      }
+      else{
+        if(document.getElementById("bugger-cont")){
+          let bugDiv = document.getElementById("bugger-cont");
+          bugDiv.remove(); 
+        }
+      }
+    }
 
     changeBuggerTitle(txt){
-      document.querySelector('[for="bugger"]').innerHTML = txt;
+      document.querySelector('[for="bugger"]').innerHTML = 'Debug: ' + txt;
     }
    
     loadBugger(val) {

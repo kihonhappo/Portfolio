@@ -1,5 +1,13 @@
 
-var links = [
+const wdd_331_links = [
+    {
+        week: "zen",
+        label: "Zen Garden",
+        active: true,
+        url: "weeks/week1.js"
+    },
+]
+const wdd_330_links = [
     {
         week: "w1",
         label: "Week 1: Setup and Review",
@@ -27,29 +35,33 @@ var links = [
     },
     {
         week: "w4",
-        label: "Week 4",
+        label: "Week 4: Modular, OOP and Forms",
         active: true,
         url: "weeks/week4.js",
         
     },
     {
         week: "w5",
-        label: "Week 5",
+        label: "Week 5: Testing & Debugging",
         active: true,
         url: "weeks/week4.js",
         
     },
     {
         week: "w6",
-        label: "Week 6",
+        label: "Week 6: Midterm Project",
         active: true,
         url: "weeks/week4.js",
         
     }
   ]
 
+
+
  //  window.onload = function(e){
-    var weeks = [
+ 
+    
+const front_weeks =    [
         {   
             week: 'w1',
             title: 'Week 1: Workspace and Dependancies Setup',
@@ -175,20 +187,43 @@ var links = [
             reading: {
                 subjects: `
                 <div id="subjects" class="subjects-cont">
-                    <h3 class="subjects-header h-center">Chapter 2 Subjects</h3>
-                    <ul>
-                        <li>The importance of well-commented code</li>
-                        <li>JavaScript grammar ― expressions, statements, semicolons and whitespace</li>
-                        <li>Primitive data types</li>
-                        <li>Strings ― string literals, string properties and methods</li>
-                        <li>Declaring and assigning constants and variables</li>
-                        <li>Numbers ― decimal, hexadecimal, octal, binary and exponent form, Infinity, and NaN</li>
-                        <li>Arithmetic operations such as +, -, *, /, and %</li>
-                        <li>Undefined and null</li>
-                        <li>Booleans ― truthy and falsy values</li>
-                        <li>Logical operators ― AND, OR, and NOT</li>
-                        <li>Our project ― we’ll set some question-and-answer variables and use alert boxes to display them</li>
-                    </ul>
+                    <h3 class="subjects-header h-center">Week 2 Study Subjects</h3>
+                    <ol>
+                        <li>
+                            <a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read" target="_blank" rel="noreferrer">Ch2: Programming basics</a>
+                        </li>
+                        <li>
+                            <a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read" target="_blank" rel="noreferrer">Ch3: Arrays, Logic, and Loops</a>
+                        </li>
+                        <li>
+                            <a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read" target="_blank" rel="noreferrer">Ch4: Functions</a>
+                        </li>
+                        <li>
+                            <a href="http://eloquentjavascript.net/code" target="_blank" rel="noreferrer">this code sandbox</a>
+                        </li>
+                        <li>
+                            <a href="http://eloquentjavascript.net/index.html" target="_blank" rel="noreferrer">Eloquent JavaScript (EJS)</a>
+                        </li>
+                        <li>
+                            <p>
+                                Other Resources for finding Javascript exercises
+                            </p>
+                            <ul>
+                            <li>
+                                <a href="https://www.w3resource.com/javascript-exercises/" target="_blank">W3Resource</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/workshopper/javascripting/tree/master/problems" target="_blank">NodeSchool-Github</a>
+                            </li>
+                            <li>
+                                <a href="https://www.jshero.net/en/success.html" target="_blank">JS Hero</a>
+                            </li>
+                            <li>
+                                <a href="https://javascript30.com" target="_blank">Javascript30</a>
+                            </li>
+                            </ul>
+                        </li>
+                    </ol>
                 </div>`,
                 examples: `
                     <div id="examples" class="examples-cont">
@@ -323,7 +358,7 @@ var links = [
             reading: {
                 subjects: `
                     <div id="subjects" class="subject-list">
-                        <h3 class="subjects-header h-center">Study Subjects</h3>
+                        <h3 class="subjects-header h-center">Week 3 Study Subjects</h3>
                         <ol class="reading-outline">
                             <li>Object Methods: this.</li>
                             <li>This is Javascript</li>
@@ -619,7 +654,7 @@ var links = [
             reading: {
                 subjects: `
                 <div id="subjects" class="subjects-cont">
-                    <h3 class="subjects-header h-center">Chapter 2 Subjects</h3>
+                    <h3 class="subjects-header h-center">Week 4 Subjects</h3>
                     <ul>
                         <li>TChapter 8 - Forms (Links to an external site.)</li>
                         <li>Chapter 12 - OOP (Links to an external site.)</li>
@@ -671,17 +706,14 @@ var links = [
             reading: {
                 subjects: `
                 <div id="subjects" class="subjects-cont">
-                    <h3 class="subjects-header h-center">Chapter 10 Subjects</h3>
+                    <h3 class="subjects-header h-center">Week 5 Study Subjects</h3>
                     <ul>
                         <li>TChapter 10 - Testing & Debugging</li>
                     </ul>
                 </div>`,
                 
                 examples: `
-                <div id="examples" class="examples-cont">
-                    <h3 class="section-header h-center">W05 Individual Activity: To Do List</h3>
-                    
-                </div>
+                
                 <div class="examples-cont">
                     <h3 class="section-header h-center">W05 Team Activity:</h3>
                     <iframe src="./pages/hiking-start.html" class="document-viewer ht-300"></iframe>
@@ -719,7 +751,7 @@ var links = [
             reading: {
                 subjects: `
                 <div id="subjects" class="subjects-cont">
-                    <h3 class="subjects-header h-center">Mid Term</h3>
+                    <h3 class="subjects-header h-center">Week 6: Mid Term</h3>
                     <ul>
                         <li>To Do List Project</li>
                        
@@ -728,9 +760,8 @@ var links = [
                 
                 examples: `
                 <div id="examples" class="examples-cont">
-                    <h3 class="section-header h-center">W04 Individual Activity: Javascript Form Validation</h3>
-                    <iframe src="./pages/hiking_start.html" class="document-viewer"></iframe>
-                    
+                    <h3 class="section-header h-center">W06 Midterm Project: Todo List Component</h3>
+                    <iframe src="./pages/todo.html" class="document-viewer"></iframe>
                 </div>
                         
                     `
@@ -754,69 +785,62 @@ var links = [
                 `}
         
         ] 
-      
-                    const myObj = Object.assign({
-                name: "Hello"
-            }, {
-                name: "World"
-            }, {
-                name: "!"
-            });
-            const result = myObj.name;
-      
-      
-   window.onload = function(e){
-    let nav = document.getElementById('nav');
-    links.forEach(function(link, index){
-        let div_link_cont = document.createElement('DIV');
-        div_link_cont.classList.add('header-link-cont');
-        let h3 = document.createElement('H3');
-        let a = document.createElement('A');
-        let div_sub_links = document.createElement('DIV');
-        a.text = link.label;
-        a.href = '#' + link.week;
-        a.classList.add('head-link-a');
-        h3.text = 'link.label';
-        h3.classList.add('nav-link-header');
-        h3.id = 'head-link-' + link.week;
-        h3.appendChild(a);
-        div_link_cont.appendChild(h3);
 
-        div_sub_links.classList.add('sub-links-cont>');
+    let links = wdd_330_links;
+    let weeks = front_weeks;
+      
+    window.onload = function(e){
+        let nav = document.getElementById('nav');
+        links.forEach(function(link, index){
+            let div_link_cont = document.createElement('DIV');
+            div_link_cont.classList.add('header-link-cont');
+            let h3 = document.createElement('H3');
+            let a = document.createElement('A');
+            let div_sub_links = document.createElement('DIV');
+            a.text = link.label;
+            a.href = '#' + link.week;
+            a.classList.add('head-link-a');
+            h3.text = 'link.label';
+            h3.classList.add('nav-link-header');
+            h3.id = 'head-link-' + link.week;
+            h3.appendChild(a);
+            div_link_cont.appendChild(h3);
 
-        var this_week = weeks.filter(x => x.week == link.week)[0];
-       
-      /*  if(this_week.reading.examples){
-            div_sub_links.innerHTML += `<a href="${link.week}-subjects" class="sub-link-a">Examples</a>`;
-        }      
-        if(this_week.reading){
-            div_sub_links.innerHTML += `<a href="${link.week}-reading" class="sub-link-a">Reading</a>`;
-        }
-        if(this_week.reading.subjects){
-            div_sub_links.innerHTML += `<a href="${link.week}-subjects" class="sub-link-a">Subjects</a>`;
-        }
-        if(this_week.notes){
-            div_sub_links.innerHTML += `<a href="${link.week}-subjects" class="sub-link-a">Notes</a>`;
-        }
-        if(this_week.team){
-            div_sub_links.innerHTML += `<a href="#${link.week}-team" class="sub-link-a">Team Activity</a>`;
-        }
+            div_sub_links.classList.add('sub-links-cont>');
 
-        div_link_cont.appendChild(div_sub_links);*/
-        nav.appendChild(div_link_cont);
-        if(link.active == true){
-            var week = weeks.filter(x => x.week == link.week)[0];
-            a.addEventListener("click", function(e){
-                e.preventDefault();
-                localStorage.setItem("lastPage", link.week);
-                loadPage(week);
-            });
-            var lastPageNav = localStorage.getItem("lastPage");
-            if(lastPageNav == link.week){
-                loadPage(week);
+            var this_week = weeks.filter(x => x.week == link.week)[0];
+        
+        /*  if(this_week.reading.examples){
+                div_sub_links.innerHTML += `<a href="${link.week}-subjects" class="sub-link-a">Examples</a>`;
+            }      
+            if(this_week.reading){
+                div_sub_links.innerHTML += `<a href="${link.week}-reading" class="sub-link-a">Reading</a>`;
             }
-            
-        }
+            if(this_week.reading.subjects){
+                div_sub_links.innerHTML += `<a href="${link.week}-subjects" class="sub-link-a">Subjects</a>`;
+            }
+            if(this_week.notes){
+                div_sub_links.innerHTML += `<a href="${link.week}-subjects" class="sub-link-a">Notes</a>`;
+            }
+            if(this_week.team){
+                div_sub_links.innerHTML += `<a href="#${link.week}-team" class="sub-link-a">Team Activity</a>`;
+            }
+
+            div_link_cont.appendChild(div_sub_links);*/
+            nav.appendChild(div_link_cont);
+            if(link.active == true){
+                var week = weeks.filter(x => x.week == link.week)[0];
+                a.addEventListener("click", function(e){
+                    e.preventDefault();
+                    localStorage.setItem("lastPage", link.week);
+                    loadPage(week);
+                });
+                var lastPageNav = localStorage.getItem("lastPage");
+                if(lastPageNav == link.week){
+                    loadPage(week);
+                }
+                
+            }
        
     });
 
