@@ -1,6 +1,6 @@
 
 import todo_item from './todo-item.js';
-import Bugger from '/components/bugger.js';
+import Bugger from 'components/bugger.js';
 
 //alert('todo list');
 //const todo_obj = 
