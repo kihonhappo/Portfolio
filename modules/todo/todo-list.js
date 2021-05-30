@@ -1,11 +1,11 @@
 
 import todo_item from './todo-item.js';
-import Bugger from '/components/bugger.js';
+//import Bugger from '/components/bugger.js';
 
 //alert('todo list');
 //const todo_obj = 
 const item_todo = new todo_item();
-const debug = new Bugger();
+const debug = '';//new Bugger();
 export default class todoList {
     constructor() {
         this.debug = debug,
@@ -93,7 +93,7 @@ export default class todoList {
         this.app = document.getElementById(ele);
         this.app.innerHTML = this.input;
         let vi = this;
-        this.debug.showDebug(true);
+        //this.debug.showDebug(true);
         const config_cont = document.querySelector('.config-cont');
         this.check_debug = document.getElementById('check_debug');
         this.check_debug.addEventListener('change', function(event){
@@ -157,8 +157,8 @@ export default class todoList {
                 event.preventDefault();
                 let parent = event.target.parentNode;
                 let ele = event.target;
-                vi.debug.changeBuggerTitle('Todo Item Attributes'); 
-                vi.debug.loadBugger('TagName: ' + ele.tagName + ' ClassList: ' + ele.classList);
+                //vi.debug.changeBuggerTitle('Todo Item Attributes'); 
+               // vi.debug.loadBugger('TagName: ' + ele.tagName + ' ClassList: ' + ele.classList);
                 if(ele.classList.contains('delete')){
                     let del = ele;
                     let id = del.id.split('_')[1];
@@ -313,13 +313,13 @@ export default class todoList {
         active_ul.innerHTML = active_li;
         completed_ul.innerHTML = completed_li;
         if(list.config.debug == true){
-            document.querySelector('.debug-cont').classList.remove('hide');
+            //document.querySelector('.debug-cont').classList.remove('hide');
             //this.debug.changeBuggerTitle('Tod Do List');
             //this.debug.loadBugger(JSON.stringify(list));
             this.check_debug.checked = 'checked';
         }
         else{
-            document.querySelector('.debug-cont').classList.add('hide');
+            //document.querySelector('.debug-cont').classList.add('hide');
             this.check_debug.checked = '';
         }
         this.active_cnt.textContent = this.getCnt('active');
