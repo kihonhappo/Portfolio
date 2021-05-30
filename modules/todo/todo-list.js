@@ -1,5 +1,5 @@
-import Bugger from '/Portfolio/modules/components/bugger.js';
-import todo_item from '/Portfolio/modules/modules/todo/todo-item.js';
+import Bugger from '/components/bugger.js';
+import todo_item from './todo-item.js';
 
 //alert('todo list');
 //const todo_obj = 
