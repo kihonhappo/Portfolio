@@ -7,7 +7,10 @@ let comment_list = [];
 export default class hikes {
 
   constructor(){
-    this.imgBasePath = "images/";
+    if(window.location.hostname.indexOf('github') > -1){
+      
+    }
+    this.imgBasePath = "/images/";
     this.hikes = [
       {
         id: 'bechler_falls',
