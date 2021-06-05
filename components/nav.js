@@ -53,6 +53,13 @@ const wdd_330_links = [
         active: true,
         url: "weeks/week4.js",
         
+    },
+    {
+        week: "w7",
+        label: "Week 7: AJAX and the CORS",
+        active: true,
+        url: "weeks/week4.js",
+        
     }
   ]
 
@@ -760,8 +767,47 @@ const front_weeks =    [
                 
                 examples: `
                 <div id="examples" class="examples-cont">
-                    <h3 class="section-header h-center">W06 Midterm Project: Todo List Component</h3>
+                    <h3 class="section-header h-center">W06 Midterm Project: <a title="Open page in Seperate Window" href="./pages/todo.html" target="_blank">Todo List Component</a></h3>
                     <iframe src="./pages/todo.html" class="document-viewer"></iframe>
+                </div>
+                        
+                    `
+                },
+            notes: `
+                <div id="notes" class="notes-cont">
+                    
+                </div>
+                `,
+            tasks: 
+                `<div id="tasks" class="tasks-cont">
+                    <h3 class="tasks-header h-center">Steps to set up my Coding Environment</h3>
+                    <ol class"num-list">
+                        <li>Download Code Editor</li>
+                        <li>Download and Install Node</li>
+                        <li>Download Set up Github</li>
+                        <li>Download Code Editor</li>
+                    </ol>
+                </div>
+                
+                `
+        },
+        {
+            week: 'w7',
+            title: 'Week 7',
+            reading: {
+                subjects: `
+                <div id="subjects" class="subjects-cont">
+                    <h3 class="subjects-header h-center">Week 7: AJAX and the CORS mechanism</h3>
+                    <ul>
+                        <li>Ch11: Further Functions</li>
+                        <li>Ch13: AJAX</li>
+                    </ul>
+                </div>`,
+                
+                examples: `
+                <div id="examples" class="examples-cont">
+                    <h3 class="section-header h-center">W07 Group Project: <a title="Open page in Seperate Window" href="./pages/hikes.html" target="_blank">Stage 2 Hikes Component</a></h3>
+                    <iframe src="./pages/hikes.html" class="document-viewer"></iframe>
                 </div>
                         
                     `
