@@ -809,7 +809,61 @@ const front_weeks =    [
                     <h3 class="section-header h-center">W07 Group Project: <a title="Open page in Seperate Window" href="./pages/hikes.html" target="_blank">Stage 2 Hikes Component</a></h3>
                     <iframe src="./pages/hikes.html" class="document-viewer"></iframe>
                 </div>
+                
+                <div id="css-battle" class="examples-cont">
+                    <h3 class="section-header h-center">W07 CSS Battle: <a title="Open page in Seperate Window" href="./pages/css_battle.html" target="_blank">Site Pointe Logo</a></h3>
+                    <iframe src="./pages/css_battle.html" class="document-viewer"></iframe>
+                </div>
+                <pre>
+                    
+                    <div class="code-cont">
+                        <code class="code-box">
                         
+                        body{
+                          background: #222;
+                        }
+                        div{ 
+                          position: absolute;
+                          top: 50%;
+                          left: 50%;
+                          transform: translate(-50%, -50%) rotate(-45deg);
+                          width: 82px; 
+                          height: 130px;
+                        }
+                        i{
+                          position: absolute;
+                        }
+                        i:nth-child(1) {
+                          width: 100px;
+                          height: 30px;
+                          background: #F2994A;
+                          border-radius: 10px 0 0;
+                        }
+                        i:nth-child(2){
+                          background: #F2994A;
+                          width: 30px;
+                          height: 80px;
+                          border-radius: 10px 0 5px;
+                        }
+                        i:nth-child(3){
+                          background: #2D9CDB;
+                          width: 100px;
+                          height: 30px;
+                          border-radius: 0 0 10px;
+                          bottom: 0px;
+                          right: 0
+                        }
+                        i:nth-child(4){
+                          background: #2D9CDB;
+                          width: 30px;
+                          height: 80px;
+                          border-radius: 5px 0 10px;
+                          bottom: 0px;
+                          right: 0
+                        }
+                        </code>
+                    </div>
+                </pre>        
                     `
                 },
             notes: `
