@@ -66,7 +66,10 @@ const wdd_330_links = [
 
 
  //  window.onload = function(e){
- 
+ const imgBasePath = '';
+ if(window.location.hostname.indexOf('github') > -1){
+  imgBasePath = 'https://kihonhappo.github.io/Portfolio';
+ }
     
 const front_weeks =    [
         {   
