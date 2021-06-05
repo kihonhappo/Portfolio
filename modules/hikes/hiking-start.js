@@ -10,7 +10,7 @@ export default class hikes {
     if(window.location.hostname.indexOf('github') > -1){
 
     }
-    this.imgBasePath = "./images/";
+    this.imgBasePath = ".images/";
     this.hikes = [
       {
         id: 'bechler_falls',
