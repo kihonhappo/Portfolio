@@ -2,8 +2,6 @@
 
 import Comment from './comment.js';
 const comm = new Comment();
-
-
 let comment_list = [];
 
 export default class hikes {
