@@ -56,7 +56,14 @@ const wdd_330_links = [
     },
     {
         week: "w7",
-        label: "Week 7: AJAX and the CORS",
+        label: "Week 7: Hikes: Comments",
+        active: true,
+        url: "weeks/week4.js",
+        
+    },
+    {
+        week: "w8",
+        label: "Week 8: AJAX and the CORS",
         active: true,
         url: "weeks/week4.js",
         
@@ -885,7 +892,47 @@ const front_weeks =    [
                     </ol>
                 </div>
                 
-                `}
+                `
+            },
+            {
+                week: 'w8',
+                title: 'Week 8',
+                reading: {
+                    subjects: `
+                    <div id="subjects" class="subjects-cont">
+                        <h3 class="subjects-header h-center">Week 8: Fetch API</h3>
+                        <ul>
+                            <li>To Do List Project</li>
+                           
+                        </ul>
+                    </div>`,
+                    
+                    examples: `
+                    <div id="examples" class="examples-cont">
+                        <h3 class="section-header h-center">W08 AJAX and the CORS: <a title="Open page in Seperate Window" href="./pages/fetch-api.html" target="_blank">API Integration Component</a></h3>
+                        <iframe src="./pages/fetch-api.html" class="document-viewer"></iframe>
+                    </div>
+                            
+                        `
+                    },
+                notes: `
+                    <div id="notes" class="notes-cont">
+                        
+                    </div>
+                    `,
+                tasks: 
+                    `<div id="tasks" class="tasks-cont">
+                        <h3 class="tasks-header h-center">Steps to set up my Coding Environment</h3>
+                        <ol class"num-list">
+                            <li>Download Code Editor</li>
+                            <li>Download and Install Node</li>
+                            <li>Download Set up Github</li>
+                            <li>Download Code Editor</li>
+                        </ol>
+                    </div>
+                    
+                    `
+            }
         
         ] 
 
