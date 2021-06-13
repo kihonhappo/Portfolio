@@ -8,7 +8,7 @@ export default class Model{
         this.detail = {};
         this.pagination = [];
         this.api_list = [
-            {name: "SWAPI", url: "https://swapi.dev/api/", endPoints: []}
+            {name: "SWAPI", url: "http://swapi.dev/api/", endPoints: []}
         ];
         this.selected_api = this.api_list[0];
         this.current_detail = {};
