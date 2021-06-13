@@ -5,8 +5,8 @@ export default class bugger {
       // we need a back button to return back to the list. This will build it and hide it. When we need it we just need to remove the 'hidden' class
       this.bugger_ele = `
         <style>
-          .debug-cont{width: 400px; height: 200px; margin-bottom: 20px; padding-top: 20px; margin: 0 auto;}
-          .debug-cont label{color: white;}
+          .debug-cont{width: 100%; height: 200px; margin-bottom: 20px; padding-top: 20px; margin: 0 auto; border-top: 2px solid black; clear: both;}
+          .debug-cont label{color: black;}
           .debug-txt-area{width: 100%; height: 100%; padding: 10px; margin-top: 20px;}
         </style>
         <hr />
