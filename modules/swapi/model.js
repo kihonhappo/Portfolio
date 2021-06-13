@@ -8,7 +8,7 @@ export default class Model{
         this.detail = {};
         this.pagination = [];
         this.api_list = [
-            {name: "SWAPI", url: "http://swapi.dev/api/", endPoints: []}
+            {name: "SWAPI", url: "https://swapi.dev/api/", endPoints: []}
         ];
         this.selected_api = this.api_list[0];
         this.current_detail = {};
@@ -27,6 +27,9 @@ export default class Model{
             //alert('model sub endpoints');
             //this.selected_api = this.api_list.filter(x => x.name.toLowerCase() == api.toLowerCase())[0];
             let url = api.url;
+            if(url.indexOf('https') == -1){
+                url = url.replace('http', 'https');
+            }
             //alert('Model: Sub End Points: before fetch ' + url);
             let vi = this;
             fetch(url)
@@ -43,6 +46,9 @@ export default class Model{
         else{
             this.selected_api = this.api_list.filter(x => x.name.toLowerCase() == api.toLowerCase())[0];
             let url = this.selected_api.url;
+            if(url.indexOf('https') == -1){
+                url = url.replace('http', 'https');
+            }
            //alert('else');
             let vi = this;
             fetch(url)
@@ -59,7 +65,11 @@ export default class Model{
     }
     getEndPoint(api, view){
         let vi = this;
-        fetch(api.url)
+        let url = api.url;
+        if(url.indexOf('https') == -1){
+            url = url.replace('http', 'https');
+        }
+        fetch(url)
             .then(response => response.json())
             .then(result => {
                 //alert('in model: ' + JSON.stringify(result));
@@ -74,6 +84,10 @@ export default class Model{
     }
     getDetail(api, view){
         let vi = this;
+        let url = api;
+        if(url.indexOf('https') == -1){
+            url = url.replace('http', 'https');
+        }
         fetch(api)
             .then(response => response.json())
             .then(result => {
