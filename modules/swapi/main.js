@@ -1,6 +1,6 @@
 import Model from './model.js';
 import View from './view.js';
-import Bugger from '/components/bugger.js';
+import Bugger from './bugger.js';
 const debug = new Bugger();
 
 import Controller from './controller.js';
