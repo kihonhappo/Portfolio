@@ -3,7 +3,7 @@
 export default class View{
     constructor(){
         this.parent = {};
-        this.debug = true;
+        this.debug = false;
         this.debugger = {};
         // The root element
         this.app = document.getElementById('app');
@@ -53,8 +53,15 @@ export default class View{
         this.table_cont = this.createElement('div', 'table-cont');
         this.table_title = this.createElement('h3', 'table-title');
         this.table_title.textContent = 'Results Table';
-        this.table = this.createElement('table', 'results-table');
-        this.table_cont.append(this.table_title, this.table);
+        this.headers_cont = this.createElement('div', 'headers-cont');
+        this.table_headers = this.createElement('table', 'results-table');
+        this.table_headers.id = 'results-headers';
+        this.headers_cont.append(this.table_headers);
+        this.body_cont = this.createElement('div', 'body-cont');
+        this.table_body = this.createElement('table', 'results-table');
+        this.table_body.id = 'results-body';
+        this.body_cont.append(this.table_body);
+        this.table_cont.append(this.table_title, this.headers_cont, this.body_cont);
         // Build and add the Pagination container
         this.page_cont = this.createElement('div', 'page-cont');
         this.pages = this.createElement('div', 'pages');
@@ -70,12 +77,14 @@ export default class View{
         this.details_title = this.createElement('h3', 'details-title');
 
         this.details_title.textContent = 'Selected Details';
+
         this.details_back_btn = this.createElement('buttton', 'btn');
         this.details_back_btn.classList.add('btn-back');
         this.details_back_btn.textContent = 'Back';
+        this.details_title.append(this.details_back_btn);
 
-        this.details = this.createElement('table', 'details-table');
-        this.details_cont.append(this.details_back_btn, this.details_title, this.details);
+        this.details = this.createElement('div', 'details');
+        this.details_cont.append(this.details_title, this.details);
         this.app.append(this.details_cont);
 
        //this.table.tr.td.addEventListener('click', )
@@ -100,9 +109,14 @@ export default class View{
         this.parent.onApiChanged('end', this.apiList.value);
         this.endPointsList.addEventListener('change', function(event){
             let sel = event.target;
-            vi.debugger.changeBuggerTitle('View : end point change' + vi.selected_api.name);
-            vi.debugger.loadBugger(JSON.stringify(vi.selectedIndex));
+            /*vi.debugger.changeBuggerTitle('View : end point change' + vi.selected_api.name);
+            vi.debugger.loadBugger(JSON.stringify(vi.selectedIndex));*/
             let end_point = {name: sel.options[sel.selectedIndex].text, url: sel.value};
+            if(vi.table_cont.classList.contains('hide')){
+                vi.table_cont.classList.toggle('hide');
+                vi.details_cont.classList.toggle('hide');
+            }
+            
             if(vi.selected_api.name == 'POKEMON'){
                 //alert('view: POKEMON: Endpoints');
                 vi.parent.onApiChanged('sub-end-point', end_point);
@@ -115,11 +129,21 @@ export default class View{
         this.subEndPointsList.addEventListener('change', function(event){
             let sel = event.target;
             let end_point = {name: sel.options[sel.selectedIndex].text, url: sel.value};
-            vi.debugger.changeBuggerTitle('View : sub end point change' + vi.selected_api.name);
-            vi.debugger.loadBugger(JSON.stringify(vi.selectedIndex));
+           /* vi.debugger.changeBuggerTitle('View : sub end point change' + vi.selected_api.name);
+            vi.debugger.loadBugger(JSON.stringify(vi.selectedIndex));*/
             vi.parent.onApiChanged('end-point', end_point);
+            
         });
 
+        this.body_cont.addEventListener('scroll', function(event){
+            let body = event.target;
+            vi.headers_cont.scrollLeft = body.scrollLeft;
+        });
+
+        this.details_back_btn.addEventListener('click', function(event){
+            vi.table_cont.classList.toggle('hide');
+            vi.details_cont.classList.toggle('hide');
+        });
         
         //this.apiList.change();
         
@@ -209,17 +233,19 @@ export default class View{
     loadTable(api){
         
         let vi = this;
-        vi.debugger.changeBuggerTitle('View loadTable: ' + api.selected_endpoint.name);
-        vi.debugger.loadBugger(JSON.stringify(api.selected_endpoint));
+       /* vi.debugger.changeBuggerTitle('View loadTable: ' + api.selected_endpoint.name);
+        vi.debugger.loadBugger(JSON.stringify(api.selected_endpoint));*/
+        //alert('loadTable');
         if(api.selected_endpoint.results != undefined){
             let list = api.selected_endpoint.results.results;
             //alert(list.length);
             // Clear table headers
-            let table = document.querySelector('.results-table');
+            let table_headers = document.querySelector('#results-headers');
+            let table_body = document.querySelector('#results-body');
             let header_cols = list[0];
             let headers = '<thead><tr>';
             Object.keys(header_cols).forEach(function(key, index){
-                headers += '<th>' + key + '</th>';
+                headers += '<th>' + vi.setHeaders(key); + '</th>';
             });
             headers += '<tr></thead>';
             let cells = '<tbody>'; 
@@ -230,68 +256,156 @@ export default class View{
                 Object.keys(item).forEach(function(key, index){
                     let txt = item[key];
                     
-                   // if(txt.indexOf('http') > -1){
-                      /*  let a = vi.createElement('a', 'row-link');
-                        a.textContent = txt;
-                        a.href = txt;
-                        a.addEventListener('click', function(event){
-                            event.preventDefault();
-                            let a = event.target;
-                            let api = a.href;
+                    if(Array.isArray(txt)){
+                        cells += '<td>';
+                            txt.forEach(function(ele){
+                                if(ele.includes('http:')){
+                                    let a = vi.createElement('a', 'row-link');
+                                    let temp = vi.createElement('div');
+                                    a.textContent = ele; 
+                                    a.href = ele;
+                                    
+                                    temp.append(a);
+                                    cells += '<span class="link-cont">' + temp.innerHTML+ '</span>';
+                                }
+                                else{
+                                    cells += '<span class="normal-ele">' + ele + '</span>';
+                                }
+                            });
                             
-                            vi.table_cont.classList.toggle('hide');
-                            vi.details_cont.classList.toggle('hide');
-                            vi.parent.getDetail(api);
-                        });*/
-                        cells += `<td>${txt}</td>`;
-                   // }
-                   // else{
-                        //cells += '<td>' + txt + '</td>';
-                   // }
+                        cells += '</td>';
+                    }
+                    else if(typeof txt !== 'object'){
+                        if(txt){
+                            if(txt.includes('http:')){
+                                let a = vi.createElement('a', 'row-link');
+                                let temp = vi.createElement('div');
+                                a.textContent = txt; 
+                                a.href = txt;
+                                
+                                temp.append(a);
+                                cells += `<td>${temp.innerHTML}</td>`;
+                            }
+                            else{
+                                cells += '<td>' + txt + '</td>';
+                            }
+                        }
+                        
+                    }
+                    else if(typeof txt === 'object'){
+                        cells += '<td>Object: ' + JSON.stringify(txt) + '</td>';
+                    }
+                    else{
+                        cells += '<td>' + txt + '</td>';
+                    }
                     
                     
                 });
                 cells += '</tr>';
             });
             cells += '</thead>';
-            table.innerHTML = headers + cells;
+            table_headers.innerHTML = headers + cells;
+            table_body.innerHTML = headers + cells;
+
+            let links = document.querySelectorAll('.row-link');
+            links.forEach(function(a){
+                a.addEventListener('click', function(event){
+                    event.preventDefault();
+                    
+                    let api = {};
+                    api.url = a.href;
+                                    
+                    vi.table_cont.classList.toggle('hide');
+                    vi.details_cont.classList.toggle('hide');
+                    vi.parent.getDetail(api);
+                });
+            });
+            
             
         }
     }
     loadDetail(api){
         let vi = this;
-        vi.debugger.changeBuggerTitle('View loadDetail: ');
-        vi.debugger.loadBugger(JSON.stringify(api));
+        /*vi.debugger.changeBuggerTitle('View loadDetail: ');
+        vi.debugger.loadBugger(JSON.stringify(api)); */
+        
         if(api.results != undefined){
-            let list = api.results;
+            let return_obj = api.results;
             //alert(list.length);
             // Clear table headers
-            let table = document.querySelector('.results-table');
-            let header_cols = list[0];
-            let headers = '<thead><tr>';
-            Object.keys(header_cols).forEach(function(key, index){
-                headers += '<th>' + key + '</th>';
-            });
-            headers += '<tr></thead>';
-            let cells = '<tbody>'; 
-            list.forEach(function(item){
-                let txt = '';
-                let val = '';
-                cells += '<tr>';
-                Object.keys(item).forEach(function(key, index){
-                    let txt = item[key];
-                    
-                    if(txt.indexOf('http') > -1){
-                        txt = '<a href="' + txt + '" class="row-link">' + txt + '</a>';
+            let details = document.querySelector('.details');
+            let html = '';
+            
+            Object.keys(return_obj).forEach(function(key, index){
+                let attr = return_obj[key];
+                let item_type = typeof attr;
+                
+                if(item_type == 'object'){
+                    let is_array = Array.isArray(attr);
+                    if(is_array == true){
+                        item_type = 'array';
                     }
-                    
-                    cells += '<td>' + txt + '</td>';
-                });
-                cells += '</tr>';
+                }
+                let ele = '';
+                switch(item_type){
+                    case 'object':
+
+                        break;
+                    case 'string':
+                        ele = attr;
+                        if(ele.includes('http:')){
+                            ele = `<a href="${ele}" class="item-link">${ele}</a>`;
+                        }
+                        break;
+                    case 'array':
+                        let ul = '<ul class="item-list">';
+                        attr.forEach(function(item){
+                            if(item.includes('http:')){
+                                item = `<a href="${item}" class="item-link">${item}</a>`;
+                            }
+                            ul +=  `<li class="list-item">
+                                        ${item}
+                                    </li>`;
+                        });
+                        ul += '</ul>';
+                        ele = ul;
+                        break;
+                }
+                let val = '';
+                key = vi.setHeaders(key);
+                html += `<div class="detail-item">
+                            <label class="li-title">${ key }</label>
+                            <div class="detail-obj">${ele}</div>
+                        </div>`;
+                 
             });
-            cells += '</thead>';
-            table.innerHTML = headers + cells;
+            details.innerHTML = html;
+            let links = document.querySelectorAll('.item-link');
+            links.forEach(function(a){
+                a.addEventListener('click', function(event){
+                    event.preventDefault();
+                    
+                    let api = {};
+                    api.url = a.href;
+                                    
+                    //vi.table_cont.classList.toggle('hide');
+                    //vi.details_cont.classList.toggle('hide');
+                    vi.parent.getDetail(api);
+                });
+            });
         }
+    }
+    setHeaders(key, ){
+        if(key.indexOf('_') > -1){
+            key = key.split('_');
+            key[0] = key[0][0].toUpperCase() + key[0].slice(1);
+            key[1] = key[1][0].toUpperCase() + key[1].slice(1);
+            key = key.join(' ');
+        }
+        else{
+            key = key[0].toUpperCase() + key.slice(1);
+        }
+        return key;
     }
     createHandler(ele, event_type, func){
         switch(event_type){

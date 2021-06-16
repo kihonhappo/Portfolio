@@ -67,6 +67,13 @@ const wdd_330_links = [
         active: true,
         url: "weeks/week4.js",
         
+    },
+    {
+        week: "w9",
+        label: "Week 9: Workflow",
+        active: true,
+        url: "weeks/week4.js",
+        
     }
   ]
 
@@ -902,8 +909,8 @@ const front_weeks =    [
                     <div id="subjects" class="subjects-cont">
                         <h3 class="subjects-header h-center">Week 8: Fetch API</h3>
                         <ul>
-                            <li>To Do List Project</li>
-                           
+                            <li>Ch8: Transforms and Transitions</li>
+                            <li>Ch12: Canvas, SVG, and Drag and Drop</li>
                         </ul>
                     </div>`,
                     
@@ -911,6 +918,45 @@ const front_weeks =    [
                     <div id="examples" class="examples-cont">
                         <h3 class="section-header h-center">W08 AJAX and the CORS: <a title="Open page in Seperate Window" href="./pages/fetch-api.html" target="_blank">API Integration Component</a></h3>
                         <iframe src="./pages/fetch-api.html" class="document-viewer"></iframe>
+                    </div>
+                            
+                        `
+                    },
+                notes: `
+                    <div id="notes" class="notes-cont">
+                        
+                    </div>
+                    `,
+                tasks: 
+                    `<div id="tasks" class="tasks-cont">
+                        <h3 class="tasks-header h-center">Steps to set up my Coding Environment</h3>
+                        <ol class"num-list">
+                            <li>Download Code Editor</li>
+                            <li>Download and Install Node</li>
+                            <li>Download Set up Github</li>
+                            <li>Download Code Editor</li>
+                        </ol>
+                    </div>
+                    
+                    `
+            },
+            {
+                week: 'w9',
+                title: 'Week 9',
+                reading: {
+                    subjects: `
+                    <div id="subjects" class="subjects-cont">
+                        <h3 class="subjects-header h-center">Week 8: Fetch API</h3>
+                        <ul>
+                            <li>Workflow</li>
+                            <li>Drums</li>
+                        </ul>
+                    </div>`,
+                    
+                    examples: `
+                    <div id="examples" class="examples-cont">
+                        <h3 class="section-header h-center">W09 Work Flow and Drums: <a title="Open page in Seperate Window" href="./modules/drums/index.html" target="_blank">Drum Audio Player Component</a></h3>
+                        <iframe src="./modules/drums/index.html" class="document-viewer"></iframe>
                     </div>
                             
                         `

@@ -3,7 +3,7 @@ export default class Controller{
     constructor(debug, model, view) {
         this.model = model;
         this.view = view;
-        this.debug = true;
+        this.debug = false;
         this.debugger = debug;
         this.model.parent = this;
         this.model.debugger = this.debugger;
@@ -40,7 +40,7 @@ export default class Controller{
         
     }
     getDetail(api){
-        alert('controller get Details');
+        //alert('controller get Details');
         this.model.getDetail(api, this.view);
     }
 }

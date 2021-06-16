@@ -3,7 +3,7 @@ export default class Model{
     constructor(){
         this.parent = {};
         this.list = [];
-        this.debug = true;
+        this.debug = false;
         this.debugger = {};
         this.detail = {};
         this.pagination = [];
@@ -36,8 +36,8 @@ export default class Model{
             .then(response => response.json())
             .then(result => {
                 //alert('Model: Sub End Points: after fetch' + JSON.stringify(result));
-                vi.debugger.changeBuggerTitle('getApi: sub-end-point: ' + vi.selected_api.name);
-                vi.debugger.loadBugger(JSON.stringify(result));
+                /*vi.debugger.changeBuggerTitle('getApi: sub-end-point: ' + vi.selected_api.name);
+                vi.debugger.loadBugger(JSON.stringify(result));*/
                 vi.selected_api.subEndPoints = result;
                 
                 view.loadSubEndPoints(vi.selected_api, result);
@@ -55,8 +55,8 @@ export default class Model{
             .then(response => response.json())
             .then(result => {
                 //alert('in model: ' + JSON.stringify(result));
-                vi.debugger.changeBuggerTitle('getApi: ' + vi.selected_api.name);
-                vi.debugger.loadBugger(JSON.stringify(result));
+               /* vi.debugger.changeBuggerTitle('getApi: ' + vi.selected_api.name);
+                vi.debugger.loadBugger(JSON.stringify(result));*/
                 vi.selected_api.endPoints = result;
                 
                 view.loadEndPoints(vi.selected_api, result);
@@ -75,8 +75,8 @@ export default class Model{
                 //alert('in model: ' + JSON.stringify(result));
                 api.results = result;
                 vi.selected_api.selected_endpoint = api;
-                vi.debugger.changeBuggerTitle('getEndPoint: ' + api.name);
-                vi.debugger.loadBugger(JSON.stringify(result));
+               /* vi.debugger.changeBuggerTitle('getEndPoint: ' + api.name);
+                vi.debugger.loadBugger(JSON.stringify(result));*/
                 //vi.selected_api.endPoints = result;
                 
                 view.loadTable(vi.selected_api);
@@ -84,18 +84,19 @@ export default class Model{
     }
     getDetail(api, view){
         let vi = this;
-        let url = api;
+        let url = api.url;
+        //alert(url);
         if(url.indexOf('https') == -1){
             url = url.replace('http', 'https');
         }
-        fetch(api)
+        fetch(url)
             .then(response => response.json())
             .then(result => {
-                alert('in model: ');
+                //alert('in model: ');
                 api.results = result;
                 vi.selected_api.selected_endpoint = api;
-                vi.debugger.changeBuggerTitle('getDetail: ');
-                vi.debugger.loadBugger(JSON.stringify(result));
+               /* vi.debugger.changeBuggerTitle('getDetail: ');
+                vi.debugger.loadBugger(JSON.stringify(result));*/
                 //vi.selected_api.endPoints = result;
                 
                 view.loadDetail(api);
