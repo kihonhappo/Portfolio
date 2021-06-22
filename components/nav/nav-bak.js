@@ -25,13 +25,7 @@ const wdd_330_links = [
         week: "w3",
         label: "Week 3: Objects and Arrays",
         active: true,
-        url: "weeks/week3.js",
-        sub_links: [
-            {
-                label: 'Team Activity',
-                url: './pages/w03_team_assignment.html'
-            }
-        ]
+        url: "weeks/week3.js"
     },
     {
         week: "w4",

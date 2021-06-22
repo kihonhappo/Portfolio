@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body{
+    font-family:Verdana; color:#aaaaaa;
+  }
+
+ .title-cont{
+      overflow: auto;
+      padding:0px;
+      text-align:center;
+      border-bottom: 1px solid black;
+ }
+ .left-title{float:left; width: 20%; color: green; font-size: x-large; padding-top: 20px;}
+ #top-header{float:left; width: 55%; color: green;}
+ .right-title{float:left; width: 25%; color: green; font-size: x-large; padding-top: 20px;}
+  
+ .h-center{text-align: center;} 
+
+  .content-wrapper{
+    overflow: hidden; 
+    height: 800px; 
+    border-bottom: 1px solid black;
+  }
+
+  #nav{}
+  .menu {
+    float:left;
+    width: 20%;
+    text-align:center;
+    height: 800px;
+    overflow-y: auto;
+  }
+  .menu a {
+    
+    padding:8px;
+    margin-top:7px;
+    display:block;
+    width:100%;
+    color:black;
+  }
+  #main {
+    float:left;
+    width:55%;
+    padding:0 20px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    color: black;
+    overflow: auto;
+    height: 800px;
+  }
+  .right {
+    word-wrap: normal;
+    float: left;
+    width: 25%;
+    padding: 10px;
+    min-height: 400px;
+    color: black;
+    overflow-y: auto;
+    height: 800px;
+  }
+.form-control{padding: 5px;}
+select.form-control{min-width: 150px;}
+#subjects{width: 100%};
+  .right p, .right li{font-size: 12px;}
+
+  .notes-header{text-align: center;}
+   .notes-cont{padding: 10px;}
+   .notes-cont p, .notes-cont li, .notes-cont i{ font-size: 12px;}
+
+   .code-black{background-color: black; color: white;}
+   
+
+   .list{margin-top: 20px;}
+   .no-bullets{list-style-type: none;}
+   .li-title{margin-bottom: 20px; font-size: 18px; text-align: center;}
+   .document-viewer{width: 100%; border: none; min-height: 600px;}
+   .section-header{border-top: 1px solid black; border-bottom: 1px solid black; padding-top: 20px; padding-bottom: 20px;}
+   .subjects-header{border-bottom: 1px solid black; padding-top: 20px; padding-bottom: 20px;}
+  @media only screen and (max-width:620px) {
+    /* For mobile phones: */
+    .menu, .main, .right {
+      width:100%;
+    }
+    .menu{height: 15%;}
+    .right{height: 35%;}
+ .ht-300{height: 300px;}
+    #main{width: 100%; border-top: 1px solid black; border-bottom: 1px solid black; height: 50%;}
+    
+    .content-wrapper{height: auto;}
+  }
+ 
+  .tasks i{float: right; margin-right: 30px;}
+  .task-txt{font-size: 12px;}
+  pre{
+    border: 1px solid red; 
+    margin-left: 0px;
+    background-color: rgb(255, 247, 229);
+    white-space: pre-line;
+    padding-left: 5px;
+  }
+  .completed{text-decoration: line-through;}
+  .code-cont{width: 100%;  padding: 0px; font-size: 12px;}
+ .example-img{width: 20%;}
+  .red{color: red;}
+  .green{color: green;}
+  .clearfix{clear: both;}
+  .reading-sub-label{font-size: 14px; font-weight: bold;}
+  .reading-outline{}
+  

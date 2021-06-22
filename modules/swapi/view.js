@@ -395,7 +395,7 @@ export default class View{
             });
         }
     }
-    setHeaders(key, ){
+    setHeaders(key){
         if(key.indexOf('_') > -1){
             key = key.split('_');
             key[0] = key[0][0].toUpperCase() + key[0].slice(1);
