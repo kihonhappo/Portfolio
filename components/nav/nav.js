@@ -64,7 +64,7 @@ export default class nav{
             },
             {
                 week: "w9",
-                label: "Week 9: Workflow",
+                label: "Week 9: Workflow & Challenge Proposal",
                 active: true,
                 url: "weeks/week4.js",
                 

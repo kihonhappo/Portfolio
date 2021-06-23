@@ -855,6 +855,83 @@ const weeks = [
         {
             week: 'w9',
             title: 'Week 9',
+            proposal: `
+                <div id="proposal" class="section-cont">
+                    <div class="example">
+                        <h3 class="section-header h-center">Challenge Proposal: Health Tracker Application</h3>
+                        <h4>Proposal Requirements</h4>
+                        <div class="">
+                            <p>Design and build one or more web applications to explore and apply the things you have learned thus far.</p>
+                            <p>As this is the primary work you will do over weeks 10-14 you should plan on spending at least 30 hours on these challenges. 
+                            Work with the instructor to manage the scope for your ideas.</p>
+                            <p>Because these should be more complex challenges, you should spend more time on this than you may have for the first block to produce a more formal proposal.
+                            A sample outline might include the following sections:</p>
+                        </div>
+                        <div class="proposal-section">
+                            <h4>Purpose</h4>
+                            <p>The Health Tracker Application will help users track various biomarkers. <br />
+                            Users will be able to visualize these changes to their lifestyle and measure their results.</p>
+                        </div>
+                        <div class="proposal-section">
+                            <h4>Audience</h4>
+                            <p>The Health Tracker&apos;s audience will be any person who wishes to track their physical and health changes. 
+                            Personal Trainers or other health professionals trying to help their clients make healthy lifestyle changes.</p>
+                            
+                        </div>
+                        <div class="proposal-section">
+                            <h4>Data sources</h4>
+                            <ul>
+                                <li>FDA Food Data Central API: <a href="https://fdc.nal.usda.gov/" target="_blank" class="site-link">https://fdc.nal.usda.gov/</a>
+                                    <span>This api will give the Health Tracker access to the latest Food Nutrition Data.</span>                                
+                                </li>
+                                <li>
+                                    Compendium of Physical Activities CSV: <a href="https://sites.google.com/site/compendiumofphysicalactivities/home" target="_blank" class="site-link">https://sites.google.com/site/compendiumofphysicalactivities/home</a>
+                                    <span>The data is downloaded into a csv flat file database. The applicaiton will load and parse the data when the user visits the site.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="proposal-section">
+                            <h4>Local Storage</h4>
+                            <p>Do to H.I.P.P.A. regulations, the Health Tracker App will use local storage to store and retrieve sensative health data for the user.</p>
+                        </div>
+                        <div class="proposal-section">
+                            <h4>Initial Module list</h4>
+                            <ul class="parent-list">
+                                <li>Utilities</li>
+                                <li>Helper Functions/Data Lists</li>
+                                <li>Initial intake wizard
+                                    <ul class="child-list">
+                                        <li>First Name</li>
+                                        <li>Last Name</li>
+                                        <li>Age</li>
+                                        <li>Weight</li>
+                                        <li>Height</li>
+                                    </ul>
+                                </li>
+                                <li>Meal Builder</li>
+                                <li>Meal/Calorie Intake Tracker</li>
+                                <li>Activity Builder</li>
+                                <li>Activity Tracker</li>
+                                <li>Weight Tracker</li>
+                                <li>Sleep Tracker</li>
+                                <li>Fat Tracker</li>
+                                <li>Initial intake forms</li>
+                            </ul>
+                        </div>
+                        <div class="proposal-section">
+                            <h4>Wireframes for each view of your application</h4>
+                        </div>
+                        <div class="proposal-section">
+                            <h4>Colors/Typography/specific Element styling</h4>
+                        </div>
+                        <div class="proposal-section">
+                            <h4>Schedule to provide yourself mile markers along the way to help you stay on target.</h4>
+                        </div>
+                    </div>
+                </div>
+                        
+                    `
+            ,
             reading:  `
                 <div id="subjects" class="section-cont">
                     <h3 class="subjects-header h-center">Week 9: Work Flow</h3>
@@ -864,7 +941,7 @@ const weeks = [
                     </ul>
                 </div>`,
                 
-            examples: `
+            drums: `
                 <div id="examples" class="section-cont">
                     <div class="example">
                         <h3 class="section-header h-center">W09 Work Flow and Drums: <a title="Open page in Seperate Window" href="./modules/drums/index.html" target="_blank">Drum Audio Player Component</a></h3>
