@@ -68,6 +68,13 @@ export default class nav{
                 active: true,
                 url: "weeks/week4.js",
                 
+            },
+            {
+                week: "w10",
+                label: "Week 10: Workflow & Challenge Proposal",
+                active: true,
+                url: "weeks/week4.js",
+                
             }
           ];
         this.loadNav();

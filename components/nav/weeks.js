@@ -968,6 +968,46 @@ const weeks = [
                 </div>
                 
                 `
+        },
+        {
+            week: 'w10',
+            title: 'Week 10',
+            reading:  `
+                <div id="subjects" class="section-cont">
+                    <h3 class="subjects-header h-center">Week 8: Fetch API</h3>
+                    <ul>
+                        <li>MDN: Validating Forms</li>
+                        <li>MDN: Using Fetch</li>
+                    </ul>
+                </div>`,
+                
+            quakes: `
+                <div id="examples" class="section-cont">
+                    <div class="example">
+                        <h3 class="section-header h-center">Quakes: <a title="Open page in Seperate Window" href="./pages/quakes.html" target="_blank">Web Service Component</a></h3>
+                        <iframe src="./pages/quakes.html" class="document-viewer"></iframe>
+                    </div>
+                </div>
+                        
+                    `
+            ,
+            notes: `
+                <div id="notes" class="section-cont">
+                    
+                </div>
+                `,
+            tasks: 
+                `<div iclass="section-cont tasks">
+                    <h3 class="tasks-header h-center">Steps to set up my Coding Environment</h3>
+                    <ol class"num-list">
+                        <li>Download Code Editor</li>
+                        <li>Download and Install Node</li>
+                        <li>Download Set up Github</li>
+                        <li>Download Code Editor</li>
+                    </ol>
+                </div>
+                
+                `
         }
     
     ] 
