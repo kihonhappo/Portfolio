@@ -24,7 +24,7 @@ export default class Controller{
     }
 
     onApiChanged(api_type, api){
-        //alert('onApiChange inside of Controller: ' + api);
+        //alert('onApiChange inside of Controller: ' + JSON.stringify(api));
         
         switch(api_type){
             case 'base-api':

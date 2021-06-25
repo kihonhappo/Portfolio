@@ -729,18 +729,22 @@ const weeks = [
                 </ul>
             </div>`,
             
-        examples: `
+        greate_hikes: `
             <div id="examples" class="section-cont">
                 <div class="example">
                     <h3 class="section-header h-center">W07 Group Project: <a title="Open page in Seperate Window" href="./pages/hikes.html" target="_blank">Stage 2 Hikes Component</a></h3>
                     <iframe src="./pages/hikes.html" class="document-viewer"></iframe>
                 </div>
             
-            
+            `,
+        css_batttle:`
                 <div id="css-battle" class="example">
                     <h3 class="section-header h-center">W07 CSS Battle: <a title="Open page in Seperate Window" href="./pages/css_battle.html" target="_blank">Site Pointe Logo</a></h3>
                     <iframe src="./pages/css_battle.html" class="document-viewer"></iframe>
                 </div>
+                `,
+        examples:
+                `
                 <pre>
                     
                     <div class="code-cont">
@@ -824,7 +828,7 @@ const weeks = [
                     </ul>
                 </div>`,
                 
-            examples: `
+            swapi_api: `
                 <div id="examples" class="section-cont">
                     <div class="example">
                         <h3 class="section-header h-center">W08 AJAX and the CORS: <a title="Open page in Seperate Window" href="./pages/fetch-api.html" target="_blank">API Integration Component</a></h3>
@@ -859,8 +863,8 @@ const weeks = [
                 <div id="proposal" class="section-cont">
                     <div class="example">
                         <h3 class="section-header h-center">Challenge Proposal: Health Tracker Application</h3>
-                        <h4>Proposal Requirements</h4>
-                        <div class="">
+                        <h4 class="show-link">Proposal Requirements</h4>
+                        <div class="hide">
                             <p>Design and build one or more web applications to explore and apply the things you have learned thus far.</p>
                             <p>As this is the primary work you will do over weeks 10-14 you should plan on spending at least 30 hours on these challenges. 
                             Work with the instructor to manage the scope for your ideas.</p>
@@ -868,19 +872,19 @@ const weeks = [
                             A sample outline might include the following sections:</p>
                         </div>
                         <div class="proposal-section">
-                            <h4>Purpose</h4>
-                            <p>The Health Tracker Application will help users track various biomarkers. <br />
+                            <h4 class="show-link">Purpose</h4>
+                            <p class="hide">The Health Tracker Application will help users track various biomarkers. <br />
                             Users will be able to visualize these changes to their lifestyle and measure their results.</p>
                         </div>
                         <div class="proposal-section">
-                            <h4>Audience</h4>
-                            <p>The Health Tracker&apos;s audience will be any person who wishes to track their physical and health changes. 
+                            <h4 class="show-link">Audience</h4>
+                            <p class="hide">The Health Tracker&apos;s audience will be any person who wishes to track their physical and health changes. 
                             Personal Trainers or other health professionals trying to help their clients make healthy lifestyle changes.</p>
                             
                         </div>
                         <div class="proposal-section">
-                            <h4>Data sources</h4>
-                            <ul>
+                            <h4 class="show-link">Data sources</h4>
+                            <ul class="hide">
                                 <li>FDA Food Data Central API: <a href="https://fdc.nal.usda.gov/" target="_blank" class="site-link">https://fdc.nal.usda.gov/</a>
                                     <span>This api will give the Health Tracker access to the latest Food Nutrition Data.</span>                                
                                 </li>
@@ -891,16 +895,16 @@ const weeks = [
                             </ul>
                         </div>
                         <div class="proposal-section">
-                            <h4>Local Storage</h4>
-                            <p>Do to H.I.P.P.A. regulations, the Health Tracker App will use local storage to store and retrieve sensative health data for the user.</p>
+                            <h4 class="show-link">Local Storage</h4>
+                            <p class="hide">Do to H.I.P.P.A. regulations, the Health Tracker App will use local storage to store and retrieve sensative health data for the user.</p>
                         </div>
                         <div class="proposal-section">
-                            <h4>Initial Module list</h4>
-                            <ul class="parent-list">
+                            <h4 class="show-link">Initial Module list</h4>
+                            <ul class="parent-list hide">
                                 <li>Utilities</li>
                                 <li>Helper Functions/Data Lists</li>
-                                <li>Initial intake wizard
-                                    <ul class="child-list">
+                                <li class="show-link">Initial intake wizard
+                                    <ul class="child-list hide">
                                         <li>First Name</li>
                                         <li>Last Name</li>
                                         <li>Age</li>
@@ -915,7 +919,29 @@ const weeks = [
                                 <li>Weight Tracker</li>
                                 <li>Sleep Tracker</li>
                                 <li>Fat Tracker</li>
-                                <li>Initial intake forms</li>
+                                <li>Body Map Component</li>
+                                <li>Video Library</li>
+                                <li>Documentation Library</li>
+                                <li>Avatar Component</li>
+                                <li class="show-link">Dashboard
+                                    <ul class="child-list hide">
+                                        <li>Day Tracker</li>
+                                        <li>Live Calorie Ticker</li>
+                                        <li>Timeline Comparison Component</li>
+                                        <li>Live Avatar</li>
+                                    </ul>
+                                </li>
+                                
+                                <li>Campainge Manager</li>
+                                <li class="show-link">Friends/Communications
+                                    <ul class="child-list hide">
+                                        <li>Social Media Integration Component</li>
+                                        <li>Email Component</li>
+                                        <li>SMS Commponent</li>
+                                        <li>Chat Component</li>
+                                        <li>Video Conference Component</li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                         <div class="proposal-section">
@@ -925,7 +951,33 @@ const weeks = [
                             <h4>Colors/Typography/specific Element styling</h4>
                         </div>
                         <div class="proposal-section">
-                            <h4>Schedule to provide yourself mile markers along the way to help you stay on target.</h4>
+                            <h4>Schedule: Phasees of Development</h4>
+                            <table class="prop-table">
+                                <thead>
+                                    <tr>
+                                        <th>Dev Phase</th>
+                                        <th>Activity</th>
+                                        <th>Module</th>
+                                        <th>Start Date</th>
+                                        <th>End</th>
+                                        <th>Projected Hours</th>
+                                        <th>Actual End</th>
+                                        <th>Actual Hours</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Phase 1</td>
+                                        <td>Research</td>
+                                        <td>Utilities</td>
+                                        <td>6-24-2021</td>
+                                        <td>6/26/2021</td>
+                                        <td>5</td>
+                                        <td>6/25/2021</td>
+                                        <td>2.5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -974,7 +1026,7 @@ const weeks = [
             title: 'Week 10',
             reading:  `
                 <div id="subjects" class="section-cont">
-                    <h3 class="subjects-header h-center">Week 8: Fetch API</h3>
+                    <h3 class="subjects-header h-center">Week 10: Validating Forms And Using Fetch</h3>
                     <ul>
                         <li>MDN: Validating Forms</li>
                         <li>MDN: Using Fetch</li>

@@ -71,7 +71,7 @@ export default class nav{
             },
             {
                 week: "w10",
-                label: "Week 10: Workflow & Challenge Proposal",
+                label: "Week 10: Validating Forms And Using Fetch",
                 active: true,
                 url: "weeks/week4.js",
                 

@@ -276,7 +276,7 @@ export default class View{
                         cells += '</td>';
                     }
                     else if(typeof txt !== 'object'){
-                        if(txt){
+                        if(txt !== null){
                             if(txt.includes('http:')){
                                 let a = vi.createElement('a', 'row-link');
                                 let temp = vi.createElement('div');

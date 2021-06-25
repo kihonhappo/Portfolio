@@ -68,7 +68,7 @@ body{
       height: 600px;
 
       .section-cont{
-
+        
         .section-header{
           border-top: 1px solid black; 
           border-bottom: 1px solid black; 
@@ -92,8 +92,15 @@ body{
         .completed{text-decoration: line-through;}
         .code-cont{width: 100%;  padding: 0px; font-size: 12px;}
         .example-img{width: 20%;}
-      }
 
+        .prop-table{
+          border: 1px solid black; border-collapse: collapse;
+
+            th{border: 1px solid black; padding: 10px; background-color: navy; color: white; white-space: nowrap;} 
+            td{border: 1px solid black; padding: 10px; width: auto;}
+        }
+      }
+      #proposal{margin-bottom: 20px;}
     }
   }
 

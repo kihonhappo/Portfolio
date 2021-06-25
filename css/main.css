@@ -162,6 +162,29 @@ body {
   width: 20%;
 }
 
+.content-wrapper .main .section-cont .prop-table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.content-wrapper .main .section-cont .prop-table th {
+  border: 1px solid black;
+  padding: 10px;
+  background-color: navy;
+  color: white;
+  white-space: nowrap;
+}
+
+.content-wrapper .main .section-cont .prop-table td {
+  border: 1px solid black;
+  padding: 10px;
+  width: auto;
+}
+
+.content-wrapper .main #proposal {
+  margin-bottom: 20px;
+}
+
 .red {
   color: red;
 }
