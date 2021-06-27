@@ -24,7 +24,7 @@ export default class QuakesView {
           <span class="cell city">City</span>
           <span class="cell state">State/Country</span>
           <span class="cell coords">Coordinates</span>
-          <span class="cell quake-id">Quake ID</span>
+          <span class="cell quake-id">Interactive Map</span>
         </li>
         <li class="list-cont">
           <div class="list-scroll">
@@ -38,7 +38,7 @@ export default class QuakesView {
             ${this.formatDate(new Date(quake.properties.time))} 
             ${this.processTitle(quake.properties.title)}
             <span class="cell coords">${quake.geometry.coordinates}</span>
-            <span class="cell quake-id">${quake.id}</span>
+            <span class="cell quake-id"><a class="map" target="_blank" href="https://earthquake.usgs.gov/earthquakes/eventpage/${quake.id}/map"><img class="map" src="../modules/quakes/images/map.png"></a></span>
           </span>
 
           <div title="Double Click to Close Quake Details" class="quake-info hide">
@@ -145,8 +145,8 @@ export default class QuakesView {
     renderQuake(ele, quake) {
       const quakeProperties = Object.entries(quake.properties);
       let str = '';
-      
-      ele.innerHTML = `<iframe class="map" src="https://earthquake.usgs.gov/earthquakes/eventpage/${quake.id}/maps"></iframe>`;
+      quakeProperties.forEach(([key, value]) => str += `<div class="info-cont"><label>${key}:</label> <p>${value}</p></div>`);
+      ele.innerHTML = str + '<div class="clearfix"></div>';
       // for the provided quake make a list of each of the properties associated with it. Then append the list to the provided element. Notice the first line of this method. Object.entries() is a slick way to turn an object into an array so that we can iterate over it easier! 
     
     }

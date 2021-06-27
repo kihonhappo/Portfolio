@@ -65,6 +65,7 @@ export default class QuakesController {
     });
     let vi = this;
     this.parentElement.addEventListener('click', e => {
+      e.preventDefault();
       let cntrl = e.target;
       let cntrl_type = cntrl.tagName;
       let parent = cntrl.closest('li');
@@ -94,6 +95,20 @@ export default class QuakesController {
           if(cntrl.classList.contains('quake-info')){
 
             //cntrl.classList.toggle('hide');
+          }
+          break;
+        case 'IMG':
+          if(cntrl.classList.contains('map')){
+            let a = cntrl.parentElement;
+            let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=300,left=100,top=100`;
+            
+            let map_window = window.open(a.href, 'Selected Quake Interactive Map', params);
+            map_window.focus();
+            /*map_window.onload = function(){
+              let html = `<div style="font-size:30px">Welcome!</div>`;
+              newWindow.document.body.insertAdjacentHTML('afterbegin', html);
+            };*/
+            
           }
           break;
         default:
