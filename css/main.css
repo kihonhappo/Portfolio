@@ -50,7 +50,7 @@ body {
   width: 20%;
   text-align: left;
   overflow: auto;
-  height: 600px;
+  height: 800px;
   padding-left: 10px;
 }
 
@@ -96,7 +96,7 @@ body {
   border-right: 1px solid black;
   color: black;
   overflow-y: auto;
-  height: 600px;
+  height: 800px;
 }
 
 .content-wrapper .main .section-cont .show-link:hover {
