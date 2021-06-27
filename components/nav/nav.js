@@ -143,6 +143,19 @@ export default class nav{
         
         this.top_header.innerHTML = week.title;
         this.main.innerHTML = week[link];
+        let show_links = document.querySelectorAll('.show-link')
+        show_links.forEach(function(show_link){
+            show_link.addEventListener('click', function(event){
+                event.preventDefault();
+                let ele = event.target;
+                let parent = ele.parentNode;
+                //alert(parent.tagName);
+                //alert(ele.tagName);
+                let closest = parent.querySelector('.child');
+                //alert(closest.innerHTML);
+                closest.classList.toggle('hide');
+            });
+        });
        // document.getElementById('right').innerHTML = ;
         
           //alert('Done');

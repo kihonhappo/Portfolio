@@ -1,5 +1,5 @@
 
-import { getJSON, getLocation } from './utilities.js';
+import { getJSON, getLocation, processDate } from './utilities.js';
 import QuakesController from './QuakesController.js';
 
 const options = {

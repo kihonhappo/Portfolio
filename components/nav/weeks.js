@@ -863,28 +863,30 @@ const weeks = [
                 <div id="proposal" class="section-cont">
                     <div class="example">
                         <h3 class="section-header h-center">Challenge Proposal: Health Tracker Application</h3>
-                        <h4 class="show-link">Proposal Requirements</h4>
-                        <div class="hide">
-                            <p>Design and build one or more web applications to explore and apply the things you have learned thus far.</p>
-                            <p>As this is the primary work you will do over weeks 10-14 you should plan on spending at least 30 hours on these challenges. 
-                            Work with the instructor to manage the scope for your ideas.</p>
-                            <p>Because these should be more complex challenges, you should spend more time on this than you may have for the first block to produce a more formal proposal.
-                            A sample outline might include the following sections:</p>
+                        <div class="proposal-section">
+                            <h4 class="show-link">Proposal Requirements</h4>
+                            <div class="child hide">
+                                <p>Design and build one or more web applications to explore and apply the things you have learned thus far.</p>
+                                <p>As this is the primary work you will do over weeks 10-14 you should plan on spending at least 30 hours on these challenges. 
+                                Work with the instructor to manage the scope for your ideas.</p>
+                                <p>Because these should be more complex challenges, you should spend more time on this than you may have for the first block to produce a more formal proposal.
+                                A sample outline might include the following sections:</p>
+                            </div>
                         </div>
                         <div class="proposal-section">
                             <h4 class="show-link">Purpose</h4>
-                            <p class="hide">The Health Tracker Application will help users track various biomarkers. <br />
+                            <p class="child hide">The Health Tracker Application will help users track various biomarkers. <br />
                             Users will be able to visualize these changes to their lifestyle and measure their results.</p>
                         </div>
                         <div class="proposal-section">
                             <h4 class="show-link">Audience</h4>
-                            <p class="hide">The Health Tracker&apos;s audience will be any person who wishes to track their physical and health changes. 
+                            <p class="child hide">The Health Tracker&apos;s audience will be any person who wishes to track their physical and health changes. 
                             Personal Trainers or other health professionals trying to help their clients make healthy lifestyle changes.</p>
                             
                         </div>
                         <div class="proposal-section">
                             <h4 class="show-link">Data sources</h4>
-                            <ul class="hide">
+                            <ul class="child hide">
                                 <li>FDA Food Data Central API: <a href="https://fdc.nal.usda.gov/" target="_blank" class="site-link">https://fdc.nal.usda.gov/</a>
                                     <span>This api will give the Health Tracker access to the latest Food Nutrition Data.</span>                                
                                 </li>
@@ -896,15 +898,15 @@ const weeks = [
                         </div>
                         <div class="proposal-section">
                             <h4 class="show-link">Local Storage</h4>
-                            <p class="hide">Do to H.I.P.P.A. regulations, the Health Tracker App will use local storage to store and retrieve sensative health data for the user.</p>
+                            <p class="child hide">Do to H.I.P.P.A. regulations, the Health Tracker App will use local storage to store and retrieve sensative health data for the user.</p>
                         </div>
                         <div class="proposal-section">
                             <h4 class="show-link">Initial Module list</h4>
-                            <ul class="parent-list hide">
+                            <ul class="parent child hide">
                                 <li>Utilities</li>
                                 <li>Helper Functions/Data Lists</li>
                                 <li class="show-link">Initial intake wizard
-                                    <ul class="child-list hide">
+                                    <ul class="child hide">
                                         <li>First Name</li>
                                         <li>Last Name</li>
                                         <li>Age</li>
@@ -912,9 +914,10 @@ const weeks = [
                                         <li>Height</li>
                                     </ul>
                                 </li>
+                                <li>Food Library</li>
                                 <li>Meal Builder</li>
                                 <li>Meal/Calorie Intake Tracker</li>
-                                <li>Activity Builder</li>
+                                <li>Activity Library</li>
                                 <li>Activity Tracker</li>
                                 <li>Weight Tracker</li>
                                 <li>Sleep Tracker</li>
@@ -924,7 +927,7 @@ const weeks = [
                                 <li>Documentation Library</li>
                                 <li>Avatar Component</li>
                                 <li class="show-link">Dashboard
-                                    <ul class="child-list hide">
+                                    <ul class="child hide">
                                         <li>Day Tracker</li>
                                         <li>Live Calorie Ticker</li>
                                         <li>Timeline Comparison Component</li>
@@ -934,7 +937,7 @@ const weeks = [
                                 
                                 <li>Campainge Manager</li>
                                 <li class="show-link">Friends/Communications
-                                    <ul class="child-list hide">
+                                    <ul class="child hide">
                                         <li>Social Media Integration Component</li>
                                         <li>Email Component</li>
                                         <li>SMS Commponent</li>
@@ -968,13 +971,54 @@ const weeks = [
                                 <tbody>
                                     <tr>
                                         <td>Phase 1</td>
-                                        <td>Research</td>
-                                        <td>Utilities</td>
-                                        <td>6-24-2021</td>
-                                        <td>6/26/2021</td>
+                                        <td>Research/Prototype</td>
+                                        <td>Food Library</td>
+                                        <td>6-26-2021</td>
+                                        <td>6/27/2021</td>
                                         <td>5</td>
-                                        <td>6/25/2021</td>
-                                        <td>2.5</td>
+                                        <td></td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="8">
+                                            The food library will utilize the FDA Nutrition APIs. 
+                                            I will successfully pull data from the APi and create a Food Data Map/Structure. 
+                                            The data from this API will be used to build meals which will be stored in the users localStorage.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phase 1</td>
+                                        <td>Prototype</td>
+                                        <td>Activity Library</td>
+                                        <td>6-28-2021</td>
+                                        <td>6-29-2021</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="8">
+                                            The activity library will utilize the Compendium of Physical Activities CSV. 
+                                            I will successfully pull data from the CSV file and create an Activity Data Map/Structure. 
+                                            The data from this source will be used to add activities to the day tracker component and then be 
+                                            stored in the users localStorage.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phase 1</td>
+                                        <td>Research/Prototype</td>
+                                        <td>Intake wizard</td>
+                                        <td>6-30-2021</td>
+                                        <td>7/04/2021</td>
+                                        <td>10</td>
+                                        <td>0</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="8">
+                                            The Intial Intake Wizard will consist of a set of intake forms to capture the users's demographic data.
+                                            This data will be stored in the users localStorage.
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1036,7 +1080,7 @@ const weeks = [
             quakes: `
                 <div id="examples" class="section-cont">
                     <div class="example">
-                        <h3 class="section-header h-center">Quakes: <a title="Open page in Seperate Window" href="./pages/quakes.html" target="_blank">Web Service Component</a></h3>
+                        <h3 class="section-header h-center">Quakes Team Activity: <a title="Open page in Seperate Window" href="./pages/quakes.html" target="_blank">Web Service Component</a></h3>
                         <iframe src="./pages/quakes.html" class="document-viewer"></iframe>
                     </div>
                 </div>

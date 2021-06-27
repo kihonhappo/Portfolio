@@ -21,3 +21,24 @@ export function getJSON(url){
             console.log(error);
         });
 }
+
+export function processDate(format_type, dte){
+    let return_dte = dte;
+    if(dte){
+        let d = dte.getDate();
+        let m = dte.getMonth() + 1;
+        let y = dte.getFullYear().toString();
+        return_dte = y + '-' + m + '-' + d;
+        switch(format_type){
+            case 'server':
+
+                break;
+            case 'client':
+                return_dte = m + '-' + d + '-' + y;
+                break;
+        }
+    }
+    
+    
+    return return_dte;
+  }

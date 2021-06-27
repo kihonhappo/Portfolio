@@ -99,11 +99,20 @@ body {
   height: 600px;
 }
 
+.content-wrapper .main .section-cont .show-link:hover {
+  cursor: pointer;
+}
+
+.content-wrapper .main .section-cont .child.hide {
+  display: block;
+}
+
 .content-wrapper .main .section-cont .section-header {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   padding-top: 20px;
   padding-bottom: 20px;
+  text-align: center;
 }
 
 .content-wrapper .main .section-cont .reading-sub-label {

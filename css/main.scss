@@ -68,12 +68,14 @@ body{
       height: 600px;
 
       .section-cont{
-        
+        .show-link:hover{cursor: pointer;}
+        .child.hide{display: block;}
         .section-header{
           border-top: 1px solid black; 
           border-bottom: 1px solid black; 
           padding-top: 20px; 
           padding-bottom: 20px;
+          text-align: center;
         }
         .reading-sub-label{font-size: 14px; font-weight: bold;}
         .list{margin-top: 20px;}
