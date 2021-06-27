@@ -22,6 +22,8 @@ export function getJSON(url){
         });
 }
 
+/* This function allows me to control the date formats incase I need to send data back to an API or DB 
+    that needs date datatypes to be a cerain format */
 export function processDate(format_type, dte){
     let return_dte = dte;
     if(dte){

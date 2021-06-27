@@ -10,6 +10,8 @@ export default class Quake {
     this._quakes = [];
   }
   async getEarthQuakesByRadius(position, start, end, radius = 300) {
+
+    // I modified the original function so I could allow the user to search by date range and or radius
     this.start = processDate('server', new Date(start));
     this.end = processDate('server', new Date(end));
     let maxradius = radius;
@@ -26,7 +28,7 @@ export default class Quake {
   getQuakeById(id, quakelist) {
     // filter this._quakes for the record identified by id and return it
     let event_quake = '&eventid=' + id;
-    //alert('ID: ' + id + ' quakes.length: ' + quakelist.length);
+    // I think the Quakes API does actually have a get Details function
     return quakelist.features.filter(item => item.id === id)[0];
   }
 }

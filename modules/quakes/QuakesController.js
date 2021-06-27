@@ -57,6 +57,8 @@ export default class QuakesController {
     const quakeList = await this.quakes.getEarthQuakesByRadius(this.position, this.start, this.end, radius);
     // render the list to html
     //console.log(JSON.stringify(quakeList));
+
+    // I added the ability to filter quake list by start date, end date, and radius
     this.quakesView.renderQuakeList(quakeList, this.start, this.end, this.radius, this.parentElement);
     // add a listener to the new list of quakes to allow drill down in to the details
     this.parentElement.addEventListener('touchend', e => {
@@ -66,15 +68,20 @@ export default class QuakesController {
     let vi = this;
     this.parentElement.addEventListener('click', e => {
       e.preventDefault();
+
+      // Get any click event on the parent element
       let cntrl = e.target;
+      // Get clicked elements tagname
       let cntrl_type = cntrl.tagName;
       let parent = cntrl.closest('li');
       let quake_id = parent.dataset.id;
       
-      //alert(cntrl_type);
+      //alert(cntrl.tagName);
+
+      // Check the elements tagname and write code acording to the clicked element
       switch(cntrl_type){
         case 'BUTTON':
-          
+          // If clicked element is the search button then check if the radius, start and end date inputs exist
           let radius = document.getElementById('radius');
           if(radius){
             vi.radius = radius.value;
@@ -84,6 +91,8 @@ export default class QuakesController {
             let end = document.getElementById('end-date')
             vi.start = processDate('client', new Date(start.value));
             vi.end = processDate('client', new Date(end.value));
+
+            // Send to this getQuakesByRadius and populate the Quakeslist with the new data
             vi.getQuakesByRadius(radius.value);
           }
           
@@ -98,16 +107,27 @@ export default class QuakesController {
           }
           break;
         case 'IMG':
+          // If the clicked item is an image then check if the image is the map icon
           if(cntrl.classList.contains('map')){
+            // Get the hyperlink parent for the image then create a pop up window and assign the window's url to the image's parent's href
             let a = cntrl.parentElement;
             let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=300,left=100,top=100`;
             
             let map_window = window.open(a.href, 'Selected Quake Interactive Map', params);
             map_window.focus();
-            /*map_window.onload = function(){
-              let html = `<div style="font-size:30px">Welcome!</div>`;
-              newWindow.document.body.insertAdjacentHTML('afterbegin', html);
-            };*/
+           // Now the user can open as many windows as they need and make side by side comparisons
+            
+          }
+          break;
+        case 'A':
+          if(cntrl.classList.contains('quake-info-link')){
+            // Get the hyperlink parent for the image then create a pop up window and assign the window's url to the image's parent's href
+            //let a = cntrl.parentElement;
+            let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=800,height=300,left=50%,top=50%`;
+            
+            let map_window = window.open(cntrl.href, 'Selected Quake Interactive Map', params);
+            map_window.focus();
+           // Now the user can open as many windows as they need and make side by side comparisons
             
           }
           break;
@@ -116,6 +136,7 @@ export default class QuakesController {
             let inner_list = parent.parentElement;
             let lis = inner_list.querySelectorAll('li');
             lis.forEach(element => {
+              // Add the selected class to the clicked li so the user can see which row they clicked
               if(element.classList.contains('selected')){
                 element.classList.remove('selected');
               }
@@ -124,15 +145,12 @@ export default class QuakesController {
             let ele = parent.querySelector('.quake-info');
             //let hides = 
             ele.classList.toggle('hide');
-            //alert(quakeList.length);
+            // Get quake details from quake model
             vi.getQuakeDetails(ele, parent.dataset.id, quakeList);
           }
           break;
       }
       
-      
-      
-      //this.getQuakeDetails(e.target.dataset.id);
     });
     this.parentElement.addEventListener('dblclick', e => {
       let cntrl = e.target;
@@ -140,12 +158,12 @@ export default class QuakesController {
       let parent = cntrl.closest('li');
       let quake_id = parent.dataset.id;
       
-      //alert(cntrl_type);
+      // When the info container in the row is open then when a user clicks inside of the info container the row will not close. 
+      // By using the double click method the user can copy or click inside of the info box with out closing the row.
       switch(cntrl_type){
         case 'DIV':
           if(cntrl.classList.contains('quake-info')){
             cntrl.classList.toggle('hide');
-            
           }
           break;
         default:
