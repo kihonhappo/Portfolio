@@ -5,38 +5,69 @@
         <title>Local Quakes</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>
-            h2{text-align: center;}
-            #quakeList{list-style: none; border: 1px solid black; padding-left: 0px; width: 90%; margin: 0 auto;}
-            .inner-list{list-style: none; padding-left: 0px;}
-            #quakeList li{border: 1px solid black;}
-            .hide{display: none;}
+
+            /* Global Styles */
+            .date-time-cont{display: inline-block;}
+            .cell{padding: 10px; text-align: center;}
+            .selected{background-color: powderblue;}
+
+            /* Quake Title */
+            .quake-title{color: blue; text-align: center;}
+
+            /* Top toolbar */
             .tool-bar{padding: 10px;}
             .dte{color: darkgreen; margin-right: 10px;}
-            .cell{padding: 10px; text-align: center;}
-            .quake-title{color: blue;}
-            .mag{color: orange; width: 80px; font-weight: bold;  display: inline-block;}
-            .cause{color: black; width: 150px; font-weight: bold; display: inline-block;}
-            .city{color: purple; text-align: center; width: 120px; display: inline-block;}
-            .state{color: green; text-align: center; width: 220px; display: inline-block;}
-            .distance{color: rgb(202, 62, 104); font-weight: bold; width: 150px; display: inline-block;}
-            .day{color: rgb(202, 62, 104);  font-weight: bold; margin-right: 10px; width: 30px; display: inline-block;}
-            .time{color: rgb(87, 41, 161); font-weight: bold; width: 100px; display: inline-block;}
-            .date{color: rgb(76, 80, 17); font-weight: bold; margin-right: 10px; width: 80px; display: inline-block;}
-            .date-time-cont{display: inline-block;}
-            .title{color: red;  display: inline-block;}
-            .missing{color: red; width: 100%; font-size: 15px; padding: 0px; font-weight: bold; display: inline-block; text-align: center; margin: 0 auto;}
-            .list-scroll{height: 400px; overflow: auto;}
             .form-control{padding-left: 10px; padding-right: 10px; padding-top: 3px; padding-bottom: 3px;}
             label{margin-left: 10px;}
             .btn{padding: 5px; margin-left: 10px; padding-left: 10px; padding-right: 10px; background-color: darkorchid; color: white}
             .search-dte{width: 100px;}
             .radius{width: 50px;}
+
+            /* Quake List */
+            #quakeList{list-style: none; border: 1px solid black; padding-left: 0px; width: 90%; margin: 0 auto;}
+            #quakeList li{border: 1px solid black;}
+
+            /* Headers */
+            .headers .date-time-cont{ padding-left: 5px; text-align: center;}
+            .headers span{}
+
+            /* Inner List */
+            .list-cont{}
+            .list-scroll{height: 400px; overflow: auto; border-top: 1px solid black;}
+            .inner-list{list-style: none; padding-left: 0px;}
+            
+            /* Inner List LI Children */
+            
+
+            /* Date info Container */
+            
+            .day{color: rgb(202, 62, 104);  font-weight: bold; margin-right: 0px; width: 30px; display: inline-block;}
+            .date{color: rgb(76, 80, 17); font-weight: bold; margin-right: 0px; width: 80px; display: inline-block;}
+            .time{color: rgb(87, 41, 161); font-weight: bold; width: 100px; display: inline-block;}
+
+            /* Quake Title Data */
+            .mag{color: orange; width: 80px; font-weight: bold;  display: inline-block;}
+            .cause{color: black; width: 150px; font-weight: bold; display: inline-block;}
+            .city{color: purple; text-align: center; width: 120px; display: inline-block;}
+            .state{color: green; text-align: center; width: 220px; display: inline-block;}
+            .distance{color: rgb(202, 62, 104); font-weight: bold; width: 150px; display: inline-block;}
+            .coords{color: darkorchid; font-weight: bold; width: 20%; display: inline-block;}
+            .quake-id{color: rgb(4, 114, 59); font-weight: bold; width: 10%; display: inline-block;}
+            
+            .title{color: red;  display: inline-block;}
+            .missing{color: red; width: 100%; font-size: 15px; padding: 0px; font-weight: bold; display: inline-block; text-align: center; margin: 0 auto;}
+
+            /* Quake Info */
+            .quake-info{border-top: 2px solid black; height: auto; background-color: white;}
+            .hide{display: none;}
+
+
        </style>
     </head>
 
     <body>
         <main>
-            <h2 id="quake-title">Quakes by Region</h2>
+            <h2 class="quake-title" >Quakes by Region</h2>
             <ul id="quakeList"></ul>
         </main>
         <script type="module" src='../modules/quakes/index.js'></script>

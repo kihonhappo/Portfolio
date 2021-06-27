@@ -13,7 +13,7 @@ export default class QuakesView {
           <button id="search" class="btn btn-search">Search</button>
         </li>
        <li class="headers">
-          <span class="cell date-time-cont">
+          <span class="date-time-cont">
             <span class="day">Day</span>
             <span class="date">Date</span>
             <span class="time">Time</span>
@@ -24,6 +24,7 @@ export default class QuakesView {
           <span class="cell city">City</span>
           <span class="cell state">State/Country</span>
           <span class="cell coords">Coordinates</span>
+          <span class="cell quake-id">Quake ID</span>
         </li>
         <li class="list-cont">
           <div class="list-scroll">
@@ -32,11 +33,15 @@ export default class QuakesView {
       str += quakeList.features
       .map(quake => {
         return `
-        <li data-id="${quake.id}">
-          <span class="cell dte">${this.formatDate(new Date(quake.properties.time))} ${this.processTitle(quake.properties.title)}</span>
-          <span class="cell coords">${quake.geometry.coordinates}</span>
+        <li class="quake-row" data-id="${quake.id}">
+          <span class="cell">
+            ${this.formatDate(new Date(quake.properties.time))} 
+            ${this.processTitle(quake.properties.title)}
+            <span class="cell coords">${quake.geometry.coordinates}</span>
+            <span class="cell quake-id">${quake.id}</span>
+          </span>
 
-          <div class="quake-info hide">
+          <div title="Double Click to Close Quake Details" class="quake-info hide">
 
           </div>
         </li>`;
@@ -128,7 +133,7 @@ export default class QuakesView {
 
       let str = `
         
-        <span class="cell date-time-cont">
+        <span class="date-time-cont">
           <span class="day">${dow}</span> 
           <span class="date">${m}/${d}/${y}</span>
           <span class="time">${local_time}</span>
@@ -139,8 +144,9 @@ export default class QuakesView {
     }
     renderQuake(ele, quake) {
       const quakeProperties = Object.entries(quake.properties);
-      ele.classList.toggel('hide');
-      ele.innerHTML = JSON.stringify(quake);
+      let str = '';
+      
+      ele.innerHTML = `<iframe class="map" src="https://earthquake.usgs.gov/earthquakes/eventpage/${quake.id}/maps"></iframe>`;
       // for the provided quake make a list of each of the properties associated with it. Then append the list to the provided element. Notice the first line of this method. Object.entries() is a slick way to turn an object into an array so that we can iterate over it easier! 
     
     }

@@ -90,9 +90,25 @@ export default class QuakesController {
           //console.log(JSON.stringify(quakeList));
          
           break;
+        case 'DIV':
+          if(cntrl.classList.contains('quake-info')){
+
+            //cntrl.classList.toggle('hide');
+          }
+          break;
         default:
           if(quake_id != undefined){
+            let inner_list = parent.parentElement;
+            let lis = inner_list.querySelectorAll('li');
+            lis.forEach(element => {
+              if(element.classList.contains('selected')){
+                element.classList.remove('selected');
+              }
+            });
+            parent.classList.toggle('selected');
             let ele = parent.querySelector('.quake-info');
+            //let hides = 
+            ele.classList.toggle('hide');
             //alert(quakeList.length);
             vi.getQuakeDetails(ele, parent.dataset.id, quakeList);
           }
@@ -102,6 +118,25 @@ export default class QuakesController {
       
       
       //this.getQuakeDetails(e.target.dataset.id);
+    });
+    this.parentElement.addEventListener('dblclick', e => {
+      let cntrl = e.target;
+      let cntrl_type = cntrl.tagName;
+      let parent = cntrl.closest('li');
+      let quake_id = parent.dataset.id;
+      
+      //alert(cntrl_type);
+      switch(cntrl_type){
+        case 'DIV':
+          if(cntrl.classList.contains('quake-info')){
+            cntrl.classList.toggle('hide');
+            
+          }
+          break;
+        default:
+
+          break;
+      }
     });
   }
   async getQuakeDetails(ele, quakeId, quakelist) {

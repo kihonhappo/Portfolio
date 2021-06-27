@@ -25,7 +25,7 @@ export default class Quake {
   
   getQuakeById(id, quakelist) {
     // filter this._quakes for the record identified by id and return it
-    alert('ID: ' + id + ' quakes.length: ' + quakelist.length);
+    //alert('ID: ' + id + ' quakes.length: ' + quakelist.length);
     return quakelist.features.filter(item => item.id === id)[0];
   }
 }
