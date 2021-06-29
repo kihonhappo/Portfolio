@@ -27,6 +27,8 @@ body {
 .title-cont #top-header {
   float: left;
   width: 70%;
+  -webkit-transition: 1s opacity;
+  transition: 1s opacity;
   color: green;
   font-size: large;
   padding-top: 0px;
@@ -49,6 +51,9 @@ body {
   height: 800px;
   padding-left: 0px;
   border: 1px solid black;
+  -webkit-box-flex: flex;
+      -ms-flex: flex;
+          flex: flex;
 }
 
 .content-wrapper .menu .header-link-cont {
@@ -86,14 +91,20 @@ body {
 
 .content-wrapper .menu .header-link-cont .link-parent a.head-link-a::after {
   content: '\002B';
-  color: #777;
+  color: green;
   font-weight: bold;
   float: right;
+  margin-right: 20px;
+  margin-top: -5px;
   margin-left: 5px;
+  font-size: 20px;
 }
 
 .content-wrapper .menu .header-link-cont .link-parent a.head-link-a.active::after {
   content: "\2212";
+  color: red;
+  font-size: 20px;
+  margin-top: -5px;
 }
 
 .content-wrapper .menu .header-link-cont .sub-links-cont {
@@ -143,6 +154,8 @@ body {
   color: black;
   overflow-y: auto;
   height: 800px;
+  -webkit-transition: 1s opacity;
+  transition: 1s opacity;
 }
 
 .content-wrapper .main .section-cont .show-link:hover {

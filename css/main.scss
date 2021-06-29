@@ -13,7 +13,7 @@ body{
   border-bottom: 1px solid black;
 
   .left-title{float:left; width: 25%; color: green; font-size: large; padding-top: 0px;}
-  #top-header{float:left; width: 70%; color: green; font-size: large; padding-top: 0px;}
+  #top-header{float:left; width: 70%; transition: 1s opacity; color: green; font-size: large; padding-top: 0px;}
 }
 
 .hide{} 
@@ -33,6 +33,7 @@ body{
       height: 800px;
       padding-left: 0px;
       border: 1px solid black;
+      flex: flex;
       .header-link-cont{
         
         margin: 0px;
@@ -63,14 +64,20 @@ body{
           }
           a.head-link-a::after {
             content: '\002B';
-            color: #777;
+            color: green;
             font-weight: bold;
             float: right;
+            margin-right: 20px;
+            margin-top: -5px;
             margin-left: 5px;
+            font-size: 20px;
           }
           
           a.head-link-a.active::after {
             content: "\2212";
+            color: red;
+            font-size: 20px;
+            margin-top: -5px;
           }
         }
         .sub-links-cont{
@@ -110,7 +117,7 @@ body{
       color: black;
       overflow-y: auto;
       height: 800px;
-
+      transition: 1s opacity;
       .section-cont{
         .show-link:hover{cursor: pointer;}
         .child.hide{display: block;}

@@ -133,7 +133,7 @@ export default class nav{
                 let sub_link_list = document.querySelectorAll('.sub-links-cont');
                 let top_links = document.querySelectorAll('.head-link-a');
                 sub_link_list.forEach(function(sub, index){
-                    if(sub.id != sub_links.id && !sub.classList.contains('hide')){
+                    if(sub.id !== sub_links.id){
                         sub.classList.add('hide');
                         sub.style.maxHeight = null;
                         top_links[index].classList.remove('active');
@@ -142,20 +142,21 @@ export default class nav{
                         me.loadPage(week, 'reading');
                         sub_links.classList.remove('hide');
                         sub_links.style.maxHeight = sub_links.scrollHeight + "px";
+                        top_links[index].classList.add('active');
                     }*/
                     
                 });
-                if(sub_links.classList.contains('hide')){
+                if(!a_top.classList.contains('active')){
                     me.loadPage(week, 'reading');
                     sub_links.classList.remove('hide');
                     sub_links.style.maxHeight = sub_links.scrollHeight + "px";
                     a_top.classList.add('active');
                 }
-                else{
+                /*else{
                     sub_links.classList.add('hide');
                     sub_links.style.maxHeight = null;
                     a_top.classList.remove('active');
-                }
+                }*/
                 
             });
             var lastPageNav = localStorage.getItem("lastPage");
@@ -176,9 +177,19 @@ export default class nav{
         });
     }
     loadPage(week, link){
+        let me = this;
+      
+        me.top_header.style.opacity = '0';
+        me.main.style.opacity = '0';
+       
+        window.setTimeout(function(){
+            me.top_header.innerHTML = week.title;
+            me.main.innerHTML = week[link];
+            me.top_header.style.opacity = '1';
+            me.main.style.opacity = '1';
+       },500);
         
-        this.top_header.innerHTML = week.title;
-        this.main.innerHTML = week[link];
+
         let show_links = document.querySelectorAll('.show-link')
         show_links.forEach(function(show_link){
             show_link.addEventListener('click', function(event){
