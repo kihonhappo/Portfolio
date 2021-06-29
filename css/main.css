@@ -32,10 +32,6 @@ body {
   padding-top: 0px;
 }
 
-.hide {
-  display: none;
-}
-
 .h-center {
   text-align: center;
 }
@@ -47,27 +43,77 @@ body {
 
 .content-wrapper .menu {
   float: left;
-  width: 20%;
+  width: 25%;
   text-align: left;
   overflow: auto;
   height: 800px;
-  padding-left: 10px;
+  padding-left: 0px;
+  border: 1px solid black;
+}
+
+.content-wrapper .menu .header-link-cont {
+  margin: 0px;
+  padding: 0px;
+}
+
+.content-wrapper .menu .header-link-cont .link-parent {
+  margin: 0px;
 }
 
 .content-wrapper .menu .header-link-cont .link-parent a.head-link-a {
   text-decoration: none;
   display: block;
   width: 100%;
-  color: black;
-  font-size: 1em;
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid black;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.content-wrapper .menu .header-link-cont .link-parent a.head-link-a:hover {
+  background-color: #ccc;
+}
+
+.content-wrapper .menu .header-link-cont .link-parent a.head-link-a.active {
+  background-color: #ccc;
+}
+
+.content-wrapper .menu .header-link-cont .link-parent a.head-link-a::after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.content-wrapper .menu .header-link-cont .link-parent a.head-link-a.active::after {
+  content: "\2212";
 }
 
 .content-wrapper .menu .header-link-cont .sub-links-cont {
   margin-left: 10px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.content-wrapper .menu .header-link-cont .sub-links-cont .sub-link:first-child {
+  margin-top: 20px;
 }
 
 .content-wrapper .menu .header-link-cont .sub-links-cont .sub-link {
-  display: block;
+  display: inline-block;
+  width: 100%;
   text-decoration: none;
   color: black;
   margin-bottom: 10px;
@@ -192,6 +238,34 @@ body {
 
 .content-wrapper .main #proposal {
   margin-bottom: 20px;
+}
+
+@-webkit-keyframes hide {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+  99% {
+    display: block;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+@keyframes hide {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+  99% {
+    display: block;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
 }
 
 .red {

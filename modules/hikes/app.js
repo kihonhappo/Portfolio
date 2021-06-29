@@ -1,6 +1,6 @@
 
 
-import Hikes  from './hiking-start.js';
+import Hikes  from './hiking.js';
 
 
 

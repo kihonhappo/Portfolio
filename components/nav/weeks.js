@@ -30,17 +30,22 @@ const weeks = [
                         <li>Project - we'll start a quiz project that will be developed throughout the book</li>
                     </ul>
                 </div>`,
-        examples: `
-            <div id="examples" class="section-cont ht-300">
-                <div class="example">
-                    <h3 class="section-header h-center">Story Editor:</h3>
-                    <iframe src="./pages/story_editor.html" class="document-viewer"></iframe>
+        story_editor: `
+                <div id="examples" class="section-cont">
+                    <div class="example">
+                        <h3 class="section-header h-center">Story Editor:</h3>
+                        <iframe src="./pages/story_editor.html" class="document-viewer"></iframe>
+                    </div>
                 </div>
-                <div class="example">
-                    <h3 class="section-header h-center">Rainbow:</h3>
-                    <iframe src="./pages/rainbow.html" class="document-viewer"></iframe>
+                `,
+        rainbow:
+                `
+                <div id="examples" class="section-cont">
+                    <div class="example">
+                        <h3 class="section-header h-center">Rainbow:</h3>
+                        <iframe src="./pages/rainbow.html" class="document-viewer"></iframe>
+                    </div>
                 </div>
-            </div>
         `,  
         notes: 
             `<div id="notes" class="section-cont">
@@ -157,7 +162,7 @@ const weeks = [
                     </li>
                 </ol>
             </div>`,
-        examples: `
+        comments: `
             <div id="examples" class="section-cont">
                 <div class="example">
                     <h3 class="examples-header h-center">Comments</h3>
@@ -325,6 +330,8 @@ const weeks = [
                         </div>
                     </pre>
                 </div>
+            </div>
+            <div id="examples" class="section-cont">
                 <div class="example">
                     <h3 class="section-header h-center">Ch5: Objects:</h3>
                     <p>
@@ -454,11 +461,15 @@ const weeks = [
                         </div>
                     </pre>
                 </div>
-            
+            </div>`,
+        ch7_events :   `<div id="examples" class="section-cont">
                 <div class="exampe">
                     <h3 class="section-header h-center">Chapter 7: Events</h3>
                     <iframe src="./pages/events.html" class="document-viewer"></iframe>
                 </div>
+            </div>`,
+        team_activity: `
+            <div id="examples" class="section-cont">
                 <div class="example">
                     <h3 class="section-header h-center">Team Activity:</h3>
                     <iframe src="./pages/w03_team_assignment.html" class="document-viewer"></iframe>
@@ -595,12 +606,16 @@ const weeks = [
                 </ul>
             </div>`,
             
-        examples: `
+        javascript_form_validation: `
             <div id="examples" class="section-cont">
                 <div class="example">
                     <h3 class="section-header h-center">W04 Individual Activity: Javascript Form Validation</h3>
                     <iframe src="./pages/w04_js_form_validation.html" class="document-viewer"></iframe>
                 </div>
+            </div>`,
+
+        tic_tac_to: `
+            <div id="examples" class="section-cont">
                 <div class="example">
                     <h3 class="section-header h-center">W04 Team Activity:</h3>
                     <iframe src="./pages/tic_tac_toe.html" class="document-viewer ht-300"></iframe>
@@ -643,7 +658,7 @@ const weeks = [
                 </ul>
             </div>`,
             
-        examples: `
+        hiking_start: `
             
             <div id="examples" class="section-cont">
                 <div class="example">
@@ -690,7 +705,7 @@ const weeks = [
                 </ul>
             </div>`,
             
-        examples: `
+        midterm_todo_list: `
             <div id="examples" class="section-cont">
                 <div class="example">
                     <h3 class="section-header h-center">W06 Midterm Project: <a title="Open page in Seperate Window" href="./pages/todo.html" target="_blank">Todo List Component</a></h3>
@@ -1082,6 +1097,41 @@ const weeks = [
                     <div class="example">
                         <h3 class="section-header h-center">Quakes Team Activity: <a title="Open page in Seperate Window" href="./pages/quakes.html" target="_blank">Web Service Component</a></h3>
                         <iframe src="./pages/quakes.html" class="document-viewer"></iframe>
+                    </div>
+                </div>
+                        
+                    `
+            ,
+            notes: `
+                <div id="notes" class="section-cont">
+                    <p>I enjoyed this weeks Team Activity. I was able to add 3 parameters to the quake search function, start date, end date, and radius.
+                        I was also able to add a link to open a window to the selected quakes dynamic map. the rows will open up when the user clicks it. 
+                        The row reveals all of the details from the selected quake object. There are 2 more links that are in the details so I set them up to open their own window also. 
+
+                    </p>
+                </div>
+                `,
+            tasks: 
+                `<div iclass="section-cont tasks">
+                    <h3 class="tasks-header h-center">Steps to set up my Coding Environment</h3>
+                    <ol class"num-list">
+                        <li>Add Wireframes to Proposal</li>
+                        <li>Complete Timeline for Proposal</li>
+                        <li>Improve Nav functions. Add accordian like dropdown effects to portfolio sections.</li>
+                        <li>Download Code Editor</li>
+                    </ol>
+                </div>
+                
+                `
+        },
+        {
+            week: 'w11',
+            title: 'Week 11',
+            authentication_jWT: `
+                <div id="examples" class="section-cont">
+                    <div class="example">
+                        <h3 class="section-header h-center">Authentication with JWT: <a title="Open page in Seperate Window" href="./pages/jwt.html" target="_blank">Authentication with JWT</a></h3>
+                        <iframe src="./pages/jwt.html" class="document-viewer"></iframe>
                     </div>
                 </div>
                         
