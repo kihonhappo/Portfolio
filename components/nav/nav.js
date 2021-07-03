@@ -130,7 +130,7 @@ export default class nav{
             var lastPageNav = localStorage.getItem("lastPage");
             let sub_last = localStorage.getItem("lastSubLink");
             if(sub_last == undefined){
-                sublast = 'examples';
+                sub_last = 'examples';
             }
             if(lastPageNav == link.week ){
                 let sub_lnk = document.getElementById(link.week + '-' + sub_last);
