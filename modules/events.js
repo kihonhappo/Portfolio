@@ -2,7 +2,7 @@
 import Bugger from '../components/bugger.js';
 
 let debug = new Bugger();
-
+debug.showDebug(true);
 const clickParagraph = document.getElementById('click');
 clickParagraph.addEventListener('click',() => debug.appendBugger('click') );
 clickParagraph.addEventListener('mousedown',() => debug.appendBugger('down') );

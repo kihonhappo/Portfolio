@@ -1,94 +1,51 @@
 
+import css_links from './css_links.js';
+import css_weeks from './css_weeks.js';
+import wfe_links from './wfe_links.js';
+import wfe_weeks from './wfe_weeks.js';
+
 
 export default class nav{
-    constructor(weeks) {
-        
+    constructor(links, weeks) {
+        this.nav_sel = document.getElementById('nav-links-sel');
         this.nav = document.getElementById('nav');
-        this.weeks = weeks;
         this.top_header = document.getElementById('top-header');
         this.main = document.getElementById('main');
-        this.links = [
-            {
-                week: "w1",
-                label: "Week 1: Setup and Review",
-                active: true,
-                url: "weeks/week1.js"
-            },
-            {
-                week: "w2",
-                label: "Week 2: Review",
-                active: true,
-                url: "weeks/week2.js"
-                
-            },
-            {
-                week: "w3",
-                label: "Week 3: Objects, Arrays",
-                active: true,
-                url: "weeks/week3.js"
-            },
-            {
-                week: "w4",
-                label: "Week 4: Modular, OOP & Forms",
-                active: true,
-                url: "weeks/week4.js",
-                
-            },
-            {
-                week: "w5",
-                label: "Week 5: Testing & Debugging",
-                active: true,
-                url: "weeks/week4.js",
-                
-            },
-            {
-                week: "w6",
-                label: "Week 6: Midterm Project",
-                active: true,
-                url: "weeks/week4.js",
-                
-            },
-            {
-                week: "w7",
-                label: "Week 7: Hikes: Comments",
-                active: true,
-                url: "weeks/week4.js",
-                
-            },
-            {
-                week: "w8",
-                label: "Week 8: AJAX and the CORS",
-                active: true,
-                url: "weeks/week4.js",
-                
-            },
-            {
-                week: "w9",
-                label: "Week 9: Workflow & Challenge Proposal",
-                active: true,
-                url: "weeks/week4.js",
-                
-            },
-            {
-                week: "w10",
-                label: "Week 10: Validating Forms And Using Fetch",
-                active: true,
-                url: "weeks/week4.js",
-                
-            },
-            {
-                week: "w11",
-                label: "Week 11: Authentication with JWT",
-                active: true,
-                url: "weeks/week4.js",
-                
+        this.links = links;
+        this.weeks = weeks;
+        
+        this.nav_sel.addEventListener('change', (e) => {
+            let val = this.nav_sel.value;
+            localStorage.setItem("lastSelect", val);
+            switch(val){
+                case 'css':
+                    this.links = css_links;
+                    this.weeks = css_weeks;
+                    break;
+                case 'wfe':
+                    this.links = wfe_links;
+                    this.weeks = wfe_weeks;
+                    break;
             }
-          ];
+            this.nav.innerHTML = '';
+            this.loadNav();
+        });
+        let lastSelect = localStorage.getItem('lastSelect');
+        if(lastSelect){
+            this.nav_sel.value = lastSelect;
+            if(lastSelect == 'css'){
+                this.links = css_links;
+                this.weeks = css_weeks;
+            }
+        }
         this.loadNav();
+        
     }
 
     loadNav(){
+        //alert(JSON.stringify(this.links) + ' ' + JSON.stringify(this.weeks));
         let me = this;
+        
         this.links.forEach(function(link, index){
             let div_link_cont = document.createElement('DIV');
             div_link_cont.classList.add('header-link-cont');
@@ -113,10 +70,20 @@ export default class nav{
                 if(key != 'week' && key != 'title'){
                     let a_child = document.createElement('A');
                     a_child.text = me.setCap(key);
+                    a_child.id = link.week + '-' + key;
                     a_child.classList.add('sub-link');
+                    
                     a_child.href = key;
                     a_child.addEventListener('click', function(event){
                         event.preventDefault();
+                        localStorage.setItem("lastSubLink", key);
+                        let subs = document.querySelectorAll('.sub-link');
+                        subs.forEach(function(sub_c){
+                            if(sub_c.classList.contains('sub-active')){
+                                sub_c.classList.remove('sub-active');
+                            }
+                        });
+                        a_child.classList.add('sub-active');
                         me.loadPage(week, key);
                     });
                     sub_links.append(a_child);
@@ -124,6 +91,7 @@ export default class nav{
                 }
             });
             div_link_cont.appendChild(sub_links);
+            
            // if(link.active == true){
             me.nav.appendChild(div_link_cont);
             a_top.addEventListener("click", function(e){
@@ -160,19 +128,28 @@ export default class nav{
                 
             });
             var lastPageNav = localStorage.getItem("lastPage");
+            let sub_last = localStorage.getItem("lastSubLink");
+            if(sub_last == undefined){
+                sublast = 'examples';
+            }
             if(lastPageNav == link.week ){
-                me.loadPage(week, 'reading');
+                let sub_lnk = document.getElementById(link.week + '-' + sub_last);
+                sub_lnk.classList.add('sub-active');
+                me.loadPage(week, sub_last);
                 
                if (sub_links.style.maxHeight) {
                     sub_links.style.maxHeight = null;
                     sub_links.classList.add('hide');
                     a_top.classList.remove('active');
-                } else {
+                } 
+                else {
                     sub_links.style.maxHeight = sub_links.scrollHeight + "px";
                     sub_links.classList.remove('hide');
                     a_top.classList.add('active');
                 } 
+                
             }
+            
            // }
         });
     }

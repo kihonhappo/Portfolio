@@ -3,6 +3,8 @@ export default class bugger {
     constructor() {
       //alert('bugger');
       // we need a back button to return back to the list. This will build it and hide it. When we need it we just need to remove the 'hidden' class
+      
+      
       this.bugger_ele = `
         <style>
           .debug-cont{width: 100%; height: 200px; margin-bottom: 20px; padding-top: 20px; margin: 0 auto; border-top: 2px solid black; clear: both;}
@@ -19,7 +21,7 @@ export default class bugger {
      
       
       
-      //document.body.appendChild(this.bugger_ele);
+     // document.body.appendChild(this.bugger_ele);
 
     }
     showDebug(bool){

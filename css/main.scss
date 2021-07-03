@@ -18,7 +18,7 @@ body{
 
 .hide{} 
 
-
+.nav-links{padding: 5px; color: green; font-weight: bold;}
 
 .h-center{text-align: center;} 
 .content-wrapper{
@@ -101,6 +101,10 @@ body{
             &:hover{color: darkorchid; text-decoration: underline;}
             &:active{color: coral; text-decoration: underline;}
             &:visited{color: coral; text-decoration: underline;}
+          
+          }
+          .sub-link.sub-active{
+            color: red; font-weight: bold;
           }
         }
       }

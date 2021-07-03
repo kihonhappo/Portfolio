@@ -1,0 +1,300 @@
+/* css Zen Garden default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+/* This file based on 'Tranquille' by Dave Shea */
+/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
+/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
+
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+
+
+/* basic elements */
+
+:root {
+  --border: none/*2px solid black*/;
+  
+}
+
+
+
+body{font-family: Arial, Helvetica, sans-serif;}
+.explanation p::first-letter{font-size: 24px; font-family: sans-serif;}
+.page-wrapper{padding: 20px; }
+.page-wrapper::before{content: " " url("snow_star.png"); float: left;}
+.page-wrapper::before{content: '' url("volcano.svg"); position: absolute; top: 400px; }
+
+h1, h2, h3{text-align: center;}
+/*h1::first-letter, h2::first-letter, h3::first-letter{font-size: 48px; font-family: sans-serif;
+  background-image: url("snow_star.png");
+}
+
+p{}
+ Intro */
+.intro{border: 1px solid red;}
+
+  header{border: var(--border); border-bottom: none; float: right; width: 70%; padding: 10px; padding-bottom: 0px;}
+
+    header h1{}
+    h2{}
+
+
+  .summary{border: var(--border); border-top: none;  float: right; margin-bottom: 30px; width: 70%; padding: 10px; padding-top: 0px;}
+
+    .summary p{text-align: center; padding: 0px;}
+    
+
+
+  .preamble{border: var(--border); float: right; width: 47%; padding-left: 10px; padding-right: 10px;}
+
+    h3{}
+    p{}
+
+/* End of Intro */
+
+/* Main */
+.main{}
+
+  .explanation{border: var(--border); float: left; width: 47%; padding-left: 10px; padding-right: 10px;}
+
+    h3{}
+    p{}
+
+  .participation{
+    border: var(--border); 
+    float: right; 
+    width: 25%; 
+    margin-top: 30px; 
+    margin-left: 0px; 
+    padding-left: 10px; 
+    padding-right: 10px;
+    
+  }
+    
+    h3{}
+    p{}
+
+  .benefits{border: var(--border); clear: right; float: right; margin-top: 30px; width: 25%; margin-right: 0px; padding-left: 10px; padding-right: 10px;}
+
+    h3{}
+    p{}
+
+  .requirements{border: var(--border); float: left; width: 25%; margin-top: -450px; padding-left: 10px; padding-right: 10px;}
+
+    h3{}
+    p{}
+
+    p[role="contentinfo"]{position: absolute; margin-top: -35px; margin-left: 413px; width: 40%; padding: 5px;
+      border: var(--border); text-align: center; font-size: 14px; font-weight: bold;}
+
+  footer{ padding-left: 10px; padding-right: 10px; margin-left: 35px; float: left; margin-top: 280px; border: 2px solid black;}
+
+    a{}
+
+/* End of Main */
+
+
+/* Sidebar */
+
+.sidebar{}
+
+  /* Wrapper */
+  .wrapper{}
+
+    /* Design-selection */
+    .design-selection{ 
+      float: left; 
+      width: 40%; 
+      height: 630px;  
+      margin-top: -420px; 
+      border: var(--border); 
+      padding-left: 10px; 
+      padding-right: 10px;
+      margin-left: -195px;
+    }
+
+
+      h3.select{border: var(--border); margin-left: 120px; width: 72%; padding: 10px;}
+
+      .design-selection nav{display: block;}
+
+      .design-selection nav ul{ 
+        height: 350px; 
+        display: block; 
+        list-style: none;
+      }
+
+      #design-selection nav ul li{border: var(--border); margin-left: 80px; float: left; margin-bottom: 10px; 
+        width: 75%; padding: 10px; padding-left: 20px; 
+        }
+
+      .design-selection nav ul li::before{content: " " url("left_image.png"); position: absolute; margin-left: -80px; margin-top: -10px;}
+      
+      .mo-fire {
+        width: 200px;
+        height: auto;
+        position: absolute;
+        left:50%;
+        margin-left: -100px;
+        top: 100px;
+      }
+      .design-selection nav ul li::before svg {
+        width: 100%;
+        height: auto;
+        position: relative
+      }
+      .flame {
+        animation-name: flamefly;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        opacity: 0;
+        transform-origin: 50% 50% 0;
+      }
+      .flame.one {
+        animation-delay: 1s;
+        animation-duration: 3s;
+      }
+      .flame3.two{
+        animation-duration: 5s;
+        animation-delay: 1s;
+      }
+      
+      .flame-main {
+        animation-name: flameWobble;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+      .flame-main.one {
+        animation-duration: 4s;
+        animation-delay: 1s;
+      }
+      .flame-main.two {
+        animation-duration: 3s;
+        animation-delay: 2s;
+      }
+      .flame-main.three {
+        animation-duration: 2.1s;
+        animation-delay: 3s;
+      }
+      .flame-main.four {
+        animation-duration: 3.2s;
+        animation-delay: 4s;
+      }
+      .flame-main.five {
+        animation-duration: 2.5s;
+        animation-delay: 5s;
+      }
+      @keyframes flameWobble {
+        50% {
+          transform: scale(1,1.2) translate(0, -30px) rotate(-2deg);
+        }
+      }
+      @keyframes flamefly {
+        0%{
+          transform: translate(0) rotate(180deg);
+        }
+         50% {
+           opacity: 1;
+        }
+        100% {
+          transform: translate(-20px, -100px) rotate(180deg);
+          opacity: 0;
+        }
+      }
+     /* .design-selection nav ul li::before{
+        width:150px;
+        height:150px;
+        background:linear-gradient(-45deg, red, orange);
+        border-radius: 150px 150px 0px 150px;
+        transform:rotate(-135deg);
+        animation:.1s flame infinite;
+        filter:blur(10px);
+        position:relative;
+        box-shadow:17px 20px 90px #700;
+        border:45px solid black;
+        border-left-width:25px;
+        border-top-width:25px;
+      }
+       
+        .design-selection nav ul li:after,
+        .design-selection nav ul li:before{
+          content:'';
+          width:100px;
+          height:100px;
+          display:block;
+          position:absolute;
+          background:linear-gradient(-45deg, red, orange);
+          animation:.2s flame infinite;
+          transform:scale(.8) rotate(20deg);
+          border-radius: 100px 100px 0px 100px;
+          top:20px;
+        }
+        .design-selection nav ul li:before{
+          top:0;
+          animation-duration:.09s;
+          transform:scale(.9) rotate(-15deg) translate(10px, 0px);
+        }
+      
+      */
+      @keyframes flame{
+        0% {height:150px; width:150px;}
+        50% {height:140px; width:140px;}
+        100% {height:150px; width:150px;}
+      }
+      .design-selection nav ul li a{text-decoration: none; font-size: 18px; font-weight: bold; color: rgb(59, 57, 57)}
+
+    /* Design Archives */
+    .design-archives{ 
+      width: 33%; 
+      float: left; 
+      margin-left: -450px;
+      margin-top: 90px; 
+      border: var(--border); 
+      height: 100px;
+      width: 25%; 
+      padding-top: 0px;
+      padding-left: 10px; 
+      padding-right: 10px;
+      border: 1px solid 
+    }
+
+      h3.archives{padding-top: 0px; margin-top: 0px; margin-bottom: 20px;}
+
+      nav{}
+
+      .design-archives ul{list-style: none;}
+
+      .flame{outline: 1px solid rgba(0, 0, 0, 0.2);
+        border-image: url("left_image.png") 20/100;
+      }
+        
+        .design-archives nav ul li::before{content: " " url("left_image.png"); 
+          position: absolute; margin-top: 0px; margin-left: 0px; transform: scale(.5);}
+        
+        .design-archives nav ul li{ padding-bottom: 0px; padding-top: 0px; float: left;}
+
+          .next{margin-right: 50px;}
+
+          .design-archives a{text-decoration: none; color: black; font-weight: bold;}
+
+    /* zen-resources */
+    .zen-resources{width: 100%; float: left; padding-left: 10px; padding-right: 10px; 
+      padding-bottom: 30px; clear: left; border: 2px solid black; margin-top: 30px; margin-bottom: 40px;}
+
+      h3.resources{text-align: center; }
+
+      .zen-resources ul{list-style: none; display: flex;
+        justify-content: center; padding: 0px; margin: 0px;}
+
+        .zen-resources li{float: left; margin-right: 150px;}
+
+        .zen-resources li a{text-decoration: none; font-size: large; color: black;}
+
+
+        /*
+        data:image/svg+xml;charset=utf-8,%3Csvg style='outline: 1px solid red%3B' width='00' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:600%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E%3Cfilter id='distortion' width='100' height='100'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.05' numOctaves='2' result='turbulence'%3E%3Canimate attributeName='baseFrequency' dur='14s' values='.1%3B.2%3B.1' repeatCount='indefinite' /%3E%3C/feTurbulence%3E%3CfeDisplacementMap in2='turbulence' in='SourceGraphic' scale='20' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3Cpath d='M5 5 l80 0l0 80l-80 0 l0 -80' filter='url(%23distortion)' stroke-linecap='butt' stroke='url(%23g)' stroke-width='10' stroke-dasharray='300'/%3E%3C/svg%3E
+        data:image/svg+xml;charset=utf-8,%3Csvg style='outline: 1px solid red%3B' width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:600%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E%3Cfilter id='distortion' width='100' height='100'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.05' numOctaves='2' result='turbulence'%3E%3Canimate attributeName='baseFrequency' dur='14s' values='.1%3B.2%3B.1' repeatCount='indefinite' /%3E%3C/feTurbulence%3E%3CfeDisplacementMap in2='turbulence' in='SourceGraphic' scale='20' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3Cpath d='M5 5 l80 0l0 80l-80 0 l0 -80' filter='url(%23distortion)' stroke-linecap='butt' stroke='url(%23g)' stroke-width='10' stroke-dasharray='300'/%3E%3C/svg%3E
+        
+        */
+

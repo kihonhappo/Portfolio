@@ -34,6 +34,12 @@ body {
   padding-top: 0px;
 }
 
+.nav-links {
+  padding: 5px;
+  color: green;
+  font-weight: bold;
+}
+
 .h-center {
   text-align: center;
 }
@@ -143,6 +149,11 @@ body {
 .content-wrapper .menu .header-link-cont .sub-links-cont .sub-link:visited {
   color: coral;
   text-decoration: underline;
+}
+
+.content-wrapper .menu .header-link-cont .sub-links-cont .sub-link.sub-active {
+  color: red;
+  font-weight: bold;
 }
 
 .content-wrapper .main {

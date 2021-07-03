@@ -1,0 +1,236 @@
+@supports (display: grid) {
+  .card {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 20% 20% 20% 20% 20%;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+    -ms-grid-rows: 25% 25% 25% 25%;
+        grid-template-rows: 25% 25% 25% 25%;
+    border: 1px solid grey;
+    -webkit-box-shadow: 2px 2px 4px grey;
+            box-shadow: 2px 2px 4px grey;
+    width: 300px;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: 8px;
+    margin-top: 100px;
+  }
+  .cell {
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 30px;
+  }
+  .cell_1 {
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    margin-top: -30px;
+  }
+  .cell_2 {
+    -ms-grid-column: 2;
+    grid-column: 2;
+    -ms-grid-row: 1;
+    grid-row: 1;
+  }
+  .cell_3 {
+    -ms-grid-column: 4;
+    grid-column: 4;
+    -ms-grid-row: 1;
+    grid-row: 1;
+  }
+  .cell_4 {
+    -ms-grid-column: 3;
+    grid-column: 3;
+    -ms-grid-row: 2;
+    grid-row: 2;
+  }
+  .cell_5 {
+    -ms-grid-column: 2;
+    grid-column: 2;
+    -ms-grid-row: 3;
+    grid-row: 3;
+  }
+  .cell_6 {
+    -ms-grid-column: 4;
+    grid-column: 4;
+    -ms-grid-row: 3;
+    grid-row: 3;
+  }
+  .cell_7 {
+    -ms-grid-column: 2;
+    grid-column: 2;
+    -ms-grid-row: 4;
+    grid-row: 4;
+  }
+  .cell_8 {
+    -ms-grid-column: 4;
+    grid-column: 4;
+    -ms-grid-row: 4;
+    grid-row: 4;
+  }
+  .cell_9 {
+    -ms-grid-column: 5;
+    grid-column: 5;
+    -ms-grid-row: 4;
+    grid-row: 4;
+  }
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+  .number {
+    width: 30px;
+    padding: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: block;
+  }
+  .invert {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  .num-top {
+    margin-bottom: -55px;
+  }
+  .num-top .number {
+    margin-top: 10px;
+    margin-bottom: -10px;
+    margin-left: 8px;
+  }
+  .row-mid {
+    margin-bottom: 60px;
+  }
+  .num-bottom {
+    margin-top: -50px;
+  }
+  .num-bottom .number {
+    margin-bottom: 10px;
+    margin-top: -20px;
+    margin-left: -10px;
+    text-align: center;
+  }
+  .num-icon {
+    width: 25px;
+  }
+  .num-top .num-icon {
+    margin-left: 10px;
+    margin-top: -5px;
+  }
+  .cell_9 .number {
+    margin-left: 5px;
+    margin-top: -20px;
+  }
+  .cell_1 .number {
+    margin-bottom: -15px;
+  }
+  .cell_1 .num-icon {
+    margin-left: -5px;
+  }
+}
+
+@supports not (display: grid) {
+  .card {
+    border: 1px solid grey;
+    -webkit-box-shadow: 2px 2px 4px grey;
+            box-shadow: 2px 2px 4px grey;
+    width: 300px;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: 8px;
+    margin-top: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .cell {
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 30px;
+    height: 6em;
+  }
+  .cell_1 {
+    width: 20%;
+    margin-top: -30px;
+  }
+  .cell_2 {
+    width: 20%;
+  }
+  .cell_3 {
+    width: 60%;
+  }
+  .cell_4 {
+    width: 100%;
+  }
+  .cell_5 {
+    width: 60%;
+  }
+  .cell_6 {
+    width: 20%;
+  }
+  .cell_7 {
+    width: 60%;
+  }
+  .cell_8 {
+    width: 20%;
+  }
+  .cell_9 {
+    margin-top: -125px;
+    margin-left: 240px;
+  }
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+  .number {
+    width: 30px;
+    padding: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: block;
+  }
+  .invert {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  .num-top {
+    margin-bottom: -55px;
+  }
+  .num-top .number {
+    margin-top: 10px;
+    margin-bottom: -10px;
+    margin-left: 8px;
+  }
+  .row-mid {
+    margin-bottom: 60px;
+  }
+  .num-bottom {
+    margin-top: -50px;
+  }
+  .num-bottom .number {
+    margin-bottom: 10px;
+    margin-top: -20px;
+    margin-left: -10px;
+    text-align: center;
+  }
+  .num-icon {
+    width: 25px;
+  }
+  .num-top .num-icon {
+    margin-left: 10px;
+    margin-top: -5px;
+  }
+  .cell_9 .number {
+    margin-left: 5px;
+    margin-top: -20px;
+  }
+  .cell_1 .number {
+    margin-bottom: -15px;
+  }
+  .cell_1 .num-icon {
+    margin-left: -5px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

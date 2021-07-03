@@ -1,0 +1,194 @@
+/* css Zen Garden default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+/* This file based on 'Tranquille' by Dave Shea */
+/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
+/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
+
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+
+
+/* basic elements */
+
+/*.intro header{ width: 200px;
+	height: 100px;
+	background: red;}
+
+.intro header:before{
+	height: 50px;
+  width: 50px;
+  background-color: #555;
+  border-radius: 50%;
+}
+
+.requirements::before {
+  position: absolute;
+  left: 800;  
+  top: 300;
+  content: " " url("volcano.svg");
+}
+
+*/
+.page-wrapper::before{content: " " url("snow_star.png"); float: left;}
+
+.main{border: 1px solid green;}
+
+.intro, .preamble, .banner, .benefits, .summary, .explanation, .participation,
+.zen-resources, .requirements{border: 1px solid black;}
+.intro{} 
+
+.banner{width: 70%; float: right; margin-left: 20px;}
+
+.banner h1, .banner h2{text-align: center;}
+.banner h2 abbr{text-align: center;}
+.summary{border-top: none; text-align: center; width: 70%; float: right;} 
+
+.preamble{float: right; width: 40%;}
+
+.requirements{float: left; width: 25%}
+
+p[role='contentinfo']{border: 1px solid black; }
+
+.explanation{float: left; width: 40%;}
+.participation{float: right; width: 30%;}
+.benefits{float: right; width: 30%;}
+
+.zen-resources{width: 100%; overflow: hidden; padding-bottom: 20px; }
+.zen-resources h3{text-align: center;}
+.zen-resources ul{list-style: none; display: flex;
+  justify-content: center; padding: 0px; margin: 0px;}
+.zen-resources ul li{float: left; margin-left: 20px; margin-right: 20px;}
+.zen-resources ul li:last-child{}
+footer{border: 1px solid black; float: left;}
+
+.sidebar{
+  clear: both; 
+  width: 100%; 
+  border: 2px solid red; 
+  position: absolute;
+  top: 110%;
+}
+.wrapper{border: 2px solid orange;}
+.design-selection{
+  border: 1px solid black; 
+  width: 30%; 
+  margin-right: auto; 
+  margin-left: auto;
+}
+.design-archives{
+  border: 1px solid black; 
+  width: 30%;  
+  margin-right: auto; 
+  margin-left: auto;
+}
+/*
+header {
+  background-color: rgba(256,256,256,.03);
+  background-image: -webkit-linear-gradient(top, #111, #0c0c0c);
+  background-image: -moz-linear-gradient(top, #111, #0c0c0c);
+  background-image: -ms-linear-gradient(top, #111, #0c0c0c);
+  background-image: -o-linear-gradient(top, #111, #0c0c0c);
+  font-size: 2em;
+  font-family: 'Amethysta', serif;
+  text-align: center;
+  line-height: 1.4em;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  white-space:nowrap;
+}
+
+.intro  {
+  color: #000;
+  font-family: 'Caesar Dressing', cursive;
+  font-size: 1em;
+  text-transform: lowercase;
+  vertical-align: middle;
+  letter-spacing: .1em;
+}
+
+header h1 {
+  animation: animation 1s ease-in-out infinite alternate;
+  -moz-animation: animation 1s ease-in-out infinite alternate;
+  -webkit-animation: animation 1s ease-in-out infinite alternate;
+  -o-animation: animation 1s ease-in-out infinite alternate;
+}
+
+header h2 {
+  animation: animation .65s ease-in-out infinite alternate;
+  -moz-animation: animation .65s ease-in-out infinite alternate;
+  -webkit-animation: animation .65s ease-in-out infinite alternate;
+  -o-animation: animation .65s ease-in-out infinite alternate;
+}
+
+@keyframes animation
+{
+0% {text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #feec85,
+  -20px -20px 40px #ffae34,
+  20px -40px 50px #ec760c,
+  -20px -60px 60px #cd4606,
+  0 -80px 70px #973716,
+  10px -90px 80px #451b0e;}
+100% {text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #fefcc9,
+  -20px -20px 40px #feec85,
+  22px -42px 60px #ffae34,
+  -22px -58px 50px #ec760c,
+  0 -82px 80px #cd4606,
+  10px -90px 80px  #973716;}
+}
+
+@-moz-keyframes animation
+{
+0% {text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #feec85,
+  -20px -20px 40px #ffae34,
+  20px -40px 50px #ec760c,
+  -20px -60px 60px #cd4606,
+  0 -80px 70px #973716,
+  10px -90px 80px #451b0e;}
+100% {text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #fefcc9,
+  -20px -20px 40px #feec85,
+  22px -42px 60px #ffae34,
+  -22px -58px 50px #ec760c,
+  0 -82px 80px #cd4606,
+  10px -90px 80px  #973716;}
+}
+
+@-webkit-keyframes animation
+{
+0% {text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #feec85,
+  -20px -20px 40px #ffae34,
+  20px -40px 50px #ec760c,
+  -20px -60px 60px #cd4606,
+  0 -80px 70px #973716,
+  10px -90px 80px #451b0e;}
+100% {text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #fefcc9,
+  -20px -20px 40px #feec85,
+  22px -42px 60px #ffae34,
+  -22px -58px 50px #ec760c,
+  0 -82px 80px #cd4606,
+  10px -90px 80px  #973716;}
+}
+
+@-o-keyframes animation
+{
+0% {text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #feec85,
+  -20px -20px 40px #ffae34,
+  20px -40px 50px #ec760c,
+  -20px -60px 60px #cd4606,
+  0 -80px 70px #973716,
+  10px -90px 80px #451b0e;}
+100% {text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #fefcc9,
+  -20px -20px 40px #feec85,
+  22px -42px 60px #ffae34,
+  -22px -58px 50px #ec760c,
+  0 -82px 80px #cd4606,
+  10px -90px 80px  #973716;}
+}
+*/
