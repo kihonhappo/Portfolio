@@ -264,15 +264,24 @@ const wfe_weeks = [
                     </div>
                 </div>
                 `,
-        rainbow:
+        rainbow_1:
                 `
                 <div id="examples" class="section-cont">
                     <div class="example">
                         <h3 class="section-header h-center">Rainbow:</h3>
-                        <iframe src="./pages/wfe/rainbow.html" class="document-viewer"></iframe>
+                        <iframe src="./pages/rainbow1.html" class="document-viewer"></iframe>
                     </div>
                 </div>
-        `,  
+        `, 
+        rainbow_2:
+                `
+                <div id="examples" class="section-cont">
+                    <div class="example">
+                        <h3 class="section-header h-center">Rainbow2:</h3>
+                        <iframe src="./pages/wfe/rainbow2.html" class="document-viewer"></iframe>
+                    </div>
+                </div>
+        `,   
         notes: 
             `<div id="notes" class="section-cont">
                 <div class="notes-sub-cont">
