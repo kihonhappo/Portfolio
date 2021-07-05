@@ -42,7 +42,8 @@ export default class QuakesView {
             ${this.processTitle(quake.properties.title)}
             <span class="cell coords">${quake.geometry.coordinates}</span>
 
-            <span class="cell quake-id"><a class="map" target="_blank" href="https://earthquake.usgs.gov/earthquakes/eventpage/${quake.id}/map"><img class="map" src="/modules/quakes/images/map.png"></a></span>
+            <span class="cell quake-id"><a class="map" target="_blank" href="https://earthquake.usgs.gov/earthquakes/eventpage/${quake.id}/map">
+            <img class="map" src="../../modules/quakes/images/map.png"></a></span>
           </span>
 
           <div title="Double Click to Close Quake Details" class="quake-info hide">
