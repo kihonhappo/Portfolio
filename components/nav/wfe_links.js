@@ -3,18 +3,6 @@
 
 const wfe_links = [
     {
-        week: "proposal",
-        label: "Challenge Proposal",
-        active: true,
-        url: "weeks/week1.js"
-    },
-    {
-        week: "project",
-        label: "Challenge Project",
-        active: true,
-        url: "weeks/week1.js"
-    },
-    {
         week: "w1",
         label: "Week 1: Setup and Review",
         active: true,
@@ -88,6 +76,18 @@ const wfe_links = [
         active: true,
         url: "weeks/week4.js",
         
+    },
+    {
+        week: "proposal",
+        label: "Challenge Proposal",
+        active: true,
+        url: "weeks/week1.js"
+    },
+    {
+        week: "project",
+        label: "Challenge Project",
+        active: true,
+        url: "weeks/week1.js"
     }
   ];
   

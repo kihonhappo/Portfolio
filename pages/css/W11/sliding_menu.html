@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transforms - Sliding Menu</title>
+    <link rel="stylesheet" href="menu.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- The parent component -->
+    <div class="menu-icon" id="menu-icon" onclick="toggleNav()">
+      <span class="icon">
+        <div class="top"></div>
+        <div class="mid"></div>
+        <div class="bottom"></div>
+      </span>
+      <ul class="menu-links">
+        <li>One</li>
+        <li>Two</li>
+        <li>One</li>
+        <li>One</li>
+      </ul>
+    </div>
+  <script>
+    function toggleNav() {
+       var updateElement = document.getElementById("menu-icon");
+        //toggle adds a class if it's not there or removes it if it is.
+        updateElement.classList.toggle("open");
+    }  
+  </script>
+</body>
+</html>

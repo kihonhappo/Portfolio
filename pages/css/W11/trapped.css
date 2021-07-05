@@ -1,0 +1,360 @@
+html,
+body {
+  height: 100%;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  height: 25vmin;
+  width: 25vmin;
+  background-color: teal;
+}
+
+.container-one {
+  padding: 1vmin;
+}
+
+.orbiting-circle {
+  height: 25%;
+  width: 25%;
+  background-color: darkred;
+  border-radius: 50%;
+  -webkit-animation: orbit 3s linear infinite;
+          animation: orbit 3s linear infinite;
+}
+
+@-webkit-keyframes orbit {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  5% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  /* don't change for 5% of the time...pause */
+  25% {
+    -webkit-transform: translate(300%, 0%);
+            transform: translate(300%, 0%);
+  }
+  /* start moving again */
+  30% {
+    -webkit-transform: translate(300%, 0%);
+            transform: translate(300%, 0%);
+  }
+  /* pause */
+  50% {
+    -webkit-transform: translate(300%, 300%);
+            transform: translate(300%, 300%);
+  }
+  /* move */
+  55% {
+    -webkit-transform: translate(300%, 300%);
+            transform: translate(300%, 300%);
+  }
+  75% {
+    -webkit-transform: translate(0%, 300%);
+            transform: translate(0%, 300%);
+  }
+  80% {
+    -webkit-transform: translate(0%, 300%);
+            transform: translate(0%, 300%);
+  }
+  100% {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+}
+
+@keyframes orbit {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  5% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  /* don't change for 5% of the time...pause */
+  25% {
+    -webkit-transform: translate(300%, 0%);
+            transform: translate(300%, 0%);
+  }
+  /* start moving again */
+  30% {
+    -webkit-transform: translate(300%, 0%);
+            transform: translate(300%, 0%);
+  }
+  /* pause */
+  50% {
+    -webkit-transform: translate(300%, 300%);
+            transform: translate(300%, 300%);
+  }
+  /* move */
+  55% {
+    -webkit-transform: translate(300%, 300%);
+            transform: translate(300%, 300%);
+  }
+  75% {
+    -webkit-transform: translate(0%, 300%);
+            transform: translate(0%, 300%);
+  }
+  80% {
+    -webkit-transform: translate(0%, 300%);
+            transform: translate(0%, 300%);
+  }
+  100% {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+}
+
+.container-two {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.morphing-circle {
+  height: 25%;
+  width: 25%;
+  background-color: red;
+}
+
+.morphing-circle {
+  height: 25%;
+  width: 25%;
+  background-color: darkred;
+  border-radius: 50%;
+  -webkit-transition: border-radius .5s ease,  background-color .5s ease,  -webkit-transform .5s ease .5s;
+  transition: border-radius .5s ease,  background-color .5s ease,  -webkit-transform .5s ease .5s;
+  transition: border-radius .5s ease,  background-color .5s ease,  transform .5s ease .5s;
+  transition: border-radius .5s ease,  background-color .5s ease,  transform .5s ease .5s,  -webkit-transform .5s ease .5s;
+  -webkit-animation: morphing-circle-square 3s linear infinite;
+          animation: morphing-circle-square 3s linear infinite;
+}
+
+.container-two:hover .morphing-circle {
+  border-radius: 0;
+  background-color: white;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+@-webkit-keyframes morphing-circle-square {
+  0% {
+    border-radius: 50%;
+  }
+  25% {
+    /*(if you don't add both red and circle here it will start changing one or the other before you are ready) */
+    border-radius: 50%;
+    background-color: darkred;
+  }
+  50% {
+    /* now change to white square...but don't start rotating yet! */
+    border-radius: 0%;
+    background-color: white;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  75% {
+    /* stay a white square, but rotate 90deg */
+    border-radius: 0%;
+    background-color: white;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  100% {
+    /* stay rotated at 90, but change back to a circle */
+    border-radius: 50%;
+    background-color: darkred;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
+@keyframes morphing-circle-square {
+  0% {
+    border-radius: 50%;
+  }
+  25% {
+    /*(if you don't add both red and circle here it will start changing one or the other before you are ready) */
+    border-radius: 50%;
+    background-color: darkred;
+  }
+  50% {
+    /* now change to white square...but don't start rotating yet! */
+    border-radius: 0%;
+    background-color: white;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  75% {
+    /* stay a white square, but rotate 90deg */
+    border-radius: 0%;
+    background-color: white;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  100% {
+    /* stay rotated at 90, but change back to a circle */
+    border-radius: 50%;
+    background-color: darkred;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
+.container-three, .container-four {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.spliting-circle {
+  height: 30px;
+  background-color: darkred;
+  border-radius: 50%;
+}
+
+.half-1 {
+  width: 15px;
+  border-radius: 30px 0 0 30px;
+  margin-right: 0px;
+  -webkit-animation: split-left 2s infinite;
+          animation: split-left 2s infinite;
+}
+
+.half-2 {
+  width: 15px;
+  border-radius: 0 30px 30px 0;
+  -webkit-animation: split-right 2s infinite;
+          animation: split-right 2s infinite;
+}
+
+@-webkit-keyframes split-left {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+@keyframes split-left {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes split-right {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+@keyframes split-right {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+.beating-circle {
+  height: 25%;
+  width: 25%;
+  background-color: darkred;
+  border-radius: 50%;
+  -webkit-animation: pulsing 2s infinite;
+          animation: pulsing 2s infinite;
+}
+
+@-webkit-keyframes pulsing {
+  0% {
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
+  50% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  100% {
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
+}
+
+@keyframes pulsing {
+  0% {
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
+  50% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  100% {
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
+}
+/*# sourceMappingURL=trapped.css.map */

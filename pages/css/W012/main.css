@@ -1,0 +1,158 @@
+@import url(http://fonts.googleapis.com/css?family=Lora);
+body{background-color: black;}
+
+
+/* For mobile phones: */
+
+@media (max-width: 900px) {
+    body > div:first-child{
+        width: 400px;
+        height: 800px;
+        margin: 0 auto; 
+    }
+    main{
+        margin: 0 auto; 
+        width: 300px;
+        
+    }
+    article{
+        height: auto;
+        width: 250px;
+        padding: 20px;
+        margin: 0 auto; 
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    header{
+        margin: 0 auto; 
+        width: 280px;
+        height: 200px;  
+        padding: 20px;
+    }
+    section figure img{width: 100%;}
+}
+
+/* For Wide Screen: */
+
+@media (min-width: 900px)  {
+    body > div:first-child{
+        width: 900px; 
+        height: 1240px;
+        margin: 0 auto; 
+    }
+    main{
+        width: 640px;
+        float: right; 
+    }
+    article{
+        width: 470px;
+        height: auto;
+        padding: 40px;
+        margin: 0 auto; 
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    header{
+        width: 200px; 
+        height: 100%;  
+        float: left; 
+        clear: right;
+        padding: 20px;
+    }
+    header h1{width: 90%;}
+    section figure img{width: 50%;}
+}
+
+body > div:first-child{
+    margin-top: -10px;
+}
+
+/* Header Section */
+
+header{
+    background-color: #798df2; 
+    padding-top: 30px;
+    text-align: right;
+    
+}
+header h1{
+    font-size: 32px;
+    
+}
+header a{
+    text-decoration: none; 
+    color: #FAEBD7;
+    font-family: 'Lora';
+}
+
+
+header nav ul{
+    list-style: none;
+    padding-left: 0px;
+}
+header nav ul li{
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+header nav a{color: #FAEBD7;}
+header nav a:visited{color: #FAEBD7;}
+header nav a:hover{color: white; text-decoration: underline;}
+header nav a:active{color: #DEB887;}
+
+/* Main Section */
+
+main{
+    background-color: #FAEBD7; 
+    padding: 10px;
+    font-family: 'Helvetica', 'Arial', 'sans-serif';
+}
+article{
+    background-color: white;
+    box-shadow: 2px 3px 3px silver;
+}
+section{
+    margin: 0 auto; 
+}
+section h2{
+    margin-top: 5px;
+}
+section figure{
+    padding-top: 35px;
+    text-align: center;
+}
+.post-content h2 a{
+    font-family: 'Lora'; 
+    text-decoration: none; 
+    color: black;
+}
+.post-content h2 a:visited{
+    text-decoration: none; 
+    color: black;
+}
+.post-content h2 a:hover{
+    color: #6495ED;
+    text-decoration: underline; 
+}
+.post-content h2 a:active{
+    color: #DEB887;
+}
+
+.post-content p{
+    font-size: 14px;
+    font-weight: bold;
+}
+.post-date{margin-top: 10px; font-size: 15px; color: rgb(46, 44, 44); font-weight: bold; opacity: .6;}
+.post-content p a{
+    color: #6495ED;
+    text-decoration: none;
+}
+.post-content p a:visited{
+    color: #6495ED;
+}
+.post-content p a:active{
+    color: #DEB887;
+}
+.post-content p a:hover{
+    text-decoration: underline;
+}

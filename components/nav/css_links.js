@@ -68,6 +68,12 @@ const css_links = [
         url: "weeks/week1.js"
     },
     {
+        week: "w12",
+        label: "W12 Prototyping",
+        active: true,
+        url: "weeks/week1.js"
+    },
+    {
         week: "zen",
         label: "Zen Garden",
         active: true,

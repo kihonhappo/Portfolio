@@ -1,0 +1,194 @@
+html,
+body {
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.container {
+    height: 25vmin;
+    width: 25vmin;
+    background-color: teal;
+}
+	
+.container-one {
+    padding: 1vmin;
+}
+
+.orbiting-circle {
+    height: 25%;
+    width: 25%;
+    background-color: darkred;
+    border-radius: 50%;
+    animation: orbit 3s linear infinite;
+}
+
+@keyframes orbit {
+    0% { transform: translate(0,0); }
+    5% { transform: translate(0,0); } /* don't change for 5% of the time...pause */
+    25% { transform: translate(300%,0%); } /* start moving again */
+    30% { transform: translate(300%,0%); } /* pause */
+    50% { transform: translate(300%,300%); } /* move */
+    55% { transform: translate(300%,300%); }
+    75% { transform: translate(0%,300%); }
+    80% { transform: translate(0%,300%); }
+    100% { transform: translate(0%,0%); }
+}
+
+
+.container-two {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.morphing-circle {
+    height: 25%;
+    width: 25%;
+    background-color: red;	
+}
+
+.morphing-circle {
+    height: 25%;
+    width: 25%;
+    background-color:darkred;	
+    border-radius: 50%;
+    transition: border-radius .5s ease, 
+                background-color .5s ease, 
+                transform .5s ease .5s;
+  animation: morphing-circle-square 3s linear infinite;
+}
+.container-two:hover .morphing-circle {
+    border-radius: 0;
+    background-color:  white;
+    transform: rotate(90deg);
+}
+
+
+@keyframes morphing-circle-square {
+    0% {border-radius: 50%}
+    25% { /*(if you don't add both red and circle here it will start changing one or the other before you are ready) */
+        border-radius: 50%;
+        background-color: darkred;
+    }
+    50% { /* now change to white square...but don't start rotating yet! */
+        border-radius: 0%;
+        background-color: white;
+        transform: rotate(0deg);
+    }
+    75% { /* stay a white square, but rotate 90deg */
+        border-radius: 0%;
+        background-color: white;
+        transform: rotate(90deg);   
+    }
+    100% { /* stay rotated at 90, but change back to a circle */
+        border-radius: 50%;
+        background-color: darkred;
+        transform: rotate(90deg);
+    }
+}
+
+
+.container-three, .container-four {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.spliting-circle{
+    height: 30px;
+    
+    background-color: darkred;	
+    border-radius: 50%;
+}
+
+.half-1{
+  width: 15px;
+  border-radius: 30px 0 0 30px;
+  margin-right: 0px;
+  animation: split-left 2s infinite;
+}
+
+.half-2{
+  
+  width: 15px;
+  border-radius: 0 30px 30px 0;
+  animation: split-right 2s infinite;
+}
+
+@keyframes split-left {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  50% {
+     -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+@keyframes split-right {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  50% {
+     -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+.beating-circle{
+  
+    height: 25%;
+    width: 25%;
+    background-color: darkred;	
+    border-radius: 50%;
+    
+    animation: pulsing 2s infinite;
+}
+
+@-webkit-keyframes pulsing {
+  0% {
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5)
+  }
+  50% {
+    -webkit-transform: scale(1.0, 1.0);
+    transform: scale(1.0, 1.0);
+  }
+  100% {
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
+}
+
+@keyframes pulsing {
+  0% {
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5)
+  }
+  50% {
+    -webkit-transform: scale(1.0, 1.0);
+    transform: scale(1.0, 1.0);
+  }
+  100% {
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
+}
+
