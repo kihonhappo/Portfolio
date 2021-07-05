@@ -1121,6 +1121,7 @@ const wfe_weeks = [
                             </div>
                         </div>
                     </div>`,   
+                    
                 style_guide: ` 
                     <div id="proposal" class="section-cont">
                         <div class="example">  
@@ -1128,7 +1129,7 @@ const wfe_weeks = [
                                 <h4>Colors/Typography/specific Element styling</h4>
                                 <div id="examples" class="section-cont">
                                     <div class="example">
-                                        <iframe src="./pages/css/w05/index.html" class="document-viewer"></iframe>
+                                        <iframe src="./modules/health_app/style-guide/index.html" class="document-viewer"></iframe>
                                     </div>
                                 </div>
                             </div>
