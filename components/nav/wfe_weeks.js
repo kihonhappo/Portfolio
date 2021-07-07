@@ -1076,25 +1076,24 @@ const wfe_weeks = [
                                     </li>
                                 </ul>
                                 <h4 class="show-link">Data Models</h4>
-                                <div class="structures">
-                                    <div class="structure">
+                                <div class="tabs" id="TABS_ID">
+                                    <ul class="tabs__list" role="tablist">
+                                        <li class="tabs__item">
+                                        Tab 1
+                                        </li>
+                                        <!-- .tabs__item -->
+                                    
+                                        <li class="tabs__item">
+                                        Tab 2
+                                        </li>
+                                        <!-- .tabs__item -->
+                                    </ul>
+                                    <div class="tabs__panel">
                                         <label>Person:</label> 
-                                        <code class="code">
-                                            {
-                                                Person_ID: '',
-                                                First_Name: '',
-                                                Last_Name: '',
-                                                Birthdate: '',
-                                                Race: '',
-                                                Ethnicity: '',
-                                                Gender: '',
-                                                Email: '',
-                                                Cell: '',
-                                                Cell_Carrier: ''
-                                            }
-                                        </code>
+                                        
                                     </div>
-                                    <div class="structure">
+                                    <div class="tabs__panel">
+                                        
                                         <label>Campaign:</label> 
                                         <code class="code">
                                             {
@@ -1111,7 +1110,7 @@ const wfe_weeks = [
                                             }
                                         </code>
                                     </div>
-                                    <div class="structure">
+                                    <div class="tabs__panel">
                                         <label>Activity:</label> 
                                         <code class="code">
                                             {
@@ -1128,7 +1127,7 @@ const wfe_weeks = [
                                             }
                                         </code>
                                     </div>
-                                    <div class="structure">
+                                    <div class="tabs__panel">
                                         <label>Food:</label> 
                                         <code class="code">
                                             {
@@ -1145,7 +1144,7 @@ const wfe_weeks = [
                                             }
                                         </code>
                                     </div>
-                                    <div class="structure">
+                                    <div class="tabs__panel">
                                         <label>Meal:</label> 
                                         <code class="code">
                                             {
@@ -1166,11 +1165,64 @@ const wfe_weeks = [
                             </div>
                         </div>
                     </div>`,
+            components: `
+            <div id="proposal" class="section-cont">
+                <div class="example">      
+                    <div class="proposal-section">
+                        <h4 class="show-link">Components and Widgets</h4>
+                        <p class="">Web components are a set of web platform APIs that allow you to create new custom, reusable, 
+                        encapsulated HTML tags to use in web pages and web apps. Custom components and widgets build on the 
+                        Web Component standards, will work across modern browsers, and can be used with any JavaScript library or 
+                        framework that works with HTML.</p>
+                        <p class="style-scope mark-down">Web components are based on existing web standards. 
+                        Features to support web components are currently being added to the HTML and DOM specs, 
+                        letting web developers easily extend HTML with new elements with encapsulated styling and custom behavior.</p>
+                        
+                        <h4 class="show-link">Specifications</h4>
+                        <p>Web components are based on four main specifications:</p>
+                        <div class="def-section">
+                            <label>Custom Elements</label>
+                            <p>The Custom Elements specification lays the foundation for designing and using new types of DOM elements.</p>
+                        </div>
+                        <div class="def-section">
+                            <label>Shadow DOM<label>
+                            <p>The shadow DOM specification defines how to use encapsulated style and markup in web components.</p>
+                        </div>
+                        <div class="def-section">
+                            <label>ES Modules</label>
+                            <p>The ES Modules specification defines the inclusion and reuse of JS documents in a standards based, modular, performant way.</p>
+                        <div class="def-section">
+                            <label>HTML Template</label>
+                            <p>The HTML template element specification defines how to declare fragments of markup that go unused at page load, but can be instantiated later on at runtime.</p>
+                        </div>
+
+                        <h4 class="show-link">Application Compnents &amp; Widgets</h4>
+                        <div class="def-section">
+                            <ul class="parent child hide">
+                                <li>Tabs Component</li>
+                                <li>Accordian Component</li>
+                                <li>List Component</li>
+                                <li>Table Component</li>
+                                <li>Dashboard Widgets</li>
+                                <li>Video Component</li>
+                                <li>Body Map Component</li>
+                                <li>Avatar Component</li>
+                                <li>Social Media Integration Component</li>
+                                <li>Email Component</li>
+                                <li>SMS Commponent</li>
+                                <li>Chat Component</li>
+                                <li>Video Conference Component</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>  
+            </div>  
+            `,
             module_list: `
                     <div id="proposal" class="section-cont">
                         <div class="example">      
                             <div class="proposal-section">
-                                <h4 class="show-link">Initial Module list</h4>
+                                <h4 class="show-link">Module list</h4>
                                 <ul class="parent child hide">
                                     <li>Utilities</li>
                                     <li>Helper Functions/Data Lists</li>
@@ -1194,7 +1246,6 @@ const wfe_weeks = [
                                     <li>Body Map Component</li>
                                     <li>Video Library</li>
                                     <li>Documentation Library</li>
-                                    <li>Avatar Component</li>
                                     <li class="show-link">Dashboard
                                         <ul class="child hide">
                                             <li>Day Tracker</li>
@@ -1203,17 +1254,8 @@ const wfe_weeks = [
                                             <li>Live Avatar</li>
                                         </ul>
                                     </li>
-                                    
                                     <li>Campainge Manager</li>
-                                    <li class="show-link">Friends/Communications
-                                        <ul class="child hide">
-                                            <li>Social Media Integration Component</li>
-                                            <li>Email Component</li>
-                                            <li>SMS Commponent</li>
-                                            <li>Chat Component</li>
-                                            <li>Video Conference Component</li>
-                                        </ul>
-                                    </li>
+                                    <li class="show-link">Friends/Communications</li>
                                 </ul>
                             </div>
                         </div>
@@ -1323,8 +1365,8 @@ const wfe_weeks = [
             health_app: `
                 <div id="examples" class="section-cont">
                     <div class="example">
-                        <h3 class="section-header h-center">W04 Individual Activity: Javascript Form Validation</h3>
-                        <iframe src="./pages/wfe/w04_js_form_validation.html" class="document-viewer"></iframe>
+                        <h3 class="section-header h-center">Challenge Project: META Enhancers</h3>
+                        <iframe src="./modules/health_app/index.html" class="document-viewer"></iframe>
                     </div>
                 </div>`,
         }
