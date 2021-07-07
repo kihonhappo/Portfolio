@@ -762,7 +762,7 @@ const wfe_weeks = [
                     <h3 class="section-header h-center">W07 Group Project: <a title="Open page in Seperate Window" href="./pages/wfe/hikes.html" target="_blank">Stage 2 Hikes Component</a></h3>
                     <iframe src="./pages/wfe/hikes.html" class="document-viewer"></iframe>
                 </div>
-            
+            </div>
             `,
         css_batttle:`
                 <div id="css-battle" class="example">
@@ -772,8 +772,8 @@ const wfe_weeks = [
                 `,
         examples:
                 `
-                <pre>
-                    
+            <div class="example">
+                <pre>                    
                     <div class="code-cont">
                         <code class="code-box">
                         
@@ -822,7 +822,7 @@ const wfe_weeks = [
                         </code>
                     </div>
                 </pre> 
-            </div>       
+            </div>
                 `
         ,
         notes: `
@@ -1026,6 +1026,36 @@ const wfe_weeks = [
                                 Personal Trainers or other health professionals trying to help their clients make healthy lifestyle changes.</p>
                                 
                             </div>
+                            <div class="proposal-section">
+                                <h4 class="show-link">App Name Ideas and Terminology</h4>
+                                <ul class="proposal-list">
+                                    <li> 
+                                        <h5>Meta</h5>
+                                        <p>/ˈmedə/</p>
+                                    
+                                        <p>adjective</p>
+                                        <p>(of a creative work) referring to itself or to the conventions of its genre; self-referential.
+                                        "the enterprise is inherently “meta,” since it doesn't review movies, for example, it reviews the reviewers who review movies"</p>
+                                    </li>
+                                    <li> 
+                                        <h5>Tracker</h5>
+                                        <p>/ˈtrakər/</p>
+                                    
+                                        <p>noun</p>
+                                        <p>a person who tracks someone or something by following their trail.</p>
+                                        <p>a connecting rod in the mechanism of some organs.</p>
+                                    </li>
+                                    <li> 
+                                        <h5>Bio-marker</h5>
+                                        <p>/ˈbīōˌmärkər/</p>
+                                    
+                                        <p>noun</p>
+                                        <p>plural noun: biomarkers</p>
+                                        <p>a measurable substance in an organism whose presence is indicative of some phenomenon such as disease, infection, or environmental exposure.
+                                        "a biomarker that may predict aggressive disease recurrence in liver transplant recipients"</p>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>`,
             data_sources: `
@@ -1046,18 +1076,93 @@ const wfe_weeks = [
                                     </li>
                                 </ul>
                                 <h4 class="show-link">Data Models</h4>
-                                <ul class="child hide">
-                                    <li>Person:                                
-                                    </li>
-                                    <li>Activity:                                
-                                    </li>
-                                    <li>Meal
-                                       
-                                    </li>
-                                    <li>
-                                       Food
-                                    </li>
-                                </ul>
+                                <div class="structures">
+                                    <div class="structure">
+                                        <label>Person:</label> 
+                                        <code class="code">
+                                            {
+                                                Person_ID: '',
+                                                First_Name: '',
+                                                Last_Name: '',
+                                                Birthdate: '',
+                                                Race: '',
+                                                Ethnicity: '',
+                                                Gender: '',
+                                                Email: '',
+                                                Cell: '',
+                                                Cell_Carrier: ''
+                                            }
+                                        </code>
+                                    </div>
+                                    <div class="structure">
+                                        <label>Campaign:</label> 
+                                        <code class="code">
+                                            {
+                                                Campaing_ID: '',
+                                                Parent: '',
+                                                Person: '',
+                                                Start_Date: '',
+                                                End_Date: '',
+                                                Type: '',
+                                                Rules: '',
+                                                Participants: [],
+                                                Start_Biomarkers: [],
+                                                End_Biomarkers: []
+                                            }
+                                        </code>
+                                    </div>
+                                    <div class="structure">
+                                        <label>Activity:</label> 
+                                        <code class="code">
+                                            {
+                                                Activity_ID: '',
+                                                First_Name: '',
+                                                Last_Name: '',
+                                                Birthdate: '',
+                                                Race: '',
+                                                Ethnicity: '',
+                                                Gender: '',
+                                                Email: '',
+                                                Cell: '',
+                                                Cell_Carrier: ''
+                                            }
+                                        </code>
+                                    </div>
+                                    <div class="structure">
+                                        <label>Food:</label> 
+                                        <code class="code">
+                                            {
+                                                Person_ID: '',
+                                                First_Name: '',
+                                                Last_Name: '',
+                                                Birthdate: '',
+                                                Race: '',
+                                                Ethnicity: '',
+                                                Gender: '',
+                                                Email: '',
+                                                Cell: '',
+                                                Cell_Carrier: ''
+                                            }
+                                        </code>
+                                    </div>
+                                    <div class="structure">
+                                        <label>Meal:</label> 
+                                        <code class="code">
+                                            {
+                                                Person_ID: '',
+                                                First_Name: '',
+                                                Last_Name: '',
+                                                Birthdate: '',
+                                                Race: '',
+                                                Ethnicity: '',
+                                                Gender: '',
+                                                Email: '',
+                                                Cell: '',
+                                                Cell_Carrier: ''
+                                            }
+                                        </code>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>`,
