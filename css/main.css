@@ -54,7 +54,7 @@ body {
   width: 25%;
   text-align: left;
   overflow: auto;
-  height: 800px;
+  height: 700px;
   padding-left: 0px;
   border: 1px solid black;
   -webkit-box-flex: flex;
@@ -239,11 +239,6 @@ body {
 
 .content-wrapper .main .section-cont .example-img {
   width: 20%;
-}
-
-.content-wrapper .main .section-cont .code-val {
-  height: auto;
-  width: 200px;
 }
 
 .content-wrapper .main .section-cont .prop-table {
