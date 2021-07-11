@@ -78,6 +78,13 @@ const wfe_links = [
         
     },
     {
+        week: "w12",
+        label: "Week 12: Application Work Week",
+        active: true,
+        url: "weeks/week4.js",
+        
+    },
+    {
         week: "proposal",
         label: "Challenge Proposal",
         active: true,

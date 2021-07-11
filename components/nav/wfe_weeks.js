@@ -50,15 +50,6 @@ const wfe_weeks = [
                     </div>
                 </div>
         `, 
-        rainbow_2:
-                `
-                <div id="examples" class="section-cont">
-                    <div class="example">
-                        <h3 class="section-header h-center">Rainbow2:</h3>
-                        <iframe src="./pages/wfe/rainbow2.html" class="document-viewer"></iframe>
-                    </div>
-                </div>
-        `,   
         notes: 
             `<div id="notes" class="section-cont">
                 <div class="notes-sub-cont">
@@ -73,21 +64,10 @@ const wfe_weeks = [
                 </div>
             </div>
             `,
-        tasks: 
-            `<div  class="section-cont tasks">
-                <h3 class="tasks-header h-center">
-                   Tasks
-                </h3>
-                <ol class"num-list">
-                    <li><span class="task-txt completed">Download Code Editor</span> <i class="fas fa-check green"></i> </li>
-                    <li><span class="task-txt completed">Download and Install Node</span> <i class="fas fa-check green"></i> </li>
-                    <li><span class="task-txt completed">Download Set up Github</span> <i class="fas fa-check green"></i></li>
-                    <li><span class="task-txt completed">Download Code Editor</span> <i class="fas fa-check green"></i> </li>
-                </ol>
-            </div>
+        report: `
             <div class="section-cont report">
                 <h3 class="report-header h-center">
-                   Week 1 Report
+                    Week 1 Report
                 </h3>
                 <div>
                     <h4 class="h-center">What did I do since the last meeting?</h4>
@@ -115,7 +95,7 @@ const wfe_weeks = [
                     </p>
                 </div>
             </div>
-            `,            
+        `,            
         next: 
             `<div id="notes" class="section-cont">
                 <h3 class="tasks-header h-center">
@@ -247,20 +227,8 @@ const wfe_weeks = [
                 </div>
             </div>`
             ,
-        tasks: 
-            `<div class="section-cont tasks">
-                <h3 class="tasks-header h-center">
-                    Tasks:
-                </h3>
-                <ol class"num-list">
-                    <li><span class="task-txt completed">Learn Github: </span> <i class="fas fa-check green"></i>  </li>
-                    <li><span class="task-txt completed">Successfully sync Git with VSCode</span> <i class="fas fa-check green"></i> </li>
-                    <li><span class="task-txt completed">Learn to update Git Pages</span> <i class="fas fa-check green"></i> </li>
-                    <li><span class="task-txt completed">Set up and learn Teams</span> <i class="fas fa-check green"></i> </li>
-                    <li><span class="task-txt completed">Join a group</span> <i class="fas fa-check green"></i> </li>
-                </ol>
-            </div>
-            <div id="report" class="section-cont report">
+        report: 
+            `<div id="report" class="section-cont report">
                 <h3 class="report-header h-center">
                    Week 2 Report
                 </h3>
@@ -550,18 +518,8 @@ const wfe_weeks = [
                 </div>
             </div>`
             ,
-        tasks: 
-            `<div class="section-cont tasks">
-                <h3 class="tasks-header h-center">
-                    Tasks:
-                </h3>
-                <ol class"num-list">
-                    <li><span class="task-txt completed">Add more examples to my portfolio</span> <i class="fas fa-check green"></i>  </li>
-                    <li><span class="task-txt">Request a reveiw from the Instructor</span> <i class="fas fa-times red"></i> </li>
-                    <li><span class="task-txt completed">Make my Portfolio site more Responsive</span> <i class="fas fa-check green"></i> </li>
-                </ol>
-            </div>
-            <div class="section-cont report">
+        report: 
+            `<div class="section-cont report">
                 <h3 class="report-header h-center">
                    Week 3 Report
                 </h3>
@@ -646,17 +604,36 @@ const wfe_weeks = [
                 </p>
             </div>
             `,
-        tasks: 
-            `<div class="section-cont tasks">
-                <h3 class="tasks-header h-center">Steps to set up my Coding Environment</h3>
-                <ol class"num-list">
-                    <li>Download Code Editor</li>
-                    <li>Download and Install Node</li>
-                    <li>Download Set up Github</li>
-                    <li>Download Code Editor</li>
-                </ol>
+        report: 
+            `<div class="section-cont report">
+                <h3 class="report-header h-center">
+                    Week 4 Report
+                </h3>
+                <div>
+                    <h4 class="h-center">What did I do since the last meeting?</h4>
+                    <p>
+                        I was having a hard time deciding on how to seperate my assignment and exercise pages from my main index page
+                        so I have decided to create each example and assignment page as a seperate html page and then link an
+                        iframe to it. This way I can include them in the body of my front end page and the user doesn't need to 
+                        navigate away. I spent a lot more time on the css for the site and tried to make it more pleasant to use.
+                    </p>
+                    <h4 class="h-center">What am I going to do next?</h4>
+                    <p> 
+                        I will not go off on tangents but stick to the assignments. Going out of scope cost me too much time so I will be more 
+                        strict when it comes to spending my time.
+                    </p>
+                    
+                    <h4 class="h-center">What are my blockers?</h4>
+                    <p>  
+                    I spent a lot of time on the Assignment this week. I ended up spending most of my time on Exercise 6.
+                    I learned that Wikipedia has a great API, so I tried to get the Category: Boulevards in Paris page from the API. 
+                    I was able to use the Javascript ajax functions to make calls to the Wiki web service but I couldn't get the actual page.
+                    I finally followed the instructions and ran the code given to extract the array of links from the page using the console.
+                    I then downloaded the log file after using console.log to record the array into the file. I then copied the array and 
+                    pasted it into the Team Assignment code. After that I was able to quickly complete the exercise.
+                    </p>
+                </div>
             </div>
-            
             `
         },
     {
@@ -692,17 +669,36 @@ const wfe_weeks = [
                 </p>
             </div>
             `,
-        tasks: 
-            `<div class="section-cont tasks">
-                <h3 class="tasks-header h-center">Steps to set up my Coding Environment</h3>
-                <ol class"num-list">
-                    <li>Download Code Editor</li>
-                    <li>Download and Install Node</li>
-                    <li>Download Set up Github</li>
-                    <li>Download Code Editor</li>
-                </ol>
+        report: 
+            `<div class="section-cont report">
+                <h3 class="report-header h-center">
+                    Week 5 Report
+                </h3>
+                <div>
+                    <h4 class="h-center">What did I do since the last meeting?</h4>
+                    <p>
+                        I was having a hard time deciding on how to seperate my assignment and exercise pages from my main index page
+                        so I have decided to create each example and assignment page as a seperate html page and then link an
+                        iframe to it. This way I can include them in the body of my front end page and the user doesn't need to 
+                        navigate away. I spent a lot more time on the css for the site and tried to make it more pleasant to use.
+                    </p>
+                    <h4 class="h-center">What am I going to do next?</h4>
+                    <p> 
+                        I will not go off on tangents but stick to the assignments. Going out of scope cost me too much time so I will be more 
+                        strict when it comes to spending my time.
+                    </p>
+                    
+                    <h4 class="h-center">What are my blockers?</h4>
+                    <p>  
+                    I spent a lot of time on the Assignment this week. I ended up spending most of my time on Exercise 6.
+                    I learned that Wikipedia has a great API, so I tried to get the Category: Boulevards in Paris page from the API. 
+                    I was able to use the Javascript ajax functions to make calls to the Wiki web service but I couldn't get the actual page.
+                    I finally followed the instructions and ran the code given to extract the array of links from the page using the console.
+                    I then downloaded the log file after using console.log to record the array into the file. I then copied the array and 
+                    pasted it into the Team Assignment code. After that I was able to quickly complete the exercise.
+                    </p>
+                </div>
             </div>
-            
             `
     },
     {
@@ -731,17 +727,36 @@ const wfe_weeks = [
                 
             </div>
             `,
-        tasks: 
-            `<div class="section-cont tasks">
-                <h3 class="tasks-header h-center">Steps to set up my Coding Environment</h3>
-                <ol class"num-list">
-                    <li>Download Code Editor</li>
-                    <li>Download and Install Node</li>
-                    <li>Download Set up Github</li>
-                    <li>Download Code Editor</li>
-                </ol>
+        report: 
+            `<div class="section-cont report">
+                <h3 class="report-header h-center">
+                    Week 6 Report
+                </h3>
+                <div>
+                    <h4 class="h-center">What did I do since the last meeting?</h4>
+                    <p>
+                        I was having a hard time deciding on how to seperate my assignment and exercise pages from my main index page
+                        so I have decided to create each example and assignment page as a seperate html page and then link an
+                        iframe to it. This way I can include them in the body of my front end page and the user doesn't need to 
+                        navigate away. I spent a lot more time on the css for the site and tried to make it more pleasant to use.
+                    </p>
+                    <h4 class="h-center">What am I going to do next?</h4>
+                    <p> 
+                        I will not go off on tangents but stick to the assignments. Going out of scope cost me too much time so I will be more 
+                        strict when it comes to spending my time.
+                    </p>
+                    
+                    <h4 class="h-center">What are my blockers?</h4>
+                    <p>  
+                    I spent a lot of time on the Assignment this week. I ended up spending most of my time on Exercise 6.
+                    I learned that Wikipedia has a great API, so I tried to get the Category: Boulevards in Paris page from the API. 
+                    I was able to use the Javascript ajax functions to make calls to the Wiki web service but I couldn't get the actual page.
+                    I finally followed the instructions and ran the code given to extract the array of links from the page using the console.
+                    I then downloaded the log file after using console.log to record the array into the file. I then copied the array and 
+                    pasted it into the Team Assignment code. After that I was able to quickly complete the exercise.
+                    </p>
+                </div>
             </div>
-            
             `
     },
     {
@@ -830,17 +845,36 @@ const wfe_weeks = [
                 
             </div>
             `,
-        tasks: 
-            `<div class="section-cont tasks">
-                <h3 class="tasks-header h-center">Steps to set up my Coding Environment</h3>
-                <ol class"num-list">
-                    <li>Download Code Editor</li>
-                    <li>Download and Install Node</li>
-                    <li>Download Set up Github</li>
-                    <li>Download Code Editor</li>
-                </ol>
+        report: 
+            `<div class="section-cont report">
+                <h3 class="report-header h-center">
+                    Week 7 Report
+                </h3>
+                <div>
+                    <h4 class="h-center">What did I do since the last meeting?</h4>
+                    <p>
+                        I was having a hard time deciding on how to seperate my assignment and exercise pages from my main index page
+                        so I have decided to create each example and assignment page as a seperate html page and then link an
+                        iframe to it. This way I can include them in the body of my front end page and the user doesn't need to 
+                        navigate away. I spent a lot more time on the css for the site and tried to make it more pleasant to use.
+                    </p>
+                    <h4 class="h-center">What am I going to do next?</h4>
+                    <p> 
+                        I will not go off on tangents but stick to the assignments. Going out of scope cost me too much time so I will be more 
+                        strict when it comes to spending my time.
+                    </p>
+                    
+                    <h4 class="h-center">What are my blockers?</h4>
+                    <p>  
+                    I spent a lot of time on the Assignment this week. I ended up spending most of my time on Exercise 6.
+                    I learned that Wikipedia has a great API, so I tried to get the Category: Boulevards in Paris page from the API. 
+                    I was able to use the Javascript ajax functions to make calls to the Wiki web service but I couldn't get the actual page.
+                    I finally followed the instructions and ran the code given to extract the array of links from the page using the console.
+                    I then downloaded the log file after using console.log to record the array into the file. I then copied the array and 
+                    pasted it into the Team Assignment code. After that I was able to quickly complete the exercise.
+                    </p>
+                </div>
             </div>
-            
             `
         },
         {
@@ -870,17 +904,36 @@ const wfe_weeks = [
                     
                 </div>
                 `,
-            tasks: 
-                `<div iclass="section-cont tasks">
-                    <h3 class="tasks-header h-center">Steps to set up my Coding Environment</h3>
-                    <ol class"num-list">
-                        <li>Download Code Editor</li>
-                        <li>Download and Install Node</li>
-                        <li>Download Set up Github</li>
-                        <li>Download Code Editor</li>
-                    </ol>
+            report: 
+                `<div class="section-cont report">
+                    <h3 class="report-header h-center">
+                        Week 8 Report
+                    </h3>
+                    <div>
+                        <h4 class="h-center">What did I do since the last meeting?</h4>
+                        <p>
+                            I was having a hard time deciding on how to seperate my assignment and exercise pages from my main index page
+                            so I have decided to create each example and assignment page as a seperate html page and then link an
+                            iframe to it. This way I can include them in the body of my front end page and the user doesn't need to 
+                            navigate away. I spent a lot more time on the css for the site and tried to make it more pleasant to use.
+                        </p>
+                        <h4 class="h-center">What am I going to do next?</h4>
+                        <p> 
+                            I will not go off on tangents but stick to the assignments. Going out of scope cost me too much time so I will be more 
+                            strict when it comes to spending my time.
+                        </p>
+                        
+                        <h4 class="h-center">What are my blockers?</h4>
+                        <p>  
+                        I spent a lot of time on the Assignment this week. I ended up spending most of my time on Exercise 6.
+                        I learned that Wikipedia has a great API, so I tried to get the Category: Boulevards in Paris page from the API. 
+                        I was able to use the Javascript ajax functions to make calls to the Wiki web service but I couldn't get the actual page.
+                        I finally followed the instructions and ran the code given to extract the array of links from the page using the console.
+                        I then downloaded the log file after using console.log to record the array into the file. I then copied the array and 
+                        pasted it into the Team Assignment code. After that I was able to quickly complete the exercise.
+                        </p>
+                    </div>
                 </div>
-                
                 `
         },
         {
@@ -954,17 +1007,36 @@ const wfe_weeks = [
                     </p>
                 </div>
                 `,
-            tasks: 
-                `<div iclass="section-cont tasks">
-                    <h3 class="tasks-header h-center">Steps to set up my Coding Environment</h3>
-                    <ol class"num-list">
-                        <li>Add Wireframes to Proposal</li>
-                        <li>Complete Timeline for Proposal</li>
-                        <li>Improve Nav functions. Add accordian like dropdown effects to portfolio sections.</li>
-                        <li>Download Code Editor</li>
-                    </ol>
+            report: 
+                `<div class="section-cont report">
+                    <h3 class="report-header h-center">
+                        Week 10 Report
+                    </h3>
+                    <div>
+                        <h4 class="h-center">What did I do since the last meeting?</h4>
+                        <p>
+                            I was having a hard time deciding on how to seperate my assignment and exercise pages from my main index page
+                            so I have decided to create each example and assignment page as a seperate html page and then link an
+                            iframe to it. This way I can include them in the body of my front end page and the user doesn't need to 
+                            navigate away. I spent a lot more time on the css for the site and tried to make it more pleasant to use.
+                        </p>
+                        <h4 class="h-center">What am I going to do next?</h4>
+                        <p> 
+                            I will not go off on tangents but stick to the assignments. Going out of scope cost me too much time so I will be more 
+                            strict when it comes to spending my time.
+                        </p>
+                        
+                        <h4 class="h-center">What are my blockers?</h4>
+                        <p>  
+                        I spent a lot of time on the Assignment this week. I ended up spending most of my time on Exercise 6.
+                        I learned that Wikipedia has a great API, so I tried to get the Category: Boulevards in Paris page from the API. 
+                        I was able to use the Javascript ajax functions to make calls to the Wiki web service but I couldn't get the actual page.
+                        I finally followed the instructions and ran the code given to extract the array of links from the page using the console.
+                        I then downloaded the log file after using console.log to record the array into the file. I then copied the array and 
+                        pasted it into the Team Assignment code. After that I was able to quickly complete the exercise.
+                        </p>
+                    </div>
                 </div>
-                
                 `
         },
         {
@@ -985,17 +1057,84 @@ const wfe_weeks = [
                     
                 </div>
                 `,
-            tasks: 
-                `<div iclass="section-cont tasks">
-                    <h3 class="tasks-header h-center">Steps to set up my Coding Environment</h3>
-                    <ol class"num-list">
-                        <li>Download Code Editor</li>
-                        <li>Download and Install Node</li>
-                        <li>Download Set up Github</li>
-                        <li>Download Code Editor</li>
-                    </ol>
+            report: 
+                `<div class="section-cont report">
+                    <h3 class="report-header h-center">
+                        Week 11 Report
+                    </h3>
+                    <div>
+                        <h4 class="h-center">What did I do since the last meeting?</h4>
+                        <p>
+                            I was having a hard time deciding on how to seperate my assignment and exercise pages from my main index page
+                            so I have decided to create each example and assignment page as a seperate html page and then link an
+                            iframe to it. This way I can include them in the body of my front end page and the user doesn't need to 
+                            navigate away. I spent a lot more time on the css for the site and tried to make it more pleasant to use.
+                        </p>
+                        <h4 class="h-center">What am I going to do next?</h4>
+                        <p> 
+                            I will not go off on tangents but stick to the assignments. Going out of scope cost me too much time so I will be more 
+                            strict when it comes to spending my time.
+                        </p>
+                        
+                        <h4 class="h-center">What are my blockers?</h4>
+                        <p>  
+                        I spent a lot of time on the Assignment this week. I ended up spending most of my time on Exercise 6.
+                        I learned that Wikipedia has a great API, so I tried to get the Category: Boulevards in Paris page from the API. 
+                        I was able to use the Javascript ajax functions to make calls to the Wiki web service but I couldn't get the actual page.
+                        I finally followed the instructions and ran the code given to extract the array of links from the page using the console.
+                        I then downloaded the log file after using console.log to record the array into the file. I then copied the array and 
+                        pasted it into the Team Assignment code. After that I was able to quickly complete the exercise.
+                        </p>
+                    </div>
                 </div>
-                
+                `
+        },
+        {
+            week: 'w12',
+            title: 'Week 12', 
+            team_notes: `
+                <div id="notes" class="section-cont">
+                    <h3 class="section-header h-center">Application Development Week</h3>
+                    <p>
+                        I met with my team on wednesday night to discuss our individual projects. Catteara Neyman, Erin Engler, Joseph Watt are at 
+                        differennt stages of development. I did recieve a great tip from Catteara, I shared with the team that one aspect of my applicaton
+                        that Cattera was able to help me find a model. 
+                    </p>
+                    <p>The component I am talking about is the body avatar. This avatar will grow or change 
+                        based on the users inputs. The site Cattera directed me to <a href="https://bodyvisualizer.com/" class="link">Body Builder</a>
+                    </p>
+                </div>
+                `,
+            report: 
+                `<div class="section-cont report">
+                    <h3 class="report-header h-center">
+                        Week 12 Report
+                    </h3>
+                    <div>
+                        <h4 class="h-center">What did I do since the last meeting?</h4>
+                        <p>
+                            I was having a hard time deciding on how to seperate my assignment and exercise pages from my main index page
+                            so I have decided to create each example and assignment page as a seperate html page and then link an
+                            iframe to it. This way I can include them in the body of my front end page and the user doesn't need to 
+                            navigate away. I spent a lot more time on the css for the site and tried to make it more pleasant to use.
+                        </p>
+                        <h4 class="h-center">What am I going to do next?</h4>
+                        <p> 
+                            I will not go off on tangents but stick to the assignments. Going out of scope cost me too much time so I will be more 
+                            strict when it comes to spending my time.
+                        </p>
+                        
+                        <h4 class="h-center">What are my blockers?</h4>
+                        <p>  
+                        I spent a lot of time on the Assignment this week. I ended up spending most of my time on Exercise 6.
+                        I learned that Wikipedia has a great API, so I tried to get the Category: Boulevards in Paris page from the API. 
+                        I was able to use the Javascript ajax functions to make calls to the Wiki web service but I couldn't get the actual page.
+                        I finally followed the instructions and ran the code given to extract the array of links from the page using the console.
+                        I then downloaded the log file after using console.log to record the array into the file. I then copied the array and 
+                        pasted it into the Team Assignment code. After that I was able to quickly complete the exercise.
+                        </p>
+                    </div>
+                </div>
                 `
         },
         {
