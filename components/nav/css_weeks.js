@@ -144,7 +144,7 @@ const css_weeks = [
             `<div id="examples" class="section-cont">
                 <div class="example">
                     <h3 class="section-header h-center">W12 Individual Activity: </h3>
-                    <iframe src="./pages/css/w12/index.html" class="document-viewer"></iframe>
+                    <iframe src="./pages/css/w012/index.html" class="document-viewer"></iframe>
                 </div>
             </div>`
         },

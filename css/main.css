@@ -54,7 +54,7 @@ body {
   width: 25%;
   text-align: left;
   overflow: auto;
-  height: 700px;
+  height: 600px;
   padding-left: 0px;
   border: 1px solid black;
   -webkit-box-flex: flex;
@@ -164,7 +164,7 @@ body {
   border-right: 1px solid black;
   color: black;
   overflow-y: auto;
-  height: 800px;
+  height: 600px;
   -webkit-transition: 1s opacity;
   transition: 1s opacity;
 }
@@ -306,23 +306,16 @@ body {
 
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
-  .menu, .main {
-    width: 100%;
-  }
-  .menu {
-    height: 15%;
-  }
-  .ht-300 {
-    height: 300px;
-  }
-  #main {
-    width: 100%;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    height: 50%;
-  }
-  .content-wrapper {
-    height: auto;
-  }
+  /* .menu, .main {
+      width:100%;
+    }
+    .menu{height: 15%;}
+    .ht-300{height: 300px;}
+    #main{width: 100%; border-top: 1px solid black; border-bottom: 1px solid black; height: 50%;}
+    
+    .content-wrapper{height: auto;} */
 }
+
+/* ----------- Non-Retina Screens ----------- */
+/* ----------- Retina Screens ----------- */
 /*# sourceMappingURL=main.css.map */
