@@ -1,11 +1,10 @@
 
 
-export default class meal{
+export default class food{
     constructor(){
         this.title = '';
         this.type = '';
-        this.meal_date_time = new Date();
-        this.components = [];
+        this.notes = '';
         this.nutrition = {
             calories: 0,
             fat: 0,
@@ -26,7 +25,6 @@ export default class meal{
             cost_per_package: 0,
             cost_per_unit: 0
         };
-        
     }
 
 }

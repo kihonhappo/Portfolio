@@ -963,18 +963,37 @@ const wfe_weeks = [
                     
                 </div>
                 `,
-            tasks: 
-                `<div class="section-cont tasks">
-                    <h3 class="tasks-header h-center">Steps to set up my Coding Environment</h3>
-                    <ol class"num-list">
-                        <li>Download Code Editor</li>
-                        <li>Download and Install Node</li>
-                        <li>Download Set up Github</li>
-                        <li>Download Code Editor</li>
-                    </ol>
+            report: 
+                `<div class="section-cont report">
+                    <h3 class="report-header h-center">
+                        Week 9 Report
+                    </h3>
+                    <div>
+                        <h4 class="h-center">What did I do since the last meeting?</h4>
+                        <p>
+                            I was having a hard time deciding on how to seperate my assignment and exercise pages from my main index page
+                            so I have decided to create each example and assignment page as a seperate html page and then link an
+                            iframe to it. This way I can include them in the body of my front end page and the user doesn't need to 
+                            navigate away. I spent a lot more time on the css for the site and tried to make it more pleasant to use.
+                        </p>
+                        <h4 class="h-center">What am I going to do next?</h4>
+                        <p> 
+                            I will not go off on tangents but stick to the assignments. Going out of scope cost me too much time so I will be more 
+                            strict when it comes to spending my time.
+                        </p>
+                            
+                        <h4 class="h-center">What are my blockers?</h4>
+                        <p>  
+                            I spent a lot of time on the Assignment this week. I ended up spending most of my time on Exercise 6.
+                            I learned that Wikipedia has a great API, so I tried to get the Category: Boulevards in Paris page from the API. 
+                            I was able to use the Javascript ajax functions to make calls to the Wiki web service but I couldn't get the actual page.
+                            I finally followed the instructions and ran the code given to extract the array of links from the page using the console.
+                            I then downloaded the log file after using console.log to record the array into the file. I then copied the array and 
+                            pasted it into the Team Assignment code. After that I was able to quickly complete the exercise.
+                        </p>
+                    </div>
                 </div>
-                
-                `
+            `
         },
         {
             week: 'w10',
@@ -1504,7 +1523,7 @@ const wfe_weeks = [
             health_app: `
                 <div id="examples" class="section-cont">
                     <div class="example">
-                        <h3 class="section-header h-center">Challenge Project: META Enhancers</h3>
+                        <h3 class="section-header h-center">Challenge Project: META Enhancers:  <a title="Open page in Seperate Window" href="./modules/health_app/index.html" target="_blank">Web Service Component</a></h3>
                         <iframe src="./modules/health_app/index.html" class="document-viewer"></iframe>
                     </div>
                 </div>`,
