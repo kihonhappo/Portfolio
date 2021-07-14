@@ -154,7 +154,7 @@ const css_weeks = [
             garden: 
             `<div id="examples" class="section-cont">
                 <div class="example">
-                    <h3 class="section-header h-center">Zen Garden - Fire and Ice</h3>
+                    <h3 class="section-header h-center">Zen Garden - Fire and Ice <a title="Open page in Seperate Window" href="./pages/css/Zen_Garden/index.html" target="_blank"><i class="fa fa-external-link-alt"></i></a></h3>
                     <iframe src="./pages/css/Zen_Garden/index.html" class="document-viewer"></iframe>
                 </div>
             </div>`

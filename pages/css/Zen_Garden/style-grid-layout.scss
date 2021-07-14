@@ -9,18 +9,24 @@
 
 
 /* basic elements */
+@import url('https://fonts.googleapis.com/css2?family=Goblin+One&display=swap');
+
 
 :root {
   --border: 2px solid black;
   
 }
 
+
 body{
   margin: 0;
   height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Recursive";
+  background-color: black;
+  color: white;
+  a{color: white;}
+  font-size: 1em;
 }
-
 
 .page-wrapper{
   margin: 0 auto;
@@ -30,19 +36,11 @@ body{
   grid-gap: 2em;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-template-rows: repeat(auto, 5);
- /* grid-template-areas:
-    ""
-
-  grid-auto-columns: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr;
-  grid-auto-rows: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr;
-  grid-template-columns: 100px 100px 100px 100px 100px 100px 100px;
-  grid-template-rows: 100px 100px 100px 100px 100px 100px 100px; */
-
-
+ 
   column-gap: 20px;
   row-gap: 20px; 
 
-  h1, h2, h3{text-align: center;}
+  h1, h2, h3{text-align: center; font-family: 'Goblin One';}
 
 
   .intro, .main, .sidebar, .sidebar .wrapper{
@@ -50,7 +48,17 @@ body{
    }
 
    .intro::before{
-      content: " " url("left_image.png"); 
+    content: "\2744"; 
+    color: white;
+    position: absolute; 
+    margin-top: 20px; 
+    margin-left: 100px; 
+    transform: scale(10);
+    text-shadow: 0 0 10px #03bcf4,
+      0 0 20px #03bcf4,
+      0 0 40px #03bcf4,
+      0 0 80px #03bcf4,
+      0 0 160px #03bcf4;; 
       border: var(--border);
       grid-column: 1 / 3;
       grid-row: 1 / 2;
@@ -137,31 +145,47 @@ body{
     h3 {margin-top: -5px;}
     ul{list-style: none; width: 80%; margin: 0 auto; margin-top: 20px; 
       li::before{
-        content: " " url("fire.svg"); 
+        content: "\2744"; 
+        color: white;
+        position: absolute; 
+        margin-top: 0px; 
+        margin-left: -60px; 
+        transform: scale(1.5);
+        text-shadow: 0 0 10px #03bcf4,
+          0 0 20px #03bcf4,
+          0 0 40px #03bcf4,
+          0 0 80px #03bcf4,
+          0 0 160px #03bcf4;
+        /*content: " " url("fire.svg"); 
         position: absolute; 
         margin-top: -100px; 
         margin-left: -120px; 
-        transform: scale(.2);
+        transform: scale(.2);*/
         
       }
-     /* li::after{
-        content: " " url("fire.svg"); 
-        position: absolute; 
-        margin-top: -100px; 
-        margin-left: 100px; 
-        transform: scale(.2);
-        
-      }*/
       li:hover{
+        text-shadow: 0 0 10px #03bcf4,
+          0 0 20px #03bcf4,
+          0 0 40px #03bcf4,
+          0 0 80px #03bcf4,
+          0 0 160px #03bcf4;
+          
         
-        border-color: 3px solid red;
-        
+      }
+      li a:hover{
+        text-shadow: 0 0 10px #03bcf4,
+        0 0 20px #03bcf4,
+        0 0 40px #03bcf4,
+        0 0 80px #03bcf4,
+        0 0 160px #03bcf4;
       }
       li{border: var(--border); margin-left: 80px; float: left; margin-bottom: 10px; 
         width: 75%; padding: 5px; padding-left: 20px; 
         }
     }
   }
+
+  
   
   .design-archives{
     grid-column: 3 / 7;
@@ -169,14 +193,20 @@ body{
     border: var(--border);
     border-bottom: none;
     padding: 10px;
-    margin-top: 480px;
+    margin-top: 500px;
     padding-bottom: -50px;
     height: 100px;
     
     h3 {margin-top: 0px;}
-    ul{list-style: none; width: 300px; margin: 0 auto; margin-top: 40px;  overflow: hidden;
-
-      li::before{content: " " url("fire.svg"); 
+    ul{list-style: none; width: 300px; margin: 0 auto; margin-top: 60px;  overflow: hidden;
+      li:hover{
+        text-shadow: 0 0 10px #03bcf4,
+        0 0 20px #03bcf4,
+        0 0 40px #03bcf4,
+        0 0 80px #03bcf4,
+        0 0 160px #03bcf4;
+      }
+      li::before{content: "" url("fire.svg"); 
         position: absolute; 
         margin-top: -140px; 
         margin-left: -20px; 
@@ -186,7 +216,7 @@ body{
       
       
       li{padding-bottom: 0px; padding-top: 0px; float: left;
-        a{text-decoration: none; color: black; font-weight: bold;}
+        a{text-decoration: none;  font-weight: bold;}
       }
       .next{margin-right: 40px;}
     }
@@ -205,18 +235,25 @@ body{
     a{margin-left: 40px; font-size: 1em; display: inline-block; width: 10%;  text-align: center;}
     a::after{content: " " url("fire.svg"); position: absolute; display: inline-block;  transform: scale(.3); 
       margin-top: -130px;  text-align: center; margin-left: -90px;
-    
+    a:hover{
+      color: white;
+      text-shadow: 0 0 10px #03bcf4,
+        0 0 20px #03bcf4,
+        0 0 40px #03bcf4,
+        0 0 80px #03bcf4,
+        0 0 160px #03bcf4;
+    }
      /* animation-name: flamefly;
       animation-duration: 1.3s;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
       opacity: 0;
-      transform-origin: 50% 50% 0; */
+      transform-origin: 50% 50% 0; 
       
       animation-name: flameWobble;
       animation-duration: 3s;
       animation-timing-function: linear;
-      animation-iteration-count: infinite;
+      animation-iteration-count: infinite;*/
     } 
     
     
@@ -235,13 +272,452 @@ body{
 
       li{float: left; margin-right: 10em; font-size: 1em;
 
-        a{text-decoration: none; font-size: large; color: black;}
+        a{text-decoration: none; font-size: large; }
+      }
+      li:hover{
+        text-shadow: 0 0 10px #03bcf4,
+          0 0 20px #03bcf4,
+          0 0 40px #03bcf4,
+          0 0 80px #03bcf4,
+          0 0 160px #03bcf4;
       }
     }
   }
   
 }
 
+.explanation p::first-letter, .preamble p::first-letter, .participation p::first-letter,
+.benefits p::first-letter, .requirements p:nth-child(1)::first-letter, .requirements p:nth-child(2)::first-letter,
+ .requirements p:nth-child(3)::first-letter, .requirements p:nth-child(4)::first-letter, .requirements p:nth-child(5)::first-letter{
+    float: left;
+    font-size: 2.5rem;
+    line-height: 0.65;
+    margin: 0.1em;
+    outline: none;
+    color: #fff;
+    text-shadow: 0 0 10px #03bcf4,
+    0 0 20px #03bcf4,
+    0 0 40px #03bcf4,
+    0 0 80px #03bcf4,
+    0 0 160px #03bcf4,
+  }
+
+h1{
+  
+  
+  font-size: 1.5em;
+  letter-spacing: 15px;
+  color: #0e3742;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  line-height: 1em;
+  outline: none;
+  color: #fff;
+    text-shadow: 0 0 10px #03bcf4,
+    0 0 20px #03bcf4,
+    0 0 40px #03bcf4,
+    0 0 80px #03bcf4,
+    0 0 160px #03bcf4,
+  /*animation: glow_text 1s ease-in-out infinite; */
+
+}
+
+div:hover > h3{animation: text_burn 1s ease-in-out infinite; }
+
+
+
+.extra1{
+  left: 5%;
+  top: 0;
+  opacity: 0;
+  position: absolute; // [1] Break the layout flow
+  color: white; // [2] Set the color for the snowflake
+  &:after {
+    content: "\2744"; // [3] Give it some shape
+    transform: scale(2);
+  }
+  animation: snowflake 15s linear infinite;
+}
+
+
+
+.extra2{
+  
+  opacity: 0;
+  position: absolute; // [1] Break the layout flow
+  color: #fff;
+    text-shadow: 0 0 10px #03bcf4,
+    0 0 20px #03bcf4,
+    0 0 40px #03bcf4,
+    0 0 80px #03bcf4,
+    0 0 160px #03bcf4;
+  // [2] Set the color for the snowflake
+  &:before {
+    content: "\2744"; // [3] Give it some shape
+    transform: scale(4);
+    position: absolute;
+    left: 200px;
+    top: 0;
+    
+  }
+  &:after {
+    content: "\2744"; // [3] Give it some shape
+    transform: scale(3);
+    
+    
+  }
+  animation: snowflake 18s linear infinite;
+  
+  
+}
+
+.extra3{
+  left: 40%;
+  top: 0;
+  position: absolute; // [1] Break the layout flow
+  color: white; // [2] Set the color for the snowflake
+  &:after {
+    content: "\2744"; // [3] Give it some shape
+  }
+  animation: snowflake 12s linear infinite;
+}
+.extra4{
+  left: 60%;
+  top: 0;
+  position: absolute; // [1] Break the layout flow
+  color: white; // [2] Set the color for the snowflake
+  &:after {
+    content: "\2744"; // [3] Give it some shape
+  }
+  animation: snowflake 10s linear infinite;
+}
+.extra5{
+  left: 80%;
+  top: 0;
+  position: absolute; // [1] Break the layout flow
+  color: white; // [2] Set the color for the snowflake
+  &:after {
+    content: "\2744"; // [3] Give it some shape
+  }
+  animation: snowflake 8s linear infinite;
+}
+.extra6{
+  left: 95%;
+  top: 0;
+  position: absolute; // [1] Break the layout flow
+  color: white; // [2] Set the color for the snowflake
+  &:after {
+    content: "\2744"; // [3] Give it some shape
+  }
+  animation: snowflake 6s linear infinite;
+}
+
+
+
+// Animation for snowflake ##{$i}
+@keyframes snowflake {
+  0% {
+    transform: rotate(0deg);
+    top: 0;
+  }
+  25% {
+    opacity: .5;
+    
+    top: 25%;
+  }
+
+  50% {
+    opacity: .75;
+    
+    top: 75%;
+  }
+
+  75% {
+    opacity: 1;
+   
+    top: 90%;
+  }
+  100% {
+    
+    transform: rotate(360deg);
+    transform: translate(5em, 45em) ;
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+
+/*
+.extra1{
+  background: none;
+	font-family: Androgyne;
+  content: "\2744";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index:1;
+	-webkit-animation: snow 10s linear infinite;
+	-moz-animation: snow 10s linear infinite;
+	-ms-animation: snow 10s linear infinite;
+	animation: snow 10s linear infinite;
+}
+*/
+
+@keyframes snowflow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+
+@keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+/*@-moz-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 400px 1000px, 200px 400px, 100px 300px;}
+}
+@-webkit-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+@-ms-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}	*/
+/*
+.extra1{
+  position: relative;
+  width: 600px;
+  height: 600px;
+ 
+}
+
+.extra1::before{
+  content: '';
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  right: 100px;
+  bottom: 100px;
+  border: 20px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 50px #0f0,
+    inset 0 0 50px #0f0;
+    animation: shine 5s linear infinite;
+}
+
+.extra1::after{
+  content: '';
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  right: 100px;
+  bottom: 100px;
+  border: 20px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 100px #fff,
+    inset 0 0 50px #fff;
+    
+}
+
+.extra2{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  
+}
+
+.extra2::before{
+  content: '';
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  right: 100px;
+  bottom: 100px;
+  border: 20px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgb(214, 143, 11),
+    inset 0 0 50px rgb(214, 143, 11);
+    animation: shine 5s linear infinite;
+}
+
+.extra2::after{
+  content: '';
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  right: 100px;
+  bottom: 100px;
+  border: 20px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 100px #fff,
+    inset 0 0 50px #fff;
+    
+}
+*/
+ @keyframes shine{
+   0%{
+      box-shadow: 0 0 50px #0f0,
+                inset 0 0 50px #0f0;
+      filter: hue-rotate(0deg);
+   }
+   20%{
+    box-shadow: 0 0 60px #0f0,
+        inset 0 0 60px #0f0;
+    filter: hue-rotate(360deg);
+   }
+   40%{
+    box-shadow: 0 0 40px #0f0,
+        inset 0 0 40px #0f0;
+    filter: hue-rotate(360deg);
+   }
+   60%{
+    box-shadow: 0 0 80px #0f0,
+        inset 0 0 80px #0f0;
+    filter: hue-rotate(360deg);
+   }
+   80%{
+    box-shadow: 0 0 100px #0f0,
+        inset 0 0 100px #0f0;
+    filter: hue-rotate(360deg);
+   }
+   100%{
+    box-shadow: 0 0 50px #0f0,
+        inset 0 0 50px #0f0;
+    filter: hue-rotate(360deg);
+   }
+ }
+
+@keyframes text_burn
+{
+0% {text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #feec85,
+  -20px -20px 40px #ffae34,
+  20px -40px 50px #ec760c,
+  -20px -60px 60px #cd4606,
+  0 -80px 70px #973716,
+  10px -90px 80px #451b0e;}
+100% {text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #fefcc9,
+  -20px -20px 40px #feec85,
+  22px -42px 60px #ffae34,
+  -22px -58px 50px #ec760c,
+  0 -82px 80px #cd4606,
+  10px -90px 80px  #973716;}
+}
+
+
+
+li a:hover{
+  
+  /*animation: glow_text 2s linear forwards;*/
+}
+
+
+@keyframes glow_text{
+  0%
+  {
+    color: #0e3742;
+    text-shadow: none;
+  }
+  10%
+  {
+    color: #fff;
+    text-shadow: 0 0 10px #03bcf4,
+  }
+  20%
+  {
+    color: #fff;
+    text-shadow: 0 0 20px #03bcf4,
+  }
+  40%
+  {
+    color: #fff;
+    text-shadow: 0 0 40px #03bcf4,
+  }
+  60%
+  {
+    color: #fff;
+    text-shadow: 0 0 60px #03bcf4,
+  }
+  80%
+  {
+    color: #fff;
+    text-shadow: 0 0 80px #03bcf4,
+  }
+  100%
+  {
+    color: #fff;
+    text-shadow: 0 0 10px #03bcf4,
+    0 0 20px #03bcf4,
+    0 0 40px #03bcf4,
+    0 0 80px #03bcf4,
+    0 0 160px #03bcf4,
+
+  }
+}
+
+
+@keyframes smokeFade {
+  0% {
+      transform: rotate(0deg) translateY(0px);
+      opacity: 1;
+      filter:blur(1px);
+  }
+  100% {
+    transform: rotate(45deg) translateY(-200px);
+      opacity: 0;
+      filter:blur(20px);
+  }
+}
+
+
+@keyframes smokeL {
+  0% {
+      transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+      opacity: 1;
+      transform: scale(0.2) translate(0, 5px);
+  }
+  100% {
+      opacity: 0;
+      transform: scale(1) translate(-50px, 80px);
+  }
+}
+
+@keyframes smokeR {
+  0% {
+      transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+      opacity: 1;
+      transform: scale(0.2) translate(0, 5px);
+  }
+  100% {
+      opacity: 0;
+      transform: scale(1) translate(50px, 80px);
+  }
+}
+
+
+
+@keyframes steam {
+  0% { top: 100px; opacity: .075; visibility: visible; }
+  20% { top: 80px; opacity: 0.2; }
+  40% { top: 60px; opacity: 0.4; }
+  60% { top: 40px; opacity: 0.2; }
+  80% { top: 20px; opacity: .075; }
+  100% { top: 0px; opacity: 0; visibility: hidden; }
+  }
 
 
 
@@ -253,6 +729,8 @@ body{
     transform: translateX(-50%) rotate(2deg);
   }
 }
+
+h3:hover{animation: text_burn .65s ease-in-out infinite; }
 
 @keyframes glowing {
   0% { background-position: 0 0; }
@@ -334,9 +812,10 @@ body{
       grid-row: 6/7;
 
       p:nth-child(6){
-     
+        
         margin-top: 970px;
         margin-left: 0px;
+        
       
       }
     }
@@ -371,9 +850,16 @@ body{
     footer{
       grid-column: 1;
       grid-row: 11/12;
-      margin-top: 0px;
+      margin-top: 100px;
       padding-bottom: 40px;
         a{margin-top: -20px;}
+        a::after{ 
+          padding-left: 12px;
+         }
+        a:first-child::after{ 
+          padding-left: 3px;
+        }
+
     }
 
     .zen-resources{
