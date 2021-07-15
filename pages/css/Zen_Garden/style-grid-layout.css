@@ -64,8 +64,7 @@ body a {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
-  -webkit-animation: bigSnowFlake 6s linear infinite;
-          animation: bigSnowFlake 6s linear infinite;
+  /*animation: bigSnowFlake 6s linear infinite;*/
 }
 
 .page-wrapper header {
@@ -1004,10 +1003,7 @@ h3:hover {
     margin-top: -20px;
   }
   .page-wrapper footer a::after {
-    padding-left: 12px;
-  }
-  .page-wrapper footer a:first-child::after {
-    padding-left: 3px;
+    padding-left: 5px;
   }
   .page-wrapper .zen-resources {
     -ms-grid-column: 1;
