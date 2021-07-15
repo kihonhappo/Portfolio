@@ -781,7 +781,7 @@ const wfe_weeks = [
             `,
         css_batttle:`
                 <div id="css-battle" class="example">
-                    <h3 class="section-header h-center">W07 CSS Battle: <a title="Open page in Seperate Window" href="./pages/wfe/css_battle.html" target="_blank">Site Pointe Logo</a></h3>
+                    <h3 class="section-header h-center">W07 CSS Battle: <a title="Open page in Seperate Window" href="./pages/wfe/css_battle.html" target="_blank"><i class="fa fa-external-link-alt"></i></a></h3>
                     <iframe src="./pages/wfe/css_battle.html" class="document-viewer"></iframe>
                 </div>
                 `,
@@ -892,7 +892,7 @@ const wfe_weeks = [
             swapi_api: `
                 <div id="examples" class="section-cont">
                     <div class="example">
-                        <h3 class="section-header h-center">W08 AJAX and the CORS: <a title="Open page in Seperate Window" href="./pages/wfe/fetch-api.html" target="_blank">API Integration Component</a></h3>
+                        <h3 class="section-header h-center">W08 AJAX and the CORS: <a title="Open page in Seperate Window" href="./pages/wfe/fetch-api.html" target="_blank"><i class="fa fa-external-link-alt"></i></a></h3>
                         <iframe src="./pages/wfe/fetch-api.html" class="document-viewer"></iframe>
                     </div>
                 </div>
@@ -951,7 +951,7 @@ const wfe_weeks = [
             drums: `
                 <div id="examples" class="section-cont">
                     <div class="example">
-                        <h3 class="section-header h-center">W09 Work Flow and Drums: <a title="Open page in Seperate Window" href="./modules/drums/index.html" target="_blank">Drum Audio Player Component</a></h3>
+                        <h3 class="section-header h-center">W09 Work Flow and Drums: <a title="Open page in Seperate Window" href="./modules/drums/index.html" target="_blank"><i class="fa fa-external-link-alt"></i></a></h3>
                         <iframe src="./modules/drums/index.html" class="document-viewer"></iframe>
                     </div>
                 </div>
@@ -1010,7 +1010,7 @@ const wfe_weeks = [
             quakes: `
                 <div id="examples" class="section-cont">
                     <div class="example">
-                        <h3 class="section-header h-center">Quakes Team Activity: <a title="Open page in Seperate Window" href="./pages/wfe/quakes.html" target="_blank">Web Service Component</a></h3>
+                        <h3 class="section-header h-center">Quakes Team Activity: <a title="Open page in Seperate Window" href="./pages/wfe/quakes.html" target="_blank"><i class="fa fa-external-link-alt"></i></a></h3>
                         <iframe src="./pages/wfe/quakes.html" class="document-viewer"></iframe>
                     </div>
                 </div>
@@ -1064,7 +1064,7 @@ const wfe_weeks = [
             authentication_jWT: `
                 <div id="examples" class="section-cont">
                     <div class="example">
-                        <h3 class="section-header h-center">Authentication with JWT: <a title="Open page in Seperate Window" href="./pages/wfe/jwt.html" target="_blank">Authentication with JWT</a></h3>
+                        <h3 class="section-header h-center">Authentication with JWT: <a title="Open page in Seperate Window" href="./pages/wfe/jwt.html" target="_blank"><i class="fa fa-external-link-alt"></i></a></h3>
                         <iframe src="./pages/wfe/jwt.html" class="document-viewer"></iframe>
                     </div>
                 </div>
@@ -1523,7 +1523,7 @@ const wfe_weeks = [
             health_app: `
                 <div id="examples" class="section-cont">
                     <div class="example">
-                        <h3 class="section-header h-center">Challenge Project: META Enhancers:  <a title="Open page in Seperate Window" href="./modules/health_app/index.html" target="_blank">Web Service Component</a></h3>
+                        <h3 class="section-header h-center">Challenge Project: META Enhancers:  <a title="Open page in Seperate Window" href="./modules/health_app/index.html" target="_blank"><i class="fa fa-external-link-alt"></i></a></h3>
                         <iframe src="./modules/health_app/index.html" class="document-viewer"></iframe>
                     </div>
                 </div>`,
