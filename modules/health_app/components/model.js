@@ -2,14 +2,14 @@
 
 export default class model{
     constructor(){
-        alert('model');
+       // alert('model');
     }
 
     save(){
 
     }
     getLocalStorage(){
-        
+
     }
     
 }
