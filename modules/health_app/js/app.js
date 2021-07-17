@@ -4,5 +4,5 @@ import View from '../components/view.js';
 
 import Controller from '../components/controller.js';
 
-
-const app = new Controller(new Model(), new View());
+const root = document.getElementById('app');
+const app = new Controller(root, new Model(), new View(root));

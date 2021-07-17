@@ -11,12 +11,10 @@
 /* basic elements */
 @import url('https://fonts.googleapis.com/css2?family=Goblin+One&display=swap');
 
-
 :root {
-  --border: 2px solid black;
+  --border: none;
   
 }
-
 
 body{
   margin: 0;
@@ -135,12 +133,6 @@ body{
     padding: 10px;
   }
   
-  /*.design-selection::before{
-    position: absolute;  height: 90px; margin-left: -10px; display: flex; 
-    width: 30%; max-width: 730px;  content: '' url("snow_star_fire.svg");
-    border: 1px solid red; margin-top: -110px;
-  }*/
-
   .design-selection{
     grid-column: 3 / 7;
     grid-row: 3 / 5;
@@ -163,12 +155,7 @@ body{
           0 0 40px #03bcf4,
           0 0 80px #03bcf4,
           0 0 160px #03bcf4;
-        /*content: " " url("fire.svg"); 
-        position: absolute; 
-        margin-top: -100px; 
-        margin-left: -120px; 
-        transform: scale(.2);*/
-        
+       
       }
       li:hover{
         text-shadow: 0 0 10px #03bcf4,
@@ -176,8 +163,6 @@ body{
           0 0 40px #03bcf4,
           0 0 80px #03bcf4,
           0 0 160px #03bcf4;
-          
-        
       }
       li a:hover{
         text-shadow: 0 0 10px #03bcf4,
@@ -192,15 +177,13 @@ body{
     }
   }
 
-  
-  
   .design-archives{
     grid-column: 3 / 7;
     grid-row: 3 / 5;
     border: var(--border);
     border-bottom: none;
     padding: 10px;
-    margin-top: 500px;
+    margin-top: 450px;
     padding-bottom: -50px;
     height: 100px;
     
@@ -305,9 +288,7 @@ h1{
     0 0 20px #03bcf4,
     0 0 40px #03bcf4,
     0 0 80px #03bcf4,
-    0 0 160px #03bcf4,
-  /*animation: glow_text 1s ease-in-out infinite; */
-
+    0 0 160px #03bcf4
 }
 
 div > h3{animation: text_burn 1s ease-in-out infinite; }
@@ -486,14 +467,6 @@ div > h3{animation: text_burn 1s ease-in-out infinite; }
   10px -90px 80px  #973716;}
 }
 
-
-
-li a:hover{
-  
-  /*animation: glow_text 2s linear forwards;*/
-}
-
-
 @keyframes glow_text{
   0%
   {
@@ -649,7 +622,6 @@ h3:hover{animation: text_burn .65s ease-in-out infinite; }
         
       }
     }
-
     
     .benefits{
       grid-column: 1;
@@ -675,9 +647,6 @@ h3:hover{animation: text_burn .65s ease-in-out infinite; }
         border: var(--border); 
         padding-left: 0px;
         margin-left: 0px;
-        li{
-          
-        }
       }
 
       width: 100%;
@@ -703,7 +672,6 @@ h3:hover{animation: text_burn .65s ease-in-out infinite; }
       border: var(--border);
       
         a{padding: 0px;
-           
           
         }
         a::after{ 
@@ -714,12 +682,7 @@ h3:hover{animation: text_burn .65s ease-in-out infinite; }
           margin-top: -150px;
           flex-wrap: wrap;
          }
-         a:first-child{
-          
-          
-         }
-        
-    }
+      }
 
     .zen-resources{
       grid-column: 1;
@@ -729,7 +692,6 @@ h3:hover{animation: text_burn .65s ease-in-out infinite; }
         li{margin-right: 10px; font-size: small;}
       }
     }
-
   }
 }
 

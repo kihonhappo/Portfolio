@@ -7,7 +7,7 @@
 /* basic elements */
 @import url("https://fonts.googleapis.com/css2?family=Goblin+One&display=swap");
 :root {
-  --border: 2px solid black;
+  --border: none;
 }
 
 body {
@@ -37,11 +37,6 @@ body a {
   -webkit-column-gap: 20px;
           column-gap: 20px;
   row-gap: 20px;
-  /*.design-selection::before{
-    position: absolute;  height: 90px; margin-left: -10px; display: flex; 
-    width: 30%; max-width: 730px;  content: '' url("snow_star_fire.svg");
-    border: 1px solid red; margin-top: -110px;
-  }*/
 }
 
 .page-wrapper h1, .page-wrapper h2, .page-wrapper h3 {
@@ -200,11 +195,6 @@ body a {
   -webkit-transform: scale(0.75);
           transform: scale(0.75);
   text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4, 0 0 80px #03bcf4, 0 0 160px #03bcf4;
-  /*content: " " url("fire.svg"); 
-        position: absolute; 
-        margin-top: -100px; 
-        margin-left: -120px; 
-        transform: scale(.2);*/
 }
 
 .page-wrapper .design-selection ul li:hover {
@@ -235,7 +225,7 @@ body a {
   border: var(--border);
   border-bottom: none;
   padding: 10px;
-  margin-top: 500px;
+  margin-top: 450px;
   padding-bottom: -50px;
   height: 100px;
 }
@@ -384,7 +374,7 @@ h1 {
   line-height: 1em;
   outline: none;
   color: #fff;
-  text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4, 0 0 80px #03bcf4, 0 0 160px #03bcf4;
+  text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4, 0 0 80px #03bcf4, 0 0 160px #03bcf4;
 }
 
 div > h3 {
@@ -670,10 +660,6 @@ div > h3 {
   100% {
     text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #fefcc9, -20px -20px 40px #feec85, 22px -42px 60px #ffae34, -22px -58px 50px #ec760c, 0 -82px 80px #cd4606, 10px -90px 80px  #973716;
   }
-}
-
-li a:hover {
-  /*animation: glow_text 2s linear forwards;*/
 }
 
 @-webkit-keyframes glow_text {

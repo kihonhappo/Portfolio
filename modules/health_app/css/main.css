@@ -1,1 +1,37 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+#app {
+  width: 350px;
+  height: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+#app #head {
+  border: 1px solid black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 100px;
+  border-bottom: none;
+}
+
+#app #head h2 {
+  text-align: center;
+}
+
+#app #head .msg {
+  text-align: center;
+  color: red;
+}
+
+#app #main {
+  border: 1px solid black;
+  height: 400px;
+}
+
+#app #footer {
+  border: 1px solid black;
+  border-top: none;
+  height: 100px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+/*# sourceMappingURL=main.css.map */
