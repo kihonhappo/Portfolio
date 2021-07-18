@@ -5,29 +5,68 @@ const template = document.createElement('template');
 template.innerHTML = `
 
 <style>
+    .tile{
+        display: inline-block;
+        
+        position: absolute;
+        margin-top: -60px;
+    }
+    .tile h3{
+        margin-bottom: 0px;
+    }
+    .cnt{
+        text-align: center; 
+        
+        width: 100%;
+        display: inline-block;
 
+    .btn{width: 100%; padding: 3px;}
+        
+    }
 </style>
 <div class="tile">
     <h3>Counter</h3>
-    <p class="cnt"></p>
+    <span class="cnt"></span>
+    <button type="button" id="btn" class="btn btn-inc">-</button>
 </div>
-<button id="btn">Add 1</button>
+
 
 `;
 export default class MyCounter extends HTMLElement{
     constructor(){
         super();
-        this.attachShadow({ mode: "open"});
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
+        this.properties = {
+            btn: 'btn',
+            title: 'Counter',
+            rate: 'rate',
+            sign: 'sign',
+            inc: 'inc'
+        };
+        this.root = this.attachShadow({ mode: "open"});
+        this.root.appendChild(template.content.cloneNode(true));
         this.count = 0;
         console.log( 'constructed' );
-        this.cntr = this.shadowRoot.querySelector('.cnt');
+        this.cntr = this.root.querySelector('.cnt');
         this.incCount();
-        this.shadowRoot.querySelector('#btn').addEventListener('click', () => {
-            //this.count += 1;
-            this.incCount();
-        })
+        let btn = this.root.querySelector('#btn');
+        if(btn){
+            btn.addEventListener('click', () => {
+                //this.count += 1;
+                this.incCount();
+            })
+        }
+        this.getAttributes();
     }
+
+    get count(){
+        return this.getAttributes('btn');
+    }
+
+    set count(val){
+        this.setAttribute('btn', val);
+    }
+
+    
 
     startCounter(cnt){
 
@@ -38,7 +77,17 @@ export default class MyCounter extends HTMLElement{
         },1000);
     }
 
+    getVal() {
+        return this.getAttribute('value');
+    }
+
+    getAttributes(){
+        let attrs = this.attributes;
+        //alert(JSON.stringify(attrs));
+    }
+
     connectedCallBack(){
+        //alert('Connected');
         // browser calls this method when the element is added to the document
         // (can be called many times if an element is repeatedly added/removed)
         console.log( 'connected' );
@@ -51,11 +100,12 @@ export default class MyCounter extends HTMLElement{
       }
     
     static get observedAttributes() {
-        return [/* array of attribute names to monitor for changes */];
+        return ['btn','title','rat','direction','inc'];
     }
     
     attributeChangedCallback(name, oldValue, newValue) {
         // called when one of attributes listed above is modified
+        //alert(name + ' Changed from ' + oldValue + ' to ' + newValue);
         console.log('Attribute Changed');
     }
     

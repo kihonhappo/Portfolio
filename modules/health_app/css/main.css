@@ -2,7 +2,7 @@
   width: 350px;
   height: 600px;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 #app #head {
@@ -24,7 +24,8 @@
 
 #app #main {
   border: 1px solid black;
-  height: 400px;
+  height: 450px;
+  padding: 10px;
 }
 
 #app #footer {
@@ -33,5 +34,19 @@
   height: 100px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  margin-bottom: 20px;
+}
+
+#app .input-frm .controls {
+  margin: 10px;
+}
+
+#app .input-frm .controls .form-control {
+  float: right;
+  padding: 3px;
+}
+
+#app .input-frm .controls select.form-control {
+  width: 180px;
 }
 /*# sourceMappingURL=main.css.map */
