@@ -30,22 +30,29 @@
 
 <body>
 
- <div class="title-cont">
+ <div id="menu-icon" class="title-cont">
+  <span class="icon" onclick="toggleNav()">
+    <div class="top"></div>
+    <div class="mid"></div>
+    <div class="bottom"></div>
+  </span>
     <h3 class="left-title">
-      <span class="links-title"></span>
       <select id="nav-links-sel" class="nav-links">
         <option selected="true" value="wfe">WDD 330: Web Fronend Dev II</option>
         <option value="css">WDD 331: Advanced CSS</option>
       </select>
+      
     </h3>
-    <h3 id="top-header">Aaron's Portfolio</h3>
-  </div>
-  
-  <div class="content-wrapper">
     
     <div id="nav" class="menu">
       
     </div>
+    
+  </div>
+  
+  <div class="content-wrapper">
+    <h3 id="top-header">Aaron's Portfolio</h3>
+    
   
     <div id="main" class="main">
       
@@ -53,7 +60,14 @@
   </div>
   <script type="module" src="js/main.js"></script>
 
- 
+<script>
+  function toggleNav() {
+    //alert('click');
+       var updateElement = document.getElementById("menu-icon");
+        //toggle adds a class if it's not there or removes it if it is.
+        updateElement.classList.toggle("open");
+    } 
+</script> 
 </body>
   
 </html>

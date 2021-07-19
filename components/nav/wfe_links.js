@@ -65,7 +65,7 @@ const wfe_links = [
     },
     {
         week: "w10",
-        label: "Week 10: Validating Forms And Using Fetch",
+        label: "Week 10: Validating Forms And Fetch",
         active: true,
         url: "weeks/week4.js",
         

@@ -4,158 +4,237 @@
 
 body{
   font-family:Verdana; color:#aaaaaa; overflow: hidden;
+
+    background: #312450;
+
 }
 
 .title-cont{
-  overflow: hidden;
+  z-index: 500;
   padding:0px;
   text-align:center;
   border-bottom: 1px solid black;
+ 
+  width: 30em;
+  height: 750px;
+  background: #312450;
+  transition-delay: .6s;
+  transition: .6s ease-in-out;
+  position: absolute;
+  float: left;
+  margin-left: -30em;
+  margin-right: 0px;
+  margin-top: 0px;
+  .icon{
+    float: right;
+    margin-right: -40px;
+    margin-top: 20px;
+    div{
+      width: 35px;
+      height: 5px;
+      background-color: white;
+      margin: 6px 0;
+      transition: .6s ease-in-out;
+    }
+  }
+  .icon:hover{
+     /* background-color: black; */
+      cursor: pointer;
+    div:hover{
+      color: white;
+    }
+  }
+  .left-title{ float: left; width: 60%; color: #5e42a6; margin-left: 10px; font-size: 1em; padding-top: 0px;}
+  .menu {
+    width: 100%;
+    text-align: left;
+    overflow: auto;
+    padding-left: 10px;
+    float: left;
+    flex: flex;
+    .header-link-cont{
+      margin: 0px;
+      padding: 0px;
+      color: white;
+      .link-parent:hover{
+        color: white;
+      }
+      .link-parent{
+        color: white;
+        
+        margin-top: 3px;
+        padding-bottom: 3px;
+        a.head-link-a {
+          text-decoration: none;
+          display: block;
+          width:100%;
+          color: white;
+          opacity: .5;
+          cursor: pointer;
+          padding-bottom: 0px;
+          
+          text-align: left;
+          outline: none;
+          font-size: .8em;
+          transition: 0.4s;
 
-  .left-title{float:left; width: 25%; color: green; font-size: large; padding-top: 0px;}
-  #top-header{float:left; width: 70%; transition: 1s opacity; color: green; font-size: large; padding-top: 0px;}
+        }
+        a.head-link-a:hover {
+          color: white;
+          opacity: 1;
+        }
+        a.head-link-a.active {
+          color: white;
+          opacity: 1;
+        }
+        a.head-link-a::after {
+          content: '\002B';
+          color: white;
+          font-weight: bold;
+          float: right;
+          margin-right: 10px;
+          margin-top: -5px;
+          margin-left: 5px;
+          font-size: 20px;
+        }
+        
+        a.head-link-a.active::after {
+          content: "\2212";
+          color: white;
+          font-size: 20px;
+          margin-top: -5px;
+        }
+      }
+      .sub-links-cont{
+        
+        margin-left: 10px;
+        color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        margin-top: -10px;
+        margin-bottom: 0px;
+        padding-bottom: 5px;
+        
+        .sub-link:first-child{padding-top: 0px;}
+        .sub-link{
+          display: inline-block;
+          width: 100%;
+          text-decoration: none;
+          color: white;
+          margin-bottom: 0px;
+          font-size: .7em;
+          
+          &:hover{color: darkorchid; text-decoration: underline;}
+          &:active{color: coral; text-decoration: underline;}
+          &:visited{color: coral; text-decoration: underline;}
+        
+        }
+        .sub-link.sub-active{
+          color: orchid; font-weight: bold;
+        }
+      }
+    }
+  }
+  
+  
+}
+.open{
+  margin-left: 0px;
+  .icon{
+    margin-right: 20px;
+    margin-top: 20px;
+    div{
+      background-color: white;
+    }
+  
+    .top{
+    top: 18;
+    transform: rotate(135deg);
+    position: absolute;
+    }
+    .mid{
+      opacity: 0;
+      margin-left: -60px;
+    }
+    .bottom{
+      margin-top: -10px;
+      transform: rotate(-135deg);
+    }
+  }
 }
 
 .hide{} 
 
-.nav-links{padding: 5px; color: green; font-weight: bold;}
+.nav-links{padding: 5px; color: #5e42a6; font-size: 1em; font-weight: bold;}
 
 .h-center{text-align: center;} 
 .content-wrapper{
-  overflow: hidden; 
-  border-bottom: 1px solid black;
+  background-attachment: fixed;
+  background-image: url("../images/lines.svg");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: #5e42a6;
+  overflow: auto; 
+  border-bottom: 1px solid white;
+  position: relative;
+  margin-top: 0px;
 
-    .menu {
-      float:left;
-      width: 25%;
-      text-align: left;
-      overflow: auto; 
-      height: 600px;
-      padding-left: 0px;
-      border: 1px solid black;
-      flex: flex;
-      .header-link-cont{
-        margin: 0px;
-        padding: 0px;
-        .link-parent{
-          
-          margin: 0px;
-          a.head-link-a {
-            text-decoration: none;
-            display: block;
-            width:100%;
-            background-color: #eee;
-            color: #444;
-            cursor: pointer;
-            padding: 10px;
-            border: 1px solid black;
-            text-align: left;
-            outline: none;
-            font-size: 15px;
-            transition: 0.4s;
-
-          }
-          a.head-link-a:hover {
-            background-color: #ccc;
-          }
-          a.head-link-a.active {
-            background-color: #ccc;
-          }
-          a.head-link-a::after {
-            content: '\002B';
-            color: green;
-            font-weight: bold;
-            float: right;
-            margin-right: 20px;
-            margin-top: -5px;
-            margin-left: 5px;
-            font-size: 20px;
-          }
-          
-          a.head-link-a.active::after {
-            content: "\2212";
-            color: red;
-            font-size: 20px;
-            margin-top: -5px;
-          }
-        }
-        .sub-links-cont{
-          
-          margin-left: 10px;
-          background-color: white;
-          max-height: 0;
-          overflow: hidden;
-          transition: max-height 0.2s ease-out;
-          margin-top: 0px;
-          margin-bottom: 0px;
-          .sub-link:first-child{margin-top: 20px;}
-          .sub-link{
-            display: inline-block;
-            width: 100%;
-            text-decoration: none;
-            color: black;
-            margin-bottom: 10px;
-            
-
-            &:hover{color: darkorchid; text-decoration: underline;}
-            &:active{color: coral; text-decoration: underline;}
-            &:visited{color: coral; text-decoration: underline;}
-          
-          }
-          .sub-link.sub-active{
-            color: red; font-weight: bold;
-          }
-        }
-      }
-    }
-    
-    
-
+  float: left;
+  width: 100%;
+  height: 750px;
+  color: white;
+  #top-header{ transition: 1s opacity; color: white; font-size: 1em; text-align: center; padding-top: 0px;}
     .main {
-      float:left;
-      width:75%;
-      padding:0 20px;
-      border-left: 1px solid black;
-      border-right: 1px solid black;
-      color: black;
-      overflow-y: auto;
-      height: 600px;
+      color: white;
+      overflow: auto;
+      height: 750px;
       transition: 1s opacity;
+      padding: 10px;
       .section-cont{
+        
+        a{
+          color: white;
+        }
         .show-link:hover{cursor: pointer;}
         .child.hide{display: block;}
         .section-header{
-          border-top: 1px solid black; 
-          border-bottom: 1px solid black; 
+          border-top: 1px solid white; 
+          border-bottom: 1px solid white; 
           padding-top: 20px; 
           padding-bottom: 20px;
           text-align: center;
+          color: white;
         }
         .reading-sub-label{font-size: 14px; font-weight: bold;}
         .list{margin-top: 20px;}
         .no-bullets{list-style-type: none;}
         .li-title{margin-bottom: 20px; font-size: 18px; text-align: center;}
-        .document-viewer{width: 100%; border: none; min-height: 600px;}
+        .document-viewer{width: 100%; border: none; height: 700px;}
         .tasks i{float: right; margin-right: 30px;}
         .task-txt{font-size: 12px;}
         pre{
-          border: 1px solid red; 
+          border: 1px solid white; 
           margin-left: 0px;
           background-color: rgb(255, 247, 229);
           white-space: pre-line;
           padding-left: 5px;
+          color: black;
         }
         .completed{text-decoration: line-through;}
         .code-cont{width: 100%;  padding: 0px; font-size: 12px;}
         .example-img{width: 20%;}
-
+        .document-viewer{
+          
+        }
         
 
         .prop-table{
-          border: 1px solid black; border-collapse: collapse;
+          border: 1px solid white; border-collapse: collapse;
 
-            th{border: 1px solid black; padding: 10px; background-color: navy; color: white; white-space: nowrap;} 
-            td{border: 1px solid black; padding: 10px; width: auto;}
+            th{border: 1px solid white; padding: 10px; background-color: white; color: white; white-space: nowrap;} 
+            td{border: 1px solid white; padding: 10px; width: auto;}
         }
       }
       #proposal{margin-bottom: 20px;}
@@ -183,33 +262,36 @@ body{
    .clearfix{clear: both;}
    
 
-  @media only screen and (max-width:620px) {
-    /* For mobile phones: */
-   /* .menu, .main {
-      width:100%;
-    }
-    .menu{height: 15%;}
-    .ht-300{height: 300px;}
-    #main{width: 100%; border-top: 1px solid black; border-bottom: 1px solid black; height: 50%;}
+   // Best Practice suggests
+   // keep default style for smallest screen size (portrait mobile, below 576px)
+   // and then proceed in assending order with media query like below
+   
+   // Small devices (landscape phones, 576px and above till next break point)
+   @media (min-width: 576px) {  
     
-    .content-wrapper{height: auto;} */
-  } 
- 
-  /* ----------- Non-Retina Screens ----------- */
-@media screen 
-and (min-device-width: 1200px) 
-and (max-device-width: 1600px) 
-and (-webkit-min-device-pixel-ratio: 1) { 
+   }
+   
+   // Medium devices (tablets, 768px and above till next break point)
+   @media (min-width: 768px) {  
 
-}
+   }
+   
+   // Large devices (desktops, 992px and above till next break point)
+   @media (min-width: 1200px) {  
 
-/* ----------- Retina Screens ----------- */
-@media screen 
-and (min-device-width: 1200px) 
-and (max-device-width: 1600px) 
-and (-webkit-min-device-pixel-ratio: 2)
-and (min-resolution: 192dpi) { 
+    .title-cont{
+      margin-left: 0px;
+      width: 25%;
+      position: relative;
+      .icon{
+        display: none;
+      }
+    }
+    .content-wrapper{
+      width: 75%;
 
-}
+    }
+   }
+    
 
   

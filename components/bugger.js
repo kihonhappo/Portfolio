@@ -7,9 +7,10 @@ export default class bugger {
       
       this.bugger_ele = `
         <style>
-          .debug-cont{width: 100%; height: 200px; margin-bottom: 20px; padding-top: 20px; margin: 0 auto; border-top: 2px solid black; clear: both;}
-          .debug-cont label{color: black;}
+          .debug-cont{width: 100%; height: 200px; margin-bottom: 20px; padding-top: 20px; margin: 0 auto; border-top: 2px solid white; clear: both;}
+          .debug-cont label{color: white;}
           .debug-txt-area{width: 100%; height: 100%; padding: 10px; margin-top: 20px;}
+          hr{backgroud-color: white;}
         </style>
         <hr />
         <div class="debug-cont">
