@@ -3,7 +3,7 @@ import Person from '../objects/person.js';
 export default class model{
     constructor(){
         this.person = new Person();
-
+        this.icons = [];
         this.fdc_api = {
             api_key: 'api_key=IyUO5cDK5RwaCKw2kbGw0UJmHbyFlFn1ejnKJFJd',
             base_url: 'https://api.nal.usda.gov/fdc',
@@ -40,13 +40,28 @@ export default class model{
             //view.loadSubEndPoints(vi.selected_api, result);
         }); 
     }
-    checkProfile(){
-
-        return this.getLocalStorage('profile');
+    checkStorage(id){
+        return this.getLocalStorage(id);
     }
-    save(){
-
+    save(frm){
+        let id = frm.id;
+        switch(id){
+            case 'person':
+                this.person.state = 'active';
+                this.person.data.forEach(function(item){
+                    item.value = frm.querySelector('[name=' + item.name + ']').value;
+                }); 
+                break;
+        }
+        localStorage.setItem(id, JSON.stringify(this.person));
+        return `<span class="green">${id} saved</span>`;
     }
+
+    delete(id){
+        localStorage.removeItem(id);
+        return `<span class="green">Item deleted successfully</span>`;
+    }
+
     getLocalStorage(name){
 
         return localStorage.getItem(name);

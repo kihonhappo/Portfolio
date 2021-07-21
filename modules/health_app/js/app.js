@@ -6,3 +6,4 @@ import Controller from '../components/controller.js';
 
 const root = document.getElementById('app');
 const app = new Controller(root, new Model(), new View(root));
+

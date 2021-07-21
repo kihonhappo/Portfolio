@@ -211,7 +211,11 @@ body{
         .list{margin-top: 20px;}
         .no-bullets{list-style-type: none;}
         .li-title{margin-bottom: 20px; font-size: 18px; text-align: center;}
-        .document-viewer{width: 100%; border: none; height: 700px;}
+        .document-viewer{
+          width: 100%; 
+          border: none; 
+          height: 700px;
+        }
         .tasks i{float: right; margin-right: 30px;}
         .task-txt{font-size: 12px;}
         pre{
@@ -225,9 +229,7 @@ body{
         .completed{text-decoration: line-through;}
         .code-cont{width: 100%;  padding: 0px; font-size: 12px;}
         .example-img{width: 20%;}
-        .document-viewer{
-          
-        }
+        .exercise-cont{border: 1px solid red;}
         
 
         .prop-table{

@@ -332,6 +332,10 @@ body {
   width: 20%;
 }
 
+.content-wrapper .main .section-cont .exercise-cont {
+  border: 1px solid red;
+}
+
 .content-wrapper .main .section-cont .prop-table {
   border: 1px solid white;
   border-collapse: collapse;

@@ -1,3 +1,63 @@
+.time {
+  position: absolute;
+  margin-left: 400px;
+  list-style: none;
+  width: 450px;
+  border: 1px solid black;
+  padding-left: 0px;
+}
+
+.time li {
+  text-align: left;
+  padding: 5px;
+}
+
+.time li .li-title {
+  color: green;
+  float: left;
+}
+
+.time li .li-val {
+  color: blue;
+  float: right;
+}
+
+.time li .clearfix {
+  clear: both;
+}
+
+input.red::-webkit-input-placeholder {
+  color: red;
+  font-weight: bold;
+}
+
+input.red:-ms-input-placeholder {
+  color: red;
+  font-weight: bold;
+}
+
+input.red::-ms-input-placeholder {
+  color: red;
+  font-weight: bold;
+}
+
+input.red::placeholder {
+  color: red;
+  font-weight: bold;
+}
+
+.red {
+  color: red;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.green {
+  color: green;
+}
+
 #app {
   width: 350px;
   height: 600px;
@@ -9,7 +69,7 @@
   border: 1px solid black;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  height: 100px;
+  height: 120px;
   border-bottom: none;
 }
 
@@ -19,12 +79,24 @@
 
 #app #head .msg {
   text-align: center;
-  color: red;
+  margin-top: 0px;
+  width: 100%;
+  float: left;
+}
+
+#app #head .burn-down {
+  float: left;
+  margin-top: -70px;
+}
+
+#app #head .burn-up {
+  float: right;
+  margin-top: -70px;
 }
 
 #app #main {
   border: 1px solid black;
-  height: 450px;
+  height: 470px;
   padding: 10px;
 }
 
@@ -39,6 +111,7 @@
 
 #app .input-frm .controls {
   margin: 10px;
+  margin-bottom: 20px;
 }
 
 #app .input-frm .controls .form-control {
@@ -47,6 +120,25 @@
 }
 
 #app .input-frm .controls select.form-control {
-  width: 175px;
+  width: 180px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#app .input-frm .controls input[type=date] {
+  width: 150px;
+  padding: 2px;
+}
+
+#app .input-frm .btn-group {
+  margin-top: 30px;
+}
+
+#app .input-frm .btn-group button {
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 /*# sourceMappingURL=app.css.map */
