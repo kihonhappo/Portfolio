@@ -34,7 +34,11 @@ export default class view{
 
                 </main>
                 <footer id="footer" class="footer">
-
+                    <button type="button" class="foot-icon"><i class="fa fa-2x fa-home"></i></button>
+                    <button type="button" class="foot-icon"><i class="fa fa-2x fa-user"></i></button>
+                    <button type="button" class="foot-icon"><i class="fa fa-2x fa-utensils"></i></button>
+                    <button type="button" class="foot-icon"><i class="fa fa-2x fa-dumbbell"></i></button>
+                    <button type="button" class="foot-icon"><i class="fa fa-2x fa-calendar-alt"></i></button>
                 </footer>
         `;
         this.root.innerHTML = temp;
@@ -50,6 +54,7 @@ export default class view{
         this.msg.innerHTML = str;
     }
     loadPerson(item){
+        
         this.main.innerHTML = this.formBuilder(item, 'person');
         let btn = document.querySelector('.btn-submit');
         let btn_delete = document.querySelector('.btn-delete');
@@ -82,7 +87,8 @@ export default class view{
             let now_d = 'Hours: ' + d.getHours() + ' Minutes: ' + d.getMinutes() + ' Seconds: ' + d.getSeconds();
             let val = bmr.calc_bmr(gender.value, wt.value, ht.value, age.value);
             bmr_box.value = val.toFixed(2);
-            bmi_box.value = bmi.calc_bmi(wt.value, ht.value).toFixed(2);
+            me.loadBurnCounters(val.toFixed(2));
+            bmi_box.value = bmi.calc_bmi(wt.value, ht.value);
         });
 
         dob.addEventListener('blur', function(event){
@@ -188,7 +194,7 @@ export default class view{
                                 switch(func){
                                     case 'bmr':
                                         //alert(value);
-                                        let day_seconds = 24 * 60 * 60;
+                                        
                                         let dot = new Date(vi.getObjAttr(obj.data, 'name', 'DOB', 'value')).getFullYear();
                                         let gender = vi.getObjAttr(obj.data, 'name', 'Gender', 'value');
                                         let age = new Date().getFullYear() - dot;
@@ -200,46 +206,11 @@ export default class view{
                                             value = 0;
                                         }
                                         else{
-                                            let d = new Date();
+                                            
                                             //let now_d = 'Hours: ' + d.getHours() + ' Minutes: ' + d.getMinutes() + ' Seconds: ' + d.getSeconds();
                                             //alert('BMR');
                                             value = bmr.calc_bmr(gender, wt, ht, age, level);
-                                             // for now
-                                            let inc = ((value / 24) / 60) / 60;
-                                            let now = (((d.getHours() * 60) * 60) + (d.getMinutes() * 60) + d.getSeconds());
-                                            let sec_left = day_seconds - now;
-                                            let down_start = (((sec_left)) * inc).toFixed(2);
-                                            let up_start = (value - down_start).toFixed(2);
-                                            /*vi.loadMessage(`
-                                                <ul class="time">
-                                                    <li>
-                                                        <label class="li-title">Seconds left in Day:</label>
-                                                        <label class="li-val">${sec_left}</label>
-                                                        <div class="clearfix"></div>
-                                                    </li>
-                                                    <li>
-                                                        <label class="li-title">Current time now:</label>
-                                                        <label class="li-val">${now_d}</label>
-                                                        <div class="clearfix"></div>
-                                                    </li> 
-                                                    <li>
-                                                        <label class="li-title">Total Seconds in a Day:</label>
-                                                        <label class="li-val">${day_seconds}</label>
-                                                        <div class="clearfix"></div>
-                                                    </li>
-                                                    <li>
-                                                        <label class="li-title">Calories left:</label> 
-                                                        <label class="li-val"> ${cal_start}</label>
-                                                        <div class="clearfix"></div>
-                                                    </li>
-                                                </ul>`);*/
-                                            inc = inc.toFixed(2);
-                                            vi.burn_down.setAttribute('inc', inc);
-                                            vi.burn_down.setAttribute('max', value.toFixed(2));
-                                            vi.burn_down.setAttribute('start', down_start);
-                                            vi.burn_up.setAttribute('inc', inc);
-                                            vi.burn_up.setAttribute('max', value.toFixed(2));
-                                            vi.burn_up.setAttribute('start', up_start);
+                                            vi.loadBurnCounters(value);
                                         }
                                         
                                         break;
@@ -328,17 +299,18 @@ export default class view{
                     break;
             }
         });
-        let btn_txt = 'Save';
-        let btn_delete = '';
+        let btn_txt = '<i class="fa fa-save green"></i>';
+        let btn_delete = ' hide';
 
         if(obj.state == 'active'){
-            btn_txt = 'Update';
-            btn_delete = `<button type="button" class="btn btn-delete">Delete</button>`;
+            btn_txt = '<i class="fa fa-edit green"></i>';
+           
+            btn_delete = '';
         }
         frm += `<div class="btn-group">
-                    <button type="button" class="btn btn-submit">${btn_txt}</button>
-                    ${btn_delete}
-                    <button type="reset" class="btn btn-reset">Reset</button>
+                    <button type="button" class="btn btn-submit">${btn_txt} Save</button>
+                    <button type="button" class="btn btn-delete${btn_delete}"><i class="fa fa-trash-alt red"></i> Delete</button>
+                    <button type="reset" class="btn btn-reset"><i class="fa fa-sync orange"></i> Reset</button>
                 </div>
         `;
         frm += '</form>';
@@ -352,6 +324,25 @@ export default class view{
         this.main.innerHTML = '';
 
         return true;
+    }
+
+    loadBurnCounters(value){
+        let vi = this;
+
+        let d = new Date();
+        let day_seconds = 24 * 60 * 60;
+        let inc = ((value / 24) / 60) / 60;
+        let now = (((d.getHours() * 60) * 60) + (d.getMinutes() * 60) + d.getSeconds());
+        let sec_left = day_seconds - now;
+        let down_start = (((sec_left)) * inc).toFixed(2);
+        let up_start = (value - down_start).toFixed(2);
+        inc = inc.toFixed(2);
+        vi.burn_down.setAttribute('inc', inc);
+        vi.burn_down.setAttribute('max', value.toFixed(2));
+        vi.burn_down.setAttribute('start', down_start);
+        vi.burn_up.setAttribute('inc', inc);
+        vi.burn_up.setAttribute('max', value.toFixed(2));
+        vi.burn_up.setAttribute('start', up_start);
     }
 
 }
