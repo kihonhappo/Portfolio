@@ -1,3 +1,16 @@
+body {
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
 .time{
     position: absolute; 
@@ -21,6 +34,9 @@ input.red::placeholder{color: red; font-weight: bold;}
 .inline{display: inline-block;}
 .green{color: green;}
 .orange{color: orange;}
+.hide{display: none;}
+
+
 #app{
     width: 350px;
     height: 600px;
@@ -44,7 +60,7 @@ input.red::placeholder{color: red; font-weight: bold;}
         }
         
         .burn-down{
-            float: left;
+            float: right;
             margin-top: -70px;
 
         }
@@ -52,6 +68,72 @@ input.red::placeholder{color: red; font-weight: bold;}
             float: right;
             margin-top: -70px;
         }
+        .menu-icon{
+            border: 1px solid black;
+            width: 250px;
+            height: 100%;
+            background-color: black;
+            position: absolute;
+            left: -250px;
+            top: 0;
+            transition-delay: .6s;
+            transition: .6s ease-in-out;
+            .icon{
+              float: right;
+              margin-right: -40px;
+              margin-top: 40px;
+              div{
+                width: 35px;
+                height: 5px;
+                background-color: silver;
+                margin: 6px 0;
+                transition: .6s ease-in-out;
+              }
+            }
+            .icon:hover{
+               /* background-color: black; */
+                cursor: pointer;
+              div:hover{
+                color: black;
+              }
+            }
+            
+            .menu-links{
+              list-style: none; 
+              margin-top: 50px;
+              position: absolute;
+              li{
+                color: gray; 
+                margin-bottom: 20px;
+                font-size: 25px;
+              }
+              li:hover{color: white; cursor: pointer;}
+            }
+          }
+          .open{
+            left: 0px;
+            .icon{
+              margin-right: 20px;
+              margin-top: 20px;
+              div{
+                background-color: white;
+              }
+            
+              .top{
+              top: 18;
+              transform: rotate(135deg);
+              position: absolute;
+              }
+              .mid{
+                opacity: 0;
+                margin-left: -60px;
+              }
+              .bottom{
+                margin-top: -10px;
+                transform: rotate(-135deg);
+              }
+            }
+          }
     }
 
     #main{

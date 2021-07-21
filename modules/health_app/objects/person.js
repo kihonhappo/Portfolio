@@ -2,6 +2,9 @@
 export default class person {
     constructor() {
         this.state = 'new',
+        this.preferences = {
+            burn_direction: 'down'
+        },
         this.data = [
             {   
                 name: 'Person_ID', 
@@ -17,6 +20,7 @@ export default class person {
             {   
                 name: 'First_Name',
                 label: 'First Name',
+                placeholder: '',
                 default: '',
                 value: '',
                 type: 'text',
@@ -28,6 +32,7 @@ export default class person {
             {   
                 name: 'Last_Name',
                 label: 'Last Name',
+                placeholder: '',
                 default: '',
                 value: '',
                 type: 'text',
@@ -38,6 +43,7 @@ export default class person {
             },
             {   name: 'DOB',
                 label: 'Birthdate',
+                placeholder: '',
                 default: '',
                 value: '',
                 type: 'date',
@@ -56,11 +62,11 @@ export default class person {
                 disabled: true,
                 required: true,
                 source: 'user:calc:age'
-
             },
             {   
                 name: 'Height',
-                label: 'Height',
+                label: 'Height <span class="green">(inches)</span>',                
+                placeholder: 'Height in Inches',
                 default: 0,
                 value: 0,
                 type: 'number',
@@ -71,7 +77,8 @@ export default class person {
             },
             {   
                 name: 'Weight',
-                label: 'Weight',
+                label: 'Weight <span class="green">(lbs)</span>',
+                placeholder: 'Enter Weight in Lbs',
                 default: 0,
                 value: 0,
                 unit: 'imperial',

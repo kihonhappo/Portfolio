@@ -1,3 +1,23 @@
+body {
+  height: 100%;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .time {
   position: absolute;
   margin-left: 400px;
@@ -62,6 +82,10 @@ input.red::placeholder {
   color: orange;
 }
 
+.hide {
+  display: none;
+}
+
 #app {
   width: 350px;
   height: 600px;
@@ -89,13 +113,99 @@ input.red::placeholder {
 }
 
 #app #head .burn-down {
-  float: left;
+  float: right;
   margin-top: -70px;
 }
 
 #app #head .burn-up {
   float: right;
   margin-top: -70px;
+}
+
+#app #head .menu-icon {
+  border: 1px solid black;
+  width: 250px;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  left: -250px;
+  top: 0;
+  -webkit-transition-delay: .6s;
+          transition-delay: .6s;
+  -webkit-transition: .6s ease-in-out;
+  transition: .6s ease-in-out;
+}
+
+#app #head .menu-icon .icon {
+  float: right;
+  margin-right: -40px;
+  margin-top: 40px;
+}
+
+#app #head .menu-icon .icon div {
+  width: 35px;
+  height: 5px;
+  background-color: silver;
+  margin: 6px 0;
+  -webkit-transition: .6s ease-in-out;
+  transition: .6s ease-in-out;
+}
+
+#app #head .menu-icon .icon:hover {
+  /* background-color: black; */
+  cursor: pointer;
+}
+
+#app #head .menu-icon .icon:hover div:hover {
+  color: black;
+}
+
+#app #head .menu-icon .menu-links {
+  list-style: none;
+  margin-top: 50px;
+  position: absolute;
+}
+
+#app #head .menu-icon .menu-links li {
+  color: gray;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+#app #head .menu-icon .menu-links li:hover {
+  color: white;
+  cursor: pointer;
+}
+
+#app #head .open {
+  left: 0px;
+}
+
+#app #head .open .icon {
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+#app #head .open .icon div {
+  background-color: white;
+}
+
+#app #head .open .icon .top {
+  top: 18;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  position: absolute;
+}
+
+#app #head .open .icon .mid {
+  opacity: 0;
+  margin-left: -60px;
+}
+
+#app #head .open .icon .bottom {
+  margin-top: -10px;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
 }
 
 #app #main {

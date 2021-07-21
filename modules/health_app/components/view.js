@@ -9,20 +9,46 @@ export default class view{
         this.parent = {};
         this.root = root;
         this.head = '';
+        this.nav = '';
         this.main = '';
         this.footer = '';
         this.msg = '';
         this.burn_counter = '';
+        
     }
     start(parent){
         this.parent = parent;
+        let burn_dir = this.parent.person.preferences.burn_direction;
+        let burn_up = '';
+        let burn_down = '';
+        let me = this;
+        if(burn_dir != 'down'){
+            burn_down = ' hide';
+        }
+        if(burn_dir != 'up'){
+            burn_up =  ' hide';
+        }
+        
         let temp = `
                 <header id="head" class="head">
+                    <div class="menu-icon" id="menu-icon">
+                        <span class="icon">
+                        <div class="top"></div>
+                        <div class="mid"></div>
+                        <div class="bottom"></div>
+                        </span>
+                        <ul class="menu-links">
+                        <li>One</li>
+                        <li>Two</li>
+                        <li>One</li>
+                        <li>One</li>
+                        </ul>
+                    </div>
                     <h2>Health App</h2>
-                    <div class="burn-down">
+                    <div class="burn-down ${burn_down}">
                         <my-counter type="custom" id="burn-down" btn="false" start="0" title="Burn Down" rate="sec" sign="neg" min="0" max="0" inc="0"></my-counter>
                     </div>
-                    <div class="burn-up">
+                    <div class="burn-up ${burn_up}">
                         <my-counter type="custom" id="burn-up" btn="false" start="0" title="Burn Up" rate="sec" sign="pos" min="0" max="0" inc="0"></my-counter>
                     </div>
                     <h3 id="msg" class="msg">
@@ -43,6 +69,10 @@ export default class view{
         `;
         this.root.innerHTML = temp;
         this.head = document.getElementById('head');
+        this.nav = document.getElementById('menu-icon');
+        this.nav.addEventListener('click', function(event){
+            me.parent.toggleNav(me.nav);
+        });
         this.main = document.getElementById('main');
         this.footer = document.getElementById('footer');
         this.msg = document.getElementById('msg');
@@ -242,12 +272,16 @@ export default class view{
                         }
                 }
             }
+            let placeholder = '';
+            if(item.placeholder){
+                placeholder = ' placeholder="' + item.placeholder + '" ';
+            }
             switch(item.ctrl){
                 case 'textbox':
                     frm += `
                         <div class="controls">
                             <label>${vi.processKey(item.label)}</label>
-                            <input ${disabled} ${required} default="${item.default}" type="${item.type}" name="${item.name}" class="form-control" value="${value}" />
+                            <input ${disabled} ${required} ${placeholder} default="${item.default}" type="${item.type}" name="${item.name}" class="form-control" value="${value}" />
                         </div>
                     `;
                     break;
@@ -337,12 +371,16 @@ export default class view{
         let down_start = (((sec_left)) * inc).toFixed(2);
         let up_start = (value - down_start).toFixed(2);
         inc = inc.toFixed(2);
-        vi.burn_down.setAttribute('inc', inc);
-        vi.burn_down.setAttribute('max', value.toFixed(2));
-        vi.burn_down.setAttribute('start', down_start);
-        vi.burn_up.setAttribute('inc', inc);
-        vi.burn_up.setAttribute('max', value.toFixed(2));
-        vi.burn_up.setAttribute('start', up_start);
+        if(this.parent.person.preferences.burn_direction == 'down'){
+            vi.burn_down.setAttribute('inc', inc);
+            vi.burn_down.setAttribute('max', value);
+            vi.burn_down.setAttribute('start', down_start);
+        }
+        else{
+            vi.burn_up.setAttribute('inc', inc);
+            vi.burn_up.setAttribute('max', value);
+            vi.burn_up.setAttribute('start', up_start);
+        }
     }
 
 }

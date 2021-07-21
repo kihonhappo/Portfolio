@@ -45,16 +45,18 @@ export default class model{
     }
     save(frm){
         let id = frm.id;
+        let msg = '';
         switch(id){
             case 'person':
                 this.person.state = 'active';
                 this.person.data.forEach(function(item){
                     item.value = frm.querySelector('[name=' + item.name + ']').value;
                 }); 
+                msg = 'Profile created successfully!';
                 break;
         }
-        localStorage.setItem(id, JSON.stringify(this.person));
-        return `<span class="green">${id} saved</span>`;
+        localStorage.setItem(id, JSON.stringify(this[id]));
+        return `<span class="green">${msg} saved</span>`;
     }
 
     delete(id){

@@ -11,24 +11,36 @@ export default class controller{
         this.start();
     }
 
+
+
     start(){
         //this.model.delete('person');
         this.person = JSON.parse(this.model.checkStorage('person'));
+        let msg = '<span class="msg-cont red">Please Create Profile</span>';
         //alert(this.person);
+        if(this.person == undefined || this.person == null){
+            
+            this.person = this.model.getPerson();
+        }
+        else{
+            msg = '<span class="msg-cont green">Person Exists!</span>';
+            
+        }
         let ready = this.view.start(this);
-        let msg = '<span class="msg-cont red">No person</span>';
+        
         if(ready == true){
-            if(this.person == undefined || this.person == null){
-                this.view.loadMessage(msg);
-                let person = this.model.getPerson();
-                this.view.loadPerson(person);
+            this.view.loadMessage(msg);
+            if(this.person.state == 'new'){
+                this.view.loadPerson(this.person);
             }
             else{
-                msg = '<span class="msg-cont green">Person Exists!</span>';
-                this.view.loadMessage(msg);
-                console.log(this.person);
-                this.view.loadPerson(this.person);
-
+                this.model.person = this.person;
+                //this.view.loadMessage(msg);
+                //console.log(this.person);
+                this.view.loadBurnCounters(this.person.data.filter(x => x.name == 'BMR')[0].value);
+                this.view.loadIcons();
+                
+                //this.view.loadPerson(this.person);
             }
             
         }
@@ -134,5 +146,10 @@ export default class controller{
         
         //alert('submitFrm: ' + data.length);
     }
+    toggleNav(nav) {
+        //var updateElement = document.getElementById("menu-icon");
+         //toggle adds a class if it's not there or removes it if it is.
+         nav.classList.toggle("open");
+     }  
 
 }

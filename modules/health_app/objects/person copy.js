@@ -1,5 +1,5 @@
 
-export default class person {
+export default class Profile {
     constructor() {
 
         this.data = [
