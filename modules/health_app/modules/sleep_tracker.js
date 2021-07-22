@@ -1,6 +1,6 @@
 
 
-export default class sleep_tracker{
+export default class SleepTracker{
     constructor(){
         this.sleep_obj = {
             sleep_id: 0,

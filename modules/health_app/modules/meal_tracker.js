@@ -1,22 +1,19 @@
 
 
-export default class weight_tracker{
+export default class MealTracker{
     constructor(){
-        this.weigh_in_obj = {
-            weight_in_id: 0,
-            weight_in_date: '',
-            weight_in_time: '',
-            day: '',
-            weight: '',
-            notes: ''
-        },
-        this.weigh_ins = [];
+        
+        this.items = [];
         this.storage = {};
         
     }
 
     add_episode(episode){
-        this.weigh_ins.add(episode);
+        this.meals.add(episode);
+    }
+
+    delete_episode(episode){
+        this.meals = this.meals.filter(x => x != episode);
     }
     
 

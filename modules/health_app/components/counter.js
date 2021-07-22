@@ -11,11 +11,14 @@ template.innerHTML = `
         position: relative;
         top: 0;
         padding: 5px;
+        margin-top: 20px;
     }
     .tile h3{
         margin-bottom: 0px;
-        
+        display: none;
     }
+    
+    .fa{margin-left: 5px;}
     .cnt{
         text-align: center; 
         
@@ -25,9 +28,13 @@ template.innerHTML = `
     .btn{padding: 3px;}
      .hide{display: none;}   
     span{display: block; margin-left: 0px; margin-top: 10; text-align: center;}
+    .left{float: left;}
 </style>
 <div class="tile">
-    <h3 class="counter-title">Counter</h3>
+    <h3 class="counter-title">
+        
+    </h3>
+    <slot name="txt">Burn</slot>
     <span class="max">0</span>
     <span class="start hide">0</span>
     <span class="inc hide">0</span>
@@ -37,7 +44,7 @@ template.innerHTML = `
 
 
 `;
-export default class MyCounter extends HTMLElement{
+export default class BurnCounter extends HTMLElement{
     constructor(){
         super();
         this.properties = {
@@ -55,6 +62,7 @@ export default class MyCounter extends HTMLElement{
         this.root = this.attachShadow({ mode: "open"});
         this.root.appendChild(template.content.cloneNode(true));
         this.count = 0;
+        this.interval = '';
         console.log( 'constructed' );
         this.start = this.root.querySelector('.start');
         this.max = this.root.querySelector('.max');
@@ -121,8 +129,9 @@ export default class MyCounter extends HTMLElement{
     assignCount(val){
         this.count = val;
         let vi = this;
+        clearInterval(vi.interval);
         if(!isNaN(this.count)){
-            setInterval(function () {
+           this.interval = setInterval(function () {
                 vi.incCount();
             }, 1000);
         }
@@ -199,13 +208,13 @@ export default class MyCounter extends HTMLElement{
     }
 
     incCount(){
-        //alert('Inc Count');
+        //alert('Inc Count: ' + this.count);
         
         if(this.properties.sign == '+'){
-            let temp_cnt = this.count + this.properties.inc;
+            this.count += this.properties.inc;
             //temp_cnt = temp_cnt;
-            if(temp_cnt < this.properties.max){
-                this.count = temp_cnt;
+            if(this.count < this.properties.max){
+                //this.count = temp_cnt;
                 this.cntr.innerHTML = this.count.toFixed(2);
             }
             else{
@@ -213,10 +222,10 @@ export default class MyCounter extends HTMLElement{
             }
         }
         else{
-            let temp_cnt = this.count - this.properties.inc;
+            this.count -= this.properties.inc;
             //temp_cnt = parseFloat(temp_cnt.toFixed(2));
-            if(temp_cnt > this.properties.min){
-                this.count = temp_cnt;
+            if(this.count > this.properties.min){
+                //this.count = temp_cnt;
                 this.cntr.innerHTML = this.count.toFixed(2);
             }
             else{
@@ -233,4 +242,4 @@ export default class MyCounter extends HTMLElement{
     }
 }
 
-customElements.define('my-counter', MyCounter);
+customElements.define('burn-counter', BurnCounter);

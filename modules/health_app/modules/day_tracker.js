@@ -1,15 +1,12 @@
 
 
-export default class weight_tracker{
+export default class DayTracker{
     constructor(){
-        this.weigh_in_obj = {
-            weight_in_id: 0,
-            weight_in_date: '',
-            weight_in_time: '',
-            day: '',
-            weight: '',
-            notes: ''
-        },
+        this.template = `   
+            <div class="day-tracker-cont">
+                <input type="image" id="avatar" alt="Avatar" src="../images/avatar.png">
+            </div>
+        `;
         this.weigh_ins = [];
         this.storage = {};
         

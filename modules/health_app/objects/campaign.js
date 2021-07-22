@@ -1,6 +1,7 @@
 
 export default class campaign {
     constructor() {
+        this.data= [];
         this.title = ''; 
         this.start_date = '';
         this.end_date = '';

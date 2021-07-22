@@ -1,56 +1,68 @@
-import Counter from './counter.js';
+import BurnCounter from './counter.js';
 import { BMR, BMI } from '../js/formulas.js';
 
 const bmr = new BMR();
 const bmi = new BMI();
 
-export default class view{
+export default class View{
     constructor(root){
         this.parent = {};
         this.root = root;
         this.head = '';
         this.nav = '';
+        this.nav_btn = '';
         this.main = '';
         this.footer = '';
         this.msg = '';
-        this.burn_counter = '';
+        this.burn_cnt = '';
         
+    }
+    loadBurnCnt(dir){
+        let sign = 'pos'
+        if(dir == 'down'){
+            sign = 'neg'
+        }
+        
+        let burn_temp = `
+            <div class="burn-cnt">
+                <burn-counter type="custom" id="burn-cnt" btn="false" start="0" title="" rate="sec" sign="${sign}" min="0" max="0" inc="0">
+                    <span slot="txt" class="slot-txt"><i class="fa fa-burn orange"></i><i class="fa fa-angle-double-${dir}"></i></span>
+                </burn-counter>
+            </div>
+        `;
+
+        return burn_temp;
+
     }
     start(parent){
         this.parent = parent;
         let burn_dir = this.parent.person.preferences.burn_direction;
-        let burn_up = '';
-        let burn_down = '';
         let me = this;
-        if(burn_dir != 'down'){
-            burn_down = ' hide';
-        }
-        if(burn_dir != 'up'){
-            burn_up =  ' hide';
-        }
         
+
+        let brn_cnt = this.loadBurnCnt(burn_dir);
         let temp = `
                 <header id="head" class="head">
+                    
                     <div class="menu-icon" id="menu-icon">
-                        <span class="icon">
+                        
+                        <ul class="menu-links">
+                            <li>One</li>
+                            <li>Two</li>
+                            <li>One</li>
+                            <li>One</li>
+                        </ul>
+                    </div>
+                    
+                    <span id="nav-btn" class="nav-btn">
                         <div class="top"></div>
                         <div class="mid"></div>
                         <div class="bottom"></div>
-                        </span>
-                        <ul class="menu-links">
-                        <li>One</li>
-                        <li>Two</li>
-                        <li>One</li>
-                        <li>One</li>
-                        </ul>
-                    </div>
+                    </span>
+                    
                     <h2>Health App</h2>
-                    <div class="burn-down ${burn_down}">
-                        <my-counter type="custom" id="burn-down" btn="false" start="0" title="Burn Down" rate="sec" sign="neg" min="0" max="0" inc="0"></my-counter>
-                    </div>
-                    <div class="burn-up ${burn_up}">
-                        <my-counter type="custom" id="burn-up" btn="false" start="0" title="Burn Up" rate="sec" sign="pos" min="0" max="0" inc="0"></my-counter>
-                    </div>
+                    
+                    ${brn_cnt}
                     <h3 id="msg" class="msg">
                         Messages: 
                     </h3>
@@ -60,29 +72,68 @@ export default class view{
 
                 </main>
                 <footer id="footer" class="footer">
-                    <button type="button" class="foot-icon"><i class="fa fa-2x fa-home"></i></button>
-                    <button type="button" class="foot-icon"><i class="fa fa-2x fa-user"></i></button>
-                    <button type="button" class="foot-icon"><i class="fa fa-2x fa-utensils"></i></button>
-                    <button type="button" class="foot-icon"><i class="fa fa-2x fa-dumbbell"></i></button>
-                    <button type="button" class="foot-icon"><i class="fa fa-2x fa-calendar-alt"></i></button>
+                    <button data-id="day" type="button" class="foot-icon active"><i class="fa fa-2x fa-home"></i></button>
+                    <button data-id="avatar" type="button" class="foot-icon"><i class="fa fa-2x fa-user"></i></button>
+                    <button data-id="meal" type="button" class="foot-icon"><i class="fa fa-2x fa-utensils"></i></button>
+                    <button data-id="activity" type="button" class="foot-icon"><i class="fa fa-2x fa-dumbbell"></i></button>
+                    <button data-id="campaign" type="button" class="foot-icon"><i class="fa fa-2x fa-calendar-alt"></i></button>
                 </footer>
         `;
         this.root.innerHTML = temp;
         this.head = document.getElementById('head');
         this.nav = document.getElementById('menu-icon');
-        this.nav.addEventListener('click', function(event){
-            me.parent.toggleNav(me.nav);
+        this.nav_btn = document.getElementById('nav-btn');
+        this.nav_btn.addEventListener('click', function(event){
+            me.parent.toggleNav();
         });
         this.main = document.getElementById('main');
         this.footer = document.getElementById('footer');
         this.msg = document.getElementById('msg');
-        this.burn_down = document.getElementById('burn-down');
-        this.burn_up = document.getElementById('burn-up');
+        this.burn_cnt = document.getElementById('burn-cnt');
+        let burn_slot = document.querySelector('span[slot=txt]');
+        this.burn_cnt.addEventListener('click', function(event){
+            let slot = event.target;
+            let dir = me.parent.person.preferences.burn_direction;
+            //alert(dir);
+            me.parent.toggleCounter();
+            dir = me.parent.person.preferences.burn_direction;
+            let value = me.parent.person.data.filter(x => x.name == 'BMR')[0].value;
+            me.loadBurnCounters(value);
+            
+        });
+        let foot_links = document.querySelectorAll('.foot-icon');
+        foot_links.forEach(function(link){
+            link.addEventListener('click', function(event){
+                foot_links.forEach(function(link){
+                    link.classList.remove('active');
+                });
+                link.classList.add('active');
+                me.parent.footLinkClick(link);
+            });
+        });
         return true;
     }
     loadMessage(str){
         this.msg.innerHTML = str;
     }
+
+    loadDayTracker(){
+
+    }
+    loadCampaign(item){
+        this.main.innerHTML = this.formBuilder(item, 'person');
+    }
+    loadMealTracker(){
+
+    }
+    loadActivityTracker(){
+
+    }
+
+    loadFood(food){
+        this.main.innerHTML = JSON.stringify(food);
+    }
+
     loadPerson(item){
         
         this.main.innerHTML = this.formBuilder(item, 'person');
@@ -360,9 +411,17 @@ export default class view{
         return true;
     }
 
-    loadBurnCounters(value){
-        let vi = this;
+    loadPage(id){
 
+    }
+
+    loadAvatar(item){
+        this.main.innerHTML = "";
+        this.main.innerHTML = item.add_item();
+    }
+
+    loadBurnCounters(value){
+        let me = this;
         let d = new Date();
         let day_seconds = 24 * 60 * 60;
         let inc = ((value / 24) / 60) / 60;
@@ -371,15 +430,30 @@ export default class view{
         let down_start = (((sec_left)) * inc).toFixed(2);
         let up_start = (value - down_start).toFixed(2);
         inc = inc.toFixed(2);
-        if(this.parent.person.preferences.burn_direction == 'down'){
-            vi.burn_down.setAttribute('inc', inc);
-            vi.burn_down.setAttribute('max', value);
-            vi.burn_down.setAttribute('start', down_start);
+        if(me.parent.person.preferences.burn_direction == 'down'){
+            let i_fa = me.burn_cnt.querySelectorAll('i')[1];
+            //alert('if dir == down: ' + i_fa.classList);
+            if(i_fa.classList.contains('fa-angle-double-up')){
+                i_fa.classList.remove('fa-angle-double-up');
+                i_fa.classList.add('fa-angle-double-down')
+            }
+            me.burn_cnt.setAttribute('sign', 'neg');
+            me.burn_cnt.setAttribute('inc', inc);
+            me.burn_cnt.setAttribute('max', value);
+            me.burn_cnt.setAttribute('start', down_start);
         }
         else{
-            vi.burn_up.setAttribute('inc', inc);
-            vi.burn_up.setAttribute('max', value);
-            vi.burn_up.setAttribute('start', up_start);
+            let i_fa = me.burn_cnt.querySelectorAll('i')[1];
+            //alert('if dir == up: ' + i_fa.classList);
+            if(i_fa.classList.contains('fa-angle-double-down')){
+                
+                i_fa.classList.remove('fa-angle-double-down');
+                i_fa.classList.add('fa-angle-double-up');
+            }
+            me.burn_cnt.setAttribute('sign', 'pos');
+            me.burn_cnt.setAttribute('inc', inc);
+            me.burn_cnt.setAttribute('max', value);
+            me.burn_cnt.setAttribute('start', up_start);
         }
     }
 

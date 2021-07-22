@@ -1,6 +1,6 @@
 
 
-export default class weight_tracker{
+export default class activity_tracker{
     constructor(){
         this.weigh_in_obj = {
             weight_in_id: 0,

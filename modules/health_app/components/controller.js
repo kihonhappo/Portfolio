@@ -1,13 +1,18 @@
 
 
 
-export default class controller{
+export default class Controller{
     constructor(root, model, view){
         this.root = root;
         this.model = model;
         this.view = view;
         this.person = {};
-        
+        this.avatar = {};
+        this.campaign = {};
+        this.day_tracker = {};    
+        this.meal_tracker = {};
+        this.weight_tracker = {};
+        this.sleep_tracker = {};   
         this.start();
     }
 
@@ -42,13 +47,54 @@ export default class controller{
                 
                 //this.view.loadPerson(this.person);
             }
-            
         }
-       //this.root.prepend(temp);
-       /* 
-       if(this.profile == undefined){
+      
+    }
 
-       }*/
+    
+
+    toggleCounter(){
+        let dir = this.person.preferences.burn_direction;
+        if(dir == 'down'){
+            dir = 'up';
+
+        }
+        else{
+            dir = 'down';
+        }
+        this.model.person.preferences.burn_direction = dir;
+    }
+
+    downLoadProfile(){
+
+    }
+    uploadProfile(){
+
+    }
+
+    footLinkClick(link){
+        let id = link.dataset.id;
+        let msg = `<span class="msg-cont green">You clicked ${id}</span>`;
+        this.view.loadMessage(msg);
+        switch(id){
+            case 'avatar':
+                this.view.loadPerson(this.person);
+                //
+                break;
+            case 'day':
+                this.view.loadAvatar(this.model.getAvatar());
+                break;
+            case 'campaign':
+                //this.view.loadCampaign(this.model.getCampaign());
+                break;
+            case 'meal':
+                //this.model.getFood(this.view);
+                break;
+            case 'activity':
+               // this.view.loadActivities(this.model.getActivities());
+                break;
+        }
+
     }
 
     resetFrm(event, id){
@@ -146,10 +192,11 @@ export default class controller{
         
         //alert('submitFrm: ' + data.length);
     }
-    toggleNav(nav) {
+    toggleNav() {
         //var updateElement = document.getElementById("menu-icon");
          //toggle adds a class if it's not there or removes it if it is.
-         nav.classList.toggle("open");
+         this.view.nav_btn.classList.toggle("open");
+         this.view.nav.classList.toggle("open");
      }  
 
 }

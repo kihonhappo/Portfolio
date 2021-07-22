@@ -87,18 +87,14 @@ input.red::placeholder {
 }
 
 #app {
-  width: 350px;
-  height: 600px;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
-  margin-top: 20px;
+  border: 1px solid black;
 }
 
 #app #head {
-  border: 1px solid black;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  height: 120px;
-  border-bottom: none;
+  height: 20%;
 }
 
 #app #head h2 {
@@ -109,17 +105,52 @@ input.red::placeholder {
   text-align: center;
   margin-top: 0px;
   width: 100%;
+  border-bottom: 1px solid black;
+  padding: 5px;
   float: left;
 }
 
-#app #head .burn-down {
+#app #head .burn-cnt {
   float: right;
-  margin-top: -70px;
+  margin-top: -85px;
+  margin-right: 20px;
+  width: 60px;
 }
 
-#app #head .burn-up {
-  float: right;
-  margin-top: -70px;
+#app #head .slot-txt {
+  margin-right: 5px;
+}
+
+#app #head .slot-txt:hover {
+  cursor: pointer;
+}
+
+#app #head .slot-txt i {
+  margin-left: 5px;
+}
+
+#app #head .nav-btn {
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 0px;
+}
+
+#app #head .nav-btn div {
+  width: 35px;
+  height: 5px;
+  background-color: silver;
+  margin: 6px 0;
+  -webkit-transition: .6s ease-in-out;
+  transition: .6s ease-in-out;
+}
+
+#app #head .nav-btn:hover {
+  /* background-color: black; */
+  cursor: pointer;
+}
+
+#app #head .nav-btn:hover div:hover {
+  color: black;
 }
 
 #app #head .menu-icon {
@@ -134,30 +165,6 @@ input.red::placeholder {
           transition-delay: .6s;
   -webkit-transition: .6s ease-in-out;
   transition: .6s ease-in-out;
-}
-
-#app #head .menu-icon .icon {
-  float: right;
-  margin-right: -40px;
-  margin-top: 40px;
-}
-
-#app #head .menu-icon .icon div {
-  width: 35px;
-  height: 5px;
-  background-color: silver;
-  margin: 6px 0;
-  -webkit-transition: .6s ease-in-out;
-  transition: .6s ease-in-out;
-}
-
-#app #head .menu-icon .icon:hover {
-  /* background-color: black; */
-  cursor: pointer;
-}
-
-#app #head .menu-icon .icon:hover div:hover {
-  color: black;
 }
 
 #app #head .menu-icon .menu-links {
@@ -177,57 +184,91 @@ input.red::placeholder {
   cursor: pointer;
 }
 
-#app #head .open {
+#app #head .menu-icon.open {
   left: 0px;
 }
 
-#app #head .open .icon {
-  margin-right: 20px;
-  margin-top: 20px;
-}
-
-#app #head .open .icon div {
-  background-color: white;
-}
-
-#app #head .open .icon .top {
+#app #head .nav-btn.open .top {
   top: 18;
   -webkit-transform: rotate(135deg);
           transform: rotate(135deg);
   position: absolute;
 }
 
-#app #head .open .icon .mid {
+#app #head .nav-btn.open .mid {
   opacity: 0;
   margin-left: -60px;
 }
 
-#app #head .open .icon .bottom {
+#app #head .nav-btn.open .bottom {
   margin-top: -10px;
   -webkit-transform: rotate(-135deg);
           transform: rotate(-135deg);
 }
 
 #app #main {
-  border: 1px solid black;
-  height: 470px;
-  padding: 10px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  min-height: 750px;
+  max-height: 60%;
+  padding: 0px;
+}
+
+#app #main .frame-full {
+  width: 550px;
+  height: 730px;
+}
+
+#app #main .body-types {
+  width: 100%;
+}
+
+#app #main .body-types .type {
+  margin-top: 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#app #main .body-types .type .body-image {
+  width: 45%;
 }
 
 #app #footer {
-  border: 1px solid black;
-  border-top: none;
-  height: 100px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  margin-bottom: 20px;
+  height: 20%;
+  margin-bottom: 0px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 
 #app #footer .foot-icon {
-  margin-top: 20px;
-  margin-left: 13px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-top: 0px;
+  margin-left: 20px;
   width: 50px;
   height: 50px;
+  background-color: white;
+}
+
+#app #footer .foot-icon:hover {
+  cursor: pointer;
+}
+
+#app #footer .foot-icon.active i {
+  color: green;
+  font-weight: bold;
+}
+
+#app .input-frm {
+  margin: 0 auto;
+  padding-bottom: 10px;
 }
 
 #app .input-frm .controls {
@@ -261,5 +302,32 @@ input.red::placeholder {
   padding: 5px;
   padding-left: 8px;
   padding-right: 8px;
+}
+
+@media (min-width: 576px) {
+  #app {
+    width: 450px;
+  }
+  .input-frm {
+    width: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  #app {
+    width: 500px;
+  }
+  .input-frm {
+    width: 400px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .input-frm {
+    width: 400px;
+  }
+  #app {
+    width: 500px;
+  }
 }
 /*# sourceMappingURL=app.css.map */

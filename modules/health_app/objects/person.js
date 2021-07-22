@@ -1,5 +1,5 @@
 
-export default class person {
+export default class Person {
     constructor() {
         this.state = 'new',
         this.preferences = {

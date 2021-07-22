@@ -38,16 +38,13 @@ input.red::placeholder{color: red; font-weight: bold;}
 
 
 #app{
-    width: 350px;
-    height: 600px;
+    width: 100%;
+    height: 100%;
     margin: 0 auto;
-    margin-top: 20px;
+    border: 1px solid black;
     #head{
-        border: 1px solid black;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        height: 120px;
-        border-bottom: none;
+        height: 20%;
+        
         h2{
             text-align: center;
         }
@@ -55,19 +52,42 @@ input.red::placeholder{color: red; font-weight: bold;}
             text-align: center;
             margin-top: 0px;
             width: 100%;
-            
+            border-bottom: 1px solid black; 
+            padding: 5px;
             float: left;
         }
         
-        .burn-down{
+        .burn-cnt{
             float: right;
-            margin-top: -70px;
+            margin-top: -85px;
+            margin-right: 20px;
+            width: 60px;
+        }
+        
+        .slot-txt{margin-right: 5px;}
+        .slot-txt:hover{cursor: pointer;}
+        .slot-txt i{margin-left: 5px;}
+        .nav-btn{
+            position: absolute;
 
-        }
-        .burn-up{
-            float: right;
-            margin-top: -70px;
-        }
+            //float: right;
+            margin-left: 20px;
+            margin-top: 0px;
+            div{
+              width: 35px;
+              height: 5px;
+              background-color: silver;
+              margin: 6px 0;
+              transition: .6s ease-in-out;
+            }
+          }
+          .nav-btn:hover{
+             /* background-color: black; */
+              cursor: pointer;
+            div:hover{
+              color: black;
+            }
+          }
         .menu-icon{
             border: 1px solid black;
             width: 250px;
@@ -78,25 +98,7 @@ input.red::placeholder{color: red; font-weight: bold;}
             top: 0;
             transition-delay: .6s;
             transition: .6s ease-in-out;
-            .icon{
-              float: right;
-              margin-right: -40px;
-              margin-top: 40px;
-              div{
-                width: 35px;
-                height: 5px;
-                background-color: silver;
-                margin: 6px 0;
-                transition: .6s ease-in-out;
-              }
-            }
-            .icon:hover{
-               /* background-color: black; */
-                cursor: pointer;
-              div:hover{
-                color: black;
-              }
-            }
+           
             
             .menu-links{
               list-style: none; 
@@ -110,57 +112,87 @@ input.red::placeholder{color: red; font-weight: bold;}
               li:hover{color: white; cursor: pointer;}
             }
           }
-          .open{
+
+          .menu-icon.open{
             left: 0px;
-            .icon{
-              margin-right: 20px;
-              margin-top: 20px;
-              div{
-                background-color: white;
-              }
+          }
+          .nav-btn.open{
             
-              .top{
-              top: 18;
-              transform: rotate(135deg);
-              position: absolute;
-              }
-              .mid{
-                opacity: 0;
-                margin-left: -60px;
-              }
-              .bottom{
-                margin-top: -10px;
-                transform: rotate(-135deg);
-              }
+            div{
+              
+            }
+            .top{
+            top: 18;
+            transform: rotate(135deg);
+            position: absolute;
+            }
+            .mid{
+              opacity: 0;
+              margin-left: -60px;
+            }
+            .bottom{
+              margin-top: -10px;
+              transform: rotate(-135deg);
             }
           }
+          
     }
 
     #main{
-        border: 1px solid black;
-        height: 470px;
-        padding: 10px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        min-height: 750px;
+        max-height: 60%;
+        padding: 0px;
+        
+        .frame-full{
+            width: 550px;
+            height: 730px;
+        }
+
+        .body-types{
+            width: 100%;
+            .type{
+
+                margin-top: 10px;
+                margin: 0 auto;
+                
+                text-align: center;
+                .body-image{width: 45%; }
+            }
+            
+        }
+        
+        
         //background-image: url(images/intro.svg);
     }
 
     #footer{
-        border: 1px solid black;
-        border-top: none;
-        height: 100px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        margin-bottom: 20px;
-
+        height: 20%;
+        margin-bottom: 0px;
+        padding: 10px;
+        display: flex;
+        flex-flow: row wrap;
         .foot-icon{
-            margin-top: 20px;
-            margin-left: 13px;
+            flex:  1;
+            margin-top: 0px;
+            margin-left: 20px;
             width: 50px;
             height: 50px;
+            background-color: white;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        .foot-icon.active i{
+            color: green; 
+            font-weight: bold;
         }
     }
 
     .input-frm{
-        
+        margin: 0 auto;
+        padding-bottom: 10px;
         .controls{
             margin: 10px;
             margin-bottom: 20px;
@@ -192,4 +224,34 @@ input.red::placeholder{color: red; font-weight: bold;}
             }
         }
     }
+}
+
+// Best Practice suggests
+   // keep default style for smallest screen size (portrait mobile, below 576px)
+   // and then proceed in assending order with media query like below
+   
+   // Small devices (landscape phones, 576px and above till next break point)
+@media (min-width: 576px) {  
+    #app{width: 450px;}
+    .input-frm{
+        width: 400px;
+    }
+}
+
+// Medium devices (tablets, 768px and above till next break point)
+@media (min-width: 768px) {  
+    #app{width: 500px;}
+    .input-frm{
+        width: 400px;
+    }
+}
+
+// Large devices (desktops, 992px and above till next break point)
+@media (min-width: 1200px) {  
+    .input-frm{
+        width: 400px;
+    }
+   #app{width: 500px;}
+   
+    
 }

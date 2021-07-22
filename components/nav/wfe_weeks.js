@@ -1221,6 +1221,71 @@ const wfe_weeks = [
                 `
         },
         {
+            week: 'w14',
+            title: 'Week 14', 
+            team_notes: `
+                <div id="notes" class="section-cont">
+                    <h3 class="section-header h-center">Application Development Week</h3>
+                    <p>
+                        I met with my team on wednesday night to discuss our individual projects. Catteara Neyman, Erin Engler, Joseph Watt are at 
+                        differennt stages of development. I did recieve a great tip from Catteara, I shared with the team that one aspect of my applicaton
+                        that Cattera was able to help me find a model. 
+                    </p>
+                    <p>The component I am talking about is the body avatar. This avatar will grow or change 
+                        based on the users inputs. The site Cattera directed me to <a href="https://bodyvisualizer.com/" class="link">Body Builder</a>
+                    </p>
+                </div>
+                `,
+            report: 
+                `<div class="section-cont report">
+                    <h3 class="report-header h-center">
+                        Week 13 Report
+                    </h3>
+                    <div>
+                        <h4 class="h-center">What did I do since the last meeting?</h4>
+                        <p>
+                            I was able to finish all of the data objects that I will be using to store, process and tranform all of application data.
+                            I successfully set up the fetch data funcitons to get food data from the FDA API. I can also get drug data as well. 
+                            I successfully set up the fetch activity data from the server. 
+                            I created the MVC components to organize the flow of data and actions in the application.
+                            I have created a form builder to create forms from objects automatically based on the objects field params.
+                            I created a Custom Web Component counter and added it to the application main page. This counter will count the calories
+                            the user burns every minute of the day.
+                            I created a function that when a user pulls up the site the application checks to see if the user has a person profile in their 
+                            local storage. If the user has local storage then the app will load the person profile. the app calculates BMR and BMi.
+                            
+                        </p>
+                        <h4 class="h-center">What am I going to do next?</h4>
+                        <p> 
+                            I will build the following dashboards and forms to complete this phase of the application.
+                            <ul>
+                                <li>Campaign Tracker</li>
+                                <li>Meal Tracker</li>
+                                <li>Activity Tracker</li>
+                                <li>Sleep Tracker</li>
+                                <li>Weight Tracker</li>
+                                <li>Day Tracker</li>
+                                <li>Meal Builder</li> 
+                                <li>Meal Planner</li>
+                                <li>Activity Planner</li>
+                            </ul>
+                        </p>
+                        
+                        <h4 class="h-center">What are my blockers?</h4>
+                        <p>  
+                            I had issues while building the counter web component. I am a bit nervous to learn new technologies because the learning 
+                            curve can take up valuable time and energy.
+                        </p>
+                        <p>
+                            My job keeps getting in the way! Just kidding, I have to be careful about not spending too much time on style before
+                            I complete the features and functionality. The css styles can take up a lot of time. CSS is more of an art and not procedure.
+                        </p>
+                    </div>
+                </div>
+                `
+        },
+        
+        {
             week: 'proposal',
             title: 'Challenge Proposal',
             proposal: `
